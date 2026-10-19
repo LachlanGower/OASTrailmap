@@ -84,3 +84,21 @@
 .mapper-link-row{display:flex;align-items:center;justify-content:space-between;gap:8px;border-top:1px solid #e2ebe1;padding:7px 0}
 .mapper-link-row span{font-size:10px;line-height:1.4;overflow-wrap:anywhere}
 .mapper-link-row button{flex-shrink:0;font-size:10px;padding:5px 7px}
+
+/* State manager, Activity Studio and compact planning overview */
+.data-stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:9px;margin:14px 0}
+.data-stat{background:#edf4ec;padding:13px;border-radius:9px;display:flex;flex-direction:column}
+.data-stat strong{font-size:22px}.data-stat span{font-size:11px;color:#50715e}
+.activity-list{display:flex;flex-wrap:wrap;gap:8px;margin:13px 0}
+#activityEditor{max-height:none;position:static;max-width:900px}
+#activityEditor form{display:flex;flex-direction:column;gap:10px}
+#activityEditor form>label{display:flex;flex-direction:column;font-size:12px;gap:4px}
+#activityEditor input,#activityEditor textarea,#activityEditor select{padding:9px;border:1px solid #b9d0c0;border-radius:7px;max-width:100%}
+#activityEditor textarea{min-height:70px}
+.studio-location-editor{display:grid;gap:8px;font-size:11px}
+.schedule-timeline{display:grid;grid-template-columns:repeat(10,minmax(0,1fr));gap:5px;margin:14px 0}
+.schedule-timeline button{cursor:pointer;padding:8px 2px;background:#e8f1e5;border:1px solid #a8c5af;border-radius:6px;min-height:48px;font-size:10px}
+.schedule-timeline button.locked{background:#fff1cb;border-color:#d2ae54}
+.schedule-timeline button.external{border-bottom:4px solid #9859a6}
+.schedule-timeline button.preferred{outline:2px solid #278158}
+@media(max-width:760px){.schedule-timeline{grid-template-columns:repeat(5,minmax(0,1fr))}}
