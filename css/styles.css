@@ -102,3 +102,22 @@
 .schedule-timeline button.external{border-bottom:4px solid #9859a6}
 .schedule-timeline button.preferred{outline:2px solid #278158}
 @media(max-width:760px){.schedule-timeline{grid-template-columns:repeat(5,minmax(0,1fr))}}
+
+/* Leader-facing Help & Design, recovery controls and multi-activity sessions */
+.help-topics{display:flex;gap:8px;flex-wrap:wrap;margin:14px 0}
+#helpDesign>label{display:flex;flex-direction:column;gap:6px;max-width:600px}
+#helpSearch{border:1px solid #a7c4af;border-radius:8px;padding:12px;width:100%;background:white}
+.help-content{background:#f7faf6;border:1px solid #d8e6d9;border-radius:12px;padding:clamp(16px,3vw,30px);max-width:920px;line-height:1.7}
+.help-content article p{white-space:pre-wrap}
+.recovery-section{border-top:2px solid #e3eae3;margin-top:24px;padding-top:16px}
+.recovery-section .studio-toolbar{margin:12px 0}
+.multi-session{border-top:1px solid #c7d9c8;margin-top:14px;padding-top:12px;display:flex;flex-direction:column;gap:9px}
+.multi-session h4{margin:0}
+.multi-activities{display:grid;gap:6px}
+.multi-activity{display:flex;align-items:center;justify-content:space-between;gap:8px;border:1px solid #e0e9e0;border-radius:7px;padding:7px 9px;background:#f7faf6}
+.multi-activity small{color:#587267}
+.multi-activity>div{display:flex;gap:4px;flex-shrink:0}
+.multi-activity button{padding:4px 8px;min-width:29px}
+.multi-session select,.multi-session input{border:1px solid #b8cbb8;border-radius:6px;padding:7px;max-width:100%}
+.multi-session>.studio-toolbar{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+@media(max-width:650px){.multi-activity{align-items:flex-start;flex-direction:column}.multi-session>.studio-toolbar>*{width:100%}}

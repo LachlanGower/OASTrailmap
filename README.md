@@ -90,3 +90,25 @@ The **Activity Studio** builds structured plans (description, equipment, prepara
 The scheduler provides Scout progress, Curriculum First, Location-focused and Balanced options, plus preferred external venue weeks, a visual timeline and per-week Scout impact preview. Preferred weeks guide external-session suggestions but do not create a booking. Foundational and dependent requirements may still be scheduled in the same night.
 
 **Caveats:** Location classifications are leader-editable proposals, not official OAS conditions; existing reference data is unchanged until explicitly edited. Scheduling is heuristic, not a guaranteed optimal 40-week curriculum. Changes on this branch have syntax-level checks but require end-to-end browser testing and sample workbook acceptance testing before merging.
+
+## Next feature branch: leader workflows, recovery, and activity combinations
+
+This branch consolidates import controls: the old footer **Import and activity bank** panel is removed. The **original Excel workbook importer**, workbook preview and unmatched-cell review are preserved in **Data & State**. The application still seeds its initial Scout progress from the original workbook.
+
+**Reset & Recovery** provides:
+- Clear achievements while keeping the Scout roster (records reset to incomplete).
+- Clear roster and achievements together.
+- Clear the 40-week schedule without changing progress.
+- Restore requirements from the bundled, unmodified `data/requirements.json` application baseline, with a preview and without clearing Scout achievements.
+- Factory reset of browser storage after an explicit confirmation and full-backup export.
+
+**Activities per week:** The scheduler derives *suggested* combinations from Activity Studio entries with confirmed requirement coverage. Session cards allow manual adding, removing, reordering and confirmation. They display combined unique requirement coverage, minutes and location warnings. Until confirmed, a suggestion is not a booked or approved session. The legacy one-off file attachment remains available for existing schedules. Stored weeks have an optional ordered `activityIds` array and `sessionMinutes` field; older schedules remain readable.
+
+**Help & Design:** A nontechnical, searchable in-app help area explains setup, original workbook import, progress review, weekly planning, backups, tree editing and troubleshooting. The appendix describes local state and schemas. The `Future phases (brainstorm)` page and [docs/future-phases.md](docs/future-phases.md) explicitly mark ideas as **not approved requirements**.
+
+### Technical checks and follow-ups
+- Syntax parsing passed on modified JS files; structural checks confirmed original workbook preview and Excel parser remain.
+- A recommendation smoke test verified matching, distinct coverage, and total duration.
+- **Not yet exercised**: full browser end-to-end flows, real Cub Pack workbook import/reimport, storage quota failures and accessibility review.
+- **Known limitation**: Activity recommendations are greedy heuristics; location warnings flag multi-venue plans but do not calculate travel time, and suggested activity order may require manual prerequisite ordering.
+- **Known limitation**: Requirement defaults refer to the shipped normalized JSON baseline rather than verbatim `OAS-Requirements.txt` source text. The original TXT source was not present in the source repository at branch creation.

@@ -113,12 +113,13 @@ function dataManagerInit(){
 }
 function dataView(mode){
  if(mode==='data'||mode==='activity'){
+  if($('#helpDesign'))$('#helpDesign').hidden=true;
   setMode('trail');
   $('#trailWorkspace').hidden=true;
   $('#treeStudio').hidden=true;$('#scheduleStudio').hidden=true;
   $('#dataManager').hidden=mode!=='data';$('#activityStudio').hidden=mode!=='activity';
   document.querySelectorAll('[data-mode]').forEach(b=>b.classList.remove('primary'));
- }else{$('#dataManager').hidden=true;$('#activityStudio').hidden=true;}
+ }else{$('#dataManager').hidden=true;$('#activityStudio').hidden=true;if($('#helpDesign'))$('#helpDesign').hidden=true;}
 }
 function dataActivityRender(){
  const area=$('#activityList');if(!area)return;
