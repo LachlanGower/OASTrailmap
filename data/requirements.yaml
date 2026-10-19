@@ -998,3 +998,1270 @@ requirements:
   tags:
   - Environment & nature
   - Camping
+  - Discussion / theory
+  - Scout Hall
+- id: s2-camping-i-have-discussed-the-appropriate-action-i-should
+  stage: 2
+  stream: Camping
+  text: I have discussed the appropriate action I should take in the case of an accident.
+  workflow: null
+  prerequisites: []
+  suggested_links:
+  - id: s1-bushcraft-i-know-my-address-and-location-in-an-emergency
+    reason: 'Related topic: emergency response'
+  - id: s1-bushcraft-i-can-demonstrate-stop-drop-and-roll-and-how-tha
+    reason: 'Related topic: emergency response'
+  - id: s1-bushcraft-i-can-find-the-emergency-exit-and-muster-point-a
+    reason: 'Related topic: emergency response'
+  source: OAS-Requirements.txt
+  tags:
+  - Emergency response
+  - Reflection & review
+  - Camping
+  - Discussion / theory
+  - Scout Hall
+- id: s2-camping-i-can-discuss-what-safety-precautions-you-should
+  stage: 2
+  stream: Camping
+  text: I can discuss what safety precautions you should take before going camping outdoors.
+  workflow: null
+  prerequisites: []
+  suggested_links: []
+  source: OAS-Requirements.txt
+  tags:
+  - Safety
+  - Environment & nature
+  - Planning
+  - Camping
+  - Discussion / theory
+  - Scout Hall
+- id: s2-camping-i-know-about-proper-hygiene-practices-at-camp
+  stage: 2
+  stream: Camping
+  text: I know about proper hygiene practices at camp.
+  workflow: null
+  prerequisites: []
+  suggested_links: []
+  source: OAS-Requirements.txt
+  tags:
+  - Hygiene & personal care
+  - Knots & rope
+  - Camping
+  - Discussion / theory
+  - Scout Hall
+- id: s2-camping-i-know-how-to-contact-the-emergency-services
+  stage: 2
+  stream: Camping
+  text: I know how to contact the emergency services.
+  workflow: null
+  prerequisites: []
+  suggested_links:
+  - id: s1-bushcraft-i-know-my-address-and-location-in-an-emergency
+    reason: 'Related topic: emergency response'
+  - id: s1-bushcraft-i-can-demonstrate-stop-drop-and-roll-and-how-tha
+    reason: 'Related topic: emergency response'
+  - id: s1-bushcraft-i-can-find-the-emergency-exit-and-muster-point-a
+    reason: 'Related topic: emergency response'
+  source: OAS-Requirements.txt
+  tags:
+  - Emergency response
+  - Camping
+  - Discussion / theory
+  - Scout Hall
+- id: s2-camping-i-can-draw-and-label-a-picture-showing-all-of-th
+  stage: 2
+  stream: Camping
+  text: I can draw and label a picture showing all of the essential equipment to bring on a camp.
+  workflow: null
+  prerequisites: []
+  suggested_links:
+  - id: s1-camping-i-can-help-pack-a-bag-for-camp
+    reason: 'Related topic: packing equipment'
+  - id: s1-bushwalking-i-can-help-pack-a-backpack-for-a-day-walk
+    reason: 'Related topic: packing equipment'
+  source: OAS-Requirements.txt
+  tags:
+  - Equipment & packing
+  - Planning
+  - Camping
+  - Scout Hall
+- id: s2-camping-i-know-the-benefits-and-risks-associated-with-fi
+  stage: 2
+  stream: Camping
+  text: I know the benefits and risks associated with fire.
+  workflow: null
+  prerequisites: []
+  suggested_links:
+  - id: s1-camping-i-know-the-basic-elements-that-you-need-to-make-
+    reason: 'Related topic: fire safety'
+  - id: s1-camping-i-can-strike-a-match
+    reason: 'Related topic: fire safety'
+  - id: s1-bushcraft-i-can-strike-a-match
+    reason: 'Related topic: fire safety'
+  source: OAS-Requirements.txt
+  tags:
+  - Safety
+  - Fire
+  - Camping
+  - Discussion / theory
+  - Scout Hall
+- id: s2-camping-i-can-demonstrate-basic-safe-food-handling-and-t
+  stage: 2
+  stream: Camping
+  text: I can demonstrate basic safe food handling and the importance of hygiene at camp.
+  workflow: null
+  prerequisites:
+  - s2-camping-i-know-about-proper-hygiene-practices-at-camp
+  suggested_links:
+  - id: s1-camping-i-can-help-prepare-food-for-cooking-at-camp
+    reason: 'Related topic: food'
+  - id: s1-bushwalking-i-can-list-what-food-to-bring-on-a-day-bushwalk
+    reason: 'Related topic: food'
+  source: OAS-Requirements.txt
+  tags:
+  - Safety
+  - Food & cooking
+  - Hygiene & personal care
+  - Camping
+  - Practical activity
+- id: s2-camping-i-can-protect-myself-when-exposed-to-the-sun-whi
+  stage: 2
+  stream: Camping
+  text: I can protect myself when exposed to the sun while outdoors.
+  workflow: null
+  prerequisites: []
+  suggested_links: []
+  source: OAS-Requirements.txt
+  tags:
+  - Environment & nature
+  - Camping
+- id: s2-camping-i-can-behave-safely-in-and-around-tents-and-camp
+  stage: 2
+  stream: Camping
+  text: I can behave safely in and around tents and campfires at camp.
+  workflow: null
+  prerequisites:
+  - s2-camping-i-can-discuss-what-safety-precautions-you-should
+  - s2-camping-i-know-the-benefits-and-risks-associated-with-fi
+  suggested_links:
+  - id: s1-camping-i-know-the-basic-elements-that-you-need-to-make-
+    reason: 'Related topic: fire safety'
+  - id: s1-camping-i-can-strike-a-match
+    reason: 'Related topic: fire safety'
+  - id: s1-camping-i-can-set-out-my-sleeping-area-at-camp
+    reason: 'Related topic: tent'
+  source: OAS-Requirements.txt
+  tags:
+  - Safety
+  - Fire
+  - Shelter & tents
+  - Camping
+- id: s2-camping-i-can-demonstrate-and-explain-why-sleeping-bags-
+  stage: 2
+  stream: Camping
+  text: I can demonstrate and explain why sleeping bags need to be aired out.
+  workflow: null
+  prerequisites: []
+  suggested_links: []
+  source: OAS-Requirements.txt
+  tags:
+  - Equipment & packing
+  - Hygiene & personal care
+  - Camping
+  - Discussion / theory
+  - Practical activity
+  - Scout Hall
+- id: s2-camping-i-have-spent-two-nights-on-camp-in-a-tent-at-thi
+  stage: 2
+  stream: Camping
+  text: I have spent two nights on camp in a tent at this stage.
+  workflow: null
+  prerequisites:
+  - s2-camping-i-can-help-set-up-a-tent-and-identify-the-main-p
+  suggested_links:
+  - id: s1-camping-i-can-set-out-my-sleeping-area-at-camp
+    reason: 'Related topic: tent'
+  - id: s1-bushcraft-i-know-three-reasons-for-having-a-shelter-when-s
+    reason: 'Related topic: tent'
+  source: OAS-Requirements.txt
+  tags:
+  - Shelter & tents
+  - Outdoor experience
+  - Camping
+  - External / real-world experience
+  - Outdoors / off-site
+- id: s2-camping-i-can-help-set-up-a-tent-and-identify-the-main-p
+  stage: 2
+  stream: Camping
+  text: I can help set up a tent and identify the main parts of a tent.
+  workflow: null
+  prerequisites:
+  - s2-camping-i-can-draw-and-label-a-picture-showing-all-of-th
+  - s1-camping-i-can-set-out-my-sleeping-area-at-camp
+  suggested_links:
+  - id: s1-camping-i-can-set-out-my-sleeping-area-at-camp
+    reason: 'Related topic: tent'
+  - id: s1-bushcraft-i-know-three-reasons-for-having-a-shelter-when-s
+    reason: 'Related topic: tent'
+  source: OAS-Requirements.txt
+  tags:
+  - Shelter & tents
+  - Camping
+  - Discussion / theory
+  - Practical activity
+  - Scout Hall
+  - Outdoors / off-site
+- id: s2-camping-i-can-talk-about-what-i-enjoyed-learnt-and-impro
+  stage: 2
+  stream: Camping
+  text: I can talk about what I enjoyed, learnt, and improved upon from at least two camps.
+  workflow: null
+  prerequisites: []
+  suggested_links:
+  - id: s1-camping-i-can-talk-about-what-i-enjoyed-learnt-or-improv
+    reason: 'Related topic: reflection'
+  - id: s1-bushwalking-i-can-talk-about-what-i-enjoyed-or-learnt-from-g
+    reason: 'Related topic: reflection'
+  - id: s1-bushcraft-i-can-talk-about-what-i-enjoyed-learnt-or-improv
+    reason: 'Related topic: reflection'
+  source: OAS-Requirements.txt
+  tags:
+  - Reflection & review
+  - Camping
+  - Discussion / theory
+  - Scout Hall
+- id: s2-camping-i-can-suggest-what-i-would-do-differently-on-a-f
+  stage: 2
+  stream: Camping
+  text: I can suggest what I would do differently on a future camp to enjoy it more, to be safer, or to learn new
+    things.
+  workflow: null
+  prerequisites: []
+  suggested_links:
+  - id: s1-camping-i-can-talk-about-what-i-enjoyed-learnt-or-improv
+    reason: 'Related topic: reflection'
+  - id: s1-bushwalking-i-can-talk-about-what-i-enjoyed-or-learnt-from-g
+    reason: 'Related topic: reflection'
+  - id: s1-bushcraft-i-can-talk-about-what-i-enjoyed-learnt-or-improv
+    reason: 'Related topic: reflection'
+  source: OAS-Requirements.txt
+  tags:
+  - Safety
+  - Planning
+  - Camping
+- id: s2-bushwalking-i-can-explain-what-clothing-i-should-wear-whilst
+  stage: 2
+  stream: Bushwalking
+  text: I can explain what clothing I should wear whilst bushwalking.
+  workflow: null
+  prerequisites: []
+  suggested_links: []
+  source: OAS-Requirements.txt
+  tags:
+  - Equipment & packing
+  - Bushwalking
+  - Discussion / theory
+  - Scout Hall
+- id: s2-bushwalking-i-have-explained-what-impact-i-can-have-on-local
+  stage: 2
+  stream: Bushwalking
+  text: I have explained what impact I can have on local vegetation when bushwalking.
+  workflow: null
+  prerequisites: []
+  suggested_links: []
+  source: OAS-Requirements.txt
+  tags:
+  - Environment & nature
+  - Bushwalking
+  - Discussion / theory
+  - Scout Hall
+- id: s2-bushwalking-i-have-discussed-the-appropriate-action-i-should
+  stage: 2
+  stream: Bushwalking
+  text: I have discussed the appropriate action I should take in the case of an accident or emergency.
+  workflow: null
+  prerequisites: []
+  suggested_links:
+  - id: s1-bushcraft-i-know-my-address-and-location-in-an-emergency
+    reason: 'Related topic: emergency response'
+  - id: s1-bushcraft-i-can-demonstrate-stop-drop-and-roll-and-how-tha
+    reason: 'Related topic: emergency response'
+  - id: s1-bushcraft-i-can-find-the-emergency-exit-and-muster-point-a
+    reason: 'Related topic: emergency response'
+  source: OAS-Requirements.txt
+  tags:
+  - Emergency response
+  - Reflection & review
+  - Bushwalking
+  - Discussion / theory
+  - Scout Hall
+- id: s2-bushwalking-i-can-discuss-what-safety-precautions-i-should-t
+  stage: 2
+  stream: Bushwalking
+  text: I can discuss what safety precautions I should take before going out for a bushwalk.
+  workflow: null
+  prerequisites: []
+  suggested_links: []
+  source: OAS-Requirements.txt
+  tags:
+  - Safety
+  - Planning
+  - Bushwalking
+  - Discussion / theory
+  - Scout Hall
+- id: s2-bushwalking-i-know-when-and-how-to-contact-the-emergency-ser
+  stage: 2
+  stream: Bushwalking
+  text: I know when and how to contact the emergency services in an emergency.
+  workflow: null
+  prerequisites: []
+  suggested_links:
+  - id: s1-bushcraft-i-know-my-address-and-location-in-an-emergency
+    reason: 'Related topic: emergency response'
+  - id: s1-bushcraft-i-can-demonstrate-stop-drop-and-roll-and-how-tha
+    reason: 'Related topic: emergency response'
+  - id: s1-bushcraft-i-can-find-the-emergency-exit-and-muster-point-a
+    reason: 'Related topic: emergency response'
+  source: OAS-Requirements.txt
+  tags:
+  - Emergency response
+  - Bushwalking
+  - Discussion / theory
+  - Scout Hall
+- id: s2-bushwalking-i-can-draw-or-list-all-of-the-essential-equipmen
+  stage: 2
+  stream: Bushwalking
+  text: I can draw or list all of the essential equipment to bring on a bushwalk.
+  workflow: null
+  prerequisites: []
+  suggested_links:
+  - id: s1-camping-i-can-help-pack-a-bag-for-camp
+    reason: 'Related topic: packing equipment'
+  - id: s1-bushwalking-i-can-help-pack-a-backpack-for-a-day-walk
+    reason: 'Related topic: packing equipment'
+  source: OAS-Requirements.txt
+  tags:
+  - Equipment & packing
+  - Planning
+  - Bushwalking
+  - Discussion / theory
+  - Scout Hall
+- id: s2-bushwalking-i-can-use-a-compass-to-find-basic-directions
+  stage: 2
+  stream: Bushwalking
+  text: I can use a compass to find basic directions.
+  workflow: null
+  prerequisites:
+  - s1-bushwalking-i-can-identify-the-main-parts-of-the-compass
+  suggested_links:
+  - id: s1-bushwalking-i-can-identify-the-four-main-cardinal-points-of-
+    reason: 'Related topic: compass navigation'
+  - id: s1-bushwalking-i-can-identify-the-main-parts-of-the-compass
+    reason: 'Related topic: compass navigation'
+  source: OAS-Requirements.txt
+  tags:
+  - Navigation
+  - Bushwalking
+  - Practical activity
+  - Scout Hall
+- id: s2-bushwalking-i-can-protect-myself-when-exposed-to-the-sun-whi
+  stage: 2
+  stream: Bushwalking
+  text: I can protect myself when exposed to the sun while outdoors.
+  workflow: null
+  prerequisites: []
+  suggested_links: []
+  source: OAS-Requirements.txt
+  tags:
+  - Environment & nature
+  - Bushwalking
+- id: s2-bushwalking-i-have-attended-at-least-two-short-bushwalks-at-
+  stage: 2
+  stream: Bushwalking
+  text: I have attended at least two short bushwalks at this stage.
+  workflow: null
+  prerequisites: []
+  suggested_links: []
+  source: OAS-Requirements.txt
+  tags:
+  - Outdoor experience
+  - Bushwalking
+  - External / real-world experience
+  - Outdoors / off-site
+- id: s2-bushwalking-i-can-show-where-and-when-i-am-allowed-to-go-bef
+  stage: 2
+  stream: Bushwalking
+  text: I can show where and when I am allowed to go, before I start bushwalking.
+  workflow: null
+  prerequisites: []
+  suggested_links: []
+  source: OAS-Requirements.txt
+  tags:
+  - Safety
+  - Planning
+  - Bushwalking
+- id: s2-bushwalking-i-have-bushwalked-a-total-distance-of-at-least-1
+  stage: 2
+  stream: Bushwalking
+  text: I have bushwalked a total distance of at least 10km.
+  workflow: null
+  prerequisites:
+  - s2-bushwalking-i-have-attended-at-least-two-short-bushwalks-at-
+  suggested_links: []
+  source: OAS-Requirements.txt
+  tags:
+  - Outdoor experience
+  - Bushwalking
+  - External / real-world experience
+  - Outdoors / off-site
+- id: s2-bushwalking-i-have-talked-about-what-i-enjoyed-learnt-or-imp
+  stage: 2
+  stream: Bushwalking
+  text: I have talked about what I enjoyed, learnt, or improved upon from at least two bushwalks.
+  workflow: null
+  prerequisites: []
+  suggested_links:
+  - id: s1-camping-i-can-talk-about-what-i-enjoyed-learnt-or-improv
+    reason: 'Related topic: reflection'
+  - id: s1-bushwalking-i-can-talk-about-what-i-enjoyed-or-learnt-from-g
+    reason: 'Related topic: reflection'
+  - id: s1-bushcraft-i-can-talk-about-what-i-enjoyed-learnt-or-improv
+    reason: 'Related topic: reflection'
+  source: OAS-Requirements.txt
+  tags:
+  - Reflection & review
+  - Bushwalking
+- id: s2-bushwalking-i-can-suggest-what-i-would-do-differently-on-a-f
+  stage: 2
+  stream: Bushwalking
+  text: I can suggest what I would do differently on a future bushwalk to enjoy it more, to be safer, to learn new
+    things, or to be more challenging.
+  workflow: null
+  prerequisites: []
+  suggested_links:
+  - id: s1-camping-i-can-talk-about-what-i-enjoyed-learnt-or-improv
+    reason: 'Related topic: reflection'
+  - id: s1-bushwalking-i-can-talk-about-what-i-enjoyed-or-learnt-from-g
+    reason: 'Related topic: reflection'
+  - id: s1-bushcraft-i-can-talk-about-what-i-enjoyed-learnt-or-improv
+    reason: 'Related topic: reflection'
+  source: OAS-Requirements.txt
+  tags:
+  - Safety
+  - Planning
+  - Bushwalking
+  - Scout Hall
+- id: s2-bushwalking-i-have-reviewed-my-list-or-picture-of-essential-
+  stage: 2
+  stream: Bushwalking
+  text: I have reviewed my list or picture of essential equipment with my Patrol and Leaders.
+  workflow: null
+  prerequisites:
+  - s2-bushwalking-i-can-draw-or-list-all-of-the-essential-equipmen
+  - s1-bushwalking-i-can-help-pack-a-backpack-for-a-day-walk
+  suggested_links:
+  - id: s1-camping-i-can-help-pack-a-bag-for-camp
+    reason: 'Related topic: packing equipment'
+  - id: s1-bushwalking-i-can-help-pack-a-backpack-for-a-day-walk
+    reason: 'Related topic: packing equipment'
+  source: OAS-Requirements.txt
+  tags:
+  - Equipment & packing
+  - Leadership & teamwork
+  - Reflection & review
+  - Bushwalking
+  - Discussion / theory
+  - Scout Hall
+- id: s2-bushcraft-i-have-explained-what-impact-i-can-have-on-local
+  stage: 2
+  stream: Bushcraft
+  text: I have explained what impact I can have on local vegetation while participating in activities.
+  workflow: null
+  prerequisites: []
+  suggested_links: []
+  source: OAS-Requirements.txt
+  tags:
+  - Environment & nature
+  - Bushcraft
+  - Discussion / theory
+  - Scout Hall
+- id: s2-bushcraft-i-have-discussed-the-appropriate-action-i-should
+  stage: 2
+  stream: Bushcraft
+  text: I have discussed the appropriate action I should take in the case of an accident.
+  workflow: null
+  prerequisites: []
+  suggested_links:
+  - id: s1-bushcraft-i-know-my-address-and-location-in-an-emergency
+    reason: 'Related topic: emergency response'
+  - id: s1-bushcraft-i-can-demonstrate-stop-drop-and-roll-and-how-tha
+    reason: 'Related topic: emergency response'
+  - id: s1-bushcraft-i-can-find-the-emergency-exit-and-muster-point-a
+    reason: 'Related topic: emergency response'
+  source: OAS-Requirements.txt
+  tags:
+  - Emergency response
+  - Reflection & review
+  - Bushcraft
+  - Discussion / theory
+  - Scout Hall
+- id: s2-bushcraft-i-can-discuss-what-safety-precautions-i-should-t
+  stage: 2
+  stream: Bushcraft
+  text: I can discuss what safety precautions I should take before going out in the bush.
+  workflow: null
+  prerequisites: []
+  suggested_links: []
+  source: OAS-Requirements.txt
+  tags:
+  - Safety
+  - Planning
+  - Bushcraft
+  - Discussion / theory
+  - Scout Hall
+- id: s2-bushcraft-i-know-how-to-contact-the-emergency-services
+  stage: 2
+  stream: Bushcraft
+  text: I know how to contact the emergency services.
+  workflow: null
+  prerequisites: []
+  suggested_links:
+  - id: s1-bushcraft-i-know-my-address-and-location-in-an-emergency
+    reason: 'Related topic: emergency response'
+  - id: s1-bushcraft-i-can-demonstrate-stop-drop-and-roll-and-how-tha
+    reason: 'Related topic: emergency response'
+  - id: s1-bushcraft-i-can-find-the-emergency-exit-and-muster-point-a
+    reason: 'Related topic: emergency response'
+  source: OAS-Requirements.txt
+  tags:
+  - Emergency response
+  - Bushcraft
+  - Discussion / theory
+  - Scout Hall
+- id: s2-bushcraft-i-can-state-how-many-degrees-there-are-on-a-comp
+  stage: 2
+  stream: Bushcraft
+  text: I can state how many degrees there are on a compass and at what degrees the cardinal points are.
+  workflow: null
+  prerequisites: []
+  suggested_links:
+  - id: s1-bushwalking-i-can-identify-the-four-main-cardinal-points-of-
+    reason: 'Related topic: compass navigation'
+  - id: s1-bushwalking-i-can-identify-the-main-parts-of-the-compass
+    reason: 'Related topic: compass navigation'
+  source: OAS-Requirements.txt
+  tags:
+  - Navigation
+  - Bushcraft
+  - Discussion / theory
+  - Scout Hall
+- id: s2-bushcraft-i-know-the-rules-for-hygiene-at-camp
+  stage: 2
+  stream: Bushcraft
+  text: I know the rules for hygiene at camp.
+  workflow: null
+  prerequisites: []
+  suggested_links: []
+  source: OAS-Requirements.txt
+  tags:
+  - Hygiene & personal care
+  - Bushcraft
+  - Discussion / theory
+  - Scout Hall
+- id: s2-bushcraft-i-can-protect-myself-when-exposed-to-the-sun-whi
+  stage: 2
+  stream: Bushcraft
+  text: I can protect myself when exposed to the sun while outdoors.
+  workflow: null
+  prerequisites: []
+  suggested_links: []
+  source: OAS-Requirements.txt
+  tags:
+  - Environment & nature
+  - Bushcraft
+- id: s2-bushcraft-i-can-cook-a-snack-in-a-fire
+  stage: 2
+  stream: Bushcraft
+  text: I can cook a snack in a fire.
+  workflow: null
+  prerequisites:
+  - s2-bushcraft-i-can-demonstrate-a-correct-way-to-build-a-safe-
+  - s2-bushcraft-i-understand-the-basic-dangers-of-fire-and-how-t
+  suggested_links:
+  - id: s1-camping-i-know-the-basic-elements-that-you-need-to-make-
+    reason: 'Related topic: fire safety'
+  - id: s1-camping-i-can-strike-a-match
+    reason: 'Related topic: fire safety'
+  - id: s1-camping-i-can-help-prepare-food-for-cooking-at-camp
+    reason: 'Related topic: food'
+  source: OAS-Requirements.txt
+  tags:
+  - Food & cooking
+  - Fire
+  - Bushcraft
+  - Practical activity
+  - Outdoors / off-site
+- id: s2-bushcraft-i-know-how-much-water-i-should-carry-when-on-a-h
+  stage: 2
+  stream: Bushcraft
+  text: I know how much water I should carry when on a hike or when taking part in an outdoor activity.
+  workflow: null
+  prerequisites: []
+  suggested_links: []
+  source: OAS-Requirements.txt
+  tags:
+  - Bushcraft
+  - Discussion / theory
+  - Scout Hall
+- id: s2-bushcraft-i-can-demonstrate-a-correct-way-to-build-a-safe-
+  stage: 2
+  stream: Bushcraft
+  text: I can demonstrate a correct way to build a safe fireplace in the bush.
+  workflow: null
+  prerequisites:
+  - s2-bushcraft-i-understand-the-basic-dangers-of-fire-and-how-t
+  - s1-bushcraft-i-can-be-safe-around-a-campfire
+  suggested_links:
+  - id: s1-camping-i-know-the-basic-elements-that-you-need-to-make-
+    reason: 'Related topic: fire safety'
+  - id: s1-camping-i-can-strike-a-match
+    reason: 'Related topic: fire safety'
+  - id: s1-bushcraft-i-can-strike-a-match
+    reason: 'Related topic: fire safety'
+  source: OAS-Requirements.txt
+  tags:
+  - Safety
+  - Fire
+  - Bushcraft
+  - Practical activity
+- id: s2-bushcraft-i-understand-the-basic-dangers-of-fire-and-how-t
+  stage: 2
+  stream: Bushcraft
+  text: I understand the basic dangers of fire, and how to be safe around them.
+  workflow: null
+  prerequisites:
+  - s1-bushcraft-i-can-be-safe-around-a-campfire
+  suggested_links:
+  - id: s1-camping-i-know-the-basic-elements-that-you-need-to-make-
+    reason: 'Related topic: fire safety'
+  - id: s1-camping-i-can-strike-a-match
+    reason: 'Related topic: fire safety'
+  - id: s1-bushcraft-i-can-strike-a-match
+    reason: 'Related topic: fire safety'
+  source: OAS-Requirements.txt
+  tags:
+  - Safety
+  - Fire
+  - Bushcraft
+- id: s2-bushcraft-i-can-establish-and-find-the-four-cardinal-direc
+  stage: 2
+  stream: Bushcraft
+  text: I can establish and find the four cardinal directions (north, south, east, west) without a magnetic compass
+    or any electronic means.
+  workflow: null
+  prerequisites: []
+  suggested_links:
+  - id: s1-bushwalking-i-can-identify-the-four-main-cardinal-points-of-
+    reason: 'Related topic: compass navigation'
+  - id: s1-bushwalking-i-can-identify-the-main-parts-of-the-compass
+    reason: 'Related topic: compass navigation'
+  source: OAS-Requirements.txt
+  tags:
+  - Navigation
+  - Bushcraft
+  - Practical activity
+  - Scout Hall
+- id: s2-bushcraft-i-can-demonstrate-three-knots-and-apply-them-in-
+  stage: 2
+  stream: Bushcraft
+  text: I can demonstrate three knots and apply them in an activity.
+  workflow: null
+  prerequisites:
+  - s1-bushcraft-i-know-how-to-correctly-pack-ropes-away
+  suggested_links: []
+  source: OAS-Requirements.txt
+  tags:
+  - Knots & rope
+  - Bushcraft
+  - Practical activity
+  - Scout Hall
+- id: s2-bushcraft-i-have-talked-about-what-i-enjoyed-learnt-or-imp
+  stage: 2
+  stream: Bushcraft
+  text: I have talked about what I enjoyed, learnt, or improved upon from at least two bushcraft activities.
+  workflow: null
+  prerequisites: []
+  suggested_links:
+  - id: s1-camping-i-can-talk-about-what-i-enjoyed-learnt-or-improv
+    reason: 'Related topic: reflection'
+  - id: s1-bushwalking-i-can-talk-about-what-i-enjoyed-or-learnt-from-g
+    reason: 'Related topic: reflection'
+  - id: s1-bushcraft-i-can-talk-about-what-i-enjoyed-learnt-or-improv
+    reason: 'Related topic: reflection'
+  source: OAS-Requirements.txt
+  tags:
+  - Reflection & review
+  - Bushcraft
+- id: s2-bushcraft-i-can-suggest-what-i-would-do-differently-for-a-
+  stage: 2
+  stream: Bushcraft
+  text: I can suggest what I would do differently for a future bushcraft activity.
+  workflow: null
+  prerequisites: []
+  suggested_links:
+  - id: s1-camping-i-can-talk-about-what-i-enjoyed-learnt-or-improv
+    reason: 'Related topic: reflection'
+  - id: s1-bushwalking-i-can-talk-about-what-i-enjoyed-or-learnt-from-g
+    reason: 'Related topic: reflection'
+  - id: s1-bushcraft-i-can-talk-about-what-i-enjoyed-learnt-or-improv
+    reason: 'Related topic: reflection'
+  source: OAS-Requirements.txt
+  tags:
+  - Planning
+  - Bushcraft
+- id: s1-camping-i-know-about-the-buddy-system
+  stage: 1
+  stream: Camping
+  text: I know about the buddy system
+  workflow: null
+  prerequisites: []
+  suggested_links: []
+  source: OAS-Requirements.txt
+  tags:
+  - Safety
+  - Camping
+  - Discussion / theory
+  - Scout Hall
+- id: s1-camping-i-know-the-boundaries-of-where-i-may-go-each-tim
+  stage: 1
+  stream: Camping
+  text: I know the boundaries of where I may go each time I go out camping.
+  workflow: null
+  prerequisites: []
+  suggested_links: []
+  source: OAS-Requirements.txt
+  tags:
+  - Safety
+  - Camping
+  - Discussion / theory
+  - Scout Hall
+- id: s1-camping-i-know-to-stop-when-i-get-lost-while-camping
+  stage: 1
+  stream: Camping
+  text: I know to stop when I get lost while camping.
+  workflow: null
+  prerequisites: []
+  suggested_links: []
+  source: OAS-Requirements.txt
+  tags:
+  - Emergency response
+  - Navigation
+  - Camping
+  - Discussion / theory
+  - Scout Hall
+- id: s1-camping-i-know-the-basic-elements-that-you-need-to-make-
+  stage: 1
+  stream: Camping
+  text: I know the basic elements that you need to make a fire.
+  workflow: null
+  prerequisites: []
+  suggested_links: []
+  source: OAS-Requirements.txt
+  tags:
+  - Fire
+  - Camping
+  - Discussion / theory
+  - Practical activity
+  - Scout Hall
+- id: s1-camping-i-know-that-i-should-follow-directions-from-the-
+  stage: 1
+  stream: Camping
+  text: I know that I should follow directions from the leader of this activity.
+  workflow: null
+  prerequisites: []
+  suggested_links: []
+  source: OAS-Requirements.txt
+  tags:
+  - Navigation
+  - Camping
+  - Discussion / theory
+  - Scout Hall
+- id: s1-camping-i-can-help-pack-a-bag-for-camp
+  stage: 1
+  stream: Camping
+  text: I can help pack a bag for camp.
+  workflow: null
+  prerequisites: []
+  suggested_links: []
+  source: OAS-Requirements.txt
+  tags:
+  - Equipment & packing
+  - Camping
+  - Practical activity
+  - Scout Hall
+- id: s1-camping-i-can-strike-a-match
+  stage: 1
+  stream: Camping
+  text: I can strike a match.
+  workflow: null
+  prerequisites:
+  - s1-camping-i-know-the-basic-elements-that-you-need-to-make-
+  - s1-camping-i-know-that-i-should-follow-directions-from-the-
+  suggested_links: []
+  source: OAS-Requirements.txt
+  tags:
+  - Fire
+  - Camping
+  - Practical activity
+  - Outdoors / off-site
+- id: s1-camping-i-can-help-prepare-food-for-cooking-at-camp
+  stage: 1
+  stream: Camping
+  text: I can help prepare food for cooking at camp.
+  workflow: null
+  prerequisites:
+  - s1-camping-i-know-about-the-buddy-system
+  - s1-camping-i-know-that-i-should-follow-directions-from-the-
+  suggested_links: []
+  source: OAS-Requirements.txt
+  tags:
+  - Food & cooking
+  - Planning
+  - Camping
+  - Practical activity
+- id: s1-camping-i-have-spent-two-nights-at-camps-and-or-scout-sl
+  stage: 1
+  stream: Camping
+  text: I have spent two nights at camps and/or Scout sleep-overs.
+  workflow: null
+  prerequisites: []
+  suggested_links: []
+  source: OAS-Requirements.txt
+  tags:
+  - Outdoor experience
+  - Camping
+  - External / real-world experience
+  - Outdoors / off-site
+- id: s1-camping-i-know-why-it-is-important-to-set-up-camp-in-an-
+  stage: 1
+  stream: Camping
+  text: I know why it is important to set up camp in an existing campsite.
+  workflow: null
+  prerequisites: []
+  suggested_links: []
+  source: OAS-Requirements.txt
+  tags:
+  - Shelter & tents
+  - Camping
+  - Discussion / theory
+  - Practical activity
+  - Scout Hall
+- id: s1-camping-i-can-set-out-my-sleeping-area-at-camp
+  stage: 1
+  stream: Camping
+  text: I can set out my sleeping area at camp.
+  workflow: null
+  prerequisites:
+  - s1-camping-i-can-help-pack-a-bag-for-camp
+  suggested_links: []
+  source: OAS-Requirements.txt
+  tags:
+  - Shelter & tents
+  - Camping
+  - Outdoors / off-site
+- id: s1-camping-i-can-care-for-my-basic-personal-gear-on-an-over
+  stage: 1
+  stream: Camping
+  text: I can care for my basic personal gear on an overnight camp.
+  workflow: null
+  prerequisites:
+  - s1-camping-i-can-help-pack-a-bag-for-camp
+  suggested_links: []
+  source: OAS-Requirements.txt
+  tags:
+  - Equipment & packing
+  - Camping
+  - Scout Hall
+- id: s1-camping-i-can-talk-about-what-i-enjoyed-learnt-or-improv
+  stage: 1
+  stream: Camping
+  text: I can talk about what I enjoyed, learnt, or improved upon by participating in the camp or sleepover.
+  workflow: null
+  prerequisites: []
+  suggested_links: []
+  source: OAS-Requirements.txt
+  tags:
+  - Reflection & review
+  - Camping
+  - Discussion / theory
+  - Scout Hall
+  - Outdoors / off-site
+- id: s1-bushwalking-i-can-help-pack-a-backpack-for-a-day-walk
+  stage: 1
+  stream: Bushwalking
+  text: I can help pack a backpack for a day walk.
+  workflow: null
+  prerequisites: []
+  suggested_links: []
+  source: OAS-Requirements.txt
+  tags:
+  - Equipment & packing
+  - Bushwalking
+  - Practical activity
+  - Scout Hall
+- id: s1-bushwalking-i-can-dress-myself-for-a-day-walk
+  stage: 1
+  stream: Bushwalking
+  text: I can dress myself for a day walk
+  workflow: null
+  prerequisites: []
+  suggested_links: []
+  source: OAS-Requirements.txt
+  tags:
+  - Bushwalking
+- id: s1-bushwalking-i-can-list-what-food-to-bring-on-a-day-bushwalk
+  stage: 1
+  stream: Bushwalking
+  text: I can list what food to bring on a day bushwalk.
+  workflow: null
+  prerequisites: []
+  suggested_links: []
+  source: OAS-Requirements.txt
+  tags:
+  - Food & cooking
+  - Bushwalking
+  - External / real-world experience
+  - Discussion / theory
+  - Scout Hall
+  - Outdoors / off-site
+- id: s1-bushwalking-i-know-why-it-is-important-to-stick-to-trails-wh
+  stage: 1
+  stream: Bushwalking
+  text: I know why it is important to stick to trails when outdoors.
+  workflow: null
+  prerequisites: []
+  suggested_links: []
+  source: OAS-Requirements.txt
+  tags:
+  - Environment & nature
+  - Bushwalking
+  - Discussion / theory
+  - Scout Hall
+- id: s1-bushwalking-i-know-why-to-stop-when-i-get-lost-in-the-bush
+  stage: 1
+  stream: Bushwalking
+  text: I know why to stop when I get lost in the bush.
+  workflow: null
+  prerequisites: []
+  suggested_links: []
+  source: OAS-Requirements.txt
+  tags:
+  - Emergency response
+  - Navigation
+  - Bushwalking
+  - Discussion / theory
+  - Scout Hall
+- id: s1-bushwalking-i-can-explain-the-buddy-system
+  stage: 1
+  stream: Bushwalking
+  text: I can explain the buddy system.
+  workflow: null
+  prerequisites: []
+  suggested_links: []
+  source: OAS-Requirements.txt
+  tags:
+  - Safety
+  - Bushwalking
+  - Discussion / theory
+  - Scout Hall
+- id: s1-bushwalking-i-can-put-together-a-small-personal-first-aid-ki
+  stage: 1
+  stream: Bushwalking
+  text: I can put together a small personal first aid kit for our bushwalk.
+  workflow: null
+  prerequisites: []
+  suggested_links: []
+  source: OAS-Requirements.txt
+  tags:
+  - First aid
+  - Equipment & packing
+  - Bushwalking
+  - Practical activity
+  - Scout Hall
+- id: s1-bushwalking-i-can-identify-the-four-main-cardinal-points-of-
+  stage: 1
+  stream: Bushwalking
+  text: I can identify the four main cardinal points of the compass.
+  workflow: null
+  prerequisites:
+  - s1-bushwalking-i-can-identify-the-main-parts-of-the-compass
+  suggested_links: []
+  source: OAS-Requirements.txt
+  tags:
+  - Navigation
+  - Bushwalking
+  - Discussion / theory
+  - Scout Hall
+- id: s1-bushwalking-i-can-identify-the-main-parts-of-the-compass
+  stage: 1
+  stream: Bushwalking
+  text: I can identify the main parts of the compass.
+  workflow: null
+  prerequisites: []
+  suggested_links: []
+  source: OAS-Requirements.txt
+  tags:
+  - Navigation
+  - Bushwalking
+  - Discussion / theory
+  - Scout Hall
+- id: s1-bushwalking-i-have-attended-at-least-one-bushwalk-of-at-leas
+  stage: 1
+  stream: Bushwalking
+  text: I have attended at least one bushwalk of at least one hour’s duration at this stage.
+  workflow: null
+  prerequisites:
+  - s1-bushwalking-i-can-dress-myself-for-a-day-walk
+  - s1-bushwalking-i-can-help-pack-a-backpack-for-a-day-walk
+  - s1-bushwalking-i-can-explain-the-buddy-system
+  suggested_links: []
+  source: OAS-Requirements.txt
+  tags:
+  - Outdoor experience
+  - Bushwalking
+  - External / real-world experience
+  - Outdoors / off-site
+- id: s1-bushwalking-i-can-demonstrate-behaving-safely-while-bushwalk
+  stage: 1
+  stream: Bushwalking
+  text: I can demonstrate behaving safely while bushwalking.
+  workflow: null
+  prerequisites:
+  - s1-bushwalking-i-can-explain-the-buddy-system
+  - s1-bushwalking-i-know-why-it-is-important-to-stick-to-trails-wh
+  suggested_links: []
+  source: OAS-Requirements.txt
+  tags:
+  - Safety
+  - Bushwalking
+  - Practical activity
+  - Outdoors / off-site
+- id: s1-bushwalking-i-can-talk-about-what-i-enjoyed-or-learnt-from-g
+  stage: 1
+  stream: Bushwalking
+  text: I can talk about what I enjoyed or learnt from going on a bushwalk.
+  workflow: null
+  prerequisites: []
+  suggested_links: []
+  source: OAS-Requirements.txt
+  tags:
+  - Reflection & review
+  - Bushwalking
+  - Discussion / theory
+  - Scout Hall
+- id: s1-bushcraft-i-know-why-it-is-important-to-stick-to-trails-wh
+  stage: 1
+  stream: Bushcraft
+  text: I know why it is important to stick to trails when outdoors.
+  workflow: null
+  prerequisites: []
+  suggested_links: []
+  source: OAS-Requirements.txt
+  tags:
+  - Environment & nature
+  - Bushcraft
+  - Discussion / theory
+  - Scout Hall
+- id: s1-bushcraft-i-know-about-the-buddy-system
+  stage: 1
+  stream: Bushcraft
+  text: I know about the “Buddy” system.
+  workflow: null
+  prerequisites: []
+  suggested_links: []
+  source: OAS-Requirements.txt
+  tags:
+  - Bushcraft
+  - Discussion / theory
+  - Scout Hall
+- id: s1-bushcraft-i-know-to-stop-when-i-get-lost-on-activities
+  stage: 1
+  stream: Bushcraft
+  text: I know to stop when I get lost on activities.
+  workflow: null
+  prerequisites: []
+  suggested_links: []
+  source: OAS-Requirements.txt
+  tags:
+  - Emergency response
+  - Navigation
+  - Bushcraft
+  - Discussion / theory
+  - Scout Hall
+- id: s1-bushcraft-i-know-my-address-and-location-in-an-emergency
+  stage: 1
+  stream: Bushcraft
+  text: I know my address and location in an emergency.
+  workflow: null
+  prerequisites: []
+  suggested_links: []
+  source: OAS-Requirements.txt
+  tags:
+  - Emergency response
+  - Bushcraft
+  - Discussion / theory
+  - Scout Hall
+- id: s1-bushcraft-i-know-three-reasons-for-having-a-shelter-when-s
+  stage: 1
+  stream: Bushcraft
+  text: I know three reasons for having a shelter when sleeping outdoors.
+  workflow: null
+  prerequisites: []
+  suggested_links: []
+  source: OAS-Requirements.txt
+  tags:
+  - Environment & nature
+  - Shelter & tents
+  - Bushcraft
+  - Discussion / theory
+  - Scout Hall
+- id: s1-bushcraft-i-can-strike-a-match
+  stage: 1
+  stream: Bushcraft
+  text: I can strike a match.
+  workflow: null
+  prerequisites: []
+  suggested_links: []
+  source: OAS-Requirements.txt
+  tags:
+  - Fire
+  - Bushcraft
+  - Practical activity
+  - Outdoors / off-site
+- id: s1-bushcraft-i-can-collect-sticks-for-preparing-a-campfire
+  stage: 1
+  stream: Bushcraft
+  text: I can collect sticks for preparing a campfire.
+  workflow: null
+  prerequisites: []
+  suggested_links: []
+  source: OAS-Requirements.txt
+  tags:
+  - Fire
+  - Bushcraft
+  - Practical activity
+  - Outdoors / off-site
+- id: s1-bushcraft-i-can-be-safe-around-a-campfire
+  stage: 1
+  stream: Bushcraft
+  text: I can be safe around a campfire.
+  workflow: null
+  prerequisites:
+  - s1-bushcraft-i-can-collect-sticks-for-preparing-a-campfire
+  - s1-bushcraft-i-know-about-the-buddy-system
+  suggested_links: []
+  source: OAS-Requirements.txt
+  tags:
+  - Safety
+  - Fire
+  - Bushcraft
+- id: s1-bushcraft-i-can-demonstrate-stop-drop-and-roll-and-how-tha
+  stage: 1
+  stream: Bushcraft
+  text: I can demonstrate stop, drop and roll, and how that can be used in an emergency situation.
+  workflow: null
+  prerequisites: []
+  suggested_links: []
+  source: OAS-Requirements.txt
+  tags:
+  - Emergency response
+  - Bushcraft
+  - Practical activity
+  - Scout Hall
+- id: s1-bushcraft-i-can-find-the-emergency-exit-and-muster-point-a
+  stage: 1
+  stream: Bushcraft
+  text: I can find the emergency exit and muster point at my Scout Hall.
+  workflow: null
+  prerequisites: []
+  suggested_links: []
+  source: OAS-Requirements.txt
+  tags:
+  - Emergency response
+  - Bushcraft
+  - Scout Hall
+- id: s1-bushcraft-i-have-participated-in-a-game-that-required-basi
+  stage: 1
+  stream: Bushcraft
+  text: I have participated in a game that required basic navigational skills.
+  workflow: null
+  prerequisites: []
+  suggested_links: []
+  source: OAS-Requirements.txt
+  tags:
+  - Navigation
+  - Outdoor experience
+  - Bushcraft
+  - External / real-world experience
+  - Outdoors / off-site
+- id: s1-bushcraft-i-can-hang-a-clothesline-at-camp-with-a-clove-hi
+  stage: 1
+  stream: Bushcraft
+  text: I can hang a clothesline at camp with a clove hitch or other knot.
+  workflow: null
+  prerequisites:
+  - s1-bushcraft-i-know-how-to-correctly-pack-ropes-away
+  suggested_links: []
+  source: OAS-Requirements.txt
+  tags:
+  - Knots & rope
+  - Bushcraft
+  - Practical activity
+  - Scout Hall
+  - Outdoors / off-site
+- id: s1-bushcraft-i-know-how-to-correctly-pack-ropes-away
+  stage: 1
+  stream: Bushcraft
+  text: I know how to correctly pack ropes away.
+  workflow: null
+  prerequisites: []
+  suggested_links: []
+  source: OAS-Requirements.txt
+  tags:
+  - Equipment & packing
+  - Knots & rope
+  - Bushcraft
+  - Discussion / theory
+  - Practical activity
+  - Scout Hall
+- id: s1-bushcraft-i-know-what-is-in-a-dilly-bag-mess-kit-and-can-k
+  stage: 1
+  stream: Bushcraft
+  text: I know what is in a dilly bag/mess kit and can keep it clean at camp.
+  workflow: null
+  prerequisites: []
+  suggested_links: []
+  source: OAS-Requirements.txt
+  tags:
+  - Food & cooking
+  - Equipment & packing
+  - Hygiene & personal care
+  - Bushcraft
+  - Discussion / theory
+  - Scout Hall
+- id: s1-bushcraft-i-can-talk-about-what-i-enjoyed-learnt-or-improv
+  stage: 1
+  stream: Bushcraft
+  text: I can talk about what I enjoyed, learnt, or improved upon, by playing a navigational game
+  workflow: null
+  prerequisites: []
+  suggested_links: []
+  source: OAS-Requirements.txt
+  tags:
+  - Navigation
+  - Reflection & review
+  - Bushcraft
+  - Discussion / theory
+  - Scout Hall
+tagging_note: Tags are broad planning themes and likely delivery settings, inferred from requirement wording; they
+  are suggestions, not official classifications.
