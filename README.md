@@ -79,3 +79,19 @@ Select one requirement card, then use the small **↑** icon on another card to 
 The **Links to edit** selector has two modes for named trees: **Master prerequisite tree** (the shared `requirements[].prerequisites` and `suggested_links` used by Scout readiness and the scheduler), or **This tree’s own links** (a local editable override for that tree, initially copied from the master for its requirements). Different named trees can have different override graphs without changing their master requirements. Tag views always show the master graph. In tree-specific mode, changed mandatory and recommended links are for visual/curriculum organisation only: they do *not* affect Scout readiness or scheduler priority. Requirement names, tags, and tree assignments are shared globally in both modes.
 
 Tree graph overrides, tree names, and the tag library are included in the editor's **Export requirements.yaml** using `schema_version: 3` fields `tree_graphs`, `tree_registry`, and `tag_library`. Re-import restores those records, including custom/master modes. These fields are optional so earlier requirements YAML files still import. Local snapshot rollback also restores them. Note: the shipped `data/requirements.yaml` is the default master dataset; changes made in the browser must be explicitly exported to create an updated YAML file.
+
+
+## Proposed next-generation workspaces (feature branch)
+
+This branch adds **Data & State Manager** and **Activity Studio** to the local-first prototype.
+
+- **Data & State Manager:** One-click complete backup, individual requirements/progress/activities/schedule/layout YAML or JSON exports, file-type recognition, record-count diff previews, schema and ID validation, dataset-scoped safety snapshots and rollback. Full export also contains manager and existing studio snapshot history.
+- **Original Excel import is mandatory:** Continue using **Import original Excel progress** to create the initial roster and completion evidence. It invokes the existing Excel parser and preserves source and completion dates; it does **not** infer completion from attendance or plans. Reimporting keeps earlier completions as in the original importer.
+- **Locations:** Requirements have a `locations.preferred` string and `locations.alternatives` list. These are *suggested* venues to review, not Scouts Australia rules. A controlled location library is editable from the Manager or the skill editor.
+- **Activities:** Structured title, description, duration, tags, location, equipment, preparation, instructions, safety and review prompts, with suggested skill coverage based on tag overlap and location; only manually checked requirements are stored in `covers`. Scout progress is never auto-completed.
+- **Scheduler:** Progress-first and Curriculum-first still choose the Scout scope, while a separate Progress/Location/Balanced scoring preference groups requirements and considers preferred external activity weeks. Locked weeks remain preserved when regenerating. The 40-week timeline gives an overview of capacity and external-week preferences.
+- **Tree focus & filters:** Tag multi-select with Any/All matching on the main Trailmap; skill-tree focus on ancestor/descendant chains; compact local-save status.
+
+**Data safety:** A browser is not durable archival storage. Export a full backup regularly and keep it privately. Never upload Scout records to this repository. A requirements-only rollback does not roll back Scout progress. The imported locations are inferred planning suggestions.
+
+**Known limitations:** Workbook style interpretation depends on SheetJS and should be reviewed during import. Automated scheduling is a heuristic. The UI still requires hands-on browser testing, and this feature branch should be reviewed before merging.

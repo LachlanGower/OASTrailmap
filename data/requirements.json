@@ -16,7 +16,14 @@
         "Camping",
         "Practical activity",
         "Scout Hall"
-      ]
+      ],
+      "locations": {
+        "preferred": "Scout Hall — indoor",
+        "alternatives": [
+          "Scout Hall — outdoor",
+          "Flexible / anywhere"
+        ]
+      }
     },
     {
       "id": "s3-camping-i-know-how-and-where-to-get-the-latest-weather-f",
@@ -33,7 +40,14 @@
         "Camping",
         "Discussion / theory",
         "Scout Hall"
-      ]
+      ],
+      "locations": {
+        "preferred": "Scout Hall — indoor",
+        "alternatives": [
+          "Scout Hall — outdoor",
+          "Flexible / anywhere"
+        ]
+      }
     },
     {
       "id": "s3-camping-i-can-help-plan-a-balanced-meal-for-camp",
@@ -63,7 +77,14 @@
         "Food & cooking",
         "Planning",
         "Camping"
-      ]
+      ],
+      "locations": {
+        "preferred": "Scout Hall — outdoor",
+        "alternatives": [
+          "Campsite",
+          "Local outdoor area"
+        ]
+      }
     },
     {
       "id": "s3-camping-i-know-the-benefits-of-using-gas-to-cook-and-can",
@@ -94,7 +115,14 @@
         "Discussion / theory",
         "Practical activity",
         "Scout Hall"
-      ]
+      ],
+      "locations": {
+        "preferred": "Scout Hall — outdoor",
+        "alternatives": [
+          "Campsite",
+          "Local outdoor area"
+        ]
+      }
     },
     {
       "id": "s3-camping-i-can-list-group-equipment-required-for-camp",
@@ -123,7 +151,14 @@
         "Camping",
         "Discussion / theory",
         "Scout Hall"
-      ]
+      ],
+      "locations": {
+        "preferred": "Scout Hall — indoor",
+        "alternatives": [
+          "Scout Hall — outdoor",
+          "Flexible / anywhere"
+        ]
+      }
     },
     {
       "id": "s3-camping-i-know-how-to-maintain-personal-hygiene-while-ca",
@@ -152,7 +187,14 @@
         "Camping",
         "Discussion / theory",
         "Scout Hall"
-      ]
+      ],
+      "locations": {
+        "preferred": "Scout Hall — indoor",
+        "alternatives": [
+          "Scout Hall — outdoor",
+          "Flexible / anywhere"
+        ]
+      }
     },
     {
       "id": "s3-camping-i-can-assemble-a-personal-first-aid-kit-for-a-ca",
@@ -174,7 +216,14 @@
         "Camping",
         "Practical activity",
         "Scout Hall"
-      ]
+      ],
+      "locations": {
+        "preferred": "Scout Hall — indoor",
+        "alternatives": [
+          "Scout Hall — outdoor",
+          "Flexible / anywhere"
+        ]
+      }
     },
     {
       "id": "s3-camping-i-know-what-drsabcd-stands-for-and-how-to-use-it",
@@ -196,7 +245,14 @@
         "Discussion / theory",
         "Practical activity",
         "Scout Hall"
-      ]
+      ],
+      "locations": {
+        "preferred": "Scout Hall — indoor",
+        "alternatives": [
+          "Scout Hall — outdoor",
+          "Flexible / anywhere"
+        ]
+      }
     },
     {
       "id": "s3-camping-i-can-demonstrate-keeping-myself-safe-from-natur",
@@ -211,7 +267,14 @@
         "Safety",
         "Camping",
         "Practical activity"
-      ]
+      ],
+      "locations": {
+        "preferred": "Scout Hall — indoor",
+        "alternatives": [
+          "Scout Hall — outdoor",
+          "Flexible / anywhere"
+        ]
+      }
     },
     {
       "id": "s3-camping-i-can-help-build-a-campfire-and-collect-material",
@@ -242,7 +305,14 @@
         "Camping",
         "Practical activity",
         "Outdoors / off-site"
-      ]
+      ],
+      "locations": {
+        "preferred": "Scout Hall — outdoor",
+        "alternatives": [
+          "Campsite",
+          "Local outdoor area"
+        ]
+      }
     },
     {
       "id": "s3-camping-i-can-cook-a-meal-on-a-campfire-with-assistance",
@@ -275,7 +345,14 @@
         "Camping",
         "Practical activity",
         "Outdoors / off-site"
-      ]
+      ],
+      "locations": {
+        "preferred": "Scout Hall — outdoor",
+        "alternatives": [
+          "Campsite",
+          "Local outdoor area"
+        ]
+      }
     },
     {
       "id": "s3-camping-i-have-used-a-gas-cooker-to-help-cook-a-camp-mea",
@@ -305,7 +382,14 @@
         "Food & cooking",
         "Camping",
         "Practical activity"
-      ]
+      ],
+      "locations": {
+        "preferred": "Scout Hall — outdoor",
+        "alternatives": [
+          "Campsite",
+          "Local outdoor area"
+        ]
+      }
     },
     {
       "id": "s3-camping-i-can-help-run-an-activity-at-a-camp",
@@ -319,7 +403,13 @@
       "tags": [
         "Leadership & teamwork",
         "Camping"
-      ]
+      ],
+      "locations": {
+        "preferred": "Flexible / anywhere",
+        "alternatives": [
+          "Scout Hall — indoor"
+        ]
+      }
     },
     {
       "id": "s3-camping-i-can-set-up-a-tent-without-help-from-an-adult",
@@ -351,7 +441,14 @@
         "Camping",
         "Practical activity",
         "Outdoors / off-site"
-      ]
+      ],
+      "locations": {
+        "preferred": "Campsite",
+        "alternatives": [
+          "Scout Hall — outdoor",
+          "Local outdoor area"
+        ]
+      }
     },
     {
       "id": "s3-camping-i-have-spent-5-nights-on-camp-in-a-tent-by-the-e",
@@ -384,7 +481,14 @@
         "Camping",
         "External / real-world experience",
         "Outdoors / off-site"
-      ]
+      ],
+      "locations": {
+        "preferred": "Campsite",
+        "alternatives": [
+          "Scout Hall — outdoor",
+          "Local outdoor area"
+        ]
+      }
     },
     {
       "id": "s3-camping-i-know-how-to-treat-cuts-and-minor-bleeding",
@@ -405,7 +509,14 @@
         "Camping",
         "Discussion / theory",
         "Scout Hall"
-      ]
+      ],
+      "locations": {
+        "preferred": "Scout Hall — indoor",
+        "alternatives": [
+          "Scout Hall — outdoor",
+          "Flexible / anywhere"
+        ]
+      }
     },
     {
       "id": "s3-camping-i-can-teach-the-importance-of-the-buddy-system-t",
@@ -435,7 +546,13 @@
         "Safety",
         "Leadership & teamwork",
         "Camping"
-      ]
+      ],
+      "locations": {
+        "preferred": "Flexible / anywhere",
+        "alternatives": [
+          "Scout Hall — indoor"
+        ]
+      }
     },
     {
       "id": "s3-camping-i-can-demonstrate-how-to-store-food-at-camp",
@@ -465,7 +582,14 @@
         "Food & cooking",
         "Camping",
         "Practical activity"
-      ]
+      ],
+      "locations": {
+        "preferred": "Scout Hall — outdoor",
+        "alternatives": [
+          "Campsite",
+          "Local outdoor area"
+        ]
+      }
     },
     {
       "id": "s3-camping-i-have-learnt-3-knots-that-can-help-me-during-a-",
@@ -494,7 +618,14 @@
         "Reflection & review",
         "Camping",
         "Scout Hall"
-      ]
+      ],
+      "locations": {
+        "preferred": "Scout Hall — indoor",
+        "alternatives": [
+          "Scout Hall — outdoor",
+          "Flexible / anywhere"
+        ]
+      }
     },
     {
       "id": "s3-camping-i-have-discussed-the-ways-i-can-improve-the-camp",
@@ -512,7 +643,14 @@
         "Camping",
         "Discussion / theory",
         "Scout Hall"
-      ]
+      ],
+      "locations": {
+        "preferred": "Scout Hall — indoor",
+        "alternatives": [
+          "Scout Hall — outdoor",
+          "Flexible / anywhere"
+        ]
+      }
     },
     {
       "id": "s3-camping-i-have-discussed-my-camping-and-how-improvements",
@@ -543,7 +681,14 @@
         "Camping",
         "Discussion / theory",
         "Scout Hall"
-      ]
+      ],
+      "locations": {
+        "preferred": "Scout Hall — indoor",
+        "alternatives": [
+          "Scout Hall — outdoor",
+          "Flexible / anywhere"
+        ]
+      }
     },
     {
       "id": "s3-bushwalking-i-can-help-a-stage-1-scout-to-pack-their-backpac",
@@ -560,7 +705,14 @@
         "Bushwalking",
         "Practical activity",
         "Scout Hall"
-      ]
+      ],
+      "locations": {
+        "preferred": "Local outdoor area",
+        "alternatives": [
+          "Campsite",
+          "Scout Hall — outdoor"
+        ]
+      }
     },
     {
       "id": "s3-bushwalking-i-know-how-and-where-to-get-the-latest-weather-f",
@@ -577,7 +729,14 @@
         "Bushwalking",
         "Discussion / theory",
         "Scout Hall"
-      ]
+      ],
+      "locations": {
+        "preferred": "Local outdoor area",
+        "alternatives": [
+          "Campsite",
+          "Scout Hall — outdoor"
+        ]
+      }
     },
     {
       "id": "s3-bushwalking-i-can-help-plan-a-balanced-menu-for-bushwalking",
@@ -605,7 +764,14 @@
         "Food & cooking",
         "Planning",
         "Bushwalking"
-      ]
+      ],
+      "locations": {
+        "preferred": "Scout Hall — outdoor",
+        "alternatives": [
+          "Campsite",
+          "Local outdoor area"
+        ]
+      }
     },
     {
       "id": "s3-bushwalking-i-can-list-places-where-i-can-and-cannot-bushwal",
@@ -621,7 +787,14 @@
         "Bushwalking",
         "Discussion / theory",
         "Scout Hall"
-      ]
+      ],
+      "locations": {
+        "preferred": "Local outdoor area",
+        "alternatives": [
+          "Campsite",
+          "Scout Hall — outdoor"
+        ]
+      }
     },
     {
       "id": "s3-bushwalking-i-can-talk-about-different-ways-of-keeping-a-gro",
@@ -637,7 +810,14 @@
         "Bushwalking",
         "Discussion / theory",
         "Scout Hall"
-      ]
+      ],
+      "locations": {
+        "preferred": "Local outdoor area",
+        "alternatives": [
+          "Campsite",
+          "Scout Hall — outdoor"
+        ]
+      }
     },
     {
       "id": "s3-bushwalking-i-have-considered-bushwalking-etiquette-when-pla",
@@ -654,7 +834,14 @@
         "Bushwalking",
         "Discussion / theory",
         "Scout Hall"
-      ]
+      ],
+      "locations": {
+        "preferred": "Local outdoor area",
+        "alternatives": [
+          "Campsite",
+          "Scout Hall — outdoor"
+        ]
+      }
     },
     {
       "id": "s3-bushwalking-i-can-be-responsible-for-my-safety-and-aware-of-",
@@ -668,7 +855,14 @@
       "tags": [
         "Safety",
         "Bushwalking"
-      ]
+      ],
+      "locations": {
+        "preferred": "Local outdoor area",
+        "alternatives": [
+          "Campsite",
+          "Scout Hall — outdoor"
+        ]
+      }
     },
     {
       "id": "s3-bushwalking-i-have-run-a-small-navigational-activity-for-my-",
@@ -697,7 +891,14 @@
         "Leadership & teamwork",
         "Bushwalking",
         "Scout Hall"
-      ]
+      ],
+      "locations": {
+        "preferred": "Local outdoor area",
+        "alternatives": [
+          "Campsite",
+          "Scout Hall — outdoor"
+        ]
+      }
     },
     {
       "id": "s3-bushwalking-i-can-use-different-types-of-maps-to-help-me-thr",
@@ -724,7 +925,14 @@
         "Bushwalking",
         "Practical activity",
         "Scout Hall"
-      ]
+      ],
+      "locations": {
+        "preferred": "Local outdoor area",
+        "alternatives": [
+          "Campsite",
+          "Scout Hall — outdoor"
+        ]
+      }
     },
     {
       "id": "s3-bushwalking-i-have-attended-a-day-bushwalk-at-this-stage-of-",
@@ -740,7 +948,14 @@
         "Bushwalking",
         "External / real-world experience",
         "Outdoors / off-site"
-      ]
+      ],
+      "locations": {
+        "preferred": "Local outdoor area",
+        "alternatives": [
+          "Campsite",
+          "Scout Hall — outdoor"
+        ]
+      }
     },
     {
       "id": "s3-bushwalking-i-have-attended-at-least-two-bushwalking-activit",
@@ -756,7 +971,14 @@
         "Bushwalking",
         "External / real-world experience",
         "Outdoors / off-site"
-      ]
+      ],
+      "locations": {
+        "preferred": "Local outdoor area",
+        "alternatives": [
+          "Campsite",
+          "Scout Hall — outdoor"
+        ]
+      }
     },
     {
       "id": "s3-bushwalking-i-know-how-to-avoid-becoming-lost-and-i-know-wha",
@@ -786,7 +1008,14 @@
         "Bushwalking",
         "Discussion / theory",
         "Scout Hall"
-      ]
+      ],
+      "locations": {
+        "preferred": "Local outdoor area",
+        "alternatives": [
+          "Campsite",
+          "Scout Hall — outdoor"
+        ]
+      }
     },
     {
       "id": "s3-bushwalking-i-know-how-to-treat-cuts-and-minor-bleeding",
@@ -807,7 +1036,14 @@
         "Bushwalking",
         "Discussion / theory",
         "Scout Hall"
-      ]
+      ],
+      "locations": {
+        "preferred": "Local outdoor area",
+        "alternatives": [
+          "Campsite",
+          "Scout Hall — outdoor"
+        ]
+      }
     },
     {
       "id": "s3-bushwalking-i-can-teach-the-importance-of-the-buddy-system-a",
@@ -837,7 +1073,14 @@
         "Safety",
         "Leadership & teamwork",
         "Bushwalking"
-      ]
+      ],
+      "locations": {
+        "preferred": "Local outdoor area",
+        "alternatives": [
+          "Campsite",
+          "Scout Hall — outdoor"
+        ]
+      }
     },
     {
       "id": "s3-bushwalking-i-can-identify-the-features-of-a-topographical-m",
@@ -864,7 +1107,14 @@
         "Bushwalking",
         "Discussion / theory",
         "Scout Hall"
-      ]
+      ],
+      "locations": {
+        "preferred": "Local outdoor area",
+        "alternatives": [
+          "Campsite",
+          "Scout Hall — outdoor"
+        ]
+      }
     },
     {
       "id": "s3-bushwalking-i-have-given-a-presentation-to-my-patrol-or-my-u",
@@ -883,7 +1133,14 @@
         "Bushwalking",
         "Discussion / theory",
         "Scout Hall"
-      ]
+      ],
+      "locations": {
+        "preferred": "Local outdoor area",
+        "alternatives": [
+          "Campsite",
+          "Scout Hall — outdoor"
+        ]
+      }
     },
     {
       "id": "s3-bushwalking-i-have-discussed-the-top-five-things-i-have-lear",
@@ -912,7 +1169,14 @@
         "Bushwalking",
         "Discussion / theory",
         "Scout Hall"
-      ]
+      ],
+      "locations": {
+        "preferred": "Local outdoor area",
+        "alternatives": [
+          "Campsite",
+          "Scout Hall — outdoor"
+        ]
+      }
     },
     {
       "id": "s3-bushcraft-i-can-explain-the-importance-of-wearing-the-righ",
@@ -929,7 +1193,14 @@
         "Bushcraft",
         "Discussion / theory",
         "Scout Hall"
-      ]
+      ],
+      "locations": {
+        "preferred": "Local outdoor area",
+        "alternatives": [
+          "Campsite",
+          "Scout Hall — outdoor"
+        ]
+      }
     },
     {
       "id": "s3-bushcraft-i-know-about-native-flora-and-fauna-and-the-risk",
@@ -946,7 +1217,14 @@
         "Bushcraft",
         "Discussion / theory",
         "Scout Hall"
-      ]
+      ],
+      "locations": {
+        "preferred": "Local outdoor area",
+        "alternatives": [
+          "Campsite",
+          "Scout Hall — outdoor"
+        ]
+      }
     },
     {
       "id": "s3-bushcraft-i-know-how-and-where-to-get-the-latest-weather-f",
@@ -963,7 +1241,14 @@
         "Bushcraft",
         "Discussion / theory",
         "Scout Hall"
-      ]
+      ],
+      "locations": {
+        "preferred": "Scout Hall — indoor",
+        "alternatives": [
+          "Scout Hall — outdoor",
+          "Flexible / anywhere"
+        ]
+      }
     },
     {
       "id": "s3-bushcraft-i-know-the-first-aid-treatment-for-burns-from-ho",
@@ -993,7 +1278,14 @@
         "Bushcraft",
         "Discussion / theory",
         "Scout Hall"
-      ]
+      ],
+      "locations": {
+        "preferred": "Scout Hall — outdoor",
+        "alternatives": [
+          "Campsite",
+          "Local outdoor area"
+        ]
+      }
     },
     {
       "id": "s3-bushcraft-i-know-how-to-treat-cuts-and-minor-bleeding",
@@ -1014,7 +1306,14 @@
         "Bushcraft",
         "Discussion / theory",
         "Scout Hall"
-      ]
+      ],
+      "locations": {
+        "preferred": "Scout Hall — indoor",
+        "alternatives": [
+          "Scout Hall — outdoor",
+          "Flexible / anywhere"
+        ]
+      }
     },
     {
       "id": "s3-bushcraft-i-know-what-drsabcd-stands-for-and-how-to-apply-",
@@ -1035,7 +1334,14 @@
         "Bushcraft",
         "Discussion / theory",
         "Scout Hall"
-      ]
+      ],
+      "locations": {
+        "preferred": "Scout Hall — indoor",
+        "alternatives": [
+          "Scout Hall — outdoor",
+          "Flexible / anywhere"
+        ]
+      }
     },
     {
       "id": "s3-bushcraft-i-can-identify-fire-safety-equipment-in-my-hall",
@@ -1066,7 +1372,14 @@
         "Bushcraft",
         "Scout Hall",
         "Discussion / theory"
-      ]
+      ],
+      "locations": {
+        "preferred": "Scout Hall — outdoor",
+        "alternatives": [
+          "Campsite",
+          "Local outdoor area"
+        ]
+      }
     },
     {
       "id": "s3-bushcraft-i-can-cook-a-meal-using-a-camp-stove",
@@ -1094,7 +1407,14 @@
         "Food & cooking",
         "Bushcraft",
         "Practical activity"
-      ]
+      ],
+      "locations": {
+        "preferred": "Scout Hall — outdoor",
+        "alternatives": [
+          "Campsite",
+          "Local outdoor area"
+        ]
+      }
     },
     {
       "id": "s3-bushcraft-i-can-explain-the-causes-of-a-major-bushfire",
@@ -1123,7 +1443,14 @@
         "Bushcraft",
         "Discussion / theory",
         "Scout Hall"
-      ]
+      ],
+      "locations": {
+        "preferred": "Scout Hall — outdoor",
+        "alternatives": [
+          "Campsite",
+          "Local outdoor area"
+        ]
+      }
     },
     {
       "id": "s3-bushcraft-i-can-name-five-different-situations-that-could-",
@@ -1153,7 +1480,14 @@
         "Bushcraft",
         "Discussion / theory",
         "Scout Hall"
-      ]
+      ],
+      "locations": {
+        "preferred": "Local outdoor area",
+        "alternatives": [
+          "Campsite",
+          "Scout Hall — outdoor"
+        ]
+      }
     },
     {
       "id": "s3-bushcraft-i-can-identify-the-southern-cross-in-the-night-s",
@@ -1171,7 +1505,14 @@
         "Practical activity",
         "Scout Hall",
         "Outdoors / off-site"
-      ]
+      ],
+      "locations": {
+        "preferred": "Local outdoor area",
+        "alternatives": [
+          "Campsite",
+          "Scout Hall — outdoor"
+        ]
+      }
     },
     {
       "id": "s3-bushcraft-i-can-identify-three-other-constellations-in-the",
@@ -1188,7 +1529,14 @@
         "Discussion / theory",
         "Scout Hall",
         "Outdoors / off-site"
-      ]
+      ],
+      "locations": {
+        "preferred": "Local outdoor area",
+        "alternatives": [
+          "Campsite",
+          "Scout Hall — outdoor"
+        ]
+      }
     },
     {
       "id": "s3-bushcraft-i-have-set-up-and-followed-a-simple-compass-trai",
@@ -1222,7 +1570,14 @@
         "Practical activity",
         "Scout Hall",
         "Outdoors / off-site"
-      ]
+      ],
+      "locations": {
+        "preferred": "Local outdoor area",
+        "alternatives": [
+          "Campsite",
+          "Scout Hall — outdoor"
+        ]
+      }
     },
     {
       "id": "s3-bushcraft-i-can-teach-the-importance-of-the-buddy-system-t",
@@ -1252,7 +1607,13 @@
         "Safety",
         "Leadership & teamwork",
         "Bushcraft"
-      ]
+      ],
+      "locations": {
+        "preferred": "Flexible / anywhere",
+        "alternatives": [
+          "Scout Hall — indoor"
+        ]
+      }
     },
     {
       "id": "s3-bushcraft-i-have-put-together-a-personal-outdoor-survival-",
@@ -1269,7 +1630,14 @@
         "Discussion / theory",
         "Practical activity",
         "Scout Hall"
-      ]
+      ],
+      "locations": {
+        "preferred": "Scout Hall — indoor",
+        "alternatives": [
+          "Scout Hall — outdoor",
+          "Flexible / anywhere"
+        ]
+      }
     },
     {
       "id": "s3-bushcraft-i-can-make-a-personal-shelter-out-of-plastic-she",
@@ -1302,7 +1670,14 @@
         "Practical activity",
         "Scout Hall",
         "Outdoors / off-site"
-      ]
+      ],
+      "locations": {
+        "preferred": "Campsite",
+        "alternatives": [
+          "Scout Hall — outdoor",
+          "Local outdoor area"
+        ]
+      }
     },
     {
       "id": "s3-bushcraft-i-can-demonstrate-five-knots-in-an-activity-or-c",
@@ -1321,7 +1696,14 @@
         "Bushcraft",
         "Practical activity",
         "Scout Hall"
-      ]
+      ],
+      "locations": {
+        "preferred": "Scout Hall — indoor",
+        "alternatives": [
+          "Scout Hall — outdoor",
+          "Flexible / anywhere"
+        ]
+      }
     },
     {
       "id": "s3-bushcraft-i-can-talk-about-the-ways-in-which-my-patrol-wor",
@@ -1353,7 +1735,14 @@
         "Bushcraft",
         "Discussion / theory",
         "Scout Hall"
-      ]
+      ],
+      "locations": {
+        "preferred": "Local outdoor area",
+        "alternatives": [
+          "Campsite",
+          "Scout Hall — outdoor"
+        ]
+      }
     },
     {
       "id": "s3-bushcraft-i-have-identified-improvements-i-can-make-to-my-",
@@ -1384,7 +1773,14 @@
         "Reflection & review",
         "Bushcraft",
         "Practical activity"
-      ]
+      ],
+      "locations": {
+        "preferred": "Campsite",
+        "alternatives": [
+          "Scout Hall — outdoor",
+          "Local outdoor area"
+        ]
+      }
     },
     {
       "id": "s2-camping-i-can-explain-what-clothing-i-should-wear-whilst",
@@ -1400,7 +1796,14 @@
         "Camping",
         "Discussion / theory",
         "Scout Hall"
-      ]
+      ],
+      "locations": {
+        "preferred": "Scout Hall — indoor",
+        "alternatives": [
+          "Scout Hall — outdoor",
+          "Flexible / anywhere"
+        ]
+      }
     },
     {
       "id": "s2-camping-i-have-explained-what-impact-i-can-have-on-local",
@@ -1416,7 +1819,14 @@
         "Camping",
         "Discussion / theory",
         "Scout Hall"
-      ]
+      ],
+      "locations": {
+        "preferred": "Local outdoor area",
+        "alternatives": [
+          "Campsite",
+          "Scout Hall — outdoor"
+        ]
+      }
     },
     {
       "id": "s2-camping-i-have-discussed-the-appropriate-action-i-should",
@@ -1446,7 +1856,14 @@
         "Camping",
         "Discussion / theory",
         "Scout Hall"
-      ]
+      ],
+      "locations": {
+        "preferred": "Scout Hall — indoor",
+        "alternatives": [
+          "Scout Hall — outdoor",
+          "Flexible / anywhere"
+        ]
+      }
     },
     {
       "id": "s2-camping-i-can-discuss-what-safety-precautions-you-should",
@@ -1464,7 +1881,14 @@
         "Camping",
         "Discussion / theory",
         "Scout Hall"
-      ]
+      ],
+      "locations": {
+        "preferred": "Local outdoor area",
+        "alternatives": [
+          "Campsite",
+          "Scout Hall — outdoor"
+        ]
+      }
     },
     {
       "id": "s2-camping-i-know-about-proper-hygiene-practices-at-camp",
@@ -1481,7 +1905,14 @@
         "Camping",
         "Discussion / theory",
         "Scout Hall"
-      ]
+      ],
+      "locations": {
+        "preferred": "Scout Hall — indoor",
+        "alternatives": [
+          "Scout Hall — outdoor",
+          "Flexible / anywhere"
+        ]
+      }
     },
     {
       "id": "s2-camping-i-know-how-to-contact-the-emergency-services",
@@ -1510,7 +1941,13 @@
         "Camping",
         "Discussion / theory",
         "Scout Hall"
-      ]
+      ],
+      "locations": {
+        "preferred": "External venue",
+        "alternatives": [
+          "Scout Hall — indoor"
+        ]
+      }
     },
     {
       "id": "s2-camping-i-can-draw-and-label-a-picture-showing-all-of-th",
@@ -1535,7 +1972,14 @@
         "Planning",
         "Camping",
         "Scout Hall"
-      ]
+      ],
+      "locations": {
+        "preferred": "Scout Hall — indoor",
+        "alternatives": [
+          "Scout Hall — outdoor",
+          "Flexible / anywhere"
+        ]
+      }
     },
     {
       "id": "s2-camping-i-know-the-benefits-and-risks-associated-with-fi",
@@ -1565,7 +2009,14 @@
         "Camping",
         "Discussion / theory",
         "Scout Hall"
-      ]
+      ],
+      "locations": {
+        "preferred": "Scout Hall — outdoor",
+        "alternatives": [
+          "Campsite",
+          "Local outdoor area"
+        ]
+      }
     },
     {
       "id": "s2-camping-i-can-demonstrate-basic-safe-food-handling-and-t",
@@ -1593,7 +2044,14 @@
         "Hygiene & personal care",
         "Camping",
         "Practical activity"
-      ]
+      ],
+      "locations": {
+        "preferred": "Scout Hall — outdoor",
+        "alternatives": [
+          "Campsite",
+          "Local outdoor area"
+        ]
+      }
     },
     {
       "id": "s2-camping-i-can-protect-myself-when-exposed-to-the-sun-whi",
@@ -1607,7 +2065,14 @@
       "tags": [
         "Environment & nature",
         "Camping"
-      ]
+      ],
+      "locations": {
+        "preferred": "Local outdoor area",
+        "alternatives": [
+          "Campsite",
+          "Scout Hall — outdoor"
+        ]
+      }
     },
     {
       "id": "s2-camping-i-can-behave-safely-in-and-around-tents-and-camp",
@@ -1639,7 +2104,14 @@
         "Fire",
         "Shelter & tents",
         "Camping"
-      ]
+      ],
+      "locations": {
+        "preferred": "Scout Hall — outdoor",
+        "alternatives": [
+          "Campsite",
+          "Local outdoor area"
+        ]
+      }
     },
     {
       "id": "s2-camping-i-can-demonstrate-and-explain-why-sleeping-bags-",
@@ -1657,7 +2129,14 @@
         "Discussion / theory",
         "Practical activity",
         "Scout Hall"
-      ]
+      ],
+      "locations": {
+        "preferred": "Scout Hall — indoor",
+        "alternatives": [
+          "Scout Hall — outdoor",
+          "Flexible / anywhere"
+        ]
+      }
     },
     {
       "id": "s2-camping-i-have-spent-two-nights-on-camp-in-a-tent-at-thi",
@@ -1685,7 +2164,14 @@
         "Camping",
         "External / real-world experience",
         "Outdoors / off-site"
-      ]
+      ],
+      "locations": {
+        "preferred": "Campsite",
+        "alternatives": [
+          "Scout Hall — outdoor",
+          "Local outdoor area"
+        ]
+      }
     },
     {
       "id": "s2-camping-i-can-help-set-up-a-tent-and-identify-the-main-p",
@@ -1715,7 +2201,14 @@
         "Practical activity",
         "Scout Hall",
         "Outdoors / off-site"
-      ]
+      ],
+      "locations": {
+        "preferred": "Campsite",
+        "alternatives": [
+          "Scout Hall — outdoor",
+          "Local outdoor area"
+        ]
+      }
     },
     {
       "id": "s2-camping-i-can-talk-about-what-i-enjoyed-learnt-and-impro",
@@ -1744,7 +2237,14 @@
         "Camping",
         "Discussion / theory",
         "Scout Hall"
-      ]
+      ],
+      "locations": {
+        "preferred": "Scout Hall — indoor",
+        "alternatives": [
+          "Scout Hall — outdoor",
+          "Flexible / anywhere"
+        ]
+      }
     },
     {
       "id": "s2-camping-i-can-suggest-what-i-would-do-differently-on-a-f",
@@ -1772,7 +2272,14 @@
         "Safety",
         "Planning",
         "Camping"
-      ]
+      ],
+      "locations": {
+        "preferred": "Scout Hall — indoor",
+        "alternatives": [
+          "Scout Hall — outdoor",
+          "Flexible / anywhere"
+        ]
+      }
     },
     {
       "id": "s2-bushwalking-i-can-explain-what-clothing-i-should-wear-whilst",
@@ -1788,7 +2295,14 @@
         "Bushwalking",
         "Discussion / theory",
         "Scout Hall"
-      ]
+      ],
+      "locations": {
+        "preferred": "Local outdoor area",
+        "alternatives": [
+          "Campsite",
+          "Scout Hall — outdoor"
+        ]
+      }
     },
     {
       "id": "s2-bushwalking-i-have-explained-what-impact-i-can-have-on-local",
@@ -1804,7 +2318,14 @@
         "Bushwalking",
         "Discussion / theory",
         "Scout Hall"
-      ]
+      ],
+      "locations": {
+        "preferred": "Local outdoor area",
+        "alternatives": [
+          "Campsite",
+          "Scout Hall — outdoor"
+        ]
+      }
     },
     {
       "id": "s2-bushwalking-i-have-discussed-the-appropriate-action-i-should",
@@ -1834,7 +2355,14 @@
         "Bushwalking",
         "Discussion / theory",
         "Scout Hall"
-      ]
+      ],
+      "locations": {
+        "preferred": "Local outdoor area",
+        "alternatives": [
+          "Campsite",
+          "Scout Hall — outdoor"
+        ]
+      }
     },
     {
       "id": "s2-bushwalking-i-can-discuss-what-safety-precautions-i-should-t",
@@ -1851,7 +2379,14 @@
         "Bushwalking",
         "Discussion / theory",
         "Scout Hall"
-      ]
+      ],
+      "locations": {
+        "preferred": "Local outdoor area",
+        "alternatives": [
+          "Campsite",
+          "Scout Hall — outdoor"
+        ]
+      }
     },
     {
       "id": "s2-bushwalking-i-know-when-and-how-to-contact-the-emergency-ser",
@@ -1880,7 +2415,13 @@
         "Bushwalking",
         "Discussion / theory",
         "Scout Hall"
-      ]
+      ],
+      "locations": {
+        "preferred": "External venue",
+        "alternatives": [
+          "Scout Hall — indoor"
+        ]
+      }
     },
     {
       "id": "s2-bushwalking-i-can-draw-or-list-all-of-the-essential-equipmen",
@@ -1906,7 +2447,14 @@
         "Bushwalking",
         "Discussion / theory",
         "Scout Hall"
-      ]
+      ],
+      "locations": {
+        "preferred": "Local outdoor area",
+        "alternatives": [
+          "Campsite",
+          "Scout Hall — outdoor"
+        ]
+      }
     },
     {
       "id": "s2-bushwalking-i-can-use-a-compass-to-find-basic-directions",
@@ -1933,7 +2481,14 @@
         "Bushwalking",
         "Practical activity",
         "Scout Hall"
-      ]
+      ],
+      "locations": {
+        "preferred": "Local outdoor area",
+        "alternatives": [
+          "Campsite",
+          "Scout Hall — outdoor"
+        ]
+      }
     },
     {
       "id": "s2-bushwalking-i-can-protect-myself-when-exposed-to-the-sun-whi",
@@ -1947,7 +2502,14 @@
       "tags": [
         "Environment & nature",
         "Bushwalking"
-      ]
+      ],
+      "locations": {
+        "preferred": "Local outdoor area",
+        "alternatives": [
+          "Campsite",
+          "Scout Hall — outdoor"
+        ]
+      }
     },
     {
       "id": "s2-bushwalking-i-have-attended-at-least-two-short-bushwalks-at-",
@@ -1963,7 +2525,14 @@
         "Bushwalking",
         "External / real-world experience",
         "Outdoors / off-site"
-      ]
+      ],
+      "locations": {
+        "preferred": "Local outdoor area",
+        "alternatives": [
+          "Campsite",
+          "Scout Hall — outdoor"
+        ]
+      }
     },
     {
       "id": "s2-bushwalking-i-can-show-where-and-when-i-am-allowed-to-go-bef",
@@ -1978,7 +2547,14 @@
         "Safety",
         "Planning",
         "Bushwalking"
-      ]
+      ],
+      "locations": {
+        "preferred": "Local outdoor area",
+        "alternatives": [
+          "Campsite",
+          "Scout Hall — outdoor"
+        ]
+      }
     },
     {
       "id": "s2-bushwalking-i-have-bushwalked-a-total-distance-of-at-least-1",
@@ -1996,7 +2572,14 @@
         "Bushwalking",
         "External / real-world experience",
         "Outdoors / off-site"
-      ]
+      ],
+      "locations": {
+        "preferred": "Local outdoor area",
+        "alternatives": [
+          "Campsite",
+          "Scout Hall — outdoor"
+        ]
+      }
     },
     {
       "id": "s2-bushwalking-i-have-talked-about-what-i-enjoyed-learnt-or-imp",
@@ -2023,7 +2606,14 @@
       "tags": [
         "Reflection & review",
         "Bushwalking"
-      ]
+      ],
+      "locations": {
+        "preferred": "Local outdoor area",
+        "alternatives": [
+          "Campsite",
+          "Scout Hall — outdoor"
+        ]
+      }
     },
     {
       "id": "s2-bushwalking-i-can-suggest-what-i-would-do-differently-on-a-f",
@@ -2052,7 +2642,14 @@
         "Planning",
         "Bushwalking",
         "Scout Hall"
-      ]
+      ],
+      "locations": {
+        "preferred": "Local outdoor area",
+        "alternatives": [
+          "Campsite",
+          "Scout Hall — outdoor"
+        ]
+      }
     },
     {
       "id": "s2-bushwalking-i-have-reviewed-my-list-or-picture-of-essential-",
@@ -2082,7 +2679,14 @@
         "Bushwalking",
         "Discussion / theory",
         "Scout Hall"
-      ]
+      ],
+      "locations": {
+        "preferred": "Local outdoor area",
+        "alternatives": [
+          "Campsite",
+          "Scout Hall — outdoor"
+        ]
+      }
     },
     {
       "id": "s2-bushcraft-i-have-explained-what-impact-i-can-have-on-local",
@@ -2098,7 +2702,14 @@
         "Bushcraft",
         "Discussion / theory",
         "Scout Hall"
-      ]
+      ],
+      "locations": {
+        "preferred": "Local outdoor area",
+        "alternatives": [
+          "Campsite",
+          "Scout Hall — outdoor"
+        ]
+      }
     },
     {
       "id": "s2-bushcraft-i-have-discussed-the-appropriate-action-i-should",
@@ -2128,7 +2739,14 @@
         "Bushcraft",
         "Discussion / theory",
         "Scout Hall"
-      ]
+      ],
+      "locations": {
+        "preferred": "Scout Hall — indoor",
+        "alternatives": [
+          "Scout Hall — outdoor",
+          "Flexible / anywhere"
+        ]
+      }
     },
     {
       "id": "s2-bushcraft-i-can-discuss-what-safety-precautions-i-should-t",
@@ -2145,7 +2763,14 @@
         "Bushcraft",
         "Discussion / theory",
         "Scout Hall"
-      ]
+      ],
+      "locations": {
+        "preferred": "Scout Hall — indoor",
+        "alternatives": [
+          "Scout Hall — outdoor",
+          "Flexible / anywhere"
+        ]
+      }
     },
     {
       "id": "s2-bushcraft-i-know-how-to-contact-the-emergency-services",
@@ -2174,7 +2799,13 @@
         "Bushcraft",
         "Discussion / theory",
         "Scout Hall"
-      ]
+      ],
+      "locations": {
+        "preferred": "External venue",
+        "alternatives": [
+          "Scout Hall — indoor"
+        ]
+      }
     },
     {
       "id": "s2-bushcraft-i-can-state-how-many-degrees-there-are-on-a-comp",
@@ -2199,7 +2830,14 @@
         "Bushcraft",
         "Discussion / theory",
         "Scout Hall"
-      ]
+      ],
+      "locations": {
+        "preferred": "Local outdoor area",
+        "alternatives": [
+          "Campsite",
+          "Scout Hall — outdoor"
+        ]
+      }
     },
     {
       "id": "s2-bushcraft-i-know-the-rules-for-hygiene-at-camp",
@@ -2215,7 +2853,14 @@
         "Bushcraft",
         "Discussion / theory",
         "Scout Hall"
-      ]
+      ],
+      "locations": {
+        "preferred": "Scout Hall — indoor",
+        "alternatives": [
+          "Scout Hall — outdoor",
+          "Flexible / anywhere"
+        ]
+      }
     },
     {
       "id": "s2-bushcraft-i-can-protect-myself-when-exposed-to-the-sun-whi",
@@ -2229,7 +2874,14 @@
       "tags": [
         "Environment & nature",
         "Bushcraft"
-      ]
+      ],
+      "locations": {
+        "preferred": "Local outdoor area",
+        "alternatives": [
+          "Campsite",
+          "Scout Hall — outdoor"
+        ]
+      }
     },
     {
       "id": "s2-bushcraft-i-can-cook-a-snack-in-a-fire",
@@ -2262,7 +2914,14 @@
         "Bushcraft",
         "Practical activity",
         "Outdoors / off-site"
-      ]
+      ],
+      "locations": {
+        "preferred": "Scout Hall — outdoor",
+        "alternatives": [
+          "Campsite",
+          "Local outdoor area"
+        ]
+      }
     },
     {
       "id": "s2-bushcraft-i-know-how-much-water-i-should-carry-when-on-a-h",
@@ -2277,7 +2936,14 @@
         "Bushcraft",
         "Discussion / theory",
         "Scout Hall"
-      ]
+      ],
+      "locations": {
+        "preferred": "Local outdoor area",
+        "alternatives": [
+          "Campsite",
+          "Scout Hall — outdoor"
+        ]
+      }
     },
     {
       "id": "s2-bushcraft-i-can-demonstrate-a-correct-way-to-build-a-safe-",
@@ -2309,7 +2975,14 @@
         "Fire",
         "Bushcraft",
         "Practical activity"
-      ]
+      ],
+      "locations": {
+        "preferred": "Scout Hall — outdoor",
+        "alternatives": [
+          "Campsite",
+          "Local outdoor area"
+        ]
+      }
     },
     {
       "id": "s2-bushcraft-i-understand-the-basic-dangers-of-fire-and-how-t",
@@ -2339,7 +3012,14 @@
         "Safety",
         "Fire",
         "Bushcraft"
-      ]
+      ],
+      "locations": {
+        "preferred": "Scout Hall — outdoor",
+        "alternatives": [
+          "Campsite",
+          "Local outdoor area"
+        ]
+      }
     },
     {
       "id": "s2-bushcraft-i-can-establish-and-find-the-four-cardinal-direc",
@@ -2364,7 +3044,14 @@
         "Bushcraft",
         "Practical activity",
         "Scout Hall"
-      ]
+      ],
+      "locations": {
+        "preferred": "Local outdoor area",
+        "alternatives": [
+          "Campsite",
+          "Scout Hall — outdoor"
+        ]
+      }
     },
     {
       "id": "s2-bushcraft-i-can-demonstrate-three-knots-and-apply-them-in-",
@@ -2382,7 +3069,14 @@
         "Bushcraft",
         "Practical activity",
         "Scout Hall"
-      ]
+      ],
+      "locations": {
+        "preferred": "Scout Hall — indoor",
+        "alternatives": [
+          "Scout Hall — outdoor",
+          "Flexible / anywhere"
+        ]
+      }
     },
     {
       "id": "s2-bushcraft-i-have-talked-about-what-i-enjoyed-learnt-or-imp",
@@ -2409,7 +3103,14 @@
       "tags": [
         "Reflection & review",
         "Bushcraft"
-      ]
+      ],
+      "locations": {
+        "preferred": "Scout Hall — indoor",
+        "alternatives": [
+          "Scout Hall — outdoor",
+          "Flexible / anywhere"
+        ]
+      }
     },
     {
       "id": "s2-bushcraft-i-can-suggest-what-i-would-do-differently-for-a-",
@@ -2436,7 +3137,14 @@
       "tags": [
         "Planning",
         "Bushcraft"
-      ]
+      ],
+      "locations": {
+        "preferred": "Scout Hall — indoor",
+        "alternatives": [
+          "Scout Hall — outdoor",
+          "Flexible / anywhere"
+        ]
+      }
     },
     {
       "id": "s1-camping-i-know-about-the-buddy-system",
@@ -2452,7 +3160,14 @@
         "Camping",
         "Discussion / theory",
         "Scout Hall"
-      ]
+      ],
+      "locations": {
+        "preferred": "Scout Hall — indoor",
+        "alternatives": [
+          "Scout Hall — outdoor",
+          "Flexible / anywhere"
+        ]
+      }
     },
     {
       "id": "s1-camping-i-know-the-boundaries-of-where-i-may-go-each-tim",
@@ -2468,7 +3183,14 @@
         "Camping",
         "Discussion / theory",
         "Scout Hall"
-      ]
+      ],
+      "locations": {
+        "preferred": "Scout Hall — indoor",
+        "alternatives": [
+          "Scout Hall — outdoor",
+          "Flexible / anywhere"
+        ]
+      }
     },
     {
       "id": "s1-camping-i-know-to-stop-when-i-get-lost-while-camping",
@@ -2485,7 +3207,14 @@
         "Camping",
         "Discussion / theory",
         "Scout Hall"
-      ]
+      ],
+      "locations": {
+        "preferred": "Local outdoor area",
+        "alternatives": [
+          "Campsite",
+          "Scout Hall — outdoor"
+        ]
+      }
     },
     {
       "id": "s1-camping-i-know-the-basic-elements-that-you-need-to-make-",
@@ -2502,7 +3231,14 @@
         "Discussion / theory",
         "Practical activity",
         "Scout Hall"
-      ]
+      ],
+      "locations": {
+        "preferred": "Scout Hall — outdoor",
+        "alternatives": [
+          "Campsite",
+          "Local outdoor area"
+        ]
+      }
     },
     {
       "id": "s1-camping-i-know-that-i-should-follow-directions-from-the-",
@@ -2518,7 +3254,14 @@
         "Camping",
         "Discussion / theory",
         "Scout Hall"
-      ]
+      ],
+      "locations": {
+        "preferred": "Local outdoor area",
+        "alternatives": [
+          "Campsite",
+          "Scout Hall — outdoor"
+        ]
+      }
     },
     {
       "id": "s1-camping-i-can-help-pack-a-bag-for-camp",
@@ -2534,7 +3277,14 @@
         "Camping",
         "Practical activity",
         "Scout Hall"
-      ]
+      ],
+      "locations": {
+        "preferred": "Scout Hall — indoor",
+        "alternatives": [
+          "Scout Hall — outdoor",
+          "Flexible / anywhere"
+        ]
+      }
     },
     {
       "id": "s1-camping-i-can-strike-a-match",
@@ -2553,7 +3303,14 @@
         "Camping",
         "Practical activity",
         "Outdoors / off-site"
-      ]
+      ],
+      "locations": {
+        "preferred": "Scout Hall — outdoor",
+        "alternatives": [
+          "Campsite",
+          "Local outdoor area"
+        ]
+      }
     },
     {
       "id": "s1-camping-i-can-help-prepare-food-for-cooking-at-camp",
@@ -2572,7 +3329,14 @@
         "Planning",
         "Camping",
         "Practical activity"
-      ]
+      ],
+      "locations": {
+        "preferred": "Scout Hall — outdoor",
+        "alternatives": [
+          "Campsite",
+          "Local outdoor area"
+        ]
+      }
     },
     {
       "id": "s1-camping-i-have-spent-two-nights-at-camps-and-or-scout-sl",
@@ -2588,7 +3352,13 @@
         "Camping",
         "External / real-world experience",
         "Outdoors / off-site"
-      ]
+      ],
+      "locations": {
+        "preferred": "Flexible / anywhere",
+        "alternatives": [
+          "Scout Hall — indoor"
+        ]
+      }
     },
     {
       "id": "s1-camping-i-know-why-it-is-important-to-set-up-camp-in-an-",
@@ -2605,7 +3375,14 @@
         "Discussion / theory",
         "Practical activity",
         "Scout Hall"
-      ]
+      ],
+      "locations": {
+        "preferred": "Campsite",
+        "alternatives": [
+          "Scout Hall — outdoor",
+          "Local outdoor area"
+        ]
+      }
     },
     {
       "id": "s1-camping-i-can-set-out-my-sleeping-area-at-camp",
@@ -2622,7 +3399,14 @@
         "Shelter & tents",
         "Camping",
         "Outdoors / off-site"
-      ]
+      ],
+      "locations": {
+        "preferred": "Campsite",
+        "alternatives": [
+          "Scout Hall — outdoor",
+          "Local outdoor area"
+        ]
+      }
     },
     {
       "id": "s1-camping-i-can-care-for-my-basic-personal-gear-on-an-over",
@@ -2639,7 +3423,14 @@
         "Equipment & packing",
         "Camping",
         "Scout Hall"
-      ]
+      ],
+      "locations": {
+        "preferred": "Scout Hall — indoor",
+        "alternatives": [
+          "Scout Hall — outdoor",
+          "Flexible / anywhere"
+        ]
+      }
     },
     {
       "id": "s1-camping-i-can-talk-about-what-i-enjoyed-learnt-or-improv",
@@ -2656,7 +3447,14 @@
         "Discussion / theory",
         "Scout Hall",
         "Outdoors / off-site"
-      ]
+      ],
+      "locations": {
+        "preferred": "Scout Hall — indoor",
+        "alternatives": [
+          "Scout Hall — outdoor",
+          "Flexible / anywhere"
+        ]
+      }
     },
     {
       "id": "s1-bushwalking-i-can-help-pack-a-backpack-for-a-day-walk",
@@ -2672,7 +3470,14 @@
         "Bushwalking",
         "Practical activity",
         "Scout Hall"
-      ]
+      ],
+      "locations": {
+        "preferred": "Local outdoor area",
+        "alternatives": [
+          "Campsite",
+          "Scout Hall — outdoor"
+        ]
+      }
     },
     {
       "id": "s1-bushwalking-i-can-dress-myself-for-a-day-walk",
@@ -2685,7 +3490,14 @@
       "source": "OAS-Requirements.txt",
       "tags": [
         "Bushwalking"
-      ]
+      ],
+      "locations": {
+        "preferred": "Local outdoor area",
+        "alternatives": [
+          "Campsite",
+          "Scout Hall — outdoor"
+        ]
+      }
     },
     {
       "id": "s1-bushwalking-i-can-list-what-food-to-bring-on-a-day-bushwalk",
@@ -2703,7 +3515,14 @@
         "Discussion / theory",
         "Scout Hall",
         "Outdoors / off-site"
-      ]
+      ],
+      "locations": {
+        "preferred": "Scout Hall — outdoor",
+        "alternatives": [
+          "Campsite",
+          "Local outdoor area"
+        ]
+      }
     },
     {
       "id": "s1-bushwalking-i-know-why-it-is-important-to-stick-to-trails-wh",
@@ -2719,7 +3538,14 @@
         "Bushwalking",
         "Discussion / theory",
         "Scout Hall"
-      ]
+      ],
+      "locations": {
+        "preferred": "Local outdoor area",
+        "alternatives": [
+          "Campsite",
+          "Scout Hall — outdoor"
+        ]
+      }
     },
     {
       "id": "s1-bushwalking-i-know-why-to-stop-when-i-get-lost-in-the-bush",
@@ -2736,7 +3562,14 @@
         "Bushwalking",
         "Discussion / theory",
         "Scout Hall"
-      ]
+      ],
+      "locations": {
+        "preferred": "Local outdoor area",
+        "alternatives": [
+          "Campsite",
+          "Scout Hall — outdoor"
+        ]
+      }
     },
     {
       "id": "s1-bushwalking-i-can-explain-the-buddy-system",
@@ -2752,7 +3585,14 @@
         "Bushwalking",
         "Discussion / theory",
         "Scout Hall"
-      ]
+      ],
+      "locations": {
+        "preferred": "Local outdoor area",
+        "alternatives": [
+          "Campsite",
+          "Scout Hall — outdoor"
+        ]
+      }
     },
     {
       "id": "s1-bushwalking-i-can-put-together-a-small-personal-first-aid-ki",
@@ -2769,7 +3609,14 @@
         "Bushwalking",
         "Practical activity",
         "Scout Hall"
-      ]
+      ],
+      "locations": {
+        "preferred": "Local outdoor area",
+        "alternatives": [
+          "Campsite",
+          "Scout Hall — outdoor"
+        ]
+      }
     },
     {
       "id": "s1-bushwalking-i-can-identify-the-four-main-cardinal-points-of-",
@@ -2787,7 +3634,14 @@
         "Bushwalking",
         "Discussion / theory",
         "Scout Hall"
-      ]
+      ],
+      "locations": {
+        "preferred": "Local outdoor area",
+        "alternatives": [
+          "Campsite",
+          "Scout Hall — outdoor"
+        ]
+      }
     },
     {
       "id": "s1-bushwalking-i-can-identify-the-main-parts-of-the-compass",
@@ -2803,7 +3657,14 @@
         "Bushwalking",
         "Discussion / theory",
         "Scout Hall"
-      ]
+      ],
+      "locations": {
+        "preferred": "Local outdoor area",
+        "alternatives": [
+          "Campsite",
+          "Scout Hall — outdoor"
+        ]
+      }
     },
     {
       "id": "s1-bushwalking-i-have-attended-at-least-one-bushwalk-of-at-leas",
@@ -2823,7 +3684,14 @@
         "Bushwalking",
         "External / real-world experience",
         "Outdoors / off-site"
-      ]
+      ],
+      "locations": {
+        "preferred": "Local outdoor area",
+        "alternatives": [
+          "Campsite",
+          "Scout Hall — outdoor"
+        ]
+      }
     },
     {
       "id": "s1-bushwalking-i-can-demonstrate-behaving-safely-while-bushwalk",
@@ -2842,7 +3710,14 @@
         "Bushwalking",
         "Practical activity",
         "Outdoors / off-site"
-      ]
+      ],
+      "locations": {
+        "preferred": "Local outdoor area",
+        "alternatives": [
+          "Campsite",
+          "Scout Hall — outdoor"
+        ]
+      }
     },
     {
       "id": "s1-bushwalking-i-can-talk-about-what-i-enjoyed-or-learnt-from-g",
@@ -2858,7 +3733,14 @@
         "Bushwalking",
         "Discussion / theory",
         "Scout Hall"
-      ]
+      ],
+      "locations": {
+        "preferred": "Local outdoor area",
+        "alternatives": [
+          "Campsite",
+          "Scout Hall — outdoor"
+        ]
+      }
     },
     {
       "id": "s1-bushcraft-i-know-why-it-is-important-to-stick-to-trails-wh",
@@ -2874,7 +3756,14 @@
         "Bushcraft",
         "Discussion / theory",
         "Scout Hall"
-      ]
+      ],
+      "locations": {
+        "preferred": "Local outdoor area",
+        "alternatives": [
+          "Campsite",
+          "Scout Hall — outdoor"
+        ]
+      }
     },
     {
       "id": "s1-bushcraft-i-know-about-the-buddy-system",
@@ -2889,7 +3778,14 @@
         "Bushcraft",
         "Discussion / theory",
         "Scout Hall"
-      ]
+      ],
+      "locations": {
+        "preferred": "Scout Hall — indoor",
+        "alternatives": [
+          "Scout Hall — outdoor",
+          "Flexible / anywhere"
+        ]
+      }
     },
     {
       "id": "s1-bushcraft-i-know-to-stop-when-i-get-lost-on-activities",
@@ -2906,7 +3802,14 @@
         "Bushcraft",
         "Discussion / theory",
         "Scout Hall"
-      ]
+      ],
+      "locations": {
+        "preferred": "Local outdoor area",
+        "alternatives": [
+          "Campsite",
+          "Scout Hall — outdoor"
+        ]
+      }
     },
     {
       "id": "s1-bushcraft-i-know-my-address-and-location-in-an-emergency",
@@ -2922,7 +3825,14 @@
         "Bushcraft",
         "Discussion / theory",
         "Scout Hall"
-      ]
+      ],
+      "locations": {
+        "preferred": "Scout Hall — indoor",
+        "alternatives": [
+          "Scout Hall — outdoor",
+          "Flexible / anywhere"
+        ]
+      }
     },
     {
       "id": "s1-bushcraft-i-know-three-reasons-for-having-a-shelter-when-s",
@@ -2939,7 +3849,14 @@
         "Bushcraft",
         "Discussion / theory",
         "Scout Hall"
-      ]
+      ],
+      "locations": {
+        "preferred": "Campsite",
+        "alternatives": [
+          "Scout Hall — outdoor",
+          "Local outdoor area"
+        ]
+      }
     },
     {
       "id": "s1-bushcraft-i-can-strike-a-match",
@@ -2955,7 +3872,14 @@
         "Bushcraft",
         "Practical activity",
         "Outdoors / off-site"
-      ]
+      ],
+      "locations": {
+        "preferred": "Scout Hall — outdoor",
+        "alternatives": [
+          "Campsite",
+          "Local outdoor area"
+        ]
+      }
     },
     {
       "id": "s1-bushcraft-i-can-collect-sticks-for-preparing-a-campfire",
@@ -2971,7 +3895,14 @@
         "Bushcraft",
         "Practical activity",
         "Outdoors / off-site"
-      ]
+      ],
+      "locations": {
+        "preferred": "Scout Hall — outdoor",
+        "alternatives": [
+          "Campsite",
+          "Local outdoor area"
+        ]
+      }
     },
     {
       "id": "s1-bushcraft-i-can-be-safe-around-a-campfire",
@@ -2989,7 +3920,14 @@
         "Safety",
         "Fire",
         "Bushcraft"
-      ]
+      ],
+      "locations": {
+        "preferred": "Scout Hall — outdoor",
+        "alternatives": [
+          "Campsite",
+          "Local outdoor area"
+        ]
+      }
     },
     {
       "id": "s1-bushcraft-i-can-demonstrate-stop-drop-and-roll-and-how-tha",
@@ -3005,7 +3943,14 @@
         "Bushcraft",
         "Practical activity",
         "Scout Hall"
-      ]
+      ],
+      "locations": {
+        "preferred": "Scout Hall — indoor",
+        "alternatives": [
+          "Scout Hall — outdoor",
+          "Flexible / anywhere"
+        ]
+      }
     },
     {
       "id": "s1-bushcraft-i-can-find-the-emergency-exit-and-muster-point-a",
@@ -3020,7 +3965,14 @@
         "Emergency response",
         "Bushcraft",
         "Scout Hall"
-      ]
+      ],
+      "locations": {
+        "preferred": "Scout Hall — indoor",
+        "alternatives": [
+          "Scout Hall — outdoor",
+          "Flexible / anywhere"
+        ]
+      }
     },
     {
       "id": "s1-bushcraft-i-have-participated-in-a-game-that-required-basi",
@@ -3037,7 +3989,14 @@
         "Bushcraft",
         "External / real-world experience",
         "Outdoors / off-site"
-      ]
+      ],
+      "locations": {
+        "preferred": "Local outdoor area",
+        "alternatives": [
+          "Campsite",
+          "Scout Hall — outdoor"
+        ]
+      }
     },
     {
       "id": "s1-bushcraft-i-can-hang-a-clothesline-at-camp-with-a-clove-hi",
@@ -3056,7 +4015,14 @@
         "Practical activity",
         "Scout Hall",
         "Outdoors / off-site"
-      ]
+      ],
+      "locations": {
+        "preferred": "Scout Hall — indoor",
+        "alternatives": [
+          "Scout Hall — outdoor",
+          "Flexible / anywhere"
+        ]
+      }
     },
     {
       "id": "s1-bushcraft-i-know-how-to-correctly-pack-ropes-away",
@@ -3074,7 +4040,14 @@
         "Discussion / theory",
         "Practical activity",
         "Scout Hall"
-      ]
+      ],
+      "locations": {
+        "preferred": "Scout Hall — indoor",
+        "alternatives": [
+          "Scout Hall — outdoor",
+          "Flexible / anywhere"
+        ]
+      }
     },
     {
       "id": "s1-bushcraft-i-know-what-is-in-a-dilly-bag-mess-kit-and-can-k",
@@ -3092,7 +4065,14 @@
         "Bushcraft",
         "Discussion / theory",
         "Scout Hall"
-      ]
+      ],
+      "locations": {
+        "preferred": "Scout Hall — outdoor",
+        "alternatives": [
+          "Campsite",
+          "Local outdoor area"
+        ]
+      }
     },
     {
       "id": "s1-bushcraft-i-can-talk-about-what-i-enjoyed-learnt-or-improv",
@@ -3109,7 +4089,14 @@
         "Bushcraft",
         "Discussion / theory",
         "Scout Hall"
-      ]
+      ],
+      "locations": {
+        "preferred": "Local outdoor area",
+        "alternatives": [
+          "Campsite",
+          "Scout Hall — outdoor"
+        ]
+      }
     }
   ],
   "tagging_note": "Tags are broad planning themes and likely delivery settings, inferred from requirement wording; they are suggestions, not official classifications."

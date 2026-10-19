@@ -75,12 +75,20 @@
 .tree-quick-link{width:30px;height:28px;border-radius:7px;border:1px solid #79a38a;background:#e8f4e8;color:#195a36;font-size:19px;font-weight:800;line-height:1;cursor:pointer}
 .tree-quick-link:hover,.tree-quick-link:focus-visible{background:#c9e8d0;outline:2px solid #2d7e51}
 .tree-graph-hint{font-size:11px;color:#4c6858;max-width:275px;align-self:center}
-/* Direct prerequisite unlink controls, including links outside the visible tree. */
-.tree-quick-link.unlink{background:#fff1e9;color:#933e26;border-color:#e6aa94}
-.tree-quick-link.unlink:hover,.tree-quick-link.unlink:focus-visible{background:#ffe0d1;outline:2px solid #b6573b}
-.mapper-direct-links{border:1px solid #d7e4d8;border-radius:9px;padding:11px;margin-bottom:14px;background:#f7faf5}
-.mapper-direct-links h4{margin:0 0 7px;font-size:12px}
-.mapper-direct-links>strong{display:block;font-size:11px;margin:10px 0 5px}
-.mapper-link-row{display:flex;align-items:center;justify-content:space-between;gap:8px;border-top:1px solid #e2ebe1;padding:7px 0}
-.mapper-link-row span{font-size:10px;line-height:1.4;overflow-wrap:anywhere}
-.mapper-link-row button{flex-shrink:0;font-size:10px;padding:5px 7px}
+
+/* New workspaces */
+.studio-nav{position:sticky;top:0;z-index:30;background:#fff;padding:9px 12px;border:1px solid #dce7dd;border-radius:12px;display:flex;align-items:center;flex-wrap:wrap;gap:7px}
+.local-save-status{margin-left:auto;color:#496851;font-size:11px}
+.activity-layout{display:grid;grid-template-columns:minmax(230px,.9fr) minmax(330px,1.3fr);gap:15px;align-items:start}
+#activityList{max-height:700px;overflow:auto;border:1px solid #dce7dd;border-radius:10px;padding:10px;background:#fff}
+.manager-row{display:flex;gap:10px;align-items:center;padding:10px 12px;border:1px solid #dce7dd;background:white;border-radius:9px;margin-bottom:8px}
+.manager-row>div{min-width:0;flex:1}.manager-row strong{display:block;font-size:12px;overflow-wrap:anywhere}.manager-row small{display:block;color:#687e71;margin-top:3px}.manager-row .button{font-size:10px;padding:6px 9px}
+#stateImportPreview:empty{display:none}#managerInventory,#managerHistory{max-width:980px}#stateManager h3{margin:25px 0 12px}
+#managerWorkbookTarget .data-tools{margin-top:24px;padding-top:12px;border-top:1px solid #dce7dd}
+.location-choice-list{display:grid;gap:5px;max-height:140px;overflow:auto;margin:8px 0}.location-choice-list label{font-size:11px;display:flex;align-items:center;gap:7px}
+#skillLocation>label{display:flex;flex-direction:column;gap:5px;font-size:11px}#skillLocation select{max-width:100%}
+.focus-toggle{align-self:center;font-size:11px;display:flex!important;flex-direction:row!important;align-items:center;gap:7px}
+.semester-timeline{display:grid;grid-template-columns:repeat(20,minmax(24px,1fr));gap:5px;margin:15px 0;padding:12px;background:#f0f5ef;border:1px solid #d9e4d9;border-radius:10px}
+.timeline-week{border:1px solid #accbb6;border-radius:6px;background:#dcefe1;color:#285841;min-height:41px;display:flex;flex-direction:column;justify-content:center;align-items:center;cursor:pointer}.timeline-week small{font-size:9px}.timeline-week span{font-size:13px;font-weight:800}.timeline-week.locked{background:#f7e5b2;border-color:#c69d4e}.timeline-week.external{outline:2px dashed #8a6bb4;outline-offset:-3px}.timeline-week:hover{filter:brightness(.95)}
+#mainTagFilter{min-width:155px;max-height:78px}#mainTagMatch{min-width:102px}#activityEditor .studio-prereqs{max-height:250px}#activityImpact{padding-top:10px;color:#3b6548;font-size:12px}
+@media(max-width:900px){.activity-layout{grid-template-columns:1fr}.semester-timeline{grid-template-columns:repeat(10,minmax(24px,1fr))}.studio-nav{position:static}}
