@@ -1,0 +1,6 @@
+# Local Scout data and generated exports
+scout-progress*.json
+schedule*.local.yaml
+*.backup.json
+.DS_Store
+Thumbs.db
