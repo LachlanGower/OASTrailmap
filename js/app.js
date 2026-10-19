@@ -51,7 +51,7 @@ function visibleRequirements(){
   const planned=plannerRequirements();
   return requirements.filter(r=>{
     if($('#plannerMode')?.checked&&selectedPlannerTags.length&&!planned.some(x=>x.id===r.id))return false;
-    if(stage!=='all'&&String(r.stage)!==stage)return false;
+    if($('#mainTagFilter')?.value&&!(r.tags||[]).includes($('#mainTagFilter').value))return false;if(stage!=='all'&&String(r.stage)!==stage)return false;
     if(stream!=='all'&&r.stream!==stream)return false;
     if(q&&!normalize(r.text+' '+r.stream+' stage '+r.stage+' '+r.tags.join(' ')).includes(q))return false;
     const st=getStatus(r);
@@ -187,7 +187,7 @@ function download(name,text,type='application/json'){const blob=new Blob([text],
 function backup(){download('oas-trailmap-backup.json',JSON.stringify({format:'oas-trailmap-backup',version:1,exportedAt:new Date().toISOString(),requirements,scoutRecords,activities},null,2));}
 function restoreBackup(data){if(!data||data.format!=='oas-trailmap-backup'||!data.scoutRecords)throw new Error('This does not look like an OAS Trailmap backup.');scoutRecords=data.scoutRecords;activities=Array.isArray(data.activities)?data.activities:[];if(Array.isArray(data.requirements))requirements=data.requirements;save();renderAll();showToast('Backup restored.');}
 async function init(){
- const res=await fetch('data/requirements.json');const data=await res.json();requirements=data.requirements||[];load();renderAll();
+ const res=await fetch('data/requirements.json');const data=await res.json();requirements=data.requirements||[];load();renderAll();const tagFilter=$('#mainTagFilter');tagFilter.innerHTML='<option value="">All tags</option>'+plannerTagNames().map(t=>'<option value="'+esc(t)+'">'+esc(t)+'</option>').join('');tagFilter.onchange=renderMap;
  for(const id of ['scoutSelect','stageFilter','streamFilter','statusFilter'])$('#'+id).addEventListener('change',()=>{if(id==='scoutSelect'){const next=$('#scoutSelect').value;if(next==='__subset__'&&!selectedScoutNames.length){selectedScout='__all__';$('#scoutSelect').value='__all__';$('#multiScoutPanel').hidden=false;renderScoutSubsetOptions();return;}selectedScout=next;if(next==='__subset__')$('#multiScoutPanel').hidden=false;}renderAll();});
  $('#multiScoutBtn').addEventListener('click',()=>{$('#multiScoutPanel').hidden=!$('#multiScoutPanel').hidden;renderScoutSubsetOptions();});
  $('#applyScoutSubset').addEventListener('click',()=>{selectedScoutNames=[...$('#multiScoutOptions').querySelectorAll('input:checked')].map(x=>x.value);if(!selectedScoutNames.length){showToast('Choose at least one Scout.');return;}selectedScout='__subset__';$('#scoutSelect').value='__subset__';$('#multiScoutPanel').hidden=true;renderAll();});
