@@ -194,8 +194,8 @@ async function init(){
  $('#cancelScoutSubset').addEventListener('click',()=>{$('#multiScoutPanel').hidden=true;});
  $('#searchInput').addEventListener('input',renderMap);$('#showRelated').addEventListener('change',()=>drawRelatedEdges());$('#missingOnly').addEventListener('change',renderMap);$('#plannerMode').addEventListener('change',()=>{renderPlanner();renderMap();});
  $('#plannerTags').addEventListener('change',e=>{if(e.target.matches('input[type=checkbox]')){const tag=e.target.value;if(e.target.checked&&!selectedPlannerTags.includes(tag))selectedPlannerTags.push(tag);else selectedPlannerTags=selectedPlannerTags.filter(t=>t!==tag);renderPlanner();renderMap();}});
- $('#workbookFile').addEventListener('change',e=>{if(e.target.files[0])handleWorkbook(e.target.files[0]);e.target.value='';});$('#activityFile').addEventListener('change',e=>{if(e.target.files[0])handleActivities(e.target.files[0]);e.target.value='';});
+ $('#workbookFile').addEventListener('change',e=>{if(e.target.files[0])handleWorkbook(e.target.files[0]);e.target.value='';});
  $('#exportBtn').addEventListener('click',backup);$('#importBackupBtn').addEventListener('click',()=>$('#backupFile').click());$('#backupFile').addEventListener('change',async e=>{const f=e.target.files[0];if(!f)return;try{restoreBackup(JSON.parse(await f.text()));}catch(err){showToast('Backup restore failed: '+err.message);}e.target.value='';});
- $('#clearDataBtn').addEventListener('click',()=>{if(confirm('Clear all Scout progress and activities saved in this browser? Export a backup first if you might need these records.')){scoutRecords={};activities=[];selectedScoutNames=[];selectedScout='__all__';localStorage.removeItem(STORE_KEY);renderAll();$('#importStatus').textContent='';$('#activityStatus').textContent='';showToast('Local data cleared.');}});
+ 
 }
 init().catch(e=>{console.error(e);$('#mapCanvas').innerHTML=`<p class="empty-inline">Could not load the requirement data. Serve this folder from a local web server or GitHub Pages rather than opening index.html directly. (${esc(e.message)})</p>`;});
