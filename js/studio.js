@@ -42,7 +42,9 @@ function mapperCycle(id,parents){
 }
 function saveMapperLinks(id,parents,recommended){
  const r=byId(id);if(!r)return false;
- if(parents.includes(id)||mapperCycle(id,parents)){showToast('Cannot add this link: it would create a prerequisite cycle.');return false;}
+ const previous=mapperLinks(r).prerequisites||[];
+ const hasAdditions=parents.some(parent=>!previous.includes(parent));
+ if(parents.includes(id)||(hasAdditions&&mapperCycle(id,parents))){showToast('Cannot add this link: it would create a prerequisite cycle.');return false;}
  snapshot('Before editing '+(customGraphActive()?activeTree+' tree':'master')+' links for '+id);
  const payload={prerequisites:uniq(parents),suggested_links:uniq(recommended).filter(p=>p!==id).map(p=>({id:p,reason:'Recommended learning path'}))};
  if(customGraphActive())studio.treeGraphs[activeTree].nodes[id]=payload;
