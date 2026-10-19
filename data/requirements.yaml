@@ -2,6 +2,10 @@ schema_version: 1
 source: OAS-Requirements.txt
 requirements:
 - id: s3-camping-i-can-pack-my-own-bag-for-camp
+  required_occurrences: 1
+  occurrence_unit: sessions
+  occurrence_basis: inferred
+  occurrence_note: "Planning default: one session to gather evidence; leader confirmation remains necessary."
   stage: 3
   stream: Camping
   text: I can pack my own bag for camp.
@@ -15,6 +19,10 @@ requirements:
   - Practical activity
   - Scout Hall
 - id: s3-camping-i-know-how-and-where-to-get-the-latest-weather-f
+  required_occurrences: 1
+  occurrence_unit: sessions
+  occurrence_basis: inferred
+  occurrence_note: "Planning default: one session to gather evidence; leader confirmation remains necessary."
   stage: 3
   stream: Camping
   text: I know how and where to get the latest weather forecast for the area I will be camping in.
@@ -29,6 +37,10 @@ requirements:
   - Discussion / theory
   - Scout Hall
 - id: s3-camping-i-can-help-plan-a-balanced-meal-for-camp
+  required_occurrences: 1
+  occurrence_unit: sessions
+  occurrence_basis: inferred
+  occurrence_note: "Planning default: one session to gather evidence; leader confirmation remains necessary."
   stage: 3
   stream: Camping
   text: I can help plan a balanced meal for camp.
@@ -37,10 +49,22 @@ requirements:
   - s1-bushwalking-i-can-list-what-food-to-bring-on-a-day-bushwalk
   suggested_links:
   - id: s2-camping-i-can-demonstrate-basic-safe-food-handling-and-t
+  required_occurrences: 1
+  occurrence_unit: sessions
+  occurrence_basis: inferred
+  occurrence_note: "Planning default: one session to gather evidence; leader confirmation remains necessary."
     reason: 'Related topic: food'
   - id: s2-bushcraft-i-can-cook-a-snack-in-a-fire
+  required_occurrences: 1
+  occurrence_unit: sessions
+  occurrence_basis: inferred
+  occurrence_note: "Planning default: one session to gather evidence; leader confirmation remains necessary."
     reason: 'Related topic: food'
   - id: s1-camping-i-can-help-prepare-food-for-cooking-at-camp
+  required_occurrences: 1
+  occurrence_unit: sessions
+  occurrence_basis: inferred
+  occurrence_note: "Planning default: one session to gather evidence; leader confirmation remains necessary."
     reason: 'Related topic: food'
   source: OAS-Requirements.txt
   tags:
@@ -48,6 +72,10 @@ requirements:
   - Planning
   - Camping
 - id: s3-camping-i-know-the-benefits-of-using-gas-to-cook-and-can
+  required_occurrences: 1
+  occurrence_unit: sessions
+  occurrence_basis: inferred
+  occurrence_note: "Planning default: one session to gather evidence; leader confirmation remains necessary."
   stage: 3
   stream: Camping
   text: I know the benefits of using gas to cook and can talk about what risks to watch out for in regards to using
@@ -70,6 +98,10 @@ requirements:
   - Practical activity
   - Scout Hall
 - id: s3-camping-i-can-list-group-equipment-required-for-camp
+  required_occurrences: 1
+  occurrence_unit: sessions
+  occurrence_basis: inferred
+  occurrence_note: "Planning default: one session to gather evidence; leader confirmation remains necessary."
   stage: 3
   stream: Camping
   text: I can list group equipment required for camp.
@@ -77,10 +109,22 @@ requirements:
   prerequisites: []
   suggested_links:
   - id: s2-camping-i-can-draw-and-label-a-picture-showing-all-of-th
+  required_occurrences: 1
+  occurrence_unit: sessions
+  occurrence_basis: inferred
+  occurrence_note: "Planning default: one session to gather evidence; leader confirmation remains necessary."
     reason: 'Related topic: packing equipment'
   - id: s2-bushwalking-i-can-draw-or-list-all-of-the-essential-equipmen
+  required_occurrences: 1
+  occurrence_unit: sessions
+  occurrence_basis: inferred
+  occurrence_note: "Planning default: one session to gather evidence; leader confirmation remains necessary."
     reason: 'Related topic: packing equipment'
   - id: s2-bushwalking-i-have-reviewed-my-list-or-picture-of-essential-
+  required_occurrences: 1
+  occurrence_unit: sessions
+  occurrence_basis: inferred
+  occurrence_note: "Planning default: one session to gather evidence; leader confirmation remains necessary."
     reason: 'Related topic: packing equipment'
   source: OAS-Requirements.txt
   tags:
@@ -89,6 +133,10 @@ requirements:
   - Discussion / theory
   - Scout Hall
 - id: s3-camping-i-know-how-to-maintain-personal-hygiene-while-ca
+  required_occurrences: 1
+  occurrence_unit: sessions
+  occurrence_basis: inferred
+  occurrence_note: "Planning default: one session to gather evidence; leader confirmation remains necessary."
   stage: 3
   stream: Camping
   text: I know how to maintain personal hygiene while camping.
@@ -96,10 +144,18 @@ requirements:
   prerequisites: []
   suggested_links:
   - id: s2-camping-i-know-about-proper-hygiene-practices-at-camp
+  required_occurrences: 1
+  occurrence_unit: sessions
+  occurrence_basis: inferred
+  occurrence_note: "Planning default: one session to gather evidence; leader confirmation remains necessary."
     reason: 'Related topic: hygiene'
   - id: s2-camping-i-can-demonstrate-basic-safe-food-handling-and-t
     reason: 'Related topic: hygiene'
   - id: s2-bushcraft-i-know-the-rules-for-hygiene-at-camp
+  required_occurrences: 1
+  occurrence_unit: sessions
+  occurrence_basis: inferred
+  occurrence_note: "Planning default: one session to gather evidence; leader confirmation remains necessary."
     reason: 'Related topic: hygiene'
   source: OAS-Requirements.txt
   tags:
@@ -108,6 +164,10 @@ requirements:
   - Discussion / theory
   - Scout Hall
 - id: s3-camping-i-can-assemble-a-personal-first-aid-kit-for-a-ca
+  required_occurrences: 1
+  occurrence_unit: sessions
+  occurrence_basis: inferred
+  occurrence_note: "Planning default: one session to gather evidence; leader confirmation remains necessary."
   stage: 3
   stream: Camping
   text: I can assemble a personal first aid kit for a camp.
@@ -115,6 +175,10 @@ requirements:
   prerequisites: []
   suggested_links:
   - id: s1-bushwalking-i-can-put-together-a-small-personal-first-aid-ki
+  required_occurrences: 1
+  occurrence_unit: sessions
+  occurrence_basis: inferred
+  occurrence_note: "Planning default: one session to gather evidence; leader confirmation remains necessary."
     reason: 'Related topic: first aid'
   source: OAS-Requirements.txt
   tags:
@@ -124,6 +188,10 @@ requirements:
   - Practical activity
   - Scout Hall
 - id: s3-camping-i-know-what-drsabcd-stands-for-and-how-to-use-it
+  required_occurrences: 1
+  occurrence_unit: sessions
+  occurrence_basis: inferred
+  occurrence_note: "Planning default: one session to gather evidence; leader confirmation remains necessary."
   stage: 3
   stream: Camping
   text: I know what DRSABCD stands for and how to use it in First Aid situations.
@@ -140,6 +208,10 @@ requirements:
   - Practical activity
   - Scout Hall
 - id: s3-camping-i-can-demonstrate-keeping-myself-safe-from-natur
+  required_occurrences: 1
+  occurrence_unit: sessions
+  occurrence_basis: inferred
+  occurrence_note: "Planning default: one session to gather evidence; leader confirmation remains necessary."
   stage: 3
   stream: Camping
   text: I can demonstrate keeping myself safe from natural and man-made things at camp.
@@ -152,6 +224,10 @@ requirements:
   - Camping
   - Practical activity
 - id: s3-camping-i-can-help-build-a-campfire-and-collect-material
+  required_occurrences: 1
+  occurrence_unit: sessions
+  occurrence_basis: inferred
+  occurrence_note: "Planning default: one session to gather evidence; leader confirmation remains necessary."
   stage: 3
   stream: Camping
   text: I can help build a campfire and collect materials to do so.
@@ -160,8 +236,16 @@ requirements:
   - s2-bushcraft-i-can-demonstrate-a-correct-way-to-build-a-safe-
   suggested_links:
   - id: s2-camping-i-know-the-benefits-and-risks-associated-with-fi
+  required_occurrences: 1
+  occurrence_unit: sessions
+  occurrence_basis: inferred
+  occurrence_note: "Planning default: one session to gather evidence; leader confirmation remains necessary."
     reason: 'Related topic: fire safety'
   - id: s2-camping-i-can-behave-safely-in-and-around-tents-and-camp
+  required_occurrences: 1
+  occurrence_unit: sessions
+  occurrence_basis: inferred
+  occurrence_note: "Planning default: one session to gather evidence; leader confirmation remains necessary."
     reason: 'Related topic: fire safety'
   - id: s2-bushcraft-i-can-cook-a-snack-in-a-fire
     reason: 'Related topic: fire safety'
@@ -172,6 +256,10 @@ requirements:
   - Practical activity
   - Outdoors / off-site
 - id: s3-camping-i-can-cook-a-meal-on-a-campfire-with-assistance
+  required_occurrences: 1
+  occurrence_unit: sessions
+  occurrence_basis: inferred
+  occurrence_note: "Planning default: one session to gather evidence; leader confirmation remains necessary."
   stage: 3
   stream: Camping
   text: I can cook a meal on a campfire with assistance.
@@ -194,6 +282,10 @@ requirements:
   - Practical activity
   - Outdoors / off-site
 - id: s3-camping-i-have-used-a-gas-cooker-to-help-cook-a-camp-mea
+  required_occurrences: 1
+  occurrence_unit: sessions
+  occurrence_basis: inferred
+  occurrence_note: "Planning default: one session to gather evidence; leader confirmation remains necessary."
   stage: 3
   stream: Camping
   text: I have used a gas cooker to help cook a camp meal.
@@ -213,6 +305,10 @@ requirements:
   - Camping
   - Practical activity
 - id: s3-camping-i-can-help-run-an-activity-at-a-camp
+  required_occurrences: 1
+  occurrence_unit: sessions
+  occurrence_basis: inferred
+  occurrence_note: "Planning default: one session to gather evidence; leader confirmation remains necessary."
   stage: 3
   stream: Camping
   text: I can help run an activity at a camp.
@@ -224,6 +320,10 @@ requirements:
   - Leadership & teamwork
   - Camping
 - id: s3-camping-i-can-set-up-a-tent-without-help-from-an-adult
+  required_occurrences: 1
+  occurrence_unit: sessions
+  occurrence_basis: inferred
+  occurrence_note: "Planning default: one session to gather evidence; leader confirmation remains necessary."
   stage: 3
   stream: Camping
   text: I can set up a tent, without help from an adult.
@@ -235,8 +335,16 @@ requirements:
   - id: s2-camping-i-can-behave-safely-in-and-around-tents-and-camp
     reason: 'Related topic: tent'
   - id: s2-camping-i-have-spent-two-nights-on-camp-in-a-tent-at-thi
+  required_occurrences: 2
+  occurrence_unit: nights
+  occurrence_basis: explicit
+  occurrence_note: "Source wording specifies this minimum number of outings or experiences."
     reason: 'Related topic: tent'
   - id: s2-camping-i-can-help-set-up-a-tent-and-identify-the-main-p
+  required_occurrences: 1
+  occurrence_unit: sessions
+  occurrence_basis: inferred
+  occurrence_note: "Planning default: one session to gather evidence; leader confirmation remains necessary."
     reason: 'Related topic: tent'
   source: OAS-Requirements.txt
   tags:
@@ -245,6 +353,10 @@ requirements:
   - Practical activity
   - Outdoors / off-site
 - id: s3-camping-i-have-spent-5-nights-on-camp-in-a-tent-by-the-e
+  required_occurrences: 5
+  occurrence_unit: nights
+  occurrence_basis: explicit
+  occurrence_note: "Source wording specifies this minimum number of outings or experiences."
   stage: 3
   stream: Camping
   text: I have spent 5 nights on camp in a tent by the end of this Stage.
@@ -267,6 +379,10 @@ requirements:
   - External / real-world experience
   - Outdoors / off-site
 - id: s3-camping-i-know-how-to-treat-cuts-and-minor-bleeding
+  required_occurrences: 1
+  occurrence_unit: sessions
+  occurrence_basis: inferred
+  occurrence_note: "Planning default: one session to gather evidence; leader confirmation remains necessary."
   stage: 3
   stream: Camping
   text: I know how to treat cuts and minor bleeding.
@@ -282,6 +398,10 @@ requirements:
   - Discussion / theory
   - Scout Hall
 - id: s3-camping-i-can-teach-the-importance-of-the-buddy-system-t
+  required_occurrences: 1
+  occurrence_unit: sessions
+  occurrence_basis: inferred
+  occurrence_note: "Planning default: one session to gather evidence; leader confirmation remains necessary."
   stage: 3
   stream: Camping
   text: I can teach the importance of the buddy system to a Stage 1 Scout.
@@ -290,10 +410,22 @@ requirements:
   - s1-camping-i-know-about-the-buddy-system
   suggested_links:
   - id: s1-camping-i-know-about-the-buddy-system
+  required_occurrences: 1
+  occurrence_unit: sessions
+  occurrence_basis: inferred
+  occurrence_note: "Planning default: one session to gather evidence; leader confirmation remains necessary."
     reason: 'Related topic: buddy system'
   - id: s1-bushwalking-i-can-explain-the-buddy-system
+  required_occurrences: 1
+  occurrence_unit: sessions
+  occurrence_basis: inferred
+  occurrence_note: "Planning default: one session to gather evidence; leader confirmation remains necessary."
     reason: 'Related topic: buddy system'
   - id: s1-bushcraft-i-know-about-the-buddy-system
+  required_occurrences: 1
+  occurrence_unit: sessions
+  occurrence_basis: inferred
+  occurrence_note: "Planning default: one session to gather evidence; leader confirmation remains necessary."
     reason: 'Related topic: buddy system'
   source: OAS-Requirements.txt
   tags:
@@ -301,6 +433,10 @@ requirements:
   - Leadership & teamwork
   - Camping
 - id: s3-camping-i-can-demonstrate-how-to-store-food-at-camp
+  required_occurrences: 1
+  occurrence_unit: sessions
+  occurrence_basis: inferred
+  occurrence_note: "Planning default: one session to gather evidence; leader confirmation remains necessary."
   stage: 3
   stream: Camping
   text: I can demonstrate how to store food at camp.
@@ -320,6 +456,10 @@ requirements:
   - Camping
   - Practical activity
 - id: s3-camping-i-have-learnt-3-knots-that-can-help-me-during-a-
+  required_occurrences: 1
+  occurrence_unit: sessions
+  occurrence_basis: inferred
+  occurrence_note: "Planning default: one session to gather evidence; leader confirmation remains necessary."
   stage: 3
   stream: Camping
   text: I have learnt 3 knots that can help me during a standing camp.
@@ -327,10 +467,22 @@ requirements:
   prerequisites: []
   suggested_links:
   - id: s2-camping-i-can-talk-about-what-i-enjoyed-learnt-and-impro
+  required_occurrences: 2
+  occurrence_unit: camps
+  occurrence_basis: explicit
+  occurrence_note: "Source wording specifies this minimum number of outings or experiences."
     reason: 'Related topic: reflection'
   - id: s2-camping-i-can-suggest-what-i-would-do-differently-on-a-f
+  required_occurrences: 1
+  occurrence_unit: sessions
+  occurrence_basis: inferred
+  occurrence_note: "Planning default: one session to gather evidence; leader confirmation remains necessary."
     reason: 'Related topic: reflection'
   - id: s2-bushwalking-i-have-talked-about-what-i-enjoyed-learnt-or-imp
+  required_occurrences: 2
+  occurrence_unit: bushwalks
+  occurrence_basis: explicit
+  occurrence_note: "Source wording specifies this minimum number of outings or experiences."
     reason: 'Related topic: reflection'
   source: OAS-Requirements.txt
   tags:
@@ -339,6 +491,10 @@ requirements:
   - Camping
   - Scout Hall
 - id: s3-camping-i-have-discussed-the-ways-i-can-improve-the-camp
+  required_occurrences: 1
+  occurrence_unit: sessions
+  occurrence_basis: inferred
+  occurrence_note: "Planning default: one session to gather evidence; leader confirmation remains necessary."
   stage: 3
   stream: Camping
   text: I have discussed the ways I can improve the camping activity that I assisted in.
@@ -353,6 +509,10 @@ requirements:
   - Discussion / theory
   - Scout Hall
 - id: s3-camping-i-have-discussed-my-camping-and-how-improvements
+  required_occurrences: 1
+  occurrence_unit: sessions
+  occurrence_basis: inferred
+  occurrence_note: "Planning default: one session to gather evidence; leader confirmation remains necessary."
   stage: 3
   stream: Camping
   text: I have discussed my camping and how improvements can be made.
@@ -373,6 +533,10 @@ requirements:
   - Discussion / theory
   - Scout Hall
 - id: s3-bushwalking-i-can-help-a-stage-1-scout-to-pack-their-backpac
+  required_occurrences: 1
+  occurrence_unit: sessions
+  occurrence_basis: inferred
+  occurrence_note: "Planning default: one session to gather evidence; leader confirmation remains necessary."
   stage: 3
   stream: Bushwalking
   text: I can help a Stage 1 Scout to pack their backpack for a bushwalk.
@@ -387,6 +551,10 @@ requirements:
   - Practical activity
   - Scout Hall
 - id: s3-bushwalking-i-know-how-and-where-to-get-the-latest-weather-f
+  required_occurrences: 1
+  occurrence_unit: sessions
+  occurrence_basis: inferred
+  occurrence_note: "Planning default: one session to gather evidence; leader confirmation remains necessary."
   stage: 3
   stream: Bushwalking
   text: I know how and where to get the latest weather forecast for the area I will be bushwalking in.
@@ -401,6 +569,10 @@ requirements:
   - Discussion / theory
   - Scout Hall
 - id: s3-bushwalking-i-can-help-plan-a-balanced-menu-for-bushwalking
+  required_occurrences: 1
+  occurrence_unit: sessions
+  occurrence_basis: inferred
+  occurrence_note: "Planning default: one session to gather evidence; leader confirmation remains necessary."
   stage: 3
   stream: Bushwalking
   text: I can help plan a balanced menu for bushwalking.
@@ -419,6 +591,10 @@ requirements:
   - Planning
   - Bushwalking
 - id: s3-bushwalking-i-can-list-places-where-i-can-and-cannot-bushwal
+  required_occurrences: 1
+  occurrence_unit: sessions
+  occurrence_basis: inferred
+  occurrence_note: "Planning default: one session to gather evidence; leader confirmation remains necessary."
   stage: 3
   stream: Bushwalking
   text: I can list places where I can and cannot bushwalk.
@@ -432,6 +608,10 @@ requirements:
   - Discussion / theory
   - Scout Hall
 - id: s3-bushwalking-i-can-talk-about-different-ways-of-keeping-a-gro
+  required_occurrences: 1
+  occurrence_unit: sessions
+  occurrence_basis: inferred
+  occurrence_note: "Planning default: one session to gather evidence; leader confirmation remains necessary."
   stage: 3
   stream: Bushwalking
   text: I can talk about different ways of keeping a group together while bushwalking.
@@ -445,6 +625,10 @@ requirements:
   - Discussion / theory
   - Scout Hall
 - id: s3-bushwalking-i-have-considered-bushwalking-etiquette-when-pla
+  required_occurrences: 1
+  occurrence_unit: sessions
+  occurrence_basis: inferred
+  occurrence_note: "Planning default: one session to gather evidence; leader confirmation remains necessary."
   stage: 3
   stream: Bushwalking
   text: I have considered bushwalking etiquette when planning for a journey.
@@ -459,6 +643,10 @@ requirements:
   - Discussion / theory
   - Scout Hall
 - id: s3-bushwalking-i-can-be-responsible-for-my-safety-and-aware-of-
+  required_occurrences: 1
+  occurrence_unit: sessions
+  occurrence_basis: inferred
+  occurrence_note: "Planning default: one session to gather evidence; leader confirmation remains necessary."
   stage: 3
   stream: Bushwalking
   text: I can be responsible for my safety and aware of my surroundings.
@@ -470,6 +658,10 @@ requirements:
   - Safety
   - Bushwalking
 - id: s3-bushwalking-i-have-run-a-small-navigational-activity-for-my-
+  required_occurrences: 1
+  occurrence_unit: sessions
+  occurrence_basis: inferred
+  occurrence_note: "Planning default: one session to gather evidence; leader confirmation remains necessary."
   stage: 3
   stream: Bushwalking
   text: I have run a small navigational activity for my fellow Scouts with the support of my Leaders.
@@ -480,8 +672,16 @@ requirements:
   - s2-bushwalking-i-can-use-a-compass-to-find-basic-directions
   suggested_links:
   - id: s1-bushcraft-i-have-participated-in-a-game-that-required-basi
+  required_occurrences: 1
+  occurrence_unit: sessions
+  occurrence_basis: inferred
+  occurrence_note: "Planning default: one session to gather evidence; leader confirmation remains necessary."
     reason: 'Related topic: map navigation'
   - id: s1-bushcraft-i-can-talk-about-what-i-enjoyed-learnt-or-improv
+  required_occurrences: 1
+  occurrence_unit: sessions
+  occurrence_basis: inferred
+  occurrence_note: "Planning default: one session to gather evidence; leader confirmation remains necessary."
     reason: 'Related topic: map navigation'
   source: OAS-Requirements.txt
   tags:
@@ -490,6 +690,10 @@ requirements:
   - Bushwalking
   - Scout Hall
 - id: s3-bushwalking-i-can-use-different-types-of-maps-to-help-me-thr
+  required_occurrences: 1
+  occurrence_unit: sessions
+  occurrence_basis: inferred
+  occurrence_note: "Planning default: one session to gather evidence; leader confirmation remains necessary."
   stage: 3
   stream: Bushwalking
   text: I can use different types of maps to help me throughout different activities.
@@ -508,6 +712,10 @@ requirements:
   - Practical activity
   - Scout Hall
 - id: s3-bushwalking-i-have-attended-a-day-bushwalk-at-this-stage-of-
+  required_occurrences: 1
+  occurrence_unit: sessions
+  occurrence_basis: inferred
+  occurrence_note: "Planning default: one session to gather evidence; leader confirmation remains necessary."
   stage: 3
   stream: Bushwalking
   text: I have attended a day bushwalk at this stage of at least six hours duration.
@@ -521,6 +729,10 @@ requirements:
   - External / real-world experience
   - Outdoors / off-site
 - id: s3-bushwalking-i-have-attended-at-least-two-bushwalking-activit
+  required_occurrences: 2
+  occurrence_unit: bushwalks
+  occurrence_basis: explicit
+  occurrence_note: "Source wording specifies this minimum number of outings or experiences."
   stage: 3
   stream: Bushwalking
   text: I have attended at least two bushwalking activities at this stage.
@@ -534,6 +746,10 @@ requirements:
   - External / real-world experience
   - Outdoors / off-site
 - id: s3-bushwalking-i-know-how-to-avoid-becoming-lost-and-i-know-wha
+  required_occurrences: 1
+  occurrence_unit: sessions
+  occurrence_basis: inferred
+  occurrence_note: "Planning default: one session to gather evidence; leader confirmation remains necessary."
   stage: 3
   stream: Bushwalking
   text: I know how to avoid becoming lost, and I know what to do if I get lost.
@@ -541,10 +757,22 @@ requirements:
   prerequisites: []
   suggested_links:
   - id: s1-camping-i-know-to-stop-when-i-get-lost-while-camping
+  required_occurrences: 1
+  occurrence_unit: sessions
+  occurrence_basis: inferred
+  occurrence_note: "Planning default: one session to gather evidence; leader confirmation remains necessary."
     reason: 'Related topic: lost procedure'
   - id: s1-bushwalking-i-know-why-to-stop-when-i-get-lost-in-the-bush
+  required_occurrences: 1
+  occurrence_unit: sessions
+  occurrence_basis: inferred
+  occurrence_note: "Planning default: one session to gather evidence; leader confirmation remains necessary."
     reason: 'Related topic: lost procedure'
   - id: s1-bushcraft-i-know-to-stop-when-i-get-lost-on-activities
+  required_occurrences: 1
+  occurrence_unit: sessions
+  occurrence_basis: inferred
+  occurrence_note: "Planning default: one session to gather evidence; leader confirmation remains necessary."
     reason: 'Related topic: lost procedure'
   source: OAS-Requirements.txt
   tags:
@@ -554,6 +782,10 @@ requirements:
   - Discussion / theory
   - Scout Hall
 - id: s3-bushwalking-i-know-how-to-treat-cuts-and-minor-bleeding
+  required_occurrences: 1
+  occurrence_unit: sessions
+  occurrence_basis: inferred
+  occurrence_note: "Planning default: one session to gather evidence; leader confirmation remains necessary."
   stage: 3
   stream: Bushwalking
   text: I know how to treat cuts and minor bleeding.
@@ -569,6 +801,10 @@ requirements:
   - Discussion / theory
   - Scout Hall
 - id: s3-bushwalking-i-can-teach-the-importance-of-the-buddy-system-a
+  required_occurrences: 1
+  occurrence_unit: sessions
+  occurrence_basis: inferred
+  occurrence_note: "Planning default: one session to gather evidence; leader confirmation remains necessary."
   stage: 3
   stream: Bushwalking
   text: I can teach the importance of the buddy system and other ways to stay safe to a Scout in Stage 1.
@@ -588,6 +824,10 @@ requirements:
   - Leadership & teamwork
   - Bushwalking
 - id: s3-bushwalking-i-can-identify-the-features-of-a-topographical-m
+  required_occurrences: 1
+  occurrence_unit: sessions
+  occurrence_basis: inferred
+  occurrence_note: "Planning default: one session to gather evidence; leader confirmation remains necessary."
   stage: 3
   stream: Bushwalking
   text: I can identify the features of a topographical map.
@@ -606,6 +846,10 @@ requirements:
   - Discussion / theory
   - Scout Hall
 - id: s3-bushwalking-i-have-given-a-presentation-to-my-patrol-or-my-u
+  required_occurrences: 1
+  occurrence_unit: sessions
+  occurrence_basis: inferred
+  occurrence_note: "Planning default: one session to gather evidence; leader confirmation remains necessary."
   stage: 3
   stream: Bushwalking
   text: I have given a presentation to my Patrol or my Unit Council about one of the bushwalks I went on during Stage
@@ -622,6 +866,10 @@ requirements:
   - Discussion / theory
   - Scout Hall
 - id: s3-bushwalking-i-have-discussed-the-top-five-things-i-have-lear
+  required_occurrences: 1
+  occurrence_unit: sessions
+  occurrence_basis: inferred
+  occurrence_note: "Planning default: one session to gather evidence; leader confirmation remains necessary."
   stage: 3
   stream: Bushwalking
   text: I have discussed the top five things I have learnt throughout Stages 1–3 of Bushwalking.
@@ -641,6 +889,10 @@ requirements:
   - Discussion / theory
   - Scout Hall
 - id: s3-bushcraft-i-can-explain-the-importance-of-wearing-the-righ
+  required_occurrences: 1
+  occurrence_unit: sessions
+  occurrence_basis: inferred
+  occurrence_note: "Planning default: one session to gather evidence; leader confirmation remains necessary."
   stage: 3
   stream: Bushcraft
   text: I can explain the importance of wearing the right clothing while outdoors.
@@ -655,6 +907,10 @@ requirements:
   - Discussion / theory
   - Scout Hall
 - id: s3-bushcraft-i-know-about-native-flora-and-fauna-and-the-risk
+  required_occurrences: 1
+  occurrence_unit: sessions
+  occurrence_basis: inferred
+  occurrence_note: "Planning default: one session to gather evidence; leader confirmation remains necessary."
   stage: 3
   stream: Bushcraft
   text: I know about native flora and fauna and the risks or benefits they pose.
@@ -669,6 +925,10 @@ requirements:
   - Discussion / theory
   - Scout Hall
 - id: s3-bushcraft-i-know-how-and-where-to-get-the-latest-weather-f
+  required_occurrences: 1
+  occurrence_unit: sessions
+  occurrence_basis: inferred
+  occurrence_note: "Planning default: one session to gather evidence; leader confirmation remains necessary."
   stage: 3
   stream: Bushcraft
   text: I know how and where to get the latest weather forecast for the areas I will be doing activities in.
@@ -683,6 +943,10 @@ requirements:
   - Discussion / theory
   - Scout Hall
 - id: s3-bushcraft-i-know-the-first-aid-treatment-for-burns-from-ho
+  required_occurrences: 1
+  occurrence_unit: sessions
+  occurrence_basis: inferred
+  occurrence_note: "Planning default: one session to gather evidence; leader confirmation remains necessary."
   stage: 3
   stream: Bushcraft
   text: I know the first aid treatment for burns from hot water, grease and food.
@@ -703,6 +967,10 @@ requirements:
   - Discussion / theory
   - Scout Hall
 - id: s3-bushcraft-i-know-how-to-treat-cuts-and-minor-bleeding
+  required_occurrences: 1
+  occurrence_unit: sessions
+  occurrence_basis: inferred
+  occurrence_note: "Planning default: one session to gather evidence; leader confirmation remains necessary."
   stage: 3
   stream: Bushcraft
   text: I know how to treat cuts and minor bleeding.
@@ -718,6 +986,10 @@ requirements:
   - Discussion / theory
   - Scout Hall
 - id: s3-bushcraft-i-know-what-drsabcd-stands-for-and-how-to-apply-
+  required_occurrences: 1
+  occurrence_unit: sessions
+  occurrence_basis: inferred
+  occurrence_note: "Planning default: one session to gather evidence; leader confirmation remains necessary."
   stage: 3
   stream: Bushcraft
   text: I know what DRSABCD stands for and how to apply it in First Aid situations.
@@ -733,6 +1005,10 @@ requirements:
   - Discussion / theory
   - Scout Hall
 - id: s3-bushcraft-i-can-identify-fire-safety-equipment-in-my-hall
+  required_occurrences: 1
+  occurrence_unit: sessions
+  occurrence_basis: inferred
+  occurrence_note: "Planning default: one session to gather evidence; leader confirmation remains necessary."
   stage: 3
   stream: Bushcraft
   text: I can identify fire safety equipment in my hall.
@@ -754,6 +1030,10 @@ requirements:
   - Scout Hall
   - Discussion / theory
 - id: s3-bushcraft-i-can-cook-a-meal-using-a-camp-stove
+  required_occurrences: 1
+  occurrence_unit: sessions
+  occurrence_basis: inferred
+  occurrence_note: "Planning default: one session to gather evidence; leader confirmation remains necessary."
   stage: 3
   stream: Bushcraft
   text: I can cook a meal using a camp stove.
@@ -772,6 +1052,10 @@ requirements:
   - Bushcraft
   - Practical activity
 - id: s3-bushcraft-i-can-explain-the-causes-of-a-major-bushfire
+  required_occurrences: 1
+  occurrence_unit: sessions
+  occurrence_basis: inferred
+  occurrence_note: "Planning default: one session to gather evidence; leader confirmation remains necessary."
   stage: 3
   stream: Bushcraft
   text: I can explain the causes of a major bushfire.
@@ -791,6 +1075,10 @@ requirements:
   - Discussion / theory
   - Scout Hall
 - id: s3-bushcraft-i-can-name-five-different-situations-that-could-
+  required_occurrences: 1
+  occurrence_unit: sessions
+  occurrence_basis: inferred
+  occurrence_note: "Planning default: one session to gather evidence; leader confirmation remains necessary."
   stage: 3
   stream: Bushcraft
   text: I can name five different situations that could be classified as an emergency in the outdoors and can respond
@@ -799,10 +1087,22 @@ requirements:
   prerequisites: []
   suggested_links:
   - id: s2-camping-i-have-discussed-the-appropriate-action-i-should
+  required_occurrences: 1
+  occurrence_unit: sessions
+  occurrence_basis: inferred
+  occurrence_note: "Planning default: one session to gather evidence; leader confirmation remains necessary."
     reason: 'Related topic: emergency response'
   - id: s2-camping-i-know-how-to-contact-the-emergency-services
+  required_occurrences: 1
+  occurrence_unit: sessions
+  occurrence_basis: inferred
+  occurrence_note: "Planning default: one session to gather evidence; leader confirmation remains necessary."
     reason: 'Related topic: emergency response'
   - id: s2-bushwalking-i-have-discussed-the-appropriate-action-i-should
+  required_occurrences: 1
+  occurrence_unit: sessions
+  occurrence_basis: inferred
+  occurrence_note: "Planning default: one session to gather evidence; leader confirmation remains necessary."
     reason: 'Related topic: emergency response'
   source: OAS-Requirements.txt
   tags:
@@ -812,6 +1112,10 @@ requirements:
   - Discussion / theory
   - Scout Hall
 - id: s3-bushcraft-i-can-identify-the-southern-cross-in-the-night-s
+  required_occurrences: 1
+  occurrence_unit: sessions
+  occurrence_basis: inferred
+  occurrence_note: "Planning default: one session to gather evidence; leader confirmation remains necessary."
   stage: 3
   stream: Bushcraft
   text: I can identify the Southern Cross in the night's sky and then find South.
@@ -827,6 +1131,10 @@ requirements:
   - Scout Hall
   - Outdoors / off-site
 - id: s3-bushcraft-i-can-identify-three-other-constellations-in-the
+  required_occurrences: 1
+  occurrence_unit: sessions
+  occurrence_basis: inferred
+  occurrence_note: "Planning default: one session to gather evidence; leader confirmation remains necessary."
   stage: 3
   stream: Bushcraft
   text: I can identify three other Constellations in the night sky.
@@ -841,6 +1149,10 @@ requirements:
   - Scout Hall
   - Outdoors / off-site
 - id: s3-bushcraft-i-have-set-up-and-followed-a-simple-compass-trai
+  required_occurrences: 1
+  occurrence_unit: sessions
+  occurrence_basis: inferred
+  occurrence_note: "Planning default: one session to gather evidence; leader confirmation remains necessary."
   stage: 3
   stream: Bushcraft
   text: I have set up and followed a simple compass trail with the support of a local map with a group of Scouts.
@@ -850,10 +1162,22 @@ requirements:
   - s2-bushcraft-i-can-state-how-many-degrees-there-are-on-a-comp
   suggested_links:
   - id: s2-bushwalking-i-can-use-a-compass-to-find-basic-directions
+  required_occurrences: 1
+  occurrence_unit: sessions
+  occurrence_basis: inferred
+  occurrence_note: "Planning default: one session to gather evidence; leader confirmation remains necessary."
     reason: 'Related topic: compass navigation'
   - id: s2-bushcraft-i-can-state-how-many-degrees-there-are-on-a-comp
+  required_occurrences: 1
+  occurrence_unit: sessions
+  occurrence_basis: inferred
+  occurrence_note: "Planning default: one session to gather evidence; leader confirmation remains necessary."
     reason: 'Related topic: compass navigation'
   - id: s2-bushcraft-i-can-establish-and-find-the-four-cardinal-direc
+  required_occurrences: 1
+  occurrence_unit: sessions
+  occurrence_basis: inferred
+  occurrence_note: "Planning default: one session to gather evidence; leader confirmation remains necessary."
     reason: 'Related topic: compass navigation'
   source: OAS-Requirements.txt
   tags:
@@ -864,6 +1188,10 @@ requirements:
   - Scout Hall
   - Outdoors / off-site
 - id: s3-bushcraft-i-can-teach-the-importance-of-the-buddy-system-t
+  required_occurrences: 1
+  occurrence_unit: sessions
+  occurrence_basis: inferred
+  occurrence_note: "Planning default: one session to gather evidence; leader confirmation remains necessary."
   stage: 3
   stream: Bushcraft
   text: I can teach the importance of the buddy system to a Scout working on Stage 1.
@@ -883,6 +1211,10 @@ requirements:
   - Leadership & teamwork
   - Bushcraft
 - id: s3-bushcraft-i-have-put-together-a-personal-outdoor-survival-
+  required_occurrences: 1
+  occurrence_unit: sessions
+  occurrence_basis: inferred
+  occurrence_note: "Planning default: one session to gather evidence; leader confirmation remains necessary."
   stage: 3
   stream: Bushcraft
   text: I have put together a personal outdoor survival kit and can explain why I have included these items.
@@ -897,6 +1229,10 @@ requirements:
   - Practical activity
   - Scout Hall
 - id: s3-bushcraft-i-can-make-a-personal-shelter-out-of-plastic-she
+  required_occurrences: 1
+  occurrence_unit: sessions
+  occurrence_basis: inferred
+  occurrence_note: "Planning default: one session to gather evidence; leader confirmation remains necessary."
   stage: 3
   stream: Bushcraft
   text: I can make a personal shelter out of plastic sheeting, rope and other things I have found.
@@ -919,6 +1255,10 @@ requirements:
   - Scout Hall
   - Outdoors / off-site
 - id: s3-bushcraft-i-can-demonstrate-five-knots-in-an-activity-or-c
+  required_occurrences: 1
+  occurrence_unit: sessions
+  occurrence_basis: inferred
+  occurrence_note: "Planning default: one session to gather evidence; leader confirmation remains necessary."
   stage: 3
   stream: Bushcraft
   text: I can demonstrate five knots in an activity or camp setting, three of which can be my Stage 2 knots.
@@ -934,6 +1274,10 @@ requirements:
   - Practical activity
   - Scout Hall
 - id: s3-bushcraft-i-can-talk-about-the-ways-in-which-my-patrol-wor
+  required_occurrences: 1
+  occurrence_unit: sessions
+  occurrence_basis: inferred
+  occurrence_note: "Planning default: one session to gather evidence; leader confirmation remains necessary."
   stage: 3
   stream: Bushcraft
   text: I can talk about the ways in which my Patrol worked together while following a compass trail.
@@ -955,6 +1299,10 @@ requirements:
   - Discussion / theory
   - Scout Hall
 - id: s3-bushcraft-i-have-identified-improvements-i-can-make-to-my-
+  required_occurrences: 1
+  occurrence_unit: sessions
+  occurrence_basis: inferred
+  occurrence_note: "Planning default: one session to gather evidence; leader confirmation remains necessary."
   stage: 3
   stream: Bushcraft
   text: I have identified improvements I can make to my shelter next time I try building one.
@@ -975,6 +1323,10 @@ requirements:
   - Bushcraft
   - Practical activity
 - id: s2-camping-i-can-explain-what-clothing-i-should-wear-whilst
+  required_occurrences: 1
+  occurrence_unit: sessions
+  occurrence_basis: inferred
+  occurrence_note: "Planning default: one session to gather evidence; leader confirmation remains necessary."
   stage: 2
   stream: Camping
   text: I can explain what clothing I should wear whilst camping.
@@ -988,6 +1340,10 @@ requirements:
   - Discussion / theory
   - Scout Hall
 - id: s2-camping-i-have-explained-what-impact-i-can-have-on-local
+  required_occurrences: 1
+  occurrence_unit: sessions
+  occurrence_basis: inferred
+  occurrence_note: "Planning default: one session to gather evidence; leader confirmation remains necessary."
   stage: 2
   stream: Camping
   text: I have explained what impact I can have on local vegetation when camping.
@@ -1008,10 +1364,22 @@ requirements:
   prerequisites: []
   suggested_links:
   - id: s1-bushcraft-i-know-my-address-and-location-in-an-emergency
+  required_occurrences: 1
+  occurrence_unit: sessions
+  occurrence_basis: inferred
+  occurrence_note: "Planning default: one session to gather evidence; leader confirmation remains necessary."
     reason: 'Related topic: emergency response'
   - id: s1-bushcraft-i-can-demonstrate-stop-drop-and-roll-and-how-tha
+  required_occurrences: 1
+  occurrence_unit: sessions
+  occurrence_basis: inferred
+  occurrence_note: "Planning default: one session to gather evidence; leader confirmation remains necessary."
     reason: 'Related topic: emergency response'
   - id: s1-bushcraft-i-can-find-the-emergency-exit-and-muster-point-a
+  required_occurrences: 1
+  occurrence_unit: sessions
+  occurrence_basis: inferred
+  occurrence_note: "Planning default: one session to gather evidence; leader confirmation remains necessary."
     reason: 'Related topic: emergency response'
   source: OAS-Requirements.txt
   tags:
@@ -1021,6 +1389,10 @@ requirements:
   - Discussion / theory
   - Scout Hall
 - id: s2-camping-i-can-discuss-what-safety-precautions-you-should
+  required_occurrences: 1
+  occurrence_unit: sessions
+  occurrence_basis: inferred
+  occurrence_note: "Planning default: one session to gather evidence; leader confirmation remains necessary."
   stage: 2
   stream: Camping
   text: I can discuss what safety precautions you should take before going camping outdoors.
@@ -1076,8 +1448,16 @@ requirements:
   prerequisites: []
   suggested_links:
   - id: s1-camping-i-can-help-pack-a-bag-for-camp
+  required_occurrences: 1
+  occurrence_unit: sessions
+  occurrence_basis: inferred
+  occurrence_note: "Planning default: one session to gather evidence; leader confirmation remains necessary."
     reason: 'Related topic: packing equipment'
   - id: s1-bushwalking-i-can-help-pack-a-backpack-for-a-day-walk
+  required_occurrences: 1
+  occurrence_unit: sessions
+  occurrence_basis: inferred
+  occurrence_note: "Planning default: one session to gather evidence; leader confirmation remains necessary."
     reason: 'Related topic: packing equipment'
   source: OAS-Requirements.txt
   tags:
@@ -1093,10 +1473,22 @@ requirements:
   prerequisites: []
   suggested_links:
   - id: s1-camping-i-know-the-basic-elements-that-you-need-to-make-
+  required_occurrences: 1
+  occurrence_unit: sessions
+  occurrence_basis: inferred
+  occurrence_note: "Planning default: one session to gather evidence; leader confirmation remains necessary."
     reason: 'Related topic: fire safety'
   - id: s1-camping-i-can-strike-a-match
+  required_occurrences: 1
+  occurrence_unit: sessions
+  occurrence_basis: inferred
+  occurrence_note: "Planning default: one session to gather evidence; leader confirmation remains necessary."
     reason: 'Related topic: fire safety'
   - id: s1-bushcraft-i-can-strike-a-match
+  required_occurrences: 1
+  occurrence_unit: sessions
+  occurrence_basis: inferred
+  occurrence_note: "Planning default: one session to gather evidence; leader confirmation remains necessary."
     reason: 'Related topic: fire safety'
   source: OAS-Requirements.txt
   tags:
@@ -1116,6 +1508,10 @@ requirements:
   - id: s1-camping-i-can-help-prepare-food-for-cooking-at-camp
     reason: 'Related topic: food'
   - id: s1-bushwalking-i-can-list-what-food-to-bring-on-a-day-bushwalk
+  required_occurrences: 1
+  occurrence_unit: sessions
+  occurrence_basis: inferred
+  occurrence_note: "Planning default: one session to gather evidence; leader confirmation remains necessary."
     reason: 'Related topic: food'
   source: OAS-Requirements.txt
   tags:
@@ -1125,6 +1521,10 @@ requirements:
   - Camping
   - Practical activity
 - id: s2-camping-i-can-protect-myself-when-exposed-to-the-sun-whi
+  required_occurrences: 1
+  occurrence_unit: sessions
+  occurrence_basis: inferred
+  occurrence_note: "Planning default: one session to gather evidence; leader confirmation remains necessary."
   stage: 2
   stream: Camping
   text: I can protect myself when exposed to the sun while outdoors.
@@ -1149,6 +1549,10 @@ requirements:
   - id: s1-camping-i-can-strike-a-match
     reason: 'Related topic: fire safety'
   - id: s1-camping-i-can-set-out-my-sleeping-area-at-camp
+  required_occurrences: 1
+  occurrence_unit: sessions
+  occurrence_basis: inferred
+  occurrence_note: "Planning default: one session to gather evidence; leader confirmation remains necessary."
     reason: 'Related topic: tent'
   source: OAS-Requirements.txt
   tags:
@@ -1157,6 +1561,10 @@ requirements:
   - Shelter & tents
   - Camping
 - id: s2-camping-i-can-demonstrate-and-explain-why-sleeping-bags-
+  required_occurrences: 1
+  occurrence_unit: sessions
+  occurrence_basis: inferred
+  occurrence_note: "Planning default: one session to gather evidence; leader confirmation remains necessary."
   stage: 2
   stream: Camping
   text: I can demonstrate and explain why sleeping bags need to be aired out.
@@ -1182,6 +1590,10 @@ requirements:
   - id: s1-camping-i-can-set-out-my-sleeping-area-at-camp
     reason: 'Related topic: tent'
   - id: s1-bushcraft-i-know-three-reasons-for-having-a-shelter-when-s
+  required_occurrences: 1
+  occurrence_unit: sessions
+  occurrence_basis: inferred
+  occurrence_note: "Planning default: one session to gather evidence; leader confirmation remains necessary."
     reason: 'Related topic: tent'
   source: OAS-Requirements.txt
   tags:
@@ -1219,8 +1631,16 @@ requirements:
   prerequisites: []
   suggested_links:
   - id: s1-camping-i-can-talk-about-what-i-enjoyed-learnt-or-improv
+  required_occurrences: 1
+  occurrence_unit: sessions
+  occurrence_basis: inferred
+  occurrence_note: "Planning default: one session to gather evidence; leader confirmation remains necessary."
     reason: 'Related topic: reflection'
   - id: s1-bushwalking-i-can-talk-about-what-i-enjoyed-or-learnt-from-g
+  required_occurrences: 1
+  occurrence_unit: sessions
+  occurrence_basis: inferred
+  occurrence_note: "Planning default: one session to gather evidence; leader confirmation remains necessary."
     reason: 'Related topic: reflection'
   - id: s1-bushcraft-i-can-talk-about-what-i-enjoyed-learnt-or-improv
     reason: 'Related topic: reflection'
@@ -1250,6 +1670,10 @@ requirements:
   - Planning
   - Camping
 - id: s2-bushwalking-i-can-explain-what-clothing-i-should-wear-whilst
+  required_occurrences: 1
+  occurrence_unit: sessions
+  occurrence_basis: inferred
+  occurrence_note: "Planning default: one session to gather evidence; leader confirmation remains necessary."
   stage: 2
   stream: Bushwalking
   text: I can explain what clothing I should wear whilst bushwalking.
@@ -1263,6 +1687,10 @@ requirements:
   - Discussion / theory
   - Scout Hall
 - id: s2-bushwalking-i-have-explained-what-impact-i-can-have-on-local
+  required_occurrences: 1
+  occurrence_unit: sessions
+  occurrence_basis: inferred
+  occurrence_note: "Planning default: one session to gather evidence; leader confirmation remains necessary."
   stage: 2
   stream: Bushwalking
   text: I have explained what impact I can have on local vegetation when bushwalking.
@@ -1296,6 +1724,10 @@ requirements:
   - Discussion / theory
   - Scout Hall
 - id: s2-bushwalking-i-can-discuss-what-safety-precautions-i-should-t
+  required_occurrences: 1
+  occurrence_unit: sessions
+  occurrence_basis: inferred
+  occurrence_note: "Planning default: one session to gather evidence; leader confirmation remains necessary."
   stage: 2
   stream: Bushwalking
   text: I can discuss what safety precautions I should take before going out for a bushwalk.
@@ -1310,6 +1742,10 @@ requirements:
   - Discussion / theory
   - Scout Hall
 - id: s2-bushwalking-i-know-when-and-how-to-contact-the-emergency-ser
+  required_occurrences: 1
+  occurrence_unit: sessions
+  occurrence_basis: inferred
+  occurrence_note: "Planning default: one session to gather evidence; leader confirmation remains necessary."
   stage: 2
   stream: Bushwalking
   text: I know when and how to contact the emergency services in an emergency.
@@ -1355,8 +1791,16 @@ requirements:
   - s1-bushwalking-i-can-identify-the-main-parts-of-the-compass
   suggested_links:
   - id: s1-bushwalking-i-can-identify-the-four-main-cardinal-points-of-
+  required_occurrences: 1
+  occurrence_unit: sessions
+  occurrence_basis: inferred
+  occurrence_note: "Planning default: one session to gather evidence; leader confirmation remains necessary."
     reason: 'Related topic: compass navigation'
   - id: s1-bushwalking-i-can-identify-the-main-parts-of-the-compass
+  required_occurrences: 1
+  occurrence_unit: sessions
+  occurrence_basis: inferred
+  occurrence_note: "Planning default: one session to gather evidence; leader confirmation remains necessary."
     reason: 'Related topic: compass navigation'
   source: OAS-Requirements.txt
   tags:
@@ -1365,6 +1809,10 @@ requirements:
   - Practical activity
   - Scout Hall
 - id: s2-bushwalking-i-can-protect-myself-when-exposed-to-the-sun-whi
+  required_occurrences: 1
+  occurrence_unit: sessions
+  occurrence_basis: inferred
+  occurrence_note: "Planning default: one session to gather evidence; leader confirmation remains necessary."
   stage: 2
   stream: Bushwalking
   text: I can protect myself when exposed to the sun while outdoors.
@@ -1376,6 +1824,10 @@ requirements:
   - Environment & nature
   - Bushwalking
 - id: s2-bushwalking-i-have-attended-at-least-two-short-bushwalks-at-
+  required_occurrences: 2
+  occurrence_unit: bushwalks
+  occurrence_basis: explicit
+  occurrence_note: "Source wording specifies this minimum number of outings or experiences."
   stage: 2
   stream: Bushwalking
   text: I have attended at least two short bushwalks at this stage.
@@ -1389,6 +1841,10 @@ requirements:
   - External / real-world experience
   - Outdoors / off-site
 - id: s2-bushwalking-i-can-show-where-and-when-i-am-allowed-to-go-bef
+  required_occurrences: 1
+  occurrence_unit: sessions
+  occurrence_basis: inferred
+  occurrence_note: "Planning default: one session to gather evidence; leader confirmation remains necessary."
   stage: 2
   stream: Bushwalking
   text: I can show where and when I am allowed to go, before I start bushwalking.
@@ -1401,6 +1857,10 @@ requirements:
   - Planning
   - Bushwalking
 - id: s2-bushwalking-i-have-bushwalked-a-total-distance-of-at-least-1
+  required_occurrences: 2
+  occurrence_unit: bushwalks
+  occurrence_basis: inferred
+  occurrence_note: "Planning estimate: spread cumulative distance across two walks; can be achieved in one long walk."
   stage: 2
   stream: Bushwalking
   text: I have bushwalked a total distance of at least 10km.
@@ -1432,6 +1892,10 @@ requirements:
   - Reflection & review
   - Bushwalking
 - id: s2-bushwalking-i-can-suggest-what-i-would-do-differently-on-a-f
+  required_occurrences: 1
+  occurrence_unit: sessions
+  occurrence_basis: inferred
+  occurrence_note: "Planning default: one session to gather evidence; leader confirmation remains necessary."
   stage: 2
   stream: Bushwalking
   text: I can suggest what I would do differently on a future bushwalk to enjoy it more, to be safer, to learn new
@@ -1473,6 +1937,10 @@ requirements:
   - Discussion / theory
   - Scout Hall
 - id: s2-bushcraft-i-have-explained-what-impact-i-can-have-on-local
+  required_occurrences: 1
+  occurrence_unit: sessions
+  occurrence_basis: inferred
+  occurrence_note: "Planning default: one session to gather evidence; leader confirmation remains necessary."
   stage: 2
   stream: Bushcraft
   text: I have explained what impact I can have on local vegetation while participating in activities.
@@ -1486,6 +1954,10 @@ requirements:
   - Discussion / theory
   - Scout Hall
 - id: s2-bushcraft-i-have-discussed-the-appropriate-action-i-should
+  required_occurrences: 1
+  occurrence_unit: sessions
+  occurrence_basis: inferred
+  occurrence_note: "Planning default: one session to gather evidence; leader confirmation remains necessary."
   stage: 2
   stream: Bushcraft
   text: I have discussed the appropriate action I should take in the case of an accident.
@@ -1506,6 +1978,10 @@ requirements:
   - Discussion / theory
   - Scout Hall
 - id: s2-bushcraft-i-can-discuss-what-safety-precautions-i-should-t
+  required_occurrences: 1
+  occurrence_unit: sessions
+  occurrence_basis: inferred
+  occurrence_note: "Planning default: one session to gather evidence; leader confirmation remains necessary."
   stage: 2
   stream: Bushcraft
   text: I can discuss what safety precautions I should take before going out in the bush.
@@ -1520,6 +1996,10 @@ requirements:
   - Discussion / theory
   - Scout Hall
 - id: s2-bushcraft-i-know-how-to-contact-the-emergency-services
+  required_occurrences: 1
+  occurrence_unit: sessions
+  occurrence_basis: inferred
+  occurrence_note: "Planning default: one session to gather evidence; leader confirmation remains necessary."
   stage: 2
   stream: Bushcraft
   text: I know how to contact the emergency services.
@@ -1569,6 +2049,10 @@ requirements:
   - Discussion / theory
   - Scout Hall
 - id: s2-bushcraft-i-can-protect-myself-when-exposed-to-the-sun-whi
+  required_occurrences: 1
+  occurrence_unit: sessions
+  occurrence_basis: inferred
+  occurrence_note: "Planning default: one session to gather evidence; leader confirmation remains necessary."
   stage: 2
   stream: Bushcraft
   text: I can protect myself when exposed to the sun while outdoors.
@@ -1602,6 +2086,10 @@ requirements:
   - Practical activity
   - Outdoors / off-site
 - id: s2-bushcraft-i-know-how-much-water-i-should-carry-when-on-a-h
+  required_occurrences: 1
+  occurrence_unit: sessions
+  occurrence_basis: inferred
+  occurrence_note: "Planning default: one session to gather evidence; leader confirmation remains necessary."
   stage: 2
   stream: Bushcraft
   text: I know how much water I should carry when on a hike or when taking part in an outdoor activity.
@@ -1614,6 +2102,10 @@ requirements:
   - Discussion / theory
   - Scout Hall
 - id: s2-bushcraft-i-can-demonstrate-a-correct-way-to-build-a-safe-
+  required_occurrences: 1
+  occurrence_unit: sessions
+  occurrence_basis: inferred
+  occurrence_note: "Planning default: one session to gather evidence; leader confirmation remains necessary."
   stage: 2
   stream: Bushcraft
   text: I can demonstrate a correct way to build a safe fireplace in the bush.
@@ -1635,6 +2127,10 @@ requirements:
   - Bushcraft
   - Practical activity
 - id: s2-bushcraft-i-understand-the-basic-dangers-of-fire-and-how-t
+  required_occurrences: 1
+  occurrence_unit: sessions
+  occurrence_basis: inferred
+  occurrence_note: "Planning default: one session to gather evidence; leader confirmation remains necessary."
   stage: 2
   stream: Bushcraft
   text: I understand the basic dangers of fire, and how to be safe around them.
@@ -1672,6 +2168,10 @@ requirements:
   - Practical activity
   - Scout Hall
 - id: s2-bushcraft-i-can-demonstrate-three-knots-and-apply-them-in-
+  required_occurrences: 1
+  occurrence_unit: sessions
+  occurrence_basis: inferred
+  occurrence_note: "Planning default: one session to gather evidence; leader confirmation remains necessary."
   stage: 2
   stream: Bushcraft
   text: I can demonstrate three knots and apply them in an activity.
@@ -1686,6 +2186,10 @@ requirements:
   - Practical activity
   - Scout Hall
 - id: s2-bushcraft-i-have-talked-about-what-i-enjoyed-learnt-or-imp
+  required_occurrences: 2
+  occurrence_unit: activities
+  occurrence_basis: explicit
+  occurrence_note: "Source wording specifies this minimum number of outings or experiences."
   stage: 2
   stream: Bushcraft
   text: I have talked about what I enjoyed, learnt, or improved upon from at least two bushcraft activities.
@@ -1703,6 +2207,10 @@ requirements:
   - Reflection & review
   - Bushcraft
 - id: s2-bushcraft-i-can-suggest-what-i-would-do-differently-for-a-
+  required_occurrences: 1
+  occurrence_unit: sessions
+  occurrence_basis: inferred
+  occurrence_note: "Planning default: one session to gather evidence; leader confirmation remains necessary."
   stage: 2
   stream: Bushcraft
   text: I can suggest what I would do differently for a future bushcraft activity.
@@ -1733,6 +2241,10 @@ requirements:
   - Discussion / theory
   - Scout Hall
 - id: s1-camping-i-know-the-boundaries-of-where-i-may-go-each-tim
+  required_occurrences: 1
+  occurrence_unit: sessions
+  occurrence_basis: inferred
+  occurrence_note: "Planning default: one session to gather evidence; leader confirmation remains necessary."
   stage: 1
   stream: Camping
   text: I know the boundaries of where I may go each time I go out camping.
@@ -1774,6 +2286,10 @@ requirements:
   - Practical activity
   - Scout Hall
 - id: s1-camping-i-know-that-i-should-follow-directions-from-the-
+  required_occurrences: 1
+  occurrence_unit: sessions
+  occurrence_basis: inferred
+  occurrence_note: "Planning default: one session to gather evidence; leader confirmation remains necessary."
   stage: 1
   stream: Camping
   text: I know that I should follow directions from the leader of this activity.
@@ -1830,6 +2346,10 @@ requirements:
   - Camping
   - Practical activity
 - id: s1-camping-i-have-spent-two-nights-at-camps-and-or-scout-sl
+  required_occurrences: 2
+  occurrence_unit: nights
+  occurrence_basis: explicit
+  occurrence_note: "Source wording specifies this minimum number of outings or experiences."
   stage: 1
   stream: Camping
   text: I have spent two nights at camps and/or Scout sleep-overs.
@@ -1843,6 +2363,10 @@ requirements:
   - External / real-world experience
   - Outdoors / off-site
 - id: s1-camping-i-know-why-it-is-important-to-set-up-camp-in-an-
+  required_occurrences: 1
+  occurrence_unit: sessions
+  occurrence_basis: inferred
+  occurrence_note: "Planning default: one session to gather evidence; leader confirmation remains necessary."
   stage: 1
   stream: Camping
   text: I know why it is important to set up camp in an existing campsite.
@@ -1870,6 +2394,10 @@ requirements:
   - Camping
   - Outdoors / off-site
 - id: s1-camping-i-can-care-for-my-basic-personal-gear-on-an-over
+  required_occurrences: 1
+  occurrence_unit: sessions
+  occurrence_basis: inferred
+  occurrence_note: "Planning default: one session to gather evidence; leader confirmation remains necessary."
   stage: 1
   stream: Camping
   text: I can care for my basic personal gear on an overnight camp.
@@ -1910,6 +2438,10 @@ requirements:
   - Practical activity
   - Scout Hall
 - id: s1-bushwalking-i-can-dress-myself-for-a-day-walk
+  required_occurrences: 1
+  occurrence_unit: sessions
+  occurrence_basis: inferred
+  occurrence_note: "Planning default: one session to gather evidence; leader confirmation remains necessary."
   stage: 1
   stream: Bushwalking
   text: I can dress myself for a day walk
@@ -1935,6 +2467,10 @@ requirements:
   - Scout Hall
   - Outdoors / off-site
 - id: s1-bushwalking-i-know-why-it-is-important-to-stick-to-trails-wh
+  required_occurrences: 1
+  occurrence_unit: sessions
+  occurrence_basis: inferred
+  occurrence_note: "Planning default: one session to gather evidence; leader confirmation remains necessary."
   stage: 1
   stream: Bushwalking
   text: I know why it is important to stick to trails when outdoors.
@@ -2016,6 +2552,10 @@ requirements:
   - Discussion / theory
   - Scout Hall
 - id: s1-bushwalking-i-have-attended-at-least-one-bushwalk-of-at-leas
+  required_occurrences: 1
+  occurrence_unit: bushwalk
+  occurrence_basis: explicit
+  occurrence_note: "Source wording specifies this minimum number of outings or experiences."
   stage: 1
   stream: Bushwalking
   text: I have attended at least one bushwalk of at least one hour’s duration at this stage.
@@ -2032,6 +2572,10 @@ requirements:
   - External / real-world experience
   - Outdoors / off-site
 - id: s1-bushwalking-i-can-demonstrate-behaving-safely-while-bushwalk
+  required_occurrences: 1
+  occurrence_unit: sessions
+  occurrence_basis: inferred
+  occurrence_note: "Planning default: one session to gather evidence; leader confirmation remains necessary."
   stage: 1
   stream: Bushwalking
   text: I can demonstrate behaving safely while bushwalking.
@@ -2060,6 +2604,10 @@ requirements:
   - Discussion / theory
   - Scout Hall
 - id: s1-bushcraft-i-know-why-it-is-important-to-stick-to-trails-wh
+  required_occurrences: 1
+  occurrence_unit: sessions
+  occurrence_basis: inferred
+  occurrence_note: "Planning default: one session to gather evidence; leader confirmation remains necessary."
   stage: 1
   stream: Bushcraft
   text: I know why it is important to stick to trails when outdoors.
@@ -2139,6 +2687,10 @@ requirements:
   - Practical activity
   - Outdoors / off-site
 - id: s1-bushcraft-i-can-collect-sticks-for-preparing-a-campfire
+  required_occurrences: 1
+  occurrence_unit: sessions
+  occurrence_basis: inferred
+  occurrence_note: "Planning default: one session to gather evidence; leader confirmation remains necessary."
   stage: 1
   stream: Bushcraft
   text: I can collect sticks for preparing a campfire.
@@ -2152,6 +2704,10 @@ requirements:
   - Practical activity
   - Outdoors / off-site
 - id: s1-bushcraft-i-can-be-safe-around-a-campfire
+  required_occurrences: 1
+  occurrence_unit: sessions
+  occurrence_basis: inferred
+  occurrence_note: "Planning default: one session to gather evidence; leader confirmation remains necessary."
   stage: 1
   stream: Bushcraft
   text: I can be safe around a campfire.
@@ -2205,6 +2761,10 @@ requirements:
   - External / real-world experience
   - Outdoors / off-site
 - id: s1-bushcraft-i-can-hang-a-clothesline-at-camp-with-a-clove-hi
+  required_occurrences: 1
+  occurrence_unit: sessions
+  occurrence_basis: inferred
+  occurrence_note: "Planning default: one session to gather evidence; leader confirmation remains necessary."
   stage: 1
   stream: Bushcraft
   text: I can hang a clothesline at camp with a clove hitch or other knot.
@@ -2220,6 +2780,10 @@ requirements:
   - Scout Hall
   - Outdoors / off-site
 - id: s1-bushcraft-i-know-how-to-correctly-pack-ropes-away
+  required_occurrences: 1
+  occurrence_unit: sessions
+  occurrence_basis: inferred
+  occurrence_note: "Planning default: one session to gather evidence; leader confirmation remains necessary."
   stage: 1
   stream: Bushcraft
   text: I know how to correctly pack ropes away.
@@ -2235,6 +2799,10 @@ requirements:
   - Practical activity
   - Scout Hall
 - id: s1-bushcraft-i-know-what-is-in-a-dilly-bag-mess-kit-and-can-k
+  required_occurrences: 1
+  occurrence_unit: sessions
+  occurrence_basis: inferred
+  occurrence_note: "Planning default: one session to gather evidence; leader confirmation remains necessary."
   stage: 1
   stream: Bushcraft
   text: I know what is in a dilly bag/mess kit and can keep it clean at camp.

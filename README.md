@@ -112,3 +112,20 @@ This branch consolidates import controls: the old footer **Import and activity b
 - **Not yet exercised**: full browser end-to-end flows, real Cub Pack workbook import/reimport, storage quota failures and accessibility review.
 - **Known limitation**: Activity recommendations are greedy heuristics; location warnings flag multi-venue plans but do not calculate travel time, and suggested activity order may require manual prerequisite ordering.
 - **Known limitation**: Requirement defaults refer to the shipped normalized JSON baseline rather than verbatim `OAS-Requirements.txt` source text. The original TXT source was not present in the source repository at branch creation.
+
+## Forecast, similar-skill swaps and repeated activity nights
+
+This feature adds `required_occurrences`, `occurrence_unit`, `occurrence_basis` and `occurrence_note` to the 142 skills in both `data/requirements.json` and `data/requirements.yaml`. A review-friendly list is generated at **[data/requirements.txt](data/requirements.txt)**. These numbers are **planning estimates**, not changes to official OAS wording. Explicit counts come from the uploaded original `OAS-Requirements.txt`; other values default conservatively to one evidence opportunity, with one documented inferred two-walk estimate for the Stage 2 cumulative-distance requirement. Leaders may adjust counts in Skill Tree Mapper.
+
+The scheduler can place the same requirement in multiple **distinct weeks** to meet its target. The Scout progress forecast shows the average number of requirements conditionally expected to be completed after each week, based on actual existing Scout completions and assumed successful planned sessions. The forecast never records a completion. During leader review, each week provides a unique evidence record; a repeat requirement becomes completed after sufficient distinct evidence opportunities have been verified. Previously completed Excel records stay fully completed.
+
+In Scheduler, use **Swap similar** beside a planned requirement to see alternatives ranked by overlapping tags, the same stream and compatible locations. Swaps lock their week to protect manual choices, and the forecast recalculates.
+
+The in-app Help & Design section now formats steps and bullets as readable structured content, includes visual workflow graphs, and explains the forecast and repeat counts. Full examples are in **[docs/workflows.md](docs/workflows.md)**; assumptions and caveats are in **[docs/repeat-counts.md](docs/repeat-counts.md)**.
+
+### Limitations and acceptance tests
+- The forecast assumes attendance, successful achievement evidence and leader approval; actual completion cannot be predicted with certainty.
+- A requirement appearing on five distinct camping nights is counted as five planned opportunities; a multi-night camp recorded within one weekly plan needs separate evidence/session modelling in a later phase.
+- Numeric source text referring to *items* (three knots, five knots) is not converted into repeat-night counts.
+- Requirement swaps should be checked by leaders for prerequisite readiness; filtering is suggestive and can flag unmet prerequisites.
+- Test the original Excel workbook import, repeat reviews, schedule generation with locked weeks, YAML import/export and browser accessibility before merging.
