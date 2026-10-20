@@ -85,7 +85,7 @@ describe('Scout progress matches app.js and forecast.js',()=>{
 });
 
 describe('scheduler compatibility utilities',()=>{
-  it('orders prerequisites first and retains the user's ordering where possible',()=>{
+  it('orders prerequisites first and retains requested ordering where possible',()=>{
     assert.deepEqual(schedule.orderSession(['C','B','A'],graph),['A','B','C']);
     assert.deepEqual(schedule.orderSession(['C','A'],graph),['C','A']); // B absent; legacy behaviour
     assert.deepEqual(schedule.orderSession(['A','A','B'],graph),['A','B']);
