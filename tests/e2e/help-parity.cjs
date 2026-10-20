@@ -32,7 +32,7 @@ async function inspect(browser,mode,viewport) {
     search:await page.locator('#helpSearch').inputValue()
   });
   const result={initial:await snap()};
-  assert.equal(result.initial.ids.length,14,'Help catalogue must include additional repeat and forecast topics');
+  assert.equal(result.initial.ids.length,15,'Help catalogue must include additional repeat and forecast topics');
   await page.screenshot({path:path.join(OUT,mode+'-'+viewport.width+'-initial.png')});
   for(const query of ['excel','repeat','forecast','not-a-real-topic']){
     await page.locator('#helpSearch').fill(query);
