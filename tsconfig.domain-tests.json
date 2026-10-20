@@ -1,0 +1,14 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "module": "CommonJS",
+    "moduleResolution": "Node",
+    "verbatimModuleSyntax": false,
+    "allowImportingTsExtensions": false,
+    "noEmit": false,
+    "rootDir": "src",
+    "outDir": ".phase3-test-dist"
+  },
+  "include": ["src/domain/**/*.ts", "src/services/**/*.ts"],
+  "exclude": ["src/components", "node_modules", "dist"]
+}
