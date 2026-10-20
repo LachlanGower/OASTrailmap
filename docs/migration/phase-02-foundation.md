@@ -12,10 +12,10 @@
 
 ## Commands
 
-Requires Node.js 22:
+Requires Node.js 22 and the checked-in `package-lock.json`:
 
 ```bash
-npm install
+npm ci
 npm run check:baseline
 npm run typecheck
 npm run dev
@@ -27,7 +27,7 @@ npm run check:dist
 npm run preview
 ```
 
-The build outputs `dist/index.html` and the untouched legacy directories as well as `dist/vue-preview.html` and bundled Vue assets.
+The dependency lockfile is generated once by GitHub Actions using npm, then reviewed and committed. Subsequent installations use `npm ci`. The build outputs `dist/index.html` and the untouched legacy directories as well as `dist/vue-preview.html` and bundled Vue assets.
 
 To simulate repository-path hosting:
 
