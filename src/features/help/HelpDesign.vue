@@ -1,12 +1,7 @@
 <script setup lang="ts">
 import { computed, ref } from 'vue';
 
-export interface HelpTopic {
-  id: string;
-  group: string;
-  title: string;
-  text: string;
-}
+import type { HelpTopic } from './types';
 const props = defineProps<{
   topics: HelpTopic[];
   renderArticle: (topic: HelpTopic) => string;
