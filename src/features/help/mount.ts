@@ -1,6 +1,6 @@
 import { createApp } from 'vue';
 import HelpDesign from './HelpDesign.vue';
-import type { HelpTopic } from './HelpDesign.vue';
+import type { HelpTopic } from './types';
 
 declare global {
   interface Window {
