@@ -1,0 +1,10 @@
+{
+  "name": "oas-trailmap-migration-baseline",
+  "private": true,
+  "version": "0.0.0",
+  "description": "Migration-trunk guardrails only; production app remains unchanged",
+  "scripts": {
+    "check:baseline": "node scripts/check-migration-baseline.cjs",
+    "test": "npm run check:baseline"
+  }
+}
