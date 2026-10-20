@@ -1,0 +1,59 @@
+name: Phase 2 Vue/Vite foundation (no deployment)
+on:
+  push:
+    branches:
+      - migration/phase-02-foundation
+  pull_request:
+    branches:
+      - migration/trunk
+permissions:
+  contents: read
+jobs:
+  foundation:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install locked dependencies
+        run: npm ci
+      - name: Check npm dependency vulnerabilities
+        run: npm audit --audit-level=moderate
+      - run: npx playwright install --with-deps chromium
+      - name: Verify Phase 1 compatibility contracts
+        run: npm run check:baseline
+      - name: Typecheck and compile Vue preview alongside unchanged legacy
+        run: npm run build
+      - name: Compare every copied legacy file byte-for-byte
+        run: npm run check:dist
+      - name: Verify development server preserves the unchanged app
+        run: |
+          npm run dev -- --host 127.0.0.1 --port 5173 >/tmp/oas-vite-dev.log 2>&1 &
+          sleep 3
+          OAS_TEST_URL=http://127.0.0.1:5173/ node tests/e2e/legacy-browser-smoke.cjs
+          OAS_TEST_URL=http://127.0.0.1:5173/ node tests/e2e/vue-preview-smoke.cjs
+      - name: Verify compiled app at root path
+        run: |
+          python3 -m http.server 8765 --bind 127.0.0.1 -d dist >/tmp/oas-vite-root.log 2>&1 &
+          sleep 2
+          OAS_TEST_URL=http://127.0.0.1:8765/ node tests/e2e/legacy-browser-smoke.cjs
+          OAS_TEST_URL=http://127.0.0.1:8765/ node tests/e2e/vue-preview-smoke.cjs
+      - name: Build and verify repository subpath
+        run: |
+          OAS_PUBLIC_BASE=/OASTrailmap/ npm run build
+          npm run check:dist
+          mkdir -p .vite-nested-test
+          ln -s "$PWD/dist" .vite-nested-test/OASTrailmap
+          python3 -m http.server 8766 --bind 127.0.0.1 -d .vite-nested-test >/tmp/oas-vite-nested.log 2>&1 &
+          sleep 2
+          OAS_TEST_URL=http://127.0.0.1:8766/OASTrailmap/ node tests/e2e/legacy-browser-smoke.cjs
+          OAS_TEST_URL=http://127.0.0.1:8766/OASTrailmap/ node tests/e2e/vue-preview-smoke.cjs
+      - name: Upload comparison screenshots (fictional data)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: phase-02-legacy-build-baseline
+          path: tests/baseline-artifacts/
+          if-no-files-found: ignore
