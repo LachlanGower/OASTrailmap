@@ -46,6 +46,6 @@ The current register lists the modular rewrite as `APP-108` (future idea at base
 
 ## Develop and review
 
-On the trunk, run `npm ci && npm run check:baseline`. This performs static structural checks only; it does **not** certify browser behaviour. Later phases add type checks, unit tests, screenshot tests and user-journey tests to the same CI. Baseline fixtures should be updated only after a documented, reviewed change to the preservation contract.
+On the trunk, run `npm run check:baseline` (Node.js 22; no dependencies installed yet). Phase 2 will introduce a package lockfile and reproducible `npm ci` builds. This performs static structural checks only; it does **not** certify browser behaviour. Later phases add type checks, unit tests, screenshot tests and user-journey tests to the same CI. Baseline fixtures should be updated only after a documented, reviewed change to the preservation contract.
 
 **Release rule:** Do not merge the migration trunk into `main` until all existing app requirements are either verified to behave the same or have a documented, approved fix; incomplete pre-existing features should not be silently converted into new assumptions.
