@@ -4,7 +4,7 @@
 
 ## Implemented
 
-- Vue handles the Help & Design search input, topic list and selected article. The original public `HELP_TOPICS` content is exposed (without Scout data) **after** `docs-upgrade.js` revises and adds its topics, so legacy and Vue see the same 15 entries.
+- Vue handles the Help & Design search input, topic list and selected article. The original public `HELP_TOPICS` content is exposed (without Scout data) **after** both `docs-upgrade.js` and the asynchronous theme/tracker initializer finish revising and adding topics, so legacy and Vue see the same 15 entries.
 - The article's diagram and text formatting are produced by the **original** `docsDiagram` and `docsFormat` functions. All content is reference/help copy, not user-generated HTML. No progress storage is read or modified.
 - The existing `showHelp()` handles overall workspace switching, while the legacy `helpRender()` is silent once Vue is active.
 - `?helpRenderer=legacy` preserves the original Help view. Vue mount failure also leaves the old UI intact.
