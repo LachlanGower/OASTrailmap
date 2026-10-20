@@ -1,0 +1,43 @@
+{
+  "fixture_kind": "synthetic",
+  "description": "Fictional Scout and minimal example of legacy storage shapes. Created from code inspection, NOT an export or an end-to-end verified recovery fixture.",
+  "storage": {
+    "oas-trailmap-v1": {
+      "version": 1,
+      "scoutRecords": {
+        "Example Scout::s1-camping-i-know-about-the-buddy-system": {
+          "completed": true,
+          "date": "2026-01-15",
+          "source": "workbook",
+          "sourceSheet": "Stage 1 Camping",
+          "sourceRow": 10,
+          "workflow": "Do",
+          "highlighted": true
+        },
+        "Example Scout::__roster__": {
+          "completed": false,
+          "date": "",
+          "source": "workbook-roster"
+        }
+      },
+      "activities": [],
+      "scouts": [
+        "Example Scout"
+      ],
+      "supplementalRequirements": []
+    },
+    "oas-studio-v1": {
+      "trees": [],
+      "order": {},
+      "tags": [],
+      "schedule": [],
+      "history": [],
+      "strategy": "progress",
+      "weeks": 40,
+      "capacity": 4,
+      "treeGraphs": {},
+      "externalWeeks": []
+    },
+    "oas-data-checkpoints-v1": []
+  }
+}
