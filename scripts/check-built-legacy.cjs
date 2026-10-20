@@ -28,7 +28,7 @@ for(const base of required) {
 
 const sourceHtml=fs.readFileSync(path.join(root,'index.html'),'utf8');
 const builtHtml=fs.readFileSync(path.join(root,'dist','index.html'),'utf8');
-const ids=s=>[...s.matchAll(/\\bid="([^"]+)"/g)].map(m=>m[1]);
+const ids=s=>[...s.matchAll(/\bid="([^"]+)"/g)].map(m=>m[1]);
 assert.deepEqual(ids(builtHtml),ids(sourceHtml),'Vite build changed static application DOM IDs');
 const originalScripts=[
   ...JSON.parse(fs.readFileSync(path.join(root,'docs/migration/baseline.json'),'utf8')).script_sources
@@ -37,7 +37,7 @@ const outputScripts=[...builtHtml.matchAll(/<script[^>]+src="([^"]+)"/g)].map(m=
 for(const src of originalScripts) {
   assert.ok(outputScripts.includes(src), 'Vite build lost an original script: '+src);
 }
-assert.ok(/assets\\/[^"\\s]+\\.js/.test(builtHtml),'Built app missing Vue island module');
+assert.ok(/assets\/[^"\s]+\.js/.test(builtHtml),'Built app missing Vue island module');
 assert.ok(!builtHtml.includes('src="/src/features/application-requirements/mount.ts"'),
   'Vite failed to compile the TypeScript app island');
 const preview=fs.readFileSync(path.join(root,'dist','vue-preview.html'),'utf8');
