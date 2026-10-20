@@ -2,9 +2,9 @@
   "name": "oas-trailmap-migration-baseline",
   "private": true,
   "version": "0.0.0",
-  "description": "Migration-trunk guardrails only; production app remains unchanged",
+  "description": "Dependency-free checks of original OAS Trailmap contracts during Phase 1",
   "scripts": {
-    "check:baseline": "node scripts/check-migration-baseline.cjs",
+    "check:baseline": "node scripts/check-migration-baseline.cjs && node scripts/check-migration-contracts.cjs",
     "test": "npm run check:baseline"
   }
 }

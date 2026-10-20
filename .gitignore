@@ -4,3 +4,10 @@ schedule*.local.yaml
 *.backup.json
 .DS_Store
 Thumbs.db
+
+# Build and test outputs (never commit browser-profile or screenshot artefacts)
+node_modules/
+dist/
+test-results/
+playwright-report/
+tests/baseline-artifacts/
