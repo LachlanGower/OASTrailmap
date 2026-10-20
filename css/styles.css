@@ -151,3 +151,24 @@
 .swap-selector label{flex:1 1 220px;display:flex;flex-direction:column;gap:4px}
 .swap-selector select{width:100%;padding:9px;border:1px solid #b9cdbe;background:white;border-radius:6px}
 @media(max-width:680px){.docs-flow{flex-direction:column}.docs-flow-unit{width:100%}.docs-arrow{transform:rotate(90deg)}.forecast-summary>span{flex:1 1 100%}}
+
+/* Theme regeneration controls and requirement coverage inventory */
+.theme-regeneration{display:flex;gap:8px;align-items:end;flex-wrap:wrap;margin:8px 0 10px}
+.theme-regeneration label{display:grid;gap:4px;font-size:12px;flex:1 1 140px}
+.theme-regeneration select{padding:7px;border-radius:7px;border:1px solid #b3cdb7;background:white;width:100%}
+.requirements-tracker{margin:26px 0;padding:18px;background:#f9fbf9;border:1px solid #d2e2d5;border-radius:12px}
+.requirements-tracker .section-heading{margin-bottom:12px}
+.requirements-tracker .studio-toolbar{display:flex;flex-wrap:wrap;align-items:end;gap:10px}
+.requirements-tracker .studio-toolbar label{display:grid;gap:5px;flex:1 1 180px}
+.requirements-tracker .studio-toolbar input,.requirements-tracker .studio-toolbar select{padding:9px;border:1px solid #b3cdb7;border-radius:7px;background:#fff;max-width:100%}
+.tracker-table-wrap{overflow:auto;max-height:520px;border:1px solid #dce8df;border-radius:8px}
+.tracker-table{width:100%;border-collapse:collapse;text-align:left;font-size:12px}
+.tracker-table thead{position:sticky;top:0;z-index:1;background:#e5f1e8}
+.tracker-table th,.tracker-table td{padding:10px;vertical-align:top;border-bottom:1px solid #e2ebe4;min-width:98px}
+.tracker-table th:first-child,.tracker-table td:first-child{min-width:230px}
+.tracker-table small{display:block;color:#577261;margin-top:4px;line-height:1.4}
+.tracker-status{display:inline-block;padding:3px 7px;border-radius:6px;background:#eff2ef;font-weight:700;text-transform:capitalize;white-space:nowrap}
+.tracker-status.unaddressed{background:#fae9e4;color:#90372d}
+.tracker-status.partial{background:#fff4d9;color:#84600e}
+.tracker-status.planned{background:#e1effc;color:#235d8c}
+.tracker-status.complete{background:#e0f3e4;color:#21633e}

@@ -81,10 +81,10 @@ function buildRepeatSchedule(keepLocks=false){
     const selectedLocs=chosen.map(id=>byId(id)?.locations?.preferred).filter(Boolean);
     const shared=selectedLocs.length?locs.some(x=>selectedLocs.includes(x)):false;
     const external=locs.some(x=>x.toLowerCase().includes('external'));
-    const externalPoints=external?((studio.externalWeeks||[]).includes(i+1)?26:-15):0;
+    const externalPoints=studio.useLocations===true&&external?((studio.externalWeeks||[]).includes(i+1)?26:-15):0;
     const progress=remaining*8+ready*5+descendantsCount(r.id)*2;
     const progressWeight=studio.strategy==='location'?.35:studio.strategy==='balanced'?.7:1;
-    const locationPoints=selectedLocs.length?(shared?22:-9):0;
+    const locationPoints=studio.useLocations===true&&selectedLocs.length?(shared?22:-9):0;
     const locationWeight=studio.strategy==='location'?3:studio.strategy==='balanced'?1.8:.2;
     const score=progress*progressWeight+tagOverlap*9+locationPoints*locationWeight+externalPoints-missing.length*35+(previous>0?5:0)-(r.stage||1)*.01;
     if(score>bestScore){best=r;bestScore=score;}
@@ -95,7 +95,7 @@ function buildRepeatSchedule(keepLocks=false){
   w.requirementIds=orderSession(chosen);
   w.tags=uniq(chosen.flatMap(id=>byId(id)?.tags||[])).slice(0,5);
   w.title=w.tags[0]||'Week '+(i+1);
-  w.location=chosen.map(id=>byId(id)?.locations?.preferred).filter(Boolean)[0]||'Flexible / anywhere';
+  w.location=studio.useLocations===true?(chosen.map(id=>byId(id)?.locations?.preferred).filter(Boolean)[0]||'Flexible / anywhere'):'Flexible / anywhere';
   w.activity=null;w.activityIds=undefined;w.confirmedSession=false;w.reviewed=false;
   applyWeek(w.requirementIds);
  }

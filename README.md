@@ -129,3 +129,19 @@ The in-app Help & Design section now formats steps and bullets as readable struc
 - Numeric source text referring to *items* (three knots, five knots) is not converted into repeat-night counts.
 - Requirement swaps should be checked by leaders for prerequisite readiness; filtering is suggestive and can flag unmet prerequisites.
 - Test the original Excel workbook import, repeat reviews, schedule generation with locked weeks, YAML import/export and browser accessibility before merging.
+
+## Themed week regeneration, variable schedule length and requirements coverage
+
+The Scheduler now supports **1–60 weeks**. Each week's **Theme** dropdown regenerates the skills for that week from the matching tag. Choose **Best for progression** (scores affected Scouts, readiness, prerequisites and dependency unlocks) or **Random within theme** and use **Regenerate themed week** to try another combination. A re-themed week is automatically locked so that whole-plan regeneration does not silently replace your changes; changing a locked week requests confirmation.
+
+The **Consider locations in recommendations** checkbox is optional and **off by default**. With the box off, location compatibility and external week preferences do not influence scheduler scoring or Activity Studio recommendation ranking; the scheduler does not present multi-location warnings as required constraints. Leaders can enable location grouping when needed.
+
+The Scheduler also includes a **Current Requirements Tracker**, covering **all 142** requirements. Search and filter requirements by whether they are unaddressed, partially addressed, fully planned, or completed for the selected Scout cohort. Review linked Studio activities, occurrence requirements, planned weeks, Scout completions and evidence credits; export coverage to CSV.
+
+The Help & Design Future phases section and `docs/future-phases.md` now include **two unapproved, brainstorm-only proposals**: (1) a themed, stage-oriented plan targeting four requirements per stage per night, with soft stage prerequisites and repeated delivery as required; and (2) restructuring the codebase into maintainable, human-readable modules with well-documented configuration for scheduling and app behaviour.
+
+### Testing considerations
+- Syntax parsed for all edited JS files. Smoke tests exercised tag-constrained progression/rand selections, automatic week locking and full requirement inventory.
+- Browser-based interaction tests, actual workbook import/reimport, 60-week performance and accessibility need checking before merge.
+- Theme mode **Random** randomises choices within the selected theme and available repeat slots; it is not constrained to maximise readiness. Leaders must check prerequisite feasibility.
+- The tracker indicates planning coverage; Studio mapping alone is **not** Scout achievement evidence.

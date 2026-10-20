@@ -97,7 +97,7 @@ function multiActivitiesFor(week){
    const notYet=(a.covers||[]).filter(id=>planned.has(id)&&!chosen.some(x=>x.covers.includes(id)));
    if(!notYet.length)continue;
    const location=a.location||'Flexible / anywhere';
-   const compatible=!week.location||location===week.location||location==='Flexible / anywhere'||week.location==='Flexible / anywhere';
+   const compatible=studio.useLocations!==true||!week.location||location===week.location||location==='Flexible / anywhere'||week.location==='Flexible / anywhere';
    const scoutValue=notYet.reduce((n,id)=>n+(scope.length?scope.filter(name=>!isCompleted(name,id)).length:1),0);
    const score=(scoutValue*3+notYet.length*8)*(compatible?1.25:.55)/Math.sqrt(duration);
    if(score>bestScore){best=a;bestScore=score;}
@@ -144,7 +144,7 @@ function multiEnhanceSchedule(){
    if(!ids.length){alert('Create activities with confirmed requirement coverage in Activity Studio first.');return;}
    const result=multiSummary(items,w),max=Number(w.sessionMinutes)||90;
    if(result.minutes>max&&!confirm('Activities total '+result.minutes+' minutes, exceeding '+max+' minutes. Confirm anyway?'))return;
-   if(result.locations.length>1&&!confirm('Activities use different locations ('+result.locations.join(', ')+'). Confirm after checking travel feasibility?'))return;
+   if(studio.useLocations===true&&result.locations.length>1&&!confirm('Activities use different locations ('+result.locations.join(', ')+'). Confirm after checking travel feasibility?'))return;
    w.activityIds=ids;w.confirmedSession=true;saveSchedule();showToast('Week '+(i+1)+' activity sequence confirmed.');
   };
  });
