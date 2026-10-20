@@ -23,8 +23,16 @@ async function inspect(browser,mode,viewport) {
   await page.locator('#helpDesignTab').click();
   await page.waitForFunction(()=> {
     const panel=document.querySelector('#helpDesign');
-    return panel && !panel.hidden && document.querySelectorAll('#helpTopics button').length>=12;
+    return panel && !panel.hidden && !!document.querySelector('#helpTopics');
   });
+  const opened=await page.evaluate(()=>({
+    topicCount:document.querySelectorAll('#helpTopics button').length,
+    htmlRenderer:document.documentElement.dataset.oasHelpRenderer,
+    vueFlag:window.__oasHelpVueActive,
+    html:document.querySelector('#helpDesign')?.innerHTML?.slice(0,600)
+  }));
+  console.log('Help diagnostics',mode,opened);
+  assert.equal(opened.topicCount,15,'Help catalogue unavailable after navigation');
   const snap=async()=>({
     titles:await page.locator('#helpTopics [data-help]').evaluateAll(nodes=>nodes.map(x=>x.textContent)),
     ids:await page.locator('#helpTopics [data-help]').evaluateAll(nodes=>nodes.map(x=>x.getAttribute('data-help'))),
