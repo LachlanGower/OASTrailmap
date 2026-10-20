@@ -15,6 +15,7 @@ function escapeHelp(text: string): string {
     ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c] ?? c));
 }
 function mountHelp(): void {
+  if (window.__oasHelpVueActive) return;
   if (new URLSearchParams(location.search).get('helpRenderer') === 'legacy') return;
   const oldSection=document.querySelector<HTMLElement>('#helpDesign');
   if (!oldSection) return;
@@ -36,6 +37,7 @@ function mountHelp(): void {
     console.warn('Vue Help view unavailable; retaining legacy Help & Design.',error);
   }
 }
+window.addEventListener('oas:help-topics-ready',mountHelp);
 if(document.readyState==='loading')
   document.addEventListener('DOMContentLoaded',mountHelp,{once:true});
 else mountHelp();
