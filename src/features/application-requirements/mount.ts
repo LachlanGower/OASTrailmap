@@ -1,3 +1,4 @@
+import '../navigation/mount';
 import { createApp } from 'vue';
 import ApplicationRequirements from './ApplicationRequirements.vue';
 import { parseCatalogue } from './catalogue';
