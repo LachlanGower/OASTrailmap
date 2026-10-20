@@ -1,6 +1,6 @@
 import { createApp } from 'vue';
 import NavigationShell from './NavigationShell.vue';
-import type { NavigationAction } from './NavigationShell.vue';
+import type { NavigationAction } from './types';
 
 /** The original IDs are the bridge contract until all workspaces use Vue. */
 const sources: Record<NavigationAction, string> = {
