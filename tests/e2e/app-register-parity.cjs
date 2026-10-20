@@ -28,6 +28,7 @@ async function inspect(browser, mode, viewport) {
     ()=>document.documentElement.dataset.appRequirementsRenderer==='vue',{timeout:20000}
   );
   else assert.notEqual(await page.locator('html').getAttribute('data-app-requirements-renderer'),'vue');
+  await page.waitForFunction(()=>typeof document.querySelector('#appRequirementsTab')?.onclick === 'function');
   await page.locator('#appRequirementsTab').click();
   await page.waitForFunction(()=>document.querySelector('#appReqList')?.textContent?.includes('APP-001'));
   assert.equal(await page.locator('#applicationRequirements').getAttribute('hidden'),null);
