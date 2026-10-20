@@ -11,6 +11,7 @@ function appReqList(){
  return entries.filter(r=>(status==='all'||r.status===status)&&(category==='all'||r.category===category)&&(!q||[r.id,r.title,r.description,...(r.implementation||[]),r.verification,applicationRequirementsData.categories?.[r.category]||''].join(' ').toLowerCase().includes(q)));
 }
 function appReqRender(){
+ if(window.__oasAppReqVueActive)return; // Vue owns the replacement panel; fallback stays intact.
  const data=applicationRequirementsData,el=$('#appReqList');if(!data||!el)return;
  const count=Object.fromEntries(['implemented','partial','planned','future'].map(s=>[s,data.requirements.filter(r=>r.status===s).length]));
  const stats=$('#appReqSummary');
@@ -44,6 +45,7 @@ function appRequirementsInit(){
  const section=$('#applicationRequirements');if(!section)return;
  const tab=$('#appRequirementsTab');
  tab.onclick=openApplicationRequirements;
+ if(window.__oasAppReqVueActive)return;
  const category=$('#appReqCategory');
  category.innerHTML='<option value="all">All feature areas</option>'+Object.entries(applicationRequirementsData.categories).map(([value,label])=>'<option value="'+esc(value)+'">'+esc(label)+'</option>').join('');
  $('#appReqSearch').oninput=appReqRender;

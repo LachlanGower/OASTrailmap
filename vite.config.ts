@@ -5,9 +5,9 @@ import vue from '@vitejs/plugin-vue';
 
 /**
  * A temporary migration bridge. The original app remains the default entry.
- * Only vue-preview.html is bundled. The legacy site is copied byte-for-byte
- * into dist/ so neither users nor GitHub Pages change during Phase 2.
- * Remove this bridge only when the migrated UI passes its parity gate.
+ * Phase 4 bundles index.html with an opt-in Vue island for the app register,
+ * plus vue-preview.html. All original legacy JS, CSS, data and docs stay
+ * intact in dist/, with the old register retained as an explicit fallback.
  */
 function copyUnchangedLegacySite(): Plugin {
   return {
@@ -17,7 +17,7 @@ function copyUnchangedLegacySite(): Plugin {
       const root = process.cwd();
       const dist = resolve(root, 'dist');
       mkdirSync(dist, { recursive: true });
-      for (const relative of ['index.html', 'css', 'js', 'data', 'docs']) {
+      for (const relative of ['css', 'js', 'data', 'docs']) {
         const src = resolve(root, relative);
         if (!existsSync(src)) throw new Error('Required legacy path missing: ' + relative);
         cpSync(src, resolve(dist, relative), { recursive: true, force: true });
@@ -35,7 +35,10 @@ export default defineConfig({
     outDir: 'dist',
     emptyOutDir: true,
     rollupOptions: {
-      input: resolve(process.cwd(), 'vue-preview.html')
+      input: {
+        index: resolve(process.cwd(), 'index.html'),
+        'vue-preview': resolve(process.cwd(), 'vue-preview.html')
+      }
     }
   }
 });

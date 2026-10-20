@@ -1,0 +1,45 @@
+name: Phase 4 Vue Application Requirements parity (no deployment)
+on:
+  push:
+    branches:
+      - migration/phase-04-app-requirements
+  pull_request:
+    branches:
+      - migration/trunk
+permissions:
+  contents: read
+jobs:
+  parity:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+      - run: npm ci
+      - run: npm audit --audit-level=moderate
+      - name: Assert original requirements, DOM IDs and legacy scripts are retained
+        run: npm run check:baseline
+      - name: Run legacy domain and app requirements parity unit tests
+        run: npm run test:domain
+      - name: Typecheck and build two Vite entry points
+        run: npm run build
+      - name: Verify static legacy files untouched and built HTML stable
+        run: npm run check:dist
+      - run: npx playwright install --with-deps chromium
+      - name: Check development and built sites
+        run: |
+          npm run dev -- --host 127.0.0.1 --port 5173 >/tmp/oas-phase4-dev.log 2>&1 &
+          python3 -m http.server 8765 --bind 127.0.0.1 -d dist >/tmp/oas-phase4-build.log 2>&1 &
+          sleep 3
+          OAS_TEST_URL=http://127.0.0.1:5173/ node tests/e2e/app-register-parity.cjs
+          OAS_TEST_URL=http://127.0.0.1:8765/ node tests/e2e/app-register-parity.cjs
+      - name: Upload fictional-data screenshots
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: phase-04-app-register-parity
+          path: tests/baseline-artifacts/phase4/
+          if-no-files-found: ignore

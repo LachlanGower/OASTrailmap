@@ -9,6 +9,6 @@
     "rootDir": "src",
     "outDir": ".phase3-test-dist"
   },
-  "include": ["src/domain/**/*.ts", "src/services/**/*.ts"],
+  "include": ["src/domain/**/*.ts", "src/services/**/*.ts", "src/features/application-requirements/catalogue.ts"],
   "exclude": ["src/components", "node_modules", "dist"]
 }
