@@ -22,10 +22,14 @@ assert.deepEqual(actualIds, baseline.dom_element_ids,
 assert.equal(new Set(actualIds).size, actualIds.length, 'Duplicate static DOM IDs');
 
 const sources = [...html.matchAll(/<script[^>]+src="([^"]+)"/g)].map(m => m[1]);
-assert.deepEqual(sources, baseline.script_sources,
-  'Script order changed; legacy scripts depend on their top-level globals');
+assert.deepEqual(sources.slice(0, baseline.script_sources.length), baseline.script_sources,
+  'Original script order changed; legacy globals require the existing ordering');
+assert.deepEqual(sources.slice(baseline.script_sources.length),
+  ['/src/features/application-requirements/mount.ts'],
+  'Unexpected Vue entrypoint or extra scripts in the legacy page');
 for (const source of sources.filter(s => !/^https?:\/\//i.test(s))) {
-  assert.ok(fs.existsSync(fromRoot(source)), 'Missing browser entrypoint: '+source);
+  assert.ok(fs.existsSync(fromRoot(source.replace(/^\//,''))),
+    'Missing browser entrypoint: '+source);
 }
 for (const label of baseline.workspace_labels) {
   assert.ok(html.includes('>'+label+'</button>'), 'Missing workspace navigation label: '+label);
@@ -99,7 +103,7 @@ for (const [recordKey, record] of Object.entries(progress.scoutRecords)) {
   const id=recordKey.split('::').slice(1).join('::');
   assert.ok(id==='__roster__' || byId.has(id), 'Unknown synthetic progress requirement ID');
 }
-console.log('Migration contracts: 122 legacy DOM IDs, '+sources.length+
+console.log('Migration contracts: 122 legacy DOM IDs, '+baseline.script_sources.length+' original scripts plus Vue entry, ' +
   ' script sources, '+reqs.length+' OAS requirements, '+app.requirements.length+
   ' app requirements, synthetic 3-key browser state, legacy JS syntax all passed.');
 console.log('No behavioural, screenshot, Excel parser or persistence-migration tests run in this check.');
