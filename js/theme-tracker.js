@@ -121,6 +121,8 @@ function setupThemeAndTracker(){
   const roadmap=HELP_TOPICS.find(t=>t.id==='future');
  if(roadmap)roadmap.text+='\n\nNEW BRAINSTORM — STAGE REWORK (NOT APPROVED): Plan approximately four requirements per stage per night, strongly organised by coherent themes. Treat stages as soft prerequisites again; some requirements may need repeating across stage-focused nights. Discover how mixed-readiness groups and evidence counts should work before committing.\n\nNEW BRAINSTORM — CODEBASE REWRITE (NOT APPROVED): Restructure the app into clear, human-readable modules with central configuration for stage policy, location rules, schedule scoring and repeat counts; add tests, migrations and contributor documentation. Preserve local-first Scout privacy and the original Excel importer.';
  HELP_TOPICS.push({id:'tracker',group:'Everyday workflows',title:'Current requirements tracker',text:'Open Scheduler → Current Requirements Tracker. It shows every requirement, its confirmed Activity Studio coverage, all weeks where it is scheduled, the number of separate opportunities needed, and Scout completion evidence. Search by ID, text or tag, or filter to unaddressed, partially planned, fully planned and complete-for-selected-Scouts. Export a CSV to review the full table with other leaders.\n\nActivity matching alone is not a completion. Fully planned means enough distinct weekly opportunities exist; actual completion still requires leader evidence.'});
+ // Publish help only after async tracker setup adds its final topic and edits.
+ window.__oasPublicHelpTopics=HELP_TOPICS.map(t=>({...t}));
  if($('#helpTopics'))helpRender();
  renderSchedule();
 }
