@@ -19,6 +19,8 @@ jobs:
           node-version: '22'
       - name: Install locked dependencies
         run: npm ci
+      - name: Check npm dependency vulnerabilities
+        run: npm audit --audit-level=moderate
       - run: npx playwright install --with-deps chromium
       - name: Verify Phase 1 compatibility contracts
         run: npm run check:baseline
