@@ -60,8 +60,7 @@ export function filterCatalogue(catalogue: ApplicationCatalogue, query: string,
       catalogue.categories[r.category] || ''].join(' ').toLowerCase().includes(q)));
 }
 export function statusCounts(catalogue: ApplicationCatalogue): Record<DeliveryStatus, number> {
-  return Object.fromEntries(statuses.map(s => [s, catalogue.requirements.filter(r => r.status === s).length]))
-    as Record<DeliveryStatus, number>;
+  return Object.fromEntries(statuses.map(s => [s, catalogue.requirements.filter(r => r.status === s).length])) as Record<DeliveryStatus, number>;
 }
 
 /** Exact existing header sequence, quote escaping and CRLF row endings. */
