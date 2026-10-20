@@ -72,7 +72,7 @@ function json(): void {
       <p>{{ item.description }}</p>
       <details>
         <summary>Implementation and verification</summary>
-        <p><strong>Evidence in code / documentation:</strong> <code v-for="(source, i) in item.implementation" :key="i">{{ source }}</code></p>
+        <p><strong>Evidence in code / documentation:</strong><template v-for="(source, i) in item.implementation" :key="i">{{ ' ' }}<code>{{ source }}</code></template></p>
         <p><strong>How to verify:</strong> {{ item.verification || 'Not yet defined' }}</p>
         <p class="tiny muted">Repository evidence is not proof that every browser interaction or real-world workflow has passed testing.</p>
       </details>
