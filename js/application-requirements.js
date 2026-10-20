@@ -42,10 +42,10 @@ function openApplicationRequirements(){
  appReqRender();
 }
 function appRequirementsInit(){
- if(window.__oasAppReqVueActive)return;
  const section=$('#applicationRequirements');if(!section)return;
  const tab=$('#appRequirementsTab');
  tab.onclick=openApplicationRequirements;
+ if(window.__oasAppReqVueActive)return;
  const category=$('#appReqCategory');
  category.innerHTML='<option value="all">All feature areas</option>'+Object.entries(applicationRequirementsData.categories).map(([value,label])=>'<option value="'+esc(value)+'">'+esc(label)+'</option>').join('');
  $('#appReqSearch').oninput=appReqRender;
