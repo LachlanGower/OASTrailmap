@@ -33,7 +33,7 @@ export function mountLegacyNavigation(): void {
     const handlers = Object.fromEntries(actions.map(action => {
       const button = original[action]!;
       const originalClick = button.onclick!;
-      return [action, (event: MouseEvent) => { originalClick.call(button, event); }];
+      return [action, (event: MouseEvent) => { originalClick.call(button, event as PointerEvent); }];
     })) as Record<NavigationAction, (event: MouseEvent) => void>;
     const classes = Object.fromEntries(actions.map(action =>
       [action, original[action]!.className])) as Record<NavigationAction, string>;
