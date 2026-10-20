@@ -11,3 +11,6 @@ dist/
 test-results/
 playwright-report/
 tests/baseline-artifacts/
+
+# Phase 3 transient TypeScript test build
+.phase3-test-dist/
