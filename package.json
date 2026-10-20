@@ -1,10 +1,28 @@
 {
-  "name": "oas-trailmap-migration-baseline",
+  "name": "oas-trailmap",
   "private": true,
-  "version": "0.0.0",
-  "description": "Dependency-free checks of original OAS Trailmap contracts during Phase 1",
+  "version": "0.2.0",
+  "description": "Local-first OAS Trailmap; isolated Vue/Vite migration foundation",
   "scripts": {
+    "dev": "vite",
+    "typecheck": "vue-tsc --noEmit -p tsconfig.json",
+    "build": "vue-tsc --noEmit -p tsconfig.json && vite build",
+    "preview": "vite preview",
     "check:baseline": "node scripts/check-migration-baseline.cjs && node scripts/check-migration-contracts.cjs",
+    "check:dist": "node scripts/check-built-legacy.cjs",
     "test": "npm run check:baseline"
+  },
+  "dependencies": {
+    "vue": "3.5.18"
+  },
+  "devDependencies": {
+    "@types/node": "22.18.1",
+    "@vitejs/plugin-vue": "6.0.1",
+    "typescript": "5.9.2",
+    "vite": "7.1.3",
+    "vue-tsc": "3.1.0"
+  },
+  "engines": {
+    "node": ">=22.12.0"
   }
 }
