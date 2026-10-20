@@ -20,6 +20,12 @@ async function inspect(browser,mode,viewport) {
   if(mode==='vue') await page.waitForFunction(
     ()=>document.documentElement.dataset.oasHelpRenderer==='vue',{timeout:20000});
   else assert.notEqual(await page.locator('html').getAttribute('data-oas-help-renderer'),'vue');
+  // Help is wired asynchronously by next-phase.js; Vue navigation waits for all
+  // original handlers before taking ownership. Do not click a dormant tab.
+  await page.waitForFunction(() =>
+    document.documentElement.dataset.oasNavRenderer==='vue' ||
+    typeof document.querySelector('#helpDesignTab')?.onclick==='function',
+    {timeout:20000});
   await page.locator('#helpDesignTab').click();
   await page.waitForFunction(()=> {
     const panel=document.querySelector('#helpDesign');
