@@ -112,6 +112,8 @@ function dataManagerInit(){
  dataRender();dataActivityRender();
 }
 function dataView(mode){
+ const appReq=$('#applicationRequirements');if(appReq)appReq.hidden=true;
+ const appReqTab=$('#appRequirementsTab');if(appReqTab){appReqTab.classList.remove('primary');appReqTab.classList.add('secondary');}
  if(mode==='data'||mode==='activity'){
   if($('#helpDesign'))$('#helpDesign').hidden=true;
   setMode('trail');

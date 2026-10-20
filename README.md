@@ -145,3 +145,9 @@ The Help & Design Future phases section and `docs/future-phases.md` now include 
 - Browser-based interaction tests, actual workbook import/reimport, 60-week performance and accessibility need checking before merge.
 - Theme mode **Random** randomises choices within the selected theme and available repeat slots; it is not constrained to maximise readiness. Leaders must check prerequisite feasibility.
 - The tracker indicates planning coverage; Studio mapping alone is **not** Scout achievement evidence.
+
+## Application Requirements — product context and traceability
+
+The **Application Requirements** workspace inventories the requirements for the *web tool itself* rather than Scout OAS skills. The source is [`data/application-requirements.json`](data/application-requirements.json), with 118 feature/workflow requirements across 10 areas, and a readable reference in [`docs/application-requirements.md`](docs/application-requirements.md). Each item has an ID, plain-language requirement, status, source-code references and a suggested verification. The UI supports searching, filtering by feature area or status, expanding evidence, and JSON/CSV exports.
+
+Statuses are honest code-inspection indicators: **implemented does not mean browser acceptance tested**. Partial/planned gaps and brainstorm-only future ideas are deliberately distinguished. When a requirement or implementation changes, edit the JSON as part of the same PR to keep the register useful for future development and conversation context. No Scout personal data belongs in this catalogue.

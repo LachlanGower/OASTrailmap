@@ -1,0 +1,1500 @@
+{
+  "schema_version": 1,
+  "title": "OAS Trailmap — Application Requirements Register",
+  "updated": "2026-10-20",
+  "description": "A maintained source-code requirements inventory for OAS Trailmap the web application. Not the OAS award requirement checklist. Statuses represent code inspection, not certification of browser end-to-end testing.",
+  "status_definitions": {
+    "implemented": "A corresponding implementation is identifiable in the repository; end-to-end verification is not implied.",
+    "partial": "Some pieces exist but the agreed experience is incomplete or not fully evidenced.",
+    "planned": "Agreed direction, not implemented as a complete workflow.",
+    "future": "Exploratory brainstorm only; not an approved requirement."
+  },
+  "categories": {
+    "CORE": "Application & navigation",
+    "EXCEL": "Excel onboarding",
+    "SKILL": "Skills and trees",
+    "SCOUT": "Scout evidence",
+    "ACT": "Activity Studio",
+    "SCHED": "Scheduling",
+    "TRACK": "OAS coverage tracking",
+    "DATA": "Data & recovery",
+    "DOC": "Help & documentation",
+    "FUTURE": "Future discovery"
+  },
+  "requirements": [
+    {
+      "id": "APP-001",
+      "category": "CORE",
+      "title": "Local-first application",
+      "description": "Keep Scout records in the browser; no server database for personal Scout progress.",
+      "status": "implemented",
+      "implementation": [
+        "js/app.js",
+        "js/data-manager.js"
+      ],
+      "verification": "Verify no Scout progress requests leave browser",
+      "source": "OAS Trailmap feature planning and repository review"
+    },
+    {
+      "id": "APP-002",
+      "category": "CORE",
+      "title": "GitHub stores code and references only",
+      "description": "Do not commit private Scout records to the repository.",
+      "status": "implemented",
+      "implementation": [
+        ".gitignore",
+        "README.md"
+      ],
+      "verification": "Review commits and backup handling for PII",
+      "source": "OAS Trailmap feature planning and repository review"
+    },
+    {
+      "id": "APP-003",
+      "category": "CORE",
+      "title": "Static web delivery",
+      "description": "Run as a static single-page application without a backend.",
+      "status": "implemented",
+      "implementation": [
+        "index.html",
+        "js/app.js"
+      ],
+      "verification": "Test browser serving and hosted deployment",
+      "source": "OAS Trailmap feature planning and repository review"
+    },
+    {
+      "id": "APP-004",
+      "category": "CORE",
+      "title": "Four main workspaces",
+      "description": "Provide Trailmap, Skill Tree Mapper, Scheduler, and Activity Studio navigation.",
+      "status": "implemented",
+      "implementation": [
+        "index.html",
+        "js/studio.js"
+      ],
+      "verification": "Navigate to each workspace on desktop and mobile",
+      "source": "OAS Trailmap feature planning and repository review"
+    },
+    {
+      "id": "APP-005",
+      "category": "CORE",
+      "title": "Central Data & State workspace",
+      "description": "Offer one place to import, inspect, export, reset and restore operational state.",
+      "status": "implemented",
+      "implementation": [
+        "index.html",
+        "js/data-manager.js",
+        "js/next-phase.js"
+      ],
+      "verification": "Run import/export and reset smoke tests",
+      "source": "OAS Trailmap feature planning and repository review"
+    },
+    {
+      "id": "APP-006",
+      "category": "CORE",
+      "title": "Help & Design workspace",
+      "description": "Provide approachable in-app guides plus design and appendix.",
+      "status": "implemented",
+      "implementation": [
+        "index.html",
+        "js/next-phase.js",
+        "js/docs-upgrade.js"
+      ],
+      "verification": "Check help navigation and readability",
+      "source": "OAS Trailmap feature planning and repository review"
+    },
+    {
+      "id": "APP-007",
+      "category": "CORE",
+      "title": "Saved locally status",
+      "description": "Show local save feedback in the interface.",
+      "status": "implemented",
+      "implementation": [
+        "index.html",
+        "js/studio.js"
+      ],
+      "verification": "Exercise save failures and UI feedback",
+      "source": "OAS Trailmap feature planning and repository review"
+    },
+    {
+      "id": "APP-008",
+      "category": "CORE",
+      "title": "Existing Scout progress preserved",
+      "description": "New planning features must not silently clear or alter progress.",
+      "status": "implemented",
+      "implementation": [
+        "js/app.js",
+        "js/data-manager.js"
+      ],
+      "verification": "Regression test imports, schedule changes and resets",
+      "source": "OAS Trailmap feature planning and repository review"
+    },
+    {
+      "id": "APP-009",
+      "category": "EXCEL",
+      "title": "Original Excel workbook is the initial progress source",
+      "description": "Seed Scout roster and achievements from the supported original Cub Pack workbook; non-negotiable.",
+      "status": "implemented",
+      "implementation": [
+        "js/app.js",
+        "index.html"
+      ],
+      "verification": "Acceptance test OAS_CORE_Cub_Pack.xlsx",
+      "source": "OAS Trailmap feature planning and repository review"
+    },
+    {
+      "id": "APP-010",
+      "category": "EXCEL",
+      "title": "Excel date and highlighted cell completion",
+      "description": "Parse dated or highlighted assessment cells as completion evidence.",
+      "status": "implemented",
+      "implementation": [
+        "js/app.js"
+      ],
+      "verification": "Test date, highlight and blank cells",
+      "source": "OAS Trailmap feature planning and repository review"
+    },
+    {
+      "id": "APP-011",
+      "category": "EXCEL",
+      "title": "Excel stage and stream sheet matching",
+      "description": "Discover supported Scout columns, sheets and assessment rows.",
+      "status": "implemented",
+      "implementation": [
+        "js/app.js"
+      ],
+      "verification": "Test sheets with varied headings",
+      "source": "OAS Trailmap feature planning and repository review"
+    },
+    {
+      "id": "APP-012",
+      "category": "EXCEL",
+      "title": "Excel import preview",
+      "description": "Review Scouts, matched completions and unmatched workbook rows before applying.",
+      "status": "implemented",
+      "implementation": [
+        "js/app.js",
+        "index.html"
+      ],
+      "verification": "Test confirm, cancel and unmatched cases",
+      "source": "OAS Trailmap feature planning and repository review"
+    },
+    {
+      "id": "APP-013",
+      "category": "EXCEL",
+      "title": "Excel import provenance",
+      "description": "Preserve dates, source sheet/row and imported evidence metadata.",
+      "status": "implemented",
+      "implementation": [
+        "js/app.js"
+      ],
+      "verification": "Inspect record after import and backup",
+      "source": "OAS Trailmap feature planning and repository review"
+    },
+    {
+      "id": "APP-014",
+      "category": "EXCEL",
+      "title": "Non-destructive workbook reimport",
+      "description": "Reimport Excel without silently removing manually recorded achievements.",
+      "status": "implemented",
+      "implementation": [
+        "js/app.js"
+      ],
+      "verification": "Repeat imports with manual completions",
+      "source": "OAS Trailmap feature planning and repository review"
+    },
+    {
+      "id": "APP-015",
+      "category": "EXCEL",
+      "title": "Excel importer in Data & State",
+      "description": "Keep the original importer accessible centrally after footer cleanup.",
+      "status": "implemented",
+      "implementation": [
+        "index.html",
+        "js/data-manager.js"
+      ],
+      "verification": "Test workbook file chooser and preview",
+      "source": "OAS Trailmap feature planning and repository review"
+    },
+    {
+      "id": "APP-016",
+      "category": "EXCEL",
+      "title": "Remove obsolete footer importer",
+      "description": "Remove duplicate import/activity-bank controls from footer.",
+      "status": "implemented",
+      "implementation": [
+        "index.html",
+        "js/app.js"
+      ],
+      "verification": "Confirm no orphaned event handlers",
+      "source": "OAS Trailmap feature planning and repository review"
+    },
+    {
+      "id": "APP-017",
+      "category": "SKILL",
+      "title": "142 requirements with stable IDs",
+      "description": "Load the 142 OAS skills while retaining stable identifiers.",
+      "status": "implemented",
+      "implementation": [
+        "data/requirements.json",
+        "data/requirements.yaml"
+      ],
+      "verification": "Validate IDs, counts and references",
+      "source": "OAS Trailmap feature planning and repository review"
+    },
+    {
+      "id": "APP-018",
+      "category": "SKILL",
+      "title": "Preserve original requirement wording",
+      "description": "Keep source text distinct from derived planning metadata and edits.",
+      "status": "implemented",
+      "implementation": [
+        "data/requirements.json",
+        "data/requirements.txt"
+      ],
+      "verification": "Compare reference text against source file",
+      "source": "OAS Trailmap feature planning and repository review"
+    },
+    {
+      "id": "APP-019",
+      "category": "SKILL",
+      "title": "Stages are reference metadata",
+      "description": "Display stage metadata without a hard stage gating rule in the existing master graph.",
+      "status": "implemented",
+      "implementation": [
+        "js/app.js",
+        "js/studio.js"
+      ],
+      "verification": "Verify readiness calculation",
+      "source": "OAS Trailmap feature planning and repository review"
+    },
+    {
+      "id": "APP-020",
+      "category": "SKILL",
+      "title": "Mandatory prerequisite relationships",
+      "description": "Use prerequisite IDs to control readiness and schedule ordering.",
+      "status": "implemented",
+      "implementation": [
+        "data/requirements.json",
+        "js/studio.js"
+      ],
+      "verification": "Check cycles, unknown IDs and readiness",
+      "source": "OAS Trailmap feature planning and repository review"
+    },
+    {
+      "id": "APP-021",
+      "category": "SKILL",
+      "title": "Suggested learning links",
+      "description": "Keep advisory connections separate from mandatory prerequisites.",
+      "status": "implemented",
+      "implementation": [
+        "data/requirements.json",
+        "js/studio.js"
+      ],
+      "verification": "Test advisory links do not block",
+      "source": "OAS Trailmap feature planning and repository review"
+    },
+    {
+      "id": "APP-022",
+      "category": "SKILL",
+      "title": "Named skill trees",
+      "description": "Organise requirements into named trees with ordering.",
+      "status": "implemented",
+      "implementation": [
+        "js/studio.js"
+      ],
+      "verification": "Create, rename and reorder a tree",
+      "source": "OAS Trailmap feature planning and repository review"
+    },
+    {
+      "id": "APP-023",
+      "category": "SKILL",
+      "title": "Tag-based tree views",
+      "description": "Allow skill-tree views based on tags.",
+      "status": "implemented",
+      "implementation": [
+        "js/studio.js"
+      ],
+      "verification": "Open tag view and compare coverage",
+      "source": "OAS Trailmap feature planning and repository review"
+    },
+    {
+      "id": "APP-024",
+      "category": "SKILL",
+      "title": "Skill text, tags and location editing",
+      "description": "Edit requirement text, tags, tree assignments and suitable locations.",
+      "status": "implemented",
+      "implementation": [
+        "js/studio.js"
+      ],
+      "verification": "Save and reload each edit",
+      "source": "OAS Trailmap feature planning and repository review"
+    },
+    {
+      "id": "APP-025",
+      "category": "SKILL",
+      "title": "Custom tree graph overrides",
+      "description": "Edit tree-specific links without changing the master prerequisite graph.",
+      "status": "implemented",
+      "implementation": [
+        "js/studio.js"
+      ],
+      "verification": "Compare master versus custom link edits",
+      "source": "OAS Trailmap feature planning and repository review"
+    },
+    {
+      "id": "APP-026",
+      "category": "SKILL",
+      "title": "Remove individual prerequisite links",
+      "description": "Break parent or child links individually, including in cyclic graphs.",
+      "status": "implemented",
+      "implementation": [
+        "js/studio.js"
+      ],
+      "verification": "Remove link with a cycle present",
+      "source": "OAS Trailmap feature planning and repository review"
+    },
+    {
+      "id": "APP-027",
+      "category": "SKILL",
+      "title": "Prevent new prerequisite cycles",
+      "description": "Reject newly added cyclic mandatory parent links.",
+      "status": "implemented",
+      "implementation": [
+        "js/studio.js"
+      ],
+      "verification": "Attempt to add a back edge",
+      "source": "OAS Trailmap feature planning and repository review"
+    },
+    {
+      "id": "APP-028",
+      "category": "SKILL",
+      "title": "Focused dependency view",
+      "description": "Show selected requirement ancestors and descendants without unrelated branches.",
+      "status": "implemented",
+      "implementation": [
+        "js/studio.js",
+        "index.html"
+      ],
+      "verification": "Focus and restore full graph",
+      "source": "OAS Trailmap feature planning and repository review"
+    },
+    {
+      "id": "APP-029",
+      "category": "SKILL",
+      "title": "Tree editor undo and snapshots",
+      "description": "Offer local checkpoints and convenient undo for graph edits.",
+      "status": "implemented",
+      "implementation": [
+        "js/studio.js"
+      ],
+      "verification": "Undo a saved tree edit",
+      "source": "OAS Trailmap feature planning and repository review"
+    },
+    {
+      "id": "APP-030",
+      "category": "SKILL",
+      "title": "Editable tag library",
+      "description": "Add and rename controlled tags used across requirements and activities.",
+      "status": "implemented",
+      "implementation": [
+        "js/studio.js"
+      ],
+      "verification": "Rename an in-use tag",
+      "source": "OAS Trailmap feature planning and repository review"
+    },
+    {
+      "id": "APP-031",
+      "category": "SKILL",
+      "title": "Main Trailmap tag filter",
+      "description": "Filter skill map by selected tags.",
+      "status": "partial",
+      "implementation": [
+        "js/app.js",
+        "index.html"
+      ],
+      "verification": "Confirm support for multi-tag any/all matching; current UI is single tag",
+      "source": "OAS Trailmap feature planning and repository review"
+    },
+    {
+      "id": "APP-032",
+      "category": "SKILL",
+      "title": "Preferred and acceptable alternative locations",
+      "description": "Store one preferred location and zero or more acceptable alternatives.",
+      "status": "implemented",
+      "implementation": [
+        "js/studio.js",
+        "data/requirements.json"
+      ],
+      "verification": "Edit and reload locations",
+      "source": "OAS Trailmap feature planning and repository review"
+    },
+    {
+      "id": "APP-033",
+      "category": "SKILL",
+      "title": "Optional locations in scheduling",
+      "description": "Make location matching optional, including excluding it from ranking.",
+      "status": "implemented",
+      "implementation": [
+        "js/theme-tracker.js",
+        "js/forecast.js",
+        "js/next-phase.js"
+      ],
+      "verification": "Compare scoring with checkbox on/off",
+      "source": "OAS Trailmap feature planning and repository review"
+    },
+    {
+      "id": "APP-034",
+      "category": "SKILL",
+      "title": "Per-requirement repeat opportunity metadata",
+      "description": "Store count, unit, basis and rationale with each requirement.",
+      "status": "implemented",
+      "implementation": [
+        "data/requirements.json",
+        "data/requirements.yaml",
+        "data/requirements.txt"
+      ],
+      "verification": "Check all 142 records",
+      "source": "OAS Trailmap feature planning and repository review"
+    },
+    {
+      "id": "APP-035",
+      "category": "SKILL",
+      "title": "Explicit multi-experience source counts",
+      "description": "Use source numbers for requirements such as multiple bushwalks and camp nights.",
+      "status": "implemented",
+      "implementation": [
+        "data/requirements.txt",
+        "docs/repeat-counts.md"
+      ],
+      "verification": "Review explicit counts with source wording",
+      "source": "OAS Trailmap feature planning and repository review"
+    },
+    {
+      "id": "APP-036",
+      "category": "SKILL",
+      "title": "Clearly labelled inferred repeat counts",
+      "description": "Default conservatively and distinguish planning guesses from official requirement wording.",
+      "status": "implemented",
+      "implementation": [
+        "data/requirements.txt",
+        "docs/repeat-counts.md"
+      ],
+      "verification": "Review one inferred 10 km case",
+      "source": "OAS Trailmap feature planning and repository review"
+    },
+    {
+      "id": "APP-037",
+      "category": "SKILL",
+      "title": "Editable repeat counts in skill editor",
+      "description": "Let a leader adjust how many distinct opportunities are planned.",
+      "status": "implemented",
+      "implementation": [
+        "js/studio.js"
+      ],
+      "verification": "Edit and export a count",
+      "source": "OAS Trailmap feature planning and repository review"
+    },
+    {
+      "id": "APP-038",
+      "category": "SCOUT",
+      "title": "Scout roster and selectors",
+      "description": "Select all Scouts or a subset for readiness and planning.",
+      "status": "implemented",
+      "implementation": [
+        "js/app.js",
+        "js/studio.js"
+      ],
+      "verification": "Test all/subset selection",
+      "source": "OAS Trailmap feature planning and repository review"
+    },
+    {
+      "id": "APP-039",
+      "category": "SCOUT",
+      "title": "Individual completion states",
+      "description": "Store Scout-by-requirement completion evidence and dates.",
+      "status": "implemented",
+      "implementation": [
+        "js/app.js"
+      ],
+      "verification": "Reopen after reload",
+      "source": "OAS Trailmap feature planning and repository review"
+    },
+    {
+      "id": "APP-040",
+      "category": "SCOUT",
+      "title": "Progress and readiness map",
+      "description": "Show completed, ready and prerequisite-blocked skills.",
+      "status": "implemented",
+      "implementation": [
+        "js/app.js",
+        "index.html"
+      ],
+      "verification": "Validate against known records",
+      "source": "OAS Trailmap feature planning and repository review"
+    },
+    {
+      "id": "APP-041",
+      "category": "SCOUT",
+      "title": "Leader approval of achievements",
+      "description": "Only leader evidence review or manual update can award completion.",
+      "status": "implemented",
+      "implementation": [
+        "js/studio.js",
+        "js/forecast.js"
+      ],
+      "verification": "Plan and confirm without automatic award",
+      "source": "OAS Trailmap feature planning and repository review"
+    },
+    {
+      "id": "APP-042",
+      "category": "SCOUT",
+      "title": "Same-night foundational and dependent skills",
+      "description": "Permit planning a prerequisite and its dependent skill in the same session.",
+      "status": "implemented",
+      "implementation": [
+        "js/studio.js",
+        "js/forecast.js"
+      ],
+      "verification": "Test within-week ordering",
+      "source": "OAS Trailmap feature planning and repository review"
+    },
+    {
+      "id": "APP-043",
+      "category": "SCOUT",
+      "title": "Multiple distinct session evidence credits",
+      "description": "Record evidence per week for skills needing repeated experiences.",
+      "status": "implemented",
+      "implementation": [
+        "js/forecast.js"
+      ],
+      "verification": "Confirm first of two remains incomplete",
+      "source": "OAS Trailmap feature planning and repository review"
+    },
+    {
+      "id": "APP-044",
+      "category": "SCOUT",
+      "title": "Preserve existing imported completions with repeat counts",
+      "description": "Do not downgrade already complete Excel records when adding repeat metadata.",
+      "status": "implemented",
+      "implementation": [
+        "js/forecast.js"
+      ],
+      "verification": "Import workbook then forecast",
+      "source": "OAS Trailmap feature planning and repository review"
+    },
+    {
+      "id": "APP-045",
+      "category": "SCOUT",
+      "title": "Multi-day camp evidence within one weekly block",
+      "description": "Count actual distinct nights even when one camp spans several nights.",
+      "status": "planned",
+      "implementation": [
+        "js/forecast.js",
+        "docs/repeat-counts.md"
+      ],
+      "verification": "Define overnight evidence and calendar model",
+      "source": "OAS Trailmap feature planning and repository review"
+    },
+    {
+      "id": "APP-046",
+      "category": "ACT",
+      "title": "Reusable Activity Studio library",
+      "description": "Create and edit reusable activities rather than duplicate session text.",
+      "status": "implemented",
+      "implementation": [
+        "js/data-manager.js",
+        "index.html"
+      ],
+      "verification": "Create, edit, reload and export",
+      "source": "OAS Trailmap feature planning and repository review"
+    },
+    {
+      "id": "APP-047",
+      "category": "ACT",
+      "title": "Structured activity plans",
+      "description": "Support duration, equipment, preparation, instructions, safety and review prompts.",
+      "status": "implemented",
+      "implementation": [
+        "js/data-manager.js"
+      ],
+      "verification": "Check all sections persist",
+      "source": "OAS Trailmap feature planning and repository review"
+    },
+    {
+      "id": "APP-048",
+      "category": "ACT",
+      "title": "Activity tags and locations",
+      "description": "Assign tags and suitable venue to an activity.",
+      "status": "implemented",
+      "implementation": [
+        "js/data-manager.js"
+      ],
+      "verification": "Test matching with/without locations",
+      "source": "OAS Trailmap feature planning and repository review"
+    },
+    {
+      "id": "APP-049",
+      "category": "ACT",
+      "title": "Requirement suggestions from tags and location",
+      "description": "Suggest likely requirement coverage using activity metadata.",
+      "status": "implemented",
+      "implementation": [
+        "js/data-manager.js"
+      ],
+      "verification": "Compare suggestions to matching tags",
+      "source": "OAS Trailmap feature planning and repository review"
+    },
+    {
+      "id": "APP-050",
+      "category": "ACT",
+      "title": "Leader-confirmed requirement coverage",
+      "description": "Let leaders add, remove and confirm requirements rather than relying on automatic mapping.",
+      "status": "implemented",
+      "implementation": [
+        "js/data-manager.js"
+      ],
+      "verification": "Save user-adjusted coverage",
+      "source": "OAS Trailmap feature planning and repository review"
+    },
+    {
+      "id": "APP-051",
+      "category": "ACT",
+      "title": "Activities YAML import/export",
+      "description": "Move activity libraries with portable YAML.",
+      "status": "implemented",
+      "implementation": [
+        "js/data-manager.js"
+      ],
+      "verification": "Round-trip structured content",
+      "source": "OAS Trailmap feature planning and repository review"
+    },
+    {
+      "id": "APP-052",
+      "category": "ACT",
+      "title": "Stable activity references",
+      "description": "Use activity IDs in scheduled weeks.",
+      "status": "implemented",
+      "implementation": [
+        "js/next-phase.js"
+      ],
+      "verification": "Reload a referenced activity",
+      "source": "OAS Trailmap feature planning and repository review"
+    },
+    {
+      "id": "APP-053",
+      "category": "ACT",
+      "title": "Activity impact previews",
+      "description": "Show activity coverage and possible Scout benefit before a leader confirms a night.",
+      "status": "partial",
+      "implementation": [
+        "js/next-phase.js",
+        "js/studio.js"
+      ],
+      "verification": "Verify multi-activity recommendation and Scout impact per activity",
+      "source": "OAS Trailmap feature planning and repository review"
+    },
+    {
+      "id": "APP-054",
+      "category": "ACT",
+      "title": "Suggested combinations for a Scout night",
+      "description": "Automatically propose complementary activities based on confirmed coverage.",
+      "status": "implemented",
+      "implementation": [
+        "js/next-phase.js"
+      ],
+      "verification": "Test suggested group and duration",
+      "source": "OAS Trailmap feature planning and repository review"
+    },
+    {
+      "id": "APP-055",
+      "category": "ACT",
+      "title": "Manual activity combination editing",
+      "description": "Allow add/remove/reorder of multiple activity references.",
+      "status": "implemented",
+      "implementation": [
+        "js/next-phase.js"
+      ],
+      "verification": "Edit and persist a session",
+      "source": "OAS Trailmap feature planning and repository review"
+    },
+    {
+      "id": "APP-056",
+      "category": "ACT",
+      "title": "Leader confirmation for session combinations",
+      "description": "Keep suggestions provisional until confirmed.",
+      "status": "implemented",
+      "implementation": [
+        "js/next-phase.js"
+      ],
+      "verification": "Check confirmed state survives reload",
+      "source": "OAS Trailmap feature planning and repository review"
+    },
+    {
+      "id": "APP-057",
+      "category": "ACT",
+      "title": "Combined duration and unique coverage",
+      "description": "Sum activity durations and count each covered requirement once.",
+      "status": "implemented",
+      "implementation": [
+        "js/next-phase.js"
+      ],
+      "verification": "Test overlaps and overtime warning",
+      "source": "OAS Trailmap feature planning and repository review"
+    },
+    {
+      "id": "APP-058",
+      "category": "ACT",
+      "title": "Location conflicts in combined activity nights",
+      "description": "Warn leaders when combined activities use multiple venues if locations enabled.",
+      "status": "implemented",
+      "implementation": [
+        "js/next-phase.js"
+      ],
+      "verification": "Check conflicts and disabled-location behaviour",
+      "source": "OAS Trailmap feature planning and repository review"
+    },
+    {
+      "id": "APP-059",
+      "category": "ACT",
+      "title": "Reusable whole-night session templates",
+      "description": "Save a full multi-activity sequence for future weeks or terms.",
+      "status": "future",
+      "implementation": [
+        "docs/future-phases.md"
+      ],
+      "verification": "Discovery and acceptance criteria required",
+      "source": "OAS Trailmap feature planning and repository review"
+    },
+    {
+      "id": "APP-060",
+      "category": "SCHED",
+      "title": "40-week planning defaults",
+      "description": "Default to one main session each week for a 40-week curriculum.",
+      "status": "implemented",
+      "implementation": [
+        "js/studio.js"
+      ],
+      "verification": "Check initial defaults",
+      "source": "OAS Trailmap feature planning and repository review"
+    },
+    {
+      "id": "APP-061",
+      "category": "SCHED",
+      "title": "Flexible 1–60 week generation",
+      "description": "Allow any whole number of weeks from 1 through 60.",
+      "status": "implemented",
+      "implementation": [
+        "index.html",
+        "js/studio.js"
+      ],
+      "verification": "Generate 1, 40 and 60 weeks",
+      "source": "OAS Trailmap feature planning and repository review"
+    },
+    {
+      "id": "APP-062",
+      "category": "SCHED",
+      "title": "Configurable capacity per week",
+      "description": "Set default and per-week requirement capacity.",
+      "status": "implemented",
+      "implementation": [
+        "js/studio.js"
+      ],
+      "verification": "Change capacity and regenerate",
+      "source": "OAS Trailmap feature planning and repository review"
+    },
+    {
+      "id": "APP-063",
+      "category": "SCHED",
+      "title": "Progress-focused strategy",
+      "description": "Prioritise readiness, broad Scout benefit and foundational unlocks.",
+      "status": "implemented",
+      "implementation": [
+        "js/forecast.js"
+      ],
+      "verification": "Compare expected ordering",
+      "source": "OAS Trailmap feature planning and repository review"
+    },
+    {
+      "id": "APP-064",
+      "category": "SCHED",
+      "title": "Location-focused strategy",
+      "description": "Prefer compatible activity locations when enabled.",
+      "status": "implemented",
+      "implementation": [
+        "js/forecast.js",
+        "js/theme-tracker.js"
+      ],
+      "verification": "Test locations toggle",
+      "source": "OAS Trailmap feature planning and repository review"
+    },
+    {
+      "id": "APP-065",
+      "category": "SCHED",
+      "title": "Balanced strategy",
+      "description": "Combine Scout progression and compatible-location grouping.",
+      "status": "implemented",
+      "implementation": [
+        "js/forecast.js"
+      ],
+      "verification": "Compare mixed plans",
+      "source": "OAS Trailmap feature planning and repository review"
+    },
+    {
+      "id": "APP-066",
+      "category": "SCHED",
+      "title": "Curriculum-first strategy",
+      "description": "Generate a plan without relying on selected Scout completion records.",
+      "status": "implemented",
+      "implementation": [
+        "js/studio.js",
+        "js/forecast.js"
+      ],
+      "verification": "Generate in curriculum mode",
+      "source": "OAS Trailmap feature planning and repository review"
+    },
+    {
+      "id": "APP-067",
+      "category": "SCHED",
+      "title": "Locked weeks and selective regeneration",
+      "description": "Preserve explicitly locked sessions when regenerating remaining weeks.",
+      "status": "implemented",
+      "implementation": [
+        "js/forecast.js",
+        "js/studio.js"
+      ],
+      "verification": "Regenerate with locked weeks",
+      "source": "OAS Trailmap feature planning and repository review"
+    },
+    {
+      "id": "APP-068",
+      "category": "SCHED",
+      "title": "External venue suggestions and preferred weeks",
+      "description": "Suggest external activities, prefer chosen weeks and allow leader confirmation.",
+      "status": "partial",
+      "implementation": [
+        "js/studio.js",
+        "js/forecast.js",
+        "js/next-phase.js"
+      ],
+      "verification": "Verify no booking/confirmation integration is implied",
+      "source": "OAS Trailmap feature planning and repository review"
+    },
+    {
+      "id": "APP-069",
+      "category": "SCHED",
+      "title": "Visual week timeline",
+      "description": "Show weeks and planned requirement counts on a navigable timeline.",
+      "status": "implemented",
+      "implementation": [
+        "js/studio.js",
+        "index.html"
+      ],
+      "verification": "Inspect timeline with 60 weeks",
+      "source": "OAS Trailmap feature planning and repository review"
+    },
+    {
+      "id": "APP-070",
+      "category": "SCHED",
+      "title": "Conditional Scout progress forecast",
+      "description": "Chart possible completed requirements by week without recording achievements.",
+      "status": "implemented",
+      "implementation": [
+        "js/forecast.js"
+      ],
+      "verification": "Forecast after one versus two evidence nights",
+      "source": "OAS Trailmap feature planning and repository review"
+    },
+    {
+      "id": "APP-071",
+      "category": "SCHED",
+      "title": "Similar requirement swaps",
+      "description": "Suggest alternative skills using tags, stream, location and readiness.",
+      "status": "implemented",
+      "implementation": [
+        "js/forecast.js"
+      ],
+      "verification": "Replace a requirement and inspect forecast",
+      "source": "OAS Trailmap feature planning and repository review"
+    },
+    {
+      "id": "APP-072",
+      "category": "SCHED",
+      "title": "Themed week regeneration",
+      "description": "Changing a week's theme regenerates matching requirements.",
+      "status": "implemented",
+      "implementation": [
+        "js/theme-tracker.js",
+        "js/studio.js"
+      ],
+      "verification": "Select a theme and check result",
+      "source": "OAS Trailmap feature planning and repository review"
+    },
+    {
+      "id": "APP-073",
+      "category": "SCHED",
+      "title": "Random within-theme selection",
+      "description": "Generate a random eligible themed selection without promising ideal progression.",
+      "status": "implemented",
+      "implementation": [
+        "js/theme-tracker.js"
+      ],
+      "verification": "Reroll and confirm matching theme",
+      "source": "OAS Trailmap feature planning and repository review"
+    },
+    {
+      "id": "APP-074",
+      "category": "SCHED",
+      "title": "Best-for-progression themed selection",
+      "description": "Rank themed choices using impact, readiness and dependency unlocking.",
+      "status": "implemented",
+      "implementation": [
+        "js/theme-tracker.js"
+      ],
+      "verification": "Compare progression scores",
+      "source": "OAS Trailmap feature planning and repository review"
+    },
+    {
+      "id": "APP-075",
+      "category": "SCHED",
+      "title": "Protect manual themed changes",
+      "description": "Lock the week after a themed regeneration or swap.",
+      "status": "implemented",
+      "implementation": [
+        "js/theme-tracker.js",
+        "js/forecast.js"
+      ],
+      "verification": "Run overall regeneration",
+      "source": "OAS Trailmap feature planning and repository review"
+    },
+    {
+      "id": "APP-076",
+      "category": "SCHED",
+      "title": "Repeated requirement placement",
+      "description": "Plan a requirement across enough distinct weeks to meet its occurrence count.",
+      "status": "implemented",
+      "implementation": [
+        "js/forecast.js"
+      ],
+      "verification": "Count repeat appearances",
+      "source": "OAS Trailmap feature planning and repository review"
+    },
+    {
+      "id": "APP-077",
+      "category": "SCHED",
+      "title": "Week theme choice controls",
+      "description": "Expose theme chooser and per-week random/progression reroll controls.",
+      "status": "implemented",
+      "implementation": [
+        "js/theme-tracker.js",
+        "index.html"
+      ],
+      "verification": "Exercise UI reroll",
+      "source": "OAS Trailmap feature planning and repository review"
+    },
+    {
+      "id": "APP-078",
+      "category": "SCHED",
+      "title": "Schedule YAML import/export",
+      "description": "Export/import weekly plan without Scout achievements.",
+      "status": "implemented",
+      "implementation": [
+        "js/studio.js",
+        "js/data-manager.js"
+      ],
+      "verification": "Round-trip locked weeks and activity IDs",
+      "source": "OAS Trailmap feature planning and repository review"
+    },
+    {
+      "id": "APP-079",
+      "category": "SCHED",
+      "title": "Week-level Scout evidence review",
+      "description": "Record achievement evidence for a scheduled night.",
+      "status": "implemented",
+      "implementation": [
+        "js/forecast.js",
+        "js/studio.js"
+      ],
+      "verification": "Review and verify record provenance",
+      "source": "OAS Trailmap feature planning and repository review"
+    },
+    {
+      "id": "APP-080",
+      "category": "SCHED",
+      "title": "Forecast limitations clearly stated",
+      "description": "Label forecasts as hypothetical and do not equate planned work with completion.",
+      "status": "implemented",
+      "implementation": [
+        "js/forecast.js",
+        "docs/workflows.md"
+      ],
+      "verification": "Review chart text and labels",
+      "source": "OAS Trailmap feature planning and repository review"
+    },
+    {
+      "id": "APP-081",
+      "category": "TRACK",
+      "title": "OAS requirement coverage inventory",
+      "description": "Show all 142 Scout requirements and how they are addressed by planned weeks and activities.",
+      "status": "implemented",
+      "implementation": [
+        "js/theme-tracker.js",
+        "index.html"
+      ],
+      "verification": "Inspect all requirements",
+      "source": "OAS Trailmap feature planning and repository review"
+    },
+    {
+      "id": "APP-082",
+      "category": "TRACK",
+      "title": "OAS tracker coverage states",
+      "description": "Classify unaddressed, partial, planned and completed-for-selected-Scouts.",
+      "status": "implemented",
+      "implementation": [
+        "js/theme-tracker.js"
+      ],
+      "verification": "Check edge cases for Scout subsets",
+      "source": "OAS Trailmap feature planning and repository review"
+    },
+    {
+      "id": "APP-083",
+      "category": "TRACK",
+      "title": "OAS tracker search and export",
+      "description": "Search skill IDs/text/tags and export a CSV.",
+      "status": "implemented",
+      "implementation": [
+        "js/theme-tracker.js"
+      ],
+      "verification": "Download and inspect CSV",
+      "source": "OAS Trailmap feature planning and repository review"
+    },
+    {
+      "id": "APP-084",
+      "category": "DATA",
+      "title": "Complete application backup",
+      "description": "Export a local full-state JSON backup including operational records.",
+      "status": "implemented",
+      "implementation": [
+        "js/data-manager.js"
+      ],
+      "verification": "Export and restore offline",
+      "source": "OAS Trailmap feature planning and repository review"
+    },
+    {
+      "id": "APP-085",
+      "category": "DATA",
+      "title": "Individual dataset imports and exports",
+      "description": "Handle requirements, progress, activities, schedules and trees separately.",
+      "status": "implemented",
+      "implementation": [
+        "js/data-manager.js"
+      ],
+      "verification": "Run per-dataset round-trip",
+      "source": "OAS Trailmap feature planning and repository review"
+    },
+    {
+      "id": "APP-086",
+      "category": "DATA",
+      "title": "Import validation",
+      "description": "Validate file formats, IDs and references before modifying state.",
+      "status": "partial",
+      "implementation": [
+        "js/data-manager.js"
+      ],
+      "verification": "Add complete prerequisite-cycle and detailed schema validation",
+      "source": "OAS Trailmap feature planning and repository review"
+    },
+    {
+      "id": "APP-087",
+      "category": "DATA",
+      "title": "Import preview and change summary",
+      "description": "Show added, changed and removed records before approval.",
+      "status": "partial",
+      "implementation": [
+        "js/data-manager.js"
+      ],
+      "verification": "Add field-by-field changes and destructive-change warnings",
+      "source": "OAS Trailmap feature planning and repository review"
+    },
+    {
+      "id": "APP-088",
+      "category": "DATA",
+      "title": "Checkpoints and snapshot history",
+      "description": "Save pre-import and manual recovery points.",
+      "status": "implemented",
+      "implementation": [
+        "js/data-manager.js",
+        "js/studio.js"
+      ],
+      "verification": "Recover from a targeted change",
+      "source": "OAS Trailmap feature planning and repository review"
+    },
+    {
+      "id": "APP-089",
+      "category": "DATA",
+      "title": "Selective dataset rollback",
+      "description": "Restore one dataset without reversing unrelated Scout achievements.",
+      "status": "implemented",
+      "implementation": [
+        "js/data-manager.js"
+      ],
+      "verification": "Rollback schedule without progress change",
+      "source": "OAS Trailmap feature planning and repository review"
+    },
+    {
+      "id": "APP-090",
+      "category": "DATA",
+      "title": "Clear achievements retaining roster",
+      "description": "Remove completion evidence but retain Scout identity records.",
+      "status": "implemented",
+      "implementation": [
+        "js/next-phase.js"
+      ],
+      "verification": "Reset and reimport Excel",
+      "source": "OAS Trailmap feature planning and repository review"
+    },
+    {
+      "id": "APP-091",
+      "category": "DATA",
+      "title": "Clear Scout roster and progress",
+      "description": "Remove all Scout-specific local records with explicit confirmation.",
+      "status": "implemented",
+      "implementation": [
+        "js/next-phase.js"
+      ],
+      "verification": "Run destructive confirm in browser",
+      "source": "OAS Trailmap feature planning and repository review"
+    },
+    {
+      "id": "APP-092",
+      "category": "DATA",
+      "title": "Clear planning data",
+      "description": "Clear schedule and locks without deleting Scout achievement records.",
+      "status": "implemented",
+      "implementation": [
+        "js/next-phase.js"
+      ],
+      "verification": "Inspect before/after",
+      "source": "OAS Trailmap feature planning and repository review"
+    },
+    {
+      "id": "APP-093",
+      "category": "DATA",
+      "title": "Restore default requirements",
+      "description": "Restore the bundled normalized requirements baseline without wiping Scout progress.",
+      "status": "implemented",
+      "implementation": [
+        "js/next-phase.js",
+        "data/requirements.json"
+      ],
+      "verification": "Preview and restore default skills",
+      "source": "OAS Trailmap feature planning and repository review"
+    },
+    {
+      "id": "APP-094",
+      "category": "DATA",
+      "title": "Restore verbatim original OAS source file",
+      "description": "Keep the literal original OAS-Requirements.txt as an immutable source separate from normalized defaults.",
+      "status": "partial",
+      "implementation": [
+        "data/requirements.txt",
+        "docs/repeat-counts.md"
+      ],
+      "verification": "The repository contains an annotated requirements.txt, not the original verbatim source",
+      "source": "OAS Trailmap feature planning and repository review"
+    },
+    {
+      "id": "APP-095",
+      "category": "DATA",
+      "title": "Factory reset with backup safeguard",
+      "description": "Offer comprehensive local reset and explicit warning/backup path.",
+      "status": "implemented",
+      "implementation": [
+        "js/next-phase.js"
+      ],
+      "verification": "Verify no unintentional wipe",
+      "source": "OAS Trailmap feature planning and repository review"
+    },
+    {
+      "id": "APP-096",
+      "category": "DATA",
+      "title": "Storage health and backup recency",
+      "description": "Surface storage quota, backup status, source timestamps and recovery readiness.",
+      "status": "planned",
+      "implementation": [
+        "js/data-manager.js"
+      ],
+      "verification": "Define signals and privacy-safe metadata",
+      "source": "OAS Trailmap feature planning and repository review"
+    },
+    {
+      "id": "APP-097",
+      "category": "DATA",
+      "title": "Import history and duplicates review",
+      "description": "Show past data imports and conflicting Scout/activity matches.",
+      "status": "planned",
+      "implementation": [
+        "js/data-manager.js"
+      ],
+      "verification": "Specify record provenance and merge policy",
+      "source": "OAS Trailmap feature planning and repository review"
+    },
+    {
+      "id": "APP-098",
+      "category": "DOC",
+      "title": "First-run nontechnical setup guide",
+      "description": "Walk leaders through Excel import, Scout selection and backup.",
+      "status": "implemented",
+      "implementation": [
+        "js/next-phase.js",
+        "js/docs-upgrade.js"
+      ],
+      "verification": "Read with a first-time leader",
+      "source": "OAS Trailmap feature planning and repository review"
+    },
+    {
+      "id": "APP-099",
+      "category": "DOC",
+      "title": "Everyday leader guides",
+      "description": "Document progress review, activities, planning nights and backups.",
+      "status": "implemented",
+      "implementation": [
+        "js/next-phase.js",
+        "docs/workflows.md"
+      ],
+      "verification": "Check against current UI",
+      "source": "OAS Trailmap feature planning and repository review"
+    },
+    {
+      "id": "APP-100",
+      "category": "DOC",
+      "title": "Workflow graphs",
+      "description": "Provide diagrams showing how Excel, progress, activities and schedules connect.",
+      "status": "implemented",
+      "implementation": [
+        "js/docs-upgrade.js",
+        "docs/workflows.md"
+      ],
+      "verification": "Check mobile, keyboard and screen-reader fallback",
+      "source": "OAS Trailmap feature planning and repository review"
+    },
+    {
+      "id": "APP-101",
+      "category": "DOC",
+      "title": "Design explanations and appendix",
+      "description": "Explain graph rules, scheduler, storage, evidence and data formats.",
+      "status": "implemented",
+      "implementation": [
+        "js/next-phase.js",
+        "docs/workflows.md"
+      ],
+      "verification": "Technical consistency review",
+      "source": "OAS Trailmap feature planning and repository review"
+    },
+    {
+      "id": "APP-102",
+      "category": "DOC",
+      "title": "Help search",
+      "description": "Search in-app user guides by title and content.",
+      "status": "implemented",
+      "implementation": [
+        "js/next-phase.js"
+      ],
+      "verification": "Search troubleshooting and setup",
+      "source": "OAS Trailmap feature planning and repository review"
+    },
+    {
+      "id": "APP-103",
+      "category": "DOC",
+      "title": "Contextual help near controls",
+      "description": "Explain complex choices in place without needing to open a separate guide.",
+      "status": "partial",
+      "implementation": [
+        "js/next-phase.js",
+        "index.html"
+      ],
+      "verification": "Broaden contextual help coverage",
+      "source": "OAS Trailmap feature planning and repository review"
+    },
+    {
+      "id": "APP-104",
+      "category": "DOC",
+      "title": "Future phases clearly marked provisional",
+      "description": "Keep brainstormed proposals separate from agreed implementation work.",
+      "status": "implemented",
+      "implementation": [
+        "docs/future-phases.md",
+        "js/theme-tracker.js"
+      ],
+      "verification": "Check no proposal is mislabelled shipped",
+      "source": "OAS Trailmap feature planning and repository review"
+    },
+    {
+      "id": "APP-105",
+      "category": "FUTURE",
+      "title": "Stage-oriented night redesign",
+      "description": "Investigate four requirements per stage per night, cohesive themes and mixed-stage delivery.",
+      "status": "future",
+      "implementation": [
+        "docs/future-phases.md"
+      ],
+      "verification": "Discover group composition, acceptance criteria and model",
+      "source": "OAS Trailmap feature planning and repository review"
+    },
+    {
+      "id": "APP-106",
+      "category": "FUTURE",
+      "title": "Stages become soft prerequisites again",
+      "description": "Investigate using stage progression as guidance rather than mandatory blocking.",
+      "status": "future",
+      "implementation": [
+        "docs/future-phases.md"
+      ],
+      "verification": "Resolve interactions with master prerequisites",
+      "source": "OAS Trailmap feature planning and repository review"
+    },
+    {
+      "id": "APP-107",
+      "category": "FUTURE",
+      "title": "Repeated delivery across stages",
+      "description": "Investigate repeat counts needed when staging themed nights across groups.",
+      "status": "future",
+      "implementation": [
+        "docs/future-phases.md"
+      ],
+      "verification": "Model progress evidence and stage-specific delivery",
+      "source": "OAS Trailmap feature planning and repository review"
+    },
+    {
+      "id": "APP-108",
+      "category": "FUTURE",
+      "title": "Human-readable modular rewrite",
+      "description": "Reorganise coupled scripts into clear modules with names, tests and maintainable structure.",
+      "status": "future",
+      "implementation": [
+        "docs/future-phases.md"
+      ],
+      "verification": "Architecture discovery and migration plan",
+      "source": "OAS Trailmap feature planning and repository review"
+    },
+    {
+      "id": "APP-109",
+      "category": "FUTURE",
+      "title": "Central configuration system",
+      "description": "Move scheduling weights, stage policies, locations, timing and counts to documented settings.",
+      "status": "future",
+      "implementation": [
+        "docs/future-phases.md"
+      ],
+      "verification": "Agree configuration schema and defaults",
+      "source": "OAS Trailmap feature planning and repository review"
+    },
+    {
+      "id": "APP-110",
+      "category": "FUTURE",
+      "title": "Reusable night templates",
+      "description": "Support reusable multi-activity session templates.",
+      "status": "future",
+      "implementation": [
+        "docs/future-phases.md"
+      ],
+      "verification": "Specify template versioning and custom edits",
+      "source": "OAS Trailmap feature planning and repository review"
+    },
+    {
+      "id": "APP-111",
+      "category": "FUTURE",
+      "title": "Calendar and term date support",
+      "description": "Map week slots onto actual dates, camps and holidays.",
+      "status": "future",
+      "implementation": [
+        "docs/future-phases.md"
+      ],
+      "verification": "Decide jurisdiction and date handling",
+      "source": "OAS Trailmap feature planning and repository review"
+    },
+    {
+      "id": "APP-112",
+      "category": "FUTURE",
+      "title": "Gear and leader resource planning",
+      "description": "Track equipment, consumables, venues and leader qualification needs.",
+      "status": "future",
+      "implementation": [
+        "docs/future-phases.md"
+      ],
+      "verification": "Privacy and feasibility discovery",
+      "source": "OAS Trailmap feature planning and repository review"
+    },
+    {
+      "id": "APP-113",
+      "category": "FUTURE",
+      "title": "Progress analytics and reporting",
+      "description": "Explore readiness bottlenecks, coverage gaps and printable review forms.",
+      "status": "future",
+      "implementation": [
+        "docs/future-phases.md"
+      ],
+      "verification": "Avoid misinterpreting hypothetical forecasts",
+      "source": "OAS Trailmap feature planning and repository review"
+    },
+    {
+      "id": "APP-114",
+      "category": "FUTURE",
+      "title": "Cross-group library sharing",
+      "description": "Share nonpersonal activities and reference content across groups.",
+      "status": "future",
+      "implementation": [
+        "docs/future-phases.md"
+      ],
+      "verification": "Define provenance and sharing boundaries",
+      "source": "OAS Trailmap feature planning and repository review"
+    },
+    {
+      "id": "APP-115",
+      "category": "FUTURE",
+      "title": "Offline-installable experience",
+      "description": "Explore installable PWA/offline continuity with careful local data handling.",
+      "status": "future",
+      "implementation": [
+        "docs/future-phases.md"
+      ],
+      "verification": "Specify updates, storage loss and restore guidance",
+      "source": "OAS Trailmap feature planning and repository review"
+    },
+    {
+      "id": "APP-116",
+      "category": "FUTURE",
+      "title": "Optional connected systems",
+      "description": "Investigate opt-in Scout system integrations, subject to privacy controls.",
+      "status": "future",
+      "implementation": [
+        "docs/future-phases.md"
+      ],
+      "verification": "Permissions and identity matching discovery",
+      "source": "OAS Trailmap feature planning and repository review"
+    },
+    {
+      "id": "APP-117",
+      "category": "FUTURE",
+      "title": "Accessibility and translations",
+      "description": "Improve keyboard support, print views, language access and touch sizing.",
+      "status": "future",
+      "implementation": [
+        "docs/future-phases.md"
+      ],
+      "verification": "Conduct accessibility audit",
+      "source": "OAS Trailmap feature planning and repository review"
+    },
+    {
+      "id": "APP-118",
+      "category": "FUTURE",
+      "title": "Evidence provenance and migrations",
+      "description": "Improve audit histories and portable backup migrations.",
+      "status": "future",
+      "implementation": [
+        "docs/future-phases.md"
+      ],
+      "verification": "Agree retention and rollback semantics",
+      "source": "OAS Trailmap feature planning and repository review"
+    }
+  ]
+}
