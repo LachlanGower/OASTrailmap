@@ -1,0 +1,44 @@
+name: Phase 4B Vue navigation parity (no deployment)
+on:
+  push:
+    branches:
+      - migration/phase-04*
+  pull_request:
+    branches:
+      - migration/trunk
+      - migration/phase-04*
+permissions:
+  contents: read
+jobs:
+  navigation:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+      - run: npm ci
+      - run: npm audit --audit-level=moderate
+      - name: Structural and domain compatibility
+        run: npm test
+      - name: Build the app with its intact legacy workspace assets
+        run: |
+          npm run build
+          npm run check:dist
+      - run: npx playwright install --with-deps chromium
+      - name: Run Vue vs legacy navigation parity on Vite dev and compiled sites
+        run: |
+          npm run dev -- --host 127.0.0.1 --port 5173 >/tmp/oas-nav-dev.log 2>&1 &
+          python3 -m http.server 8765 --bind 127.0.0.1 -d dist >/tmp/oas-nav-build.log 2>&1 &
+          sleep 3
+          OAS_TEST_URL=http://127.0.0.1:5173/ node tests/e2e/navigation-parity.cjs
+          OAS_TEST_URL=http://127.0.0.1:8765/ node tests/e2e/navigation-parity.cjs
+      - name: Screenshot evidence (public and fictional data only)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: phase-04b-navigation
+          path: tests/baseline-artifacts/phase4b/
+          if-no-files-found: ignore
