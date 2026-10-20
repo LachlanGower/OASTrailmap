@@ -4,7 +4,7 @@
  * Until each workspace is migrated, the original, already-initialised legacy
  * handlers remain the single authority for activating workspaces.
  */
-export type NavigationAction = 'trail' | 'tree' | 'schedule' | 'activity' | 'data' | 'help' | 'requirements' | 'undo';
+import type { NavigationAction } from './types';
 const props = defineProps<{
   actions: Record<NavigationAction, (event: MouseEvent) => void>;
   initialSaveStatus: string;
