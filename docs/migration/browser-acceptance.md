@@ -4,10 +4,10 @@ This is the **baseline reference for future user-facing parity**. The initial Ph
 
 | ID | Test scenario | Baseline action and required evidence | APP requirements | Result |
 | --- | --- | --- | --- | --- |
-| B01 | Fresh local load | Serve repository root with a static HTTP server; open app; verify no startup errors and 142 requirements display | APP-001, APP-003, APP-017 | Not run |
-| B02 | Seven workspace tabs | Switch Trailmap, Mapper, Scheduler, Activity Studio, Data & State, Help & Design, Application Requirements; no blank/crashed panel | APP-004, APP-005, APP-006 | Not run |
+| B01 | Fresh local load | Serve repository root with a static HTTP server; open app; verify no startup errors and 142 requirements display | APP-001, APP-003, APP-017 | Automated smoke passed |
+| B02 | Seven workspace tabs | Switch Trailmap, Mapper, Scheduler, Activity Studio, Data & State, Help & Design, Application Requirements; no blank/crashed panel | APP-004, APP-005, APP-006 | Panel visibility passed; deeper workflow tests pending |
 | B03 | Requirement selection/filter | Filter stage, stream, tag, search and status; open a requirement; check details and readiness | APP-018, APP-031, APP-040 | Not run |
-| B04 | Synthetic progress update | Import or seed only fictional Scout data, change one completion, reload and verify the same ID/state | APP-008, APP-039 | Not run |
+| B04 | Synthetic progress update | Import or seed only fictional Scout data, change one completion, reload and verify the same ID/state | APP-008, APP-039 | Automated synthetic storage test passed; full imports pending |
 | B05 | Pack and subset | Switch all, one and a group of example Scouts; verify totals and filtering scope | APP-038, APP-040 | Not run |
 | B06 | Original Excel workbook | In a private local test only, import the original workbook; review sheet/date/highlight/unmatched preview; verify imported provenance and non-destructive reimport | APP-009…APP-015 | Not run |
 | B07 | Skill Tree Mapper | Change tree/tag selection; edit a skill; create/remove local and master links; verify cycle rejection and rollback snapshot | APP-019…APP-037 | Not run |
@@ -20,7 +20,7 @@ This is the **baseline reference for future user-facing parity**. The initial Ph
 | B14 | Recovery | Test resets and rollback in a fresh disposable browser; ensure prominent confirmation before destructive actions | DATA category | Not run |
 | B15 | Application Requirements | Search by APP ID, filter statuses/categories, expand details and export JSON/CSV | Application register requirements | Not run |
 | B16 | No data leakage | Use a browser network inspector while changing Scout progress; confirm it stays local | APP-001, APP-002 | Not run |
-| B17 | Mobile + keyboard | Check at 390×844 and 1440×900; verify navigation, scrolling, focus order, dialogs and controls | APP-004, APP-006 | Not run |
+| B17 | Mobile + keyboard | Check at 390×844 and 1440×900; verify navigation, scrolling, focus order, dialogs and controls | APP-004, APP-006 | Screenshots/panel navigation captured; keyboard/accessibility pending |
 | B18 | Static hosting | Serve from a nested repository-style path; check relative URLs, assets and data fetches | APP-003 | Not run |
 
 ## Evidence recording and comparison
@@ -43,4 +43,4 @@ python -m http.server 8000
 npm run check:baseline
 ```
 
-**Outstanding gate:** Browser screenshots and actual original Excel workbook import/reimport must be verified before migration is approved for production. This checklist is an actionable plan, not a claim of passing results.
+**Outstanding production gate:** Browser screenshots are captured as a baseline but are not yet visually compared; the original Excel workbook import/reimport must still be verified before changing the importer or releasing the migrated app. See `test-evidence.md` for exact checks already run. This checklist is an actionable plan, not a claim of passing results.
