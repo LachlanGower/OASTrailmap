@@ -1,0 +1,34 @@
+name: Phase 3 domain and storage (no deployment)
+on:
+  push:
+    branches:
+      - migration/phase-03-domain-storage
+  pull_request:
+    branches:
+      - migration/trunk
+permissions:
+  contents: read
+jobs:
+  domain-contracts:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+      - name: Install locked dependencies
+        run: npm ci
+      - name: Dependency security audit
+        run: npm audit --audit-level=moderate
+      - name: Preserve legacy requirement, DOM and script contracts
+        run: npm run check:baseline
+      - name: Compile and test Phase 3 domain and storage
+        run: npm run test:domain
+      - name: Typecheck both Vue preview and new services
+        run: npm run typecheck
+      - name: Build identical legacy distribution with optional Vue preview
+        run: npm run build
+      - name: Byte-level preservation of existing web application
+        run: npm run check:dist
