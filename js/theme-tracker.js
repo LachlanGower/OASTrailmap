@@ -123,6 +123,7 @@ function setupThemeAndTracker(){
  HELP_TOPICS.push({id:'tracker',group:'Everyday workflows',title:'Current requirements tracker',text:'Open Scheduler → Current Requirements Tracker. It shows every requirement, its confirmed Activity Studio coverage, all weeks where it is scheduled, the number of separate opportunities needed, and Scout completion evidence. Search by ID, text or tag, or filter to unaddressed, partially planned, fully planned and complete-for-selected-Scouts. Export a CSV to review the full table with other leaders.\n\nActivity matching alone is not a completion. Fully planned means enough distinct weekly opportunities exist; actual completion still requires leader evidence.'});
  // Publish help only after async tracker setup adds its final topic and edits.
  window.__oasPublicHelpTopics=HELP_TOPICS.map(t=>({...t}));
+ window.dispatchEvent(new Event('oas:help-topics-ready'));
  if($('#helpTopics'))helpRender();
  renderSchedule();
 }
