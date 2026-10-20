@@ -10,7 +10,8 @@
     "preview": "vite preview",
     "check:baseline": "node scripts/check-migration-baseline.cjs && node scripts/check-migration-contracts.cjs",
     "check:dist": "node scripts/check-built-legacy.cjs",
-    "test": "npm run check:baseline"
+    "test": "npm run check:baseline && npm run test:domain",
+    "test:domain": "tsc -p tsconfig.domain-tests.json && node --test tests/unit/*.test.cjs"
   },
   "dependencies": {
     "vue": "^3.5.44"
