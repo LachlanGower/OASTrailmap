@@ -1,0 +1,44 @@
+name: Phase 4D.2 Vue tree canvas parity (no deployment)
+on:
+  push:
+    branches:
+      - migration/phase-04d2-vue-tree-canvas
+  pull_request:
+    branches:
+      - migration/trunk
+permissions:
+  contents: read
+jobs:
+  tree-canvas:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+      - run: npm ci
+      - run: npm audit --audit-level=moderate
+      - name: Baseline plus pure domain tests
+        run: npm test
+      - name: Build Vue island and verify legacy assets
+        run: |
+          npm run build
+          npm run check:dist
+      - run: npx playwright install --with-deps chromium
+      - name: Compare legacy and Vue mapper at desktop/mobile in dev and build
+        run: |
+          npm run dev -- --host 127.0.0.1 --port 5173 >/tmp/oas-tree-dev.log 2>&1 &
+          python3 -m http.server 8765 --bind 127.0.0.1 -d dist >/tmp/oas-tree-build.log 2>&1 &
+          sleep 3
+          OAS_TEST_URL=http://127.0.0.1:5173/ node tests/e2e/tree-canvas-parity.cjs
+          OAS_TEST_URL=http://127.0.0.1:8765/ node tests/e2e/tree-canvas-parity.cjs
+      - name: Synthetic screenshot artifacts
+        if: always()
+        continue-on-error: true
+        uses: actions/upload-artifact@v4
+        with:
+          name: phase-04d2-tree-canvas
+          path: tests/baseline-artifacts/phase4d2/
+          if-no-files-found: ignore
