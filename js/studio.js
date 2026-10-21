@@ -117,6 +117,44 @@ function renderTree(){
    });
    items.forEach((r,i)=>position.set(r.id,i));
  });
+ // Vue only renders cards; legacy remains the authority for graph links and ordering.
+ const viewSnapshot={
+  isTag,name:isTag?activeTree.slice(5):activeTree,count:rs.length,
+  lanes:ordered.map(([depth,items])=>({depth,cards:items.map(r=>{
+   const links=mapperLinks(r),selected=!!editingReq&&editingReq!==r.id;
+   const selectedLinks=selected?mapperLinks(byId(editingReq)):null;
+   const isParent=!!selectedLinks?.prerequisites.includes(r.id);
+   const isChild=!!selected&&links.prerequisites.includes(editingReq);
+   return {
+    id:r.id,text:r.text,tree:treeFor(r),stage:r.stage,depth,
+    readyCount:readyScoutCount(r),prerequisites:links.prerequisites.length,
+    recommended:links.suggested_links.length,active:editingReq===r.id,
+    actions:!selected?null:[
+     {action:isParent?'remove-parent':'parent',
+      label:(isParent?'Remove as parent of':'Add as parent of')+' selected skill',
+      title:isParent?'Break parent link':'Add as parent',
+      symbol:isParent?'×':'↑',unlink:isParent},
+     {action:isChild?'remove-child':'child',
+      label:(isChild?'Remove as child of':'Add as child of')+' selected skill',
+      title:isChild?'Break child link':'Add as child',
+      symbol:isChild?'×':'↓',unlink:isChild}
+    ]
+   };
+  })}))
+ };
+ window.__oasTreeLatestSnapshot=viewSnapshot;
+ if(typeof window.__oasVueTreeRender==='function'){
+  try{
+   if(window.__oasVueTreeRender(viewSnapshot)){
+    if(viewport){viewport.scrollLeft=oldX;viewport.scrollTop=oldY;}
+    renderTreeEditor();return;
+   }
+  }catch(error){
+   console.warn('Vue tree update failed; retaining legacy tree canvas.',error);
+   window.__oasVueTreeRender=undefined;
+   delete document.documentElement.dataset.oasTreeRenderer;
+  }
+ }
  let html=`<div class="tree-view-note">${isTag?`<b>Tag view:</b> ${esc(activeTree.slice(5))} · ${rs.length} matching skills across all trees.`:`<b>Skill tree:</b> ${esc(activeTree)} · ${rs.length} skills.`} <span>Solid green = mandatory; dashed amber = recommended. Select a skill, then use ↑ or ↓ to connect another node, or × to break an existing link. Drag to reorder within a column.</span></div><div class="tree-lanes">`;
  for(const [level,items] of ordered){html+=`<div class="tree-lane" data-depth="${level}"><h3>${level===0?'Foundations':`Depth ${level+1}`}</h3>`;
  for(const r of items){const n=readyScoutCount(r),ln=mapperLinks(r),selected=editingReq&&editingReq!==r.id;html+=`<div role="button" tabindex="0" draggable="true" class="tree-node ${editingReq===r.id?'active':''}" data-tree-id="${esc(r.id)}" aria-label="Select skill: ${esc(r.text)}" title="${esc(r.text)}"><strong>${esc(r.text)}</strong><small>${esc(treeFor(r))} · Stage ${esc(r.stage)} · ${n} ready</small><small>${ln.prerequisites.length} mandatory · ${ln.suggested_links.length} recommended</small>${selected?(()=>{const selectedLinks=mapperLinks(byId(editingReq)),isParent=selectedLinks.prerequisites.includes(r.id),isChild=ln.prerequisites.includes(editingReq);return `<div class="tree-quick-actions"><button type="button" class="tree-quick-link ${isParent?'unlink':''}" data-quick-link="${isParent?'remove-parent':'parent'}" aria-label="${isParent?'Remove as parent of':'Add as parent of'} selected skill" title="${isParent?'Break parent link':'Add as parent'}">${isParent?'×':'↑'}</button><button type="button" class="tree-quick-link ${isChild?'unlink':''}" data-quick-link="${isChild?'remove-child':'child'}" aria-label="${isChild?'Remove as child of':'Add as child of'} selected skill" title="${isChild?'Break child link':'Add as child'}">${isChild?'×':'↓'}</button></div>`;})():''}</div>`;}html+='</div>';
@@ -157,6 +195,25 @@ function drawTreeEdges(){
  }
  svg.innerHTML=paths;
 }
+// The original mapper remains the single authority for graph writes.
+window.__oasTreeSnapshot=()=>window.__oasTreeLatestSnapshot;
+window.__oasTreeSelect=id=>{editingReq=id;renderTree();};
+window.__oasTreeQuickLink=(id,action)=>quickLink(id,action);
+window.__oasTreeDrop=(id,target)=>{
+ if(!id||id===target||!byId(id))return;
+ const depths=treeLevels(treeSelectionRequirements());
+ if(depths.get(id)!==depths.get(target)){
+  showToast('Reorder within the same depth; prerequisite arrows determine depth.');
+  return;
+ }
+ const all=treeOrder(treeSelectionRequirements()).map(r=>r.id);
+ const i=all.indexOf(id),j=all.indexOf(target);
+ if(i<0||j<0)return;
+ all.splice(i,1);all.splice(all.indexOf(target),0,id);
+ studio.order[activeTree]=all;writeStudio();renderTree();
+};
+window.__oasTreeEdges=drawTreeEdges;
+window.__oasTreeLegacyRender=renderTree;
 function wouldCycle(id,prereqs){const graph=new Map(requirements.map(r=>[r.id,r.id===id?prereqs:r.prerequisites||[]]));const visiting=new Set(),done=new Set();function visit(n){if(visiting.has(n))return true;if(done.has(n))return false;visiting.add(n);for(const child of graph.get(n)||[])if(visit(child))return true;visiting.delete(n);done.add(n);return false;}return [...graph.keys()].some(visit);}
 function validateReqs(list){if(!Array.isArray(list)||!list.length)throw Error('No requirements found');const ids=new Set();for(const r of list){if(typeof r.id!=='string'||!r.id||ids.has(r.id))throw Error('Missing or duplicated requirement ID: '+r.id);ids.add(r.id);if(!Array.isArray(r.tags)||!Array.isArray(r.prerequisites)||typeof r.text!=='string')throw Error('Malformed requirement '+r.id);}for(const r of list)for(const p of r.prerequisites)if(!ids.has(p))throw Error(`Missing prerequisite ${p} used by ${r.id}`);const done=new Set(),visiting=new Set(),map=new Map(list.map(r=>[r.id,r.prerequisites]));function visit(n){if(visiting.has(n))throw Error('Circular mandatory prerequisite at '+n);if(done.has(n))return;visiting.add(n);map.get(n).forEach(visit);visiting.delete(n);done.add(n);}ids.forEach(visit);}
 function renderTreeEditor(){const r=byId(editingReq),panel=$('#treeEditor'),links=r?mapperLinks(r):null;if(!r){panel.innerHTML='<p class="muted">Select a skill. Click to edit; drag cards to rearrange. Recommended links remain advisory.</p>';return;}const incoming=requirements.filter(other=>other.id!==r.id&&mapperLinks(other).prerequisites.includes(r.id));
