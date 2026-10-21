@@ -14,6 +14,7 @@ const HELP_TOPICS=[
  {id:'future',group:'Future phases (brainstorm)',title:'Ideas for future releases — not committed requirements',text:'IDEAS FOR DISCUSSION, NOT APPROVED REQUIREMENTS:\n\n• Reusable night templates: turn a successful multi-activity session into a template for future terms.\n• Scout-group sharing: exchange reviewed activities and requirements without revealing Scout data.\n• Equipment and resource planning: detect missing gear, venue constraints and leader qualifications.\n• Session calendar: map Week 1–40 to actual term dates, holidays, excursions and camp weekends.\n• Progress insights: show likely requirement unlocks, gaps by strand and progress over time.\n• Offline application: installable browser experience with explicit local data recovery guidance.\n• Optional integrations: consider Scout management data sources only after privacy and permissions design.\n• Better provenance: show where requirements and completion evidence originated.\n• Accessibility and translations: larger text, keyboard-first navigation, printable leader guides.\n\nEach idea needs its own discovery, acceptance criteria, privacy review and prioritisation before work is scheduled.'}
 ];
 function helpRender(){
+ if(window.__oasHelpVueActive)return; // Vue now owns the read-only Help workspace.
  const nav=$('#helpTopics'),content=$('#helpContent');if(!nav||!content)return;
  const q=($('#helpSearch')?.value||'').toLowerCase();
  const filtered=HELP_TOPICS.filter(t=>(t.title+' '+t.group+' '+t.text).toLowerCase().includes(q));
