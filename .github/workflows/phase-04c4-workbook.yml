@@ -1,0 +1,44 @@
+name: Phase 4C.4 Vue workbook import parity (no deployment)
+on:
+  push:
+    branches:
+      - migration/phase-04c4-vue-workbook-import
+  pull_request:
+    branches:
+      - migration/trunk
+permissions:
+  contents: read
+jobs:
+  workbook-import:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+      - run: npm ci
+      - run: npm audit --audit-level=moderate
+      - name: Domain and import parser unit tests
+        run: npm test
+      - name: Build and verify original assets
+        run: |
+          npm run build
+          npm run check:dist
+      - run: npx playwright install --with-deps chromium
+      - name: Compare workbook preview, cancel, apply, reimport and backup in browsers
+        run: |
+          npm run dev -- --host 127.0.0.1 --port 5173 >/tmp/oas-workbook-dev.log 2>&1 &
+          python3 -m http.server 8765 --bind 127.0.0.1 -d dist >/tmp/oas-workbook-built.log 2>&1 &
+          sleep 3
+          OAS_TEST_URL=http://127.0.0.1:5173/ node tests/e2e/workbook-import-parity.cjs
+          OAS_TEST_URL=http://127.0.0.1:8765/ node tests/e2e/workbook-import-parity.cjs
+      - name: Synthetic workbook screenshots only
+        if: always()
+        continue-on-error: true
+        uses: actions/upload-artifact@v4
+        with:
+          name: phase-04c4-workbook-preview
+          path: tests/baseline-artifacts/phase4c4/
+          if-no-files-found: ignore

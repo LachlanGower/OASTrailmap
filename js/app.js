@@ -256,11 +256,38 @@ function parseWorkbook(wb){const rows=[],scouts=new Set(),unmatched=[];const ext
  }
  return {rows,scouts:[...scouts].sort(),unmatched,extraReqs};
 }
+window.__oasWorkbookRequirements=()=>requirements;
+/**
+ * Commit remains identical to the original OAS importer. Vue can preview
+ * safely without touching Scout data; only this explicit Apply action writes.
+ * Existing record extensions and workbook provenance fields survive merges.
+ */
+window.__oasWorkbookApply=parsed=>{
+ for(const r of parsed.extraReqs)if(!requirements.some(x=>x.id===r.id))requirements.push(r);
+ for(const item of (parsed.workflows||[])){
+  const requirement=requirements.find(r=>r.id===item.id);
+  if(requirement&&!requirement.workflow)requirement.workflow=item.workflow;
+ }
+ for(const scout of parsed.scouts)
+  if(!scoutRecords[getKey(scout,'__roster__')])
+   scoutRecords[getKey(scout,'__roster__')]={completed:false,date:'',source:'workbook-roster'};
+ for(const r of parsed.rows){
+  const key=getKey(r.scout,r.id),old=recordFor(r.scout,r.id);
+  scoutRecords[key]={...old,completed:true,date:r.date||old.date||'',
+   source:'workbook',sourceSheet:r.sourceSheet,sourceRow:r.sourceRow,
+   workflow:r.workflow,highlighted:r.highlighted||false};
+ }
+ save();
+ $('#previewPanel').hidden=true;
+ $('#importStatus').textContent=`Imported ${parsed.rows.length} completed cells for ${parsed.scouts.length} Scouts.`;
+ selectedScout='__all__';renderAll();showToast('Workbook progress imported.');
+ pendingImport=null;
+};
 function showWorkbookPreview(parsed,fileName){pendingImport=parsed;const panel=$('#previewPanel');const unique=new Set(parsed.rows.map(r=>getKey(r.scout,r.id)));panel.hidden=false;panel.innerHTML=`<h3>Workbook import preview</h3><p><b>${esc(fileName)}</b> · ${parsed.scouts.length} Scouts · ${parsed.rows.length} completed cells across ${unique.size} Scout/requirement pairs · ${parsed.unmatched.length} workbook rows not found verbatim in the requirements source.</p><p>Import adds completion evidence and will not clear existing manual records. Where a cell has both a date and a highlight, the date is retained. Unmatched rows are added as clearly labelled workbook-specific requirements so their evidence is not lost.</p>${parsed.unmatched.length?`<div class="preview-table-wrap"><table class="preview-table"><thead><tr><th>Sheet</th><th>Row</th><th>Workflow</th><th>Requirement text</th></tr></thead><tbody>${parsed.unmatched.slice(0,80).map(x=>`<tr><td>${esc(x.sheet)}</td><td>${x.row}</td><td>${esc(x.workflow)}</td><td><span class="tag-warning">Workbook-only</span> ${esc(x.text)}</td></tr>`).join('')}</tbody></table></div>`:'<p>No unmatched requirement rows found.</p>'}<div class="preview-actions"><button id="applyWorkbook" class="button primary">Apply import</button><button id="cancelWorkbook" class="button secondary">Cancel</button></div>`;
- $('#applyWorkbook').addEventListener('click',()=>{for(const r of parsed.extraReqs)if(!requirements.some(x=>x.id===r.id))requirements.push(r);for(const s of parsed.scouts)if(!scoutRecords[getKey(s,'__roster__')])scoutRecords[getKey(s,'__roster__')]={completed:false,date:'',source:'workbook-roster'};for(const r of parsed.rows){const key=getKey(r.scout,r.id),old=recordFor(r.scout,r.id);scoutRecords[key]={...old,completed:true,date:r.date||old.date||'',source:'workbook',sourceSheet:r.sourceSheet,sourceRow:r.sourceRow,workflow:r.workflow,highlighted:r.highlighted||false};}save();panel.hidden=true;$('#importStatus').textContent=`Imported ${parsed.rows.length} completed cells for ${parsed.scouts.length} Scouts.`;selectedScout='__all__';renderAll();showToast('Workbook progress imported.');pendingImport=null;});
+ $('#applyWorkbook').addEventListener('click',()=>window.__oasWorkbookApply(parsed));
  $('#cancelWorkbook').addEventListener('click',()=>{panel.hidden=true;pendingImport=null;});
 }
-async function handleWorkbook(file){if(!window.XLSX){$('#importStatus').textContent='Excel reader is still loading. Check your internet connection and try again.';return;}try{const data=await fileRead(file);const wb=XLSX.read(data,{type:'array',cellDates:true,cellStyles:true});const parsed=parseWorkbook(wb);if(!parsed.scouts.length)throw new Error('No Scout roster found. Check that this is an OAS progress workbook.');showWorkbookPreview(parsed,file.name);$('#importStatus').textContent='Preview ready — review the unmatched rows before applying.';}catch(e){$('#importStatus').textContent='Could not read workbook: '+e.message;}}
+async function handleWorkbook(file){if(window.__oasWorkbookStart)return window.__oasWorkbookStart(file);if(!window.XLSX){$('#importStatus').textContent='Excel reader is still loading. Check your internet connection and try again.';return;}try{const data=await fileRead(file);const wb=XLSX.read(data,{type:'array',cellDates:true,cellStyles:true});const parsed=parseWorkbook(wb);if(!parsed.scouts.length)throw new Error('No Scout roster found. Check that this is an OAS progress workbook.');showWorkbookPreview(parsed,file.name);$('#importStatus').textContent='Preview ready — review the unmatched rows before applying.';}catch(e){$('#importStatus').textContent='Could not read workbook: '+e.message;}}
 function parseCsv(text){const rows=[];let row=[],cell='',quoted=false;for(let i=0;i<text.length;i++){const c=text[i];if(c==='"'&&quoted&&text[i+1]==='"'){cell+='"';i++;}else if(c==='"'){quoted=!quoted;}else if(c===','&&!quoted){row.push(cell);cell='';}else if((c==='\n'||c==='\r')&&!quoted){if(c==='\r'&&text[i+1]==='\n')i++;row.push(cell);if(row.some(x=>x.trim()))rows.push(row);row=[];cell='';}else cell+=c;}if(cell||row.length){row.push(cell);rows.push(row);}const headers=(rows.shift()||[]).map(x=>x.trim().toLowerCase());return rows.map(r=>Object.fromEntries(headers.map((h,i)=>[h,(r[i]||'').trim()])));}
 function parseActivities(text,ext){if(ext==='csv'){return parseCsv(text).map((x,i)=>({id:x.id||`activity-${i+1}`,title:x.title||x.name||`Activity ${i+1}`,description:x.description||'',duration_minutes:Number(x.duration_minutes)||undefined,tags:(x.tags||'').split(/[;,|]/).map(t=>t.trim()).filter(Boolean),covers:(x.covers||x.requirement_ids||'').split(/[;,|]/).map(t=>t.trim()).filter(Boolean)}));}
  let data;if(ext==='json')data=JSON.parse(text);else{if(!window.jsyaml)throw new Error('YAML parser is not loaded. Try JSON or reconnect to the internet.');data=jsyaml.load(text);}const list=Array.isArray(data)?data:data.activities;if(!Array.isArray(list))throw new Error('Expected an activities list.');return list.map((a,i)=>({...a,id:String(a.id||`activity-${i+1}`),title:String(a.title||a.name||`Activity ${i+1}`),covers:Array.isArray(a.covers)?a.covers:Array.isArray(a.requirement_ids)?a.requirement_ids:[],tags:Array.isArray(a.tags)?a.tags:[]}));}
