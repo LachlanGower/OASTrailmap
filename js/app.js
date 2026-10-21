@@ -97,8 +97,42 @@ function renderPlanner(){
  $('#plannerReadyCount').textContent=selectedPlannerTags.length?readyPairs:'—';
  $('#plannerNote').textContent=!selectedPlannerTags.length?'Choose one or more tags. Matching requirements are counted once even when they carry several selected tags. Counts use the current Scout scope.':`${selectedPlannerTags.join(' + ')} · ${reqs.length} unique requirements across all matching stages and streams. ${outstanding} incomplete Scout-skill pairs remain; ${affected.size} Scouts have at least one outstanding requirement in this plan.`;
 }
+/**
+ * Read-only projection of the *current* legacy app state for the Vue map.
+ * Completion writes, date edits and workbook loading stay with legacy code.
+ */
+function trailmapMapSnapshot(visible=visibleRequirements()){
+  return {
+    plannerMode:!!$('#plannerMode')?.checked,
+    selectedPlannerTags:[...selectedPlannerTags],
+    groupScope:groupScope(),
+    nodes:visible.map(r=>{
+      const status=getStatus(r);
+      return {
+        id:r.id,stage:r.stage,stream:r.stream,text:r.text,
+        workflow:r.workflow||'',tags:[...(r.tags||[])],
+        status,readyCount:readyScoutCount(r),
+        missingPrerequisites:groupScope()?0:blockedPrerequisites(r,selectedScout).length,
+        hasActivity:activityFor(r.id).length>0,
+        selected:selectedRequirement===r.id
+      };
+    })
+  };
+}
 function renderMap(){
   const visible=visibleRequirements(); const canvas=$('#mapCanvas');
+  // Once Vue owns the map, never overwrite its nodes with innerHTML.
+  // Keep the original renderer ready for ?trailmapRenderer=legacy and errors.
+  if(typeof window.__oasTrailmapVueRender==='function'){
+    $('#emptyMap').hidden=visible.length>0;
+    try {
+      if(window.__oasTrailmapVueRender(trailmapMapSnapshot(visible)))return;
+    } catch(error) {
+      console.warn('Vue Trailmap update failed; falling back to original map.',error);
+      window.__oasTrailmapVueRender=undefined;
+      delete document.documentElement.dataset.oasTrailmapRenderer;
+    }
+  }
   if(!visible.length){canvas.innerHTML='';$('#emptyMap').hidden=false;return;} $('#emptyMap').hidden=true;
   const priority=$('#plannerMode')?.checked;
   let html='<div class="map-grid">';
@@ -147,6 +181,12 @@ function renderDetail(){
  panel.querySelectorAll('[data-complete-scout]').forEach(input=>input.addEventListener('change',()=>{const name=input.dataset.completeScout,key=getKey(name,r.id),old=recordFor(name,r.id);scoutRecords[key]={...old,completed:input.checked,date:input.checked?(old.date||new Date().toISOString().slice(0,10)):'',source:'manual'};save();renderSummary();renderMap();renderDetail();renderPlanner();}));
  panel.querySelectorAll('[data-related]').forEach(b=>b.addEventListener('click',()=>{selectedRequirement=b.dataset.related;renderMap();renderDetail();}));
 }
+// Explicit bridge: the Vue island renders nodes, the original application
+// remains authoritative for selection, detail changes and relationship lines.
+window.__oasTrailmapSnapshot=trailmapMapSnapshot;
+window.__oasTrailmapSelect=id=>{selectedRequirement=id;renderMap();renderDetail();};
+window.__oasTrailmapDrawRelated=drawRelatedEdges;
+window.__oasTrailmapLegacyRender=renderMap;
 function renderAll(){renderScoutSelect();renderSummary();renderPlanner();renderMap();renderDetail();}
 function fileRead(file){return new Promise((resolve,reject)=>{const r=new FileReader();r.onload=()=>resolve(r.result);r.onerror=reject;r.readAsArrayBuffer(file);});}
 function parseDateCell(cell){if(!cell)return ''; if(cell.v instanceof Date)return cell.v.toISOString().slice(0,10);if(typeof cell.v==='number'&&window.XLSX?.SSF){const d=XLSX.SSF.parse_date_code(cell.v);if(d)return `${d.y}-${String(d.m).padStart(2,'0')}-${String(d.d).padStart(2,'0')}`;}
