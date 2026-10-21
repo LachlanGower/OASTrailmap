@@ -70,10 +70,8 @@ export function mountWorkbookImporter():void {
     console.warn('Workbook preview rejected; no data was applied.',error);
    }
   };
- };
- const init=()=>mountWorkbookImporter();
- if(document.readyState==='loading')
-   document.addEventListener('DOMContentLoaded',init,{once:true});
- else init();
+ },60);
 }
-mountWorkbookImporter();
+if(document.readyState==='loading')
+  document.addEventListener('DOMContentLoaded',mountWorkbookImporter,{once:true});
+else mountWorkbookImporter();
