@@ -1,3 +1,4 @@
+import '../tree/mount';
 import '../workbook/mount';
 import '../scouts/mount';
 import '../trailmap/mount';
