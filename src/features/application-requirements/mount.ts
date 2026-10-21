@@ -1,3 +1,4 @@
+import '../trailmap/mount';
 import '../help/mount';
 import '../navigation/mount';
 import { createApp } from 'vue';
