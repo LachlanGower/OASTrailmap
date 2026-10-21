@@ -1,0 +1,44 @@
+name: Phase 4C.2 Vue requirement map parity (no deployment)
+on:
+  push:
+    branches:
+      - migration/phase-04c2-vue-requirement-map
+  pull_request:
+    branches:
+      - migration/trunk
+permissions:
+  contents: read
+jobs:
+  map-parity:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+      - run: npm ci
+      - run: npm audit --audit-level=moderate
+      - name: Legacy structure and pure TypeScript unit parity
+        run: npm test
+      - name: Bundle both app and preview while preserving original files
+        run: |
+          npm run build
+          npm run check:dist
+      - run: npx playwright install --with-deps chromium
+      - name: Compare Vue and original map on desktop/mobile in dev + compiled build
+        run: |
+          npm run dev -- --host 127.0.0.1 --port 5173 >/tmp/oas-map-dev.log 2>&1 &
+          python3 -m http.server 8765 --bind 127.0.0.1 -d dist >/tmp/oas-map-build.log 2>&1 &
+          sleep 3
+          OAS_TEST_URL=http://127.0.0.1:5173/ node tests/e2e/trailmap-map-parity.cjs
+          OAS_TEST_URL=http://127.0.0.1:8765/ node tests/e2e/trailmap-map-parity.cjs
+      - name: Upload fictional-data screenshots
+        if: always()
+        continue-on-error: true
+        uses: actions/upload-artifact@v4
+        with:
+          name: phase-04c2-map-parity
+          path: tests/baseline-artifacts/phase4c2/
+          if-no-files-found: ignore
