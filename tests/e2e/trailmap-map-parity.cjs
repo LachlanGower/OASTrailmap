@@ -39,7 +39,7 @@ async function inspect(browser,mode,viewport){
       return {
         ids:nodes.map(n=>n.dataset.id),
         marks:nodes.map(n=>n.querySelector('.node-mark')?.textContent),
-        classes:nodes.map(n=>n.className),
+        classes:nodes.map(n=>[...n.classList].join(' ')), // HTML class whitespace is not a visual difference
         copy:nodes.map(n=>n.querySelector('.node-copy')?.textContent),
         badges:nodes.map(n=>[...n.querySelectorAll('.node-badge')].map(x=>x.textContent)),
         titles:nodes.map(n=>n.title),
