@@ -1,3 +1,4 @@
+import '../help/mount';
 import '../navigation/mount';
 import { createApp } from 'vue';
 import ApplicationRequirements from './ApplicationRequirements.vue';

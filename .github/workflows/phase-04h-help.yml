@@ -1,0 +1,44 @@
+name: Phase 4H Vue Help parity (no deployment)
+on:
+  push:
+    branches:
+      - migration/phase-04h-help-cleanup
+  pull_request:
+    branches:
+      - migration/phase-04g-data-state
+      - migration/trunk
+permissions:
+  contents: read
+jobs:
+  help-parity:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+      - run: npm ci
+      - run: npm audit --audit-level=moderate
+      - run: npm test
+      - name: Build and verify original assets
+        run: |
+          npm run build
+          npm run check:dist
+      - run: npx playwright install --with-deps chromium
+      - name: Compare legacy and Vue Help at desktop and mobile sizes
+        run: |
+          npm run dev -- --host 127.0.0.1 --port 5173 >/tmp/oas-help-dev.log 2>&1 &
+          python3 -m http.server 8765 --bind 127.0.0.1 -d dist >/tmp/oas-help-build.log 2>&1 &
+          sleep 3
+          OAS_TEST_URL=http://127.0.0.1:5173/ node tests/e2e/help-parity.cjs
+          OAS_TEST_URL=http://127.0.0.1:8765/ node tests/e2e/help-parity.cjs
+      - name: Screenshot evidence (public copy only)
+        if: always()
+        continue-on-error: true
+        uses: actions/upload-artifact@v4
+        with:
+          name: phase-04h-help
+          path: tests/baseline-artifacts/phase4h/
+          if-no-files-found: ignore
