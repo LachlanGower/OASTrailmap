@@ -75,6 +75,11 @@ function renderSummary(){
   $('#totalReq').textContent=requirements.length;
 }
 function renderScoutSelect(){
+ if(window.__oasVueScoutRefresh){
+  const missing=$('#missingOnly');if(missing){missing.disabled=groupScope();if(missing.disabled)missing.checked=false;}
+  window.__oasVueScoutRefresh();
+  renderScoutSubsetOptions();return;
+ }
  const select=$('#scoutSelect'),current=selectedScout;
  select.innerHTML='<option value="__all__">All Scouts · pack overview</option><option value="__subset__">Selected Scouts · subset</option>'+scoutNames().map(n=>`<option value="${esc(n)}">${esc(n)}</option>`).join('');
  select.value=[...select.options].some(o=>o.value===current)?current:'__all__';selectedScout=select.value;
@@ -82,9 +87,44 @@ function renderScoutSelect(){
  renderScoutSubsetOptions();
 }
 function renderScoutSubsetOptions(){
+ if(window.__oasVueScoutSubsetRefresh){window.__oasVueScoutSubsetRefresh();return;}
  const box=$('#multiScoutOptions');if(!box)return;const names=scoutNames();
  box.innerHTML=names.length?names.map(n=>`<label class="scout-option"><input type="checkbox" value="${esc(n)}" ${selectedScoutNames.includes(n)?'checked':''}><span>${esc(n)}</span></label>`).join(''):'<p class="empty-inline">Import a workbook or add Scout progress first.</p>';
 }
+/** Vue gets read-only projections. Legacy remains the only writer to storage. */
+window.__oasScoutPickerSnapshot=()=>({
+ names:scoutNames(),selected:selectedScout,subset:[...selectedScoutNames],
+ missingOnlyDisabled:groupScope()
+});
+window.__oasScoutCompletionSnapshot=()=>{
+ const r=requirements.find(x=>x.id===selectedRequirement);if(!r)return null;
+ const names=groupScope()?scopedScoutNames():[selectedScout];
+ return {requirementId:r.id,group:groupScope(),entries:names.map(name=>{
+  const old=recordFor(name,r.id);
+  return {scout:name,completed:old.completed===true,date:old.date||''};
+ })};
+};
+window.__oasScoutSelect=next=>{
+ if(next==='__subset__'&&!selectedScoutNames.length){
+  selectedScout='__all__';$('#scoutSelect').value='__all__';
+  $('#multiScoutPanel').hidden=false;renderScoutSelect();return;
+ }
+ selectedScout=next;
+ if(next==='__subset__')$('#multiScoutPanel').hidden=false;
+ renderAll();
+};
+window.__oasScoutSaveCompletion=(name,id,checked)=>{
+ const key=getKey(name,id),old=recordFor(name,id);
+ scoutRecords[key]={...old,completed:checked,
+  date:checked?(old.date||new Date().toISOString().slice(0,10)):'',
+  source:'manual'};
+ save();renderSummary();renderMap();renderDetail();renderPlanner();
+};
+window.__oasScoutSaveDate=(name,id,date)=>{
+ const key=getKey(name,id),old=recordFor(name,id);
+ scoutRecords[key]={...old,date,completed:old.completed,source:old.source||'manual'};
+ save();renderSummary();renderMap();renderPlanner();
+};
 function renderPlanner(){
  const panel=$('#plannerPanel');if(!panel)return;panel.hidden=!$('#plannerMode').checked;
  const tagBox=$('#plannerTags');const tags=plannerTagNames();
@@ -228,7 +268,7 @@ function backup(){download('oas-trailmap-backup.json',JSON.stringify({format:'oa
 function restoreBackup(data){if(!data||data.format!=='oas-trailmap-backup'||!data.scoutRecords)throw new Error('This does not look like an OAS Trailmap backup.');scoutRecords=data.scoutRecords;activities=Array.isArray(data.activities)?data.activities:[];if(Array.isArray(data.requirements))requirements=data.requirements;save();renderAll();showToast('Backup restored.');}
 async function init(){
  const res=await fetch('data/requirements.json');const data=await res.json();requirements=data.requirements||[];load();renderAll();const tagFilter=$('#mainTagFilter');tagFilter.innerHTML='<option value="">All tags</option>'+plannerTagNames().map(t=>'<option value="'+esc(t)+'">'+esc(t)+'</option>').join('');tagFilter.onchange=renderMap;
- for(const id of ['scoutSelect','stageFilter','streamFilter','statusFilter'])$('#'+id).addEventListener('change',()=>{if(id==='scoutSelect'){const next=$('#scoutSelect').value;if(next==='__subset__'&&!selectedScoutNames.length){selectedScout='__all__';$('#scoutSelect').value='__all__';$('#multiScoutPanel').hidden=false;renderScoutSubsetOptions();return;}selectedScout=next;if(next==='__subset__')$('#multiScoutPanel').hidden=false;}renderAll();});
+ for(const id of ['scoutSelect','stageFilter','streamFilter','statusFilter'])$('#'+id).addEventListener('change',()=>{if(id==='scoutSelect')window.__oasScoutSelect($('#scoutSelect').value);else renderAll();});
  $('#multiScoutBtn').addEventListener('click',()=>{$('#multiScoutPanel').hidden=!$('#multiScoutPanel').hidden;renderScoutSubsetOptions();});
  $('#applyScoutSubset').addEventListener('click',()=>{selectedScoutNames=[...$('#multiScoutOptions').querySelectorAll('input:checked')].map(x=>x.value);if(!selectedScoutNames.length){showToast('Choose at least one Scout.');return;}selectedScout='__subset__';$('#scoutSelect').value='__subset__';$('#multiScoutPanel').hidden=true;renderAll();});
  $('#cancelScoutSubset').addEventListener('click',()=>{$('#multiScoutPanel').hidden=true;});
@@ -236,6 +276,6 @@ async function init(){
  $('#plannerTags').addEventListener('change',e=>{if(e.target.matches('input[type=checkbox]')){const tag=e.target.value;if(e.target.checked&&!selectedPlannerTags.includes(tag))selectedPlannerTags.push(tag);else selectedPlannerTags=selectedPlannerTags.filter(t=>t!==tag);renderPlanner();renderMap();}});
  $('#workbookFile').addEventListener('change',e=>{if(e.target.files[0])handleWorkbook(e.target.files[0]);e.target.value='';});
  $('#exportBtn').addEventListener('click',backup);$('#importBackupBtn').addEventListener('click',()=>$('#backupFile').click());$('#backupFile').addEventListener('change',async e=>{const f=e.target.files[0];if(!f)return;try{restoreBackup(JSON.parse(await f.text()));}catch(err){showToast('Backup restore failed: '+err.message);}e.target.value='';});
- 
+ window.__oasScoutControlsReady=true;
 }
 init().catch(e=>{console.error(e);$('#mapCanvas').innerHTML=`<p class="empty-inline">Could not load the requirement data. Serve this folder from a local web server or GitHub Pages rather than opening index.html directly. (${esc(e.message)})</p>`;});
