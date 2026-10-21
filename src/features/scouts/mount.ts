@@ -30,6 +30,8 @@ function mountScoutUi():void {
   if (!originalSelect || !subset || !field || !window.__oasScoutPickerSnapshot ||
       !window.__oasScoutSelect || !window.__oasScoutCompletionSnapshot ||
       !window.__oasScoutSaveCompletion || !window.__oasScoutSaveDate) return;
+  const originalFieldHtml=field.innerHTML;
+  const originalSubsetHtml=subset.innerHTML;
   const state=shallowReactive({current:window.__oasScoutPickerSnapshot()});
   let pickerApp:App<Element> | null=null;
   let subsetApp:App<Element> | null=null;
@@ -88,9 +90,18 @@ function mountScoutUi():void {
     window.__oasVueScoutSubsetRefresh=undefined;
     window.__oasVueCompletionMount=undefined;
     window.__oasVueCompletionUnmount=undefined;
-    pickerApp?.unmount();
-    subsetApp?.unmount();
-    window.location.search; // Read-only: never reset Scout storage during failure.
+    try{pickerApp?.unmount();}catch{}
+    try{subsetApp?.unmount();}catch{}
+    // After a failed takeover these controls must *remain usable*. The
+    // original bound select was discarded when Vue began mounting, so its
+    // replacement explicitly delegates to the original selection function.
+    field.innerHTML=originalFieldHtml;
+    subset.innerHTML=originalSubsetHtml;
+    const select=field.querySelector<HTMLSelectElement>('#scoutSelect');
+    select?.addEventListener('change',()=>{
+      if(select)window.__oasScoutSelect?.(select.value);
+    });
+    document.documentElement.dataset.oasScoutRenderer='fallback';
   }
 }
 
