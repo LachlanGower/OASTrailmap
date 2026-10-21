@@ -86,6 +86,20 @@ async function inspect(browser,mode,viewport){
  assert.equal(await page.locator('#previewPanel').getAttribute('hidden'),'');
  assert.equal(await page.evaluate(()=>localStorage.getItem('oas-trailmap-v1')),initialRaw,
    'Cancel must not change stored state');
+ // Data & State's general import picker must route to the same Vue preview.
+ await page.locator('#dataType').selectOption('excel');
+ await page.locator('#dataFile').setInputFiles({
+  name:'fictional-cub-progress.xlsx',
+  mimeType:'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
+  buffer:Buffer.from('synthetic workbook decoded via injected local adapter')
+ });
+ await page.waitForFunction(()=>!document.querySelector('#previewPanel').hidden &&
+   !!document.querySelector('#applyWorkbook'),{timeout:20000});
+ const alternate=await current();
+ assert.deepEqual(alternate.rows,preview.rows,'Both file input routes should preview the same records');
+ await page.locator('#cancelWorkbook').click();
+ assert.equal(await page.evaluate(()=>localStorage.getItem('oas-trailmap-v1')),initialRaw,
+   'Cancelling Data & State import must preserve data');
  await openPreview();
  await page.locator('#applyWorkbook').click();
  await page.waitForFunction(()=>document.querySelector('#importStatus')?.textContent?.startsWith('Imported'));
