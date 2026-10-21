@@ -42,6 +42,8 @@ async function inspect(browser,mode,viewport){
  await page.waitForFunction(()=>document.querySelectorAll('#mapCanvas .requirement-node').length===142);
  if(mode==='vue')await page.waitForFunction(()=>typeof window.__oasWorkbookStart==='function',{timeout:20000});
  else assert.equal(await page.evaluate(()=>typeof window.__oasWorkbookStart),'undefined');
+ await page.waitForFunction(()=>document.documentElement.dataset.oasNavRenderer==='vue' ||
+   typeof document.querySelector('#dataManagerTab')?.onclick==='function',{timeout:20000});
  await page.locator('#dataManagerTab').click();
  await page.waitForFunction(()=>!document.querySelector('#dataManager').hidden);
  async function openPreview(){
