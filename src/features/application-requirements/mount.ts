@@ -1,3 +1,4 @@
+import '../scouts/mount';
 import '../trailmap/mount';
 import '../help/mount';
 import '../navigation/mount';
