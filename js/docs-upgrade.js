@@ -52,3 +52,4 @@ helpOpen=function(id){
  if(!target){box.innerHTML='';return;}
  box.innerHTML='<article class="docs-article" data-help-open="'+esc(id)+'"><p class="eyebrow">'+esc(target.group)+'</p><h3>'+esc(target.title)+'</h3>'+docsDiagram(id)+docsFormat(target.text,id)+'</article>';
 };
+
