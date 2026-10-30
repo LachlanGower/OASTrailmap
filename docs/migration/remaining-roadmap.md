@@ -2,7 +2,7 @@
 
 **Updated:** 21 October 2026. This is the engineering execution plan, not a revision of the approved OAS requirements. Subphase numbering describes review slices, not work claimed complete.
 
-## Integration and approval rules
+> **Current detailed execution plan (31 October 2026):** [Remaining slices through Phase 5](remaining-slices-through-phase-5.md) supersedes the older slice order below. Draft PRs #21–#25 cover the Skill Tree and initial Scheduler UI migration; later slices are still planned, not accepted. Preview publishing requires verified GitHub Pages configuration and green checks.\n\n## Integration and approval rules
 
 - `main` / deployed production stay frozen until the user explicitly authorises Phase 6 release.
 - `migration/trunk` receives only reviewed, passing feature PRs.
