@@ -92,6 +92,7 @@ function dataApply(type,x){
 function dataRender(){
  const el=$('#dataManager');if(!el)return;
  const types=['requirements','progress','activities','schedule','trees'],numbers=types.map(t=>dataRecordCount(t));
+ window.__oasVueDataDashboardRender?.(types.map((type,i)=>({type,label:dataLabel(type),count:numbers[i]})));
  const filter=$('#mainTagFilter'),previous=filter?.value;if(filter){filter.innerHTML='<option value="">All tags</option>'+[...new Set(requirements.flatMap(r=>r.tags||[]))].sort().map(t=>'<option value="'+esc(t)+'">'+esc(t)+'</option>').join('');filter.value=previous||'';}
  $('#dataStats').innerHTML=types.map((t,i)=>'<div class="data-stat"><strong>'+numbers[i]+'</strong><span>'+dataLabel(t)+'</span></div>').join('');
  $('#dataExports').innerHTML=['full',...types].map(t=>'<button type="button" class="button secondary" data-dexport="'+t+'">Export '+dataLabel(t)+'</button>').join('');
