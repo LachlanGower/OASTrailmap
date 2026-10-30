@@ -66,7 +66,7 @@ function dataCheckpoints(){try{return JSON.parse(localStorage.getItem(DATA_CHECK
 function dataCheckpoint(title,types=['full']){
  let list=dataCheckpoints();list.unshift({title,at:dataStamp(),types,payload:dataBundle('full')});
  list=list.slice(0,6);
- try{localStorage.setItem(DATA_CHECKPOINTS_KEY,JSON.stringify(list))}catch{showToast('Checkpoint storage full. Export a backup before proceeding.')}
+ try{localStorage.setItem(DATA_CHECKPOINTS_KEY,JSON.stringify(list))}catch(error){throw new Error('Safety checkpoint could not be stored. Export a full backup before proceeding. '+(error?.message||''))}
 }
 function dataExport(type){const obj=dataBundle(type),ext=['requirements','activities','schedule'].includes(type)?'yaml':'json';download(type==='full'?'oas-trailmap-full-backup.json':type+'-'+(type==='trees'?'layout.':'')+ext,ext==='yaml'?dataEncode(obj):JSON.stringify(obj,null,2),ext==='yaml'?'text/yaml':'application/json')}
 function dataShowPreview(type,next,fileName){
