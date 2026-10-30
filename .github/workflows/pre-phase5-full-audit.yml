@@ -1,0 +1,36 @@
+name: Pre Phase 5 full migration audit
+on:
+  push:
+    branches: [migration/pre-phase5-full-audit]
+  pull_request:
+    branches: [migration/phase-04h2b-build-consolidation]
+permissions:
+  contents: read
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+      - run: npm ci
+      - run: npm run typecheck
+      - run: npm test
+      - run: npm run build
+      - run: npm run check:dist
+      - run: npx playwright install --with-deps chromium
+      - name: Run full existing browser regression collection
+        run: |
+          npm run dev -- --host 127.0.0.1 --port 5173 > /tmp/oas-audit-dev.log 2>&1 &
+          python3 -m http.server 8765 --bind 127.0.0.1 -d dist > /tmp/oas-audit-dist.log 2>&1 &
+          sleep 4
+          for base in http://127.0.0.1:5173/ http://127.0.0.1:8765/; do
+            for test in tests/e2e/*.cjs; do
+              echo "::group::${base} ${test}"
+              OAS_TEST_URL="$base" timeout 95s node "$test" || exit 1
+              echo "::endgroup::"
+            done
+          done
