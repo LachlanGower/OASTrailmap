@@ -22,7 +22,7 @@ function mount():void {
     return true;
    };
    document.documentElement.dataset.oasScheduleWeeksRenderer='vue';
-   document.querySelector<HTMLButtonElement>('[data-mode="schedule"]')?.click();
+   // A lazy week-card mount must not switch the user's active workspace.
   }catch(err){
    window.__oasVueScheduleWeeksRender=undefined;
    target.innerHTML=old;
