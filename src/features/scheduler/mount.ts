@@ -1,3 +1,4 @@
+import './forecast-mount';
 import './coverage-mount';
 import './toolbar-mount';
 import './weeks-mount';

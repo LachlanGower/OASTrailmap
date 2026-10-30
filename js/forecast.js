@@ -182,9 +182,12 @@ function forecastMarkup(){
  '<details><summary>Repeat requirements needing more scheduled nights ('+unmet.length+')</summary>'+(!unmet.length?'<p>All repeated requirements have enough planned sessions.</p>':'<ul>'+unmet.map(r=>'<li>'+esc(r.text)+' — '+(scheduled.get(r.id)||0)+' / '+requiredTimes(r)+' '+esc(r.occurrence_unit||'sessions')+' ('+esc(r.occurrence_basis||'inferred')+')</li>').join('')+'</ul>')+'</details></section>';
 }
 function enhanceForecast(){
- const node=$('#forecastProgress');if(node)node.innerHTML=forecastMarkup();
+ const names=scheduleScope(),model=forecastModel(),planned=scheduleOccurrenceCounts(studio.schedule);
+ const snapshot={hasSchedule:studio.schedule.length>0,weeks:studio.schedule.length,scouts:names.length,initial:model.initial,final:model.final,points:model.marks.map(p=>p.mean),limit:requirements.length,unmet:requirements.filter(r=>requiredTimes(r)>1&&(planned.get(r.id)||0)<requiredTimes(r)).map(r=>({id:r.id,text:r.text,planned:planned.get(r.id)||0,required:requiredTimes(r),unit:r.occurrence_unit||'sessions',basis:r.occurrence_basis||'inferred'}))};
+ const node=$('#forecastProgress');if(node&&!window.__oasVueForecastRender?.(snapshot))node.innerHTML=forecastMarkup();
  enhanceRequirementSwaps();
 }
+window.__oasRefreshForecastVue=enhanceForecast;
 const forecastPriorRender=renderSchedule;
 renderSchedule=function(){forecastPriorRender();enhanceForecast()};
 function reviewWeekWithOccurrences(index){
