@@ -1,3 +1,4 @@
+import './recovery-mount';
 import {createApp,shallowReactive} from 'vue';
 import DataDashboard,{type DataCount} from './DataDashboard.vue';
 declare global {interface Window {__oasVueDataDashboardRender?:(items:DataCount[])=>boolean;}}

@@ -1,0 +1,30 @@
+name: Phase 4G.3 recovery integrity
+on:
+  push:
+    branches: [migration/phase-04g3-vue-recovery]
+  pull_request:
+    branches: [migration/phase-04g2-vue-data-state]
+permissions:
+  contents: read
+jobs:
+  recovery:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+      - run: npm ci
+      - run: npm test
+      - run: npm run build
+      - run: npm run check:dist
+      - run: npx playwright install --with-deps chromium
+      - name: Recovery parity and checkpoint failure on Vite and built site
+        run: |
+          npm run dev -- --host 127.0.0.1 --port 5173 >/tmp/oas-dev.log 2>&1 &
+          python3 -m http.server 8765 --bind 127.0.0.1 -d dist >/tmp/oas-dist.log 2>&1 &
+          sleep 3
+          OAS_TEST_URL=http://127.0.0.1:5173/ node tests/e2e/recovery-parity.cjs
+          OAS_TEST_URL=http://127.0.0.1:8765/ node tests/e2e/recovery-parity.cjs
