@@ -1,3 +1,4 @@
+import './coverage-mount';
 import './toolbar-mount';
 import './weeks-mount';
 import { createApp, shallowReactive } from 'vue';
