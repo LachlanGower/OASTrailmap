@@ -3,8 +3,8 @@ const assert=require('node:assert/strict');
 const {chromium}=require('playwright');
 const fixture=require('../fixtures/legacy-state.synthetic.json');
 const ROOT=process.env.OAS_TEST_URL||'http://127.0.0.1:5173/';
-async function inspect(browser,legacy){
- const page=await browser.newPage({viewport:{width:1280,height:800}});
+async function inspect(browser,legacy,viewport){
+ const page=await browser.newPage({viewport});
  const errors=[];
  page.on('pageerror',error=>errors.push(error.message));
  page.on('dialog',dialog=>dialog.dismiss());
@@ -31,12 +31,11 @@ async function inspect(browser,legacy){
  try{
   for(const viewport of [{width:1440,height:900},{width:390,height:844}]){
    // Viewport coverage is provided by browser context sizing in a later full-suite run.
-   const old=await inspect(browser,true),vue=await inspect(browser,false);
+   const old=await inspect(browser,true,viewport),vue=await inspect(browser,false,viewport);
    assert.equal(vue.text,old.text);
    assert.equal(vue.chart,old.chart);
    assert.equal(vue.scoutState,old.scoutState);
    assert.equal(vue.studioState,old.studioState);
-   if(!viewport.width)throw Error('Unexpected viewport');
   }
   console.log('Conditional Vue forecast matches legacy totals with fictional state');
  }finally{await browser.close();}
