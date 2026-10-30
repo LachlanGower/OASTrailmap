@@ -1,3 +1,4 @@
+import '../activity/mount';
 import '../scheduler/mount';
 import '../tree/admin-mount';
 import '../tree/editor-mount';
