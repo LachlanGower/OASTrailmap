@@ -25,7 +25,7 @@ async function inspect(browser,legacy,viewport){
  await form.locator('[name="duration"]').fill('45');
  await form.locator('button[type="submit"]').click();
  await page.waitForFunction(()=>[...document.querySelectorAll('#activityList button')].some(b=>b.textContent.includes('Synthetic navigation activity')),{timeout:10000});
- const after=await page.evaluate(()=>({scout:localStorage.getItem('oas-trailmap-v1'),activities:JSON.parse(localStorage.getItem('oas-studio-v1')||'{}')}));
+ const after=await page.evaluate(()=>({scout:localStorage.getItem('oas-trailmap-v1'),activities:JSON.parse(localStorage.getItem('oas-trailmap-v1')||'{}')}));
  await page.close();
  assert.deepEqual(errors,[]);
  assert.deepEqual(JSON.parse(after.scout).scoutRecords,before,'Activity Studio must not write Scout evidence');
@@ -37,7 +37,7 @@ async function inspect(browser,legacy,viewport){
  try{
   for(const viewport of [{width:1440,height:900},{width:390,height:844}]){
    const old=await inspect(browser,true,viewport),vue=await inspect(browser,false,viewport);
-   assert.equal(vue,old,'Activity save should preserve legacy storage semantics');
+   assert.deepEqual(vue,old,'Activity save should preserve legacy storage semantics');
   }
   console.log('4F.2 activity editor save parity checked using fictional Scout data');
  }finally{await browser.close();}
