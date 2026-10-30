@@ -27,10 +27,13 @@ jobs:
           npm run dev -- --host 127.0.0.1 --port 5173 > /tmp/oas-audit-dev.log 2>&1 &
           python3 -m http.server 8765 --bind 127.0.0.1 -d dist > /tmp/oas-audit-dist.log 2>&1 &
           sleep 4
+          failures=0
           for base in http://127.0.0.1:5173/ http://127.0.0.1:8765/; do
             for test in tests/e2e/*.cjs; do
               echo "::group::${base} ${test}"
-              OAS_TEST_URL="$base" timeout 95s node "$test" || exit 1
+              OAS_TEST_URL="$base" timeout 95s node "$test" || { echo "FAILED: $base $test"; failures=$((failures+1)); }
               echo "::endgroup::"
             done
           done
+          echo "Audit regression failures: $failures"
+          test "$failures" -eq 0
