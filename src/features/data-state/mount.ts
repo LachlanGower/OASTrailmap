@@ -13,7 +13,7 @@ function mount():void{
   window.__oasVueDataDashboardRender=items=>{state.current=items;return true;};
   stats.hidden=true;exports.hidden=true;
   document.documentElement.dataset.oasDataDashboardRenderer='vue';
-  document.querySelector<HTMLButtonElement>('#dataManagerTab')?.click();
+  // Mounting a read-only dashboard must not navigate away from the user's current tab.
  }catch(error){host.remove();window.__oasVueDataDashboardRender=undefined;stats.hidden=false;exports.hidden=false;console.warn('Vue Data dashboard unavailable; original controls retained.',error);}
 }
 if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',mount,{once:true});else mount();

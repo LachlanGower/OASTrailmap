@@ -1,6 +1,6 @@
 import { createApp, nextTick, shallowReactive } from 'vue';
 import ScheduleWeeks, { type WeekCard } from './ScheduleWeeks.vue';
-declare global { interface Window { __oasEnhanceScheduleWeeks?:()=>void; __oasEnhanceMultiSessions?:()=>void; __oasVueScheduleWeeksRender?:(weeks:WeekCard[],bind:()=>void)=>boolean; __oasScheduleTags?:()=>string[]; } }
+declare global { interface Window { __oasEnhanceScheduleWeeks?:()=>void; __oasEnhanceMultiSessions?:()=>void; __oasRefreshSchedulerWeeks?:()=>void; __oasVueScheduleWeeksRender?:(weeks:WeekCard[],bind:()=>void)=>boolean; __oasScheduleTags?:()=>string[]; } }
 function mount():void {
  if(new URLSearchParams(location.search).get('scheduleWeeksRenderer')==='legacy')return;
  const target=document.querySelector<HTMLElement>('#scheduleWeeksGrid');
@@ -22,7 +22,9 @@ function mount():void {
     return true;
    };
    document.documentElement.dataset.oasScheduleWeeksRenderer='vue';
-   document.querySelector<HTMLButtonElement>('[data-mode="schedule"]')?.click();
+   // A lazy week-card mount must not switch the user's active workspace.
+   // Populate Vue from the existing schedule without a synthetic tab click.
+   window.__oasRefreshSchedulerWeeks?.();
   }catch(err){
    window.__oasVueScheduleWeeksRender=undefined;
    target.innerHTML=old;
