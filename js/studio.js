@@ -338,6 +338,7 @@ function renderSchedule(){if(!$('#scheduleWeeksGrid'))return;$('#scheduleStrateg
  bindScheduleWeekHandlers();
  }
 }
+window.__oasScheduleTags=()=>[...studio.tags];
 function bindScheduleWeekHandlers(){
  const grid=$('#scheduleWeeksGrid');grid.querySelectorAll('[data-week-lock]').forEach(el=>el.onchange=()=>{studio.schedule[+el.dataset.weekLock].locked=el.checked;saveSchedule();});grid.querySelectorAll('[data-week-tag]').forEach(el=>el.onchange=()=>{const i=+el.dataset.weekTag;if(typeof regenerateThemeWeek==='function')regenerateThemeWeek(i,el.value);else{const w=studio.schedule[i];w.tags=el.value?[el.value]:[];w.title=el.value;saveSchedule();}});grid.querySelectorAll('[data-week-capacity]').forEach(el=>el.onchange=()=>{const w=studio.schedule[+el.dataset.weekCapacity];w.capacity=Math.max(1,Math.min(12,+el.value||4));saveSchedule();});grid.querySelectorAll('[data-week-move]').forEach(el=>el.onclick=()=>{const i=+el.dataset.weekMove;[studio.schedule[i-1],studio.schedule[i]]=[studio.schedule[i],studio.schedule[i-1]];saveSchedule();});grid.querySelectorAll('[data-week-edit]').forEach(el=>el.onclick=()=>editWeek(+el.dataset.weekEdit));grid.querySelectorAll('[data-week-file]').forEach(el=>el.onchange=async()=>{const f=el.files[0];if(!f)return;const w=studio.schedule[+el.dataset.weekFile];w.activity={filename:f.name,text:await f.text(),attachedAt:new Date().toISOString()};saveSchedule();});grid.querySelectorAll('[data-week-review]').forEach(el=>el.onclick=()=>reviewWeek(+el.dataset.weekReview));
 }
