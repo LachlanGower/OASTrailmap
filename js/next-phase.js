@@ -40,7 +40,7 @@ function recoveryConfirm(label,details,apply,phrase){
  $('#resetProceed').onclick=()=>{
   if(phrase&&prompt('Type '+phrase+' to confirm:', '')!==phrase)return;
   if(!confirm('Confirm: '+label+'?'))return;
-  try{apply();review.hidden=true;showToast(label+' completed.');}catch(e){alert('Reset failed: '+e.message);}
+  try{const applied=apply();if(applied===false)return;review.hidden=true;showToast(label+' completed.');}catch(e){alert('Reset failed: '+e.message);}
  };
  review.scrollIntoView({block:'nearest',behavior:'smooth'});
 }
@@ -49,20 +49,20 @@ function recoveryInit(){
  $('#clearAchievementsBtn').onclick=()=>{
   const names=scoutNames().length,total=Object.values(scoutRecords).filter(r=>r.completed).length;
   recoveryConfirm('Clear achievements','Will reset '+total+' completed records for '+names+' Scouts. Keep the existing roster and evidence-free record entries. Import the original workbook again to reseed achievements.',()=>{
-   if(!recoverySnapshot('Before clearing Scout achievements',['progress']))return;
+   if(!recoverySnapshot('Before clearing Scout achievements',['progress']))return false;
    for(const k of Object.keys(scoutRecords))scoutRecords[k]={...scoutRecords[k],completed:false,date:'',source:'reset',sourceSheet:undefined,sourceRow:undefined};
    recoveryRefresh();
   },'CLEAR PROGRESS');
  };
  $('#clearScoutDataBtn').onclick=()=>{
   recoveryConfirm('Clear Scout roster and progress','Remove '+scoutNames().length+' Scouts and every completion record. This does not delete activities, requirements or schedules.',()=>{
-   if(!recoverySnapshot('Before clearing Scout roster and progress',['progress']))return;
+   if(!recoverySnapshot('Before clearing Scout roster and progress',['progress']))return false;
    scoutRecords={};selectedScoutNames=[];selectedScout='__all__';recoveryRefresh();
   },'CLEAR SCOUTS');
  };
  $('#clearPlanBtn').onclick=()=>{
   recoveryConfirm('Clear the schedule','Remove all planned weeks, locked sessions, activity assignments and session reviews. Scout achievements remain intact.',()=>{
-   if(!recoverySnapshot('Before clearing schedule',['schedule']))return;
+   if(!recoverySnapshot('Before clearing schedule',['schedule']))return false;
    studio.schedule=[];recoveryRefresh();
   },'CLEAR SCHEDULE');
  };
