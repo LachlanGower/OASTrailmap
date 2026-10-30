@@ -131,6 +131,7 @@ function enhanceRequirementSwaps(){
  const grid=$('#scheduleWeeksGrid');if(!grid)return;
  grid.querySelectorAll('.week-card').forEach((card,i)=>{
   const w=studio.schedule[i];if(!w)return;
+  if(card.querySelector('[data-swap-open]'))return; // Already enhanced during this render.
   const list=card.querySelector('ol');if(!list)return;
   const items=list.querySelectorAll('li');
   items.forEach((li,j)=>{

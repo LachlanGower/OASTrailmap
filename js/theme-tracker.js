@@ -27,12 +27,15 @@ function regenerateThemeWeek(i,theme,mode){
  const previous=currentTagTheme(w),strategy=mode||w.themeMode||'progression';
  if(w.locked&&!confirm('Week '+(i+1)+' is locked. Unlock and regenerate its requirements for '+(theme||'an unthemed week')+'?')){renderSchedule();return}
  if(!theme){
+  if(!confirm('Clear the planned requirements for Week '+(i+1)+'? This will also remove its activity confirmations. Cancel keeps the week unchanged.')){renderSchedule();return;}
+  if(typeof dataCheckpoint==='function')dataCheckpoint('Before clearing Week '+(i+1)+' theme',['schedule']);
   w.theme='';w.tags=[];w.title='Week '+(i+1);
-  w.requirementIds=[];w.locked=true;w.activityIds=undefined;w.confirmedSession=false;
+  w.requirementIds=[];w.locked=true;w.activity=null;w.activityIds=undefined;w.confirmedSession=false;w.reviewed=false;
   saveSchedule();return;
  }
  const candidates=themedCandidates(i,theme);
  if(!candidates.length){alert('No eligible requirements match the '+theme+' theme. Try another tag or add tags to skills.');renderSchedule();return}
+ if((w.activity||w.activityIds?.length||w.confirmedSession)&&!confirm('Regenerating Week '+(i+1)+' will invalidate its existing activity attachment or confirmation. Continue?')){renderSchedule();return;}
  const cap=Math.max(1,Math.min(12,Number(w.capacity)||studio.capacity||4));
  const chosen=[],pool=[...candidates];
  while(chosen.length<cap&&pool.length){
@@ -52,7 +55,7 @@ function regenerateThemeWeek(i,theme,mode){
  }
  if(typeof dataCheckpoint==='function')dataCheckpoint('Before changing Week '+(i+1)+' theme',['schedule']);
  w.theme=theme;w.themeMode=strategy;w.tags=uniq([theme,...chosen.flatMap(r=>r.tags||[])]).slice(0,5);w.title=theme+' · Week '+(i+1);
- w.requirementIds=orderSession(chosen.map(r=>r.id));w.locked=true;w.confirmedSession=false;w.activityIds=undefined;w.reviewed=false;
+ w.requirementIds=orderSession(chosen.map(r=>r.id));w.locked=true;w.confirmedSession=false;w.activity=null;w.activityIds=undefined;w.reviewed=false;
  if(useLocationGrouping())w.location=chosen.find(r=>r.locations?.preferred)?.locations?.preferred||'Flexible / anywhere';
  else w.location='Flexible / anywhere';
  saveSchedule();
