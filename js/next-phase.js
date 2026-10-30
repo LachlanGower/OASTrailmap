@@ -126,10 +126,12 @@ function multiSchedulePanel(w,i){
  '<label>Session length (minutes) <input type="number" min="15" max="600" data-multi-minutes="'+i+'" value="'+preferred+'"></label>'+
  '<div class="studio-toolbar"><button class="button secondary" type="button" data-multi-suggest="'+i+'">Refresh suggestions</button><select data-multi-pick="'+i+'"><option value="">Add from Activity Studio…</option>'+all.filter(a=>!choices.some(c=>c.id===a.id)).map(a=>'<option value="'+esc(a.id)+'">'+esc(a.title||a.id)+'</option>').join('')+'</select><button class="button primary" type="button" data-multi-confirm="'+i+'">Confirm this combination</button></div></section>';
 }
+window.__oasEnhanceMultiSessions=multiEnhanceSchedule;
 function multiEnhanceSchedule(){
  const grid=$('#scheduleWeeksGrid');if(!grid)return;
  grid.querySelectorAll('.week-card').forEach((card,i)=>{
   const w=studio.schedule[i];if(!w)return;
+  if(card.querySelector('[data-week-session]'))return;
   card.insertAdjacentHTML('beforeend',multiSchedulePanel(w,i));
   const panel=card.querySelector('[data-week-session]');if(!panel)return;
   const proposed=()=>Array.isArray(w.activityIds)?multiSelectedActivities(w):multiActivitiesFor(w);
