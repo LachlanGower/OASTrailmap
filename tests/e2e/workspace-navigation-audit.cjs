@@ -1,0 +1,21 @@
+'use strict';
+const assert=require('node:assert/strict');
+const {chromium}=require('playwright');
+const ROOT=process.env.OAS_TEST_URL||'http://127.0.0.1:5173/';
+(async()=>{const browser=await chromium.launch({headless:true});try{
+ const page=await browser.newPage();
+ const errors=[];
+ page.on('pageerror',e=>errors.push(e.message));
+ await page.goto(ROOT,{waitUntil:'domcontentloaded'});
+ await page.waitForFunction(()=>document.documentElement.dataset.oasDataDashboardRenderer==='vue',{timeout:20000});
+ const initial=await page.evaluate(()=>({trail:document.querySelector('#trailWorkspace').hidden,data:document.querySelector('#dataManager').hidden}));
+ assert.deepEqual(initial,{trail:false,data:true},'Vue dashboard must not activate itself on initial load');
+ await page.locator('[data-mode="schedule"]').click();
+ await page.waitForFunction(()=>!document.querySelector('#scheduleStudio').hidden);
+ await page.locator('#dataManagerTab').click();
+ await page.waitForFunction(()=>!document.querySelector('#dataManager').hidden);
+ assert.equal(await page.locator('#dataManager').isVisible(),true);
+ assert.deepEqual(errors,[]);
+ console.log('Vue dashboard preserves user navigation intent');
+ await page.close();
+}finally{await browser.close();}})().catch(e=>{console.error(e);process.exitCode=1});
