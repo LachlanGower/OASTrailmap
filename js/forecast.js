@@ -187,6 +187,7 @@ function enhanceForecast(){
  const node=$('#forecastProgress');if(node&&!window.__oasVueForecastRender?.(snapshot))node.innerHTML=forecastMarkup();
  enhanceRequirementSwaps();
 }
+window.__oasRefreshForecastVue=enhanceForecast;
 const forecastPriorRender=renderSchedule;
 renderSchedule=function(){forecastPriorRender();enhanceForecast()};
 function reviewWeekWithOccurrences(index){
