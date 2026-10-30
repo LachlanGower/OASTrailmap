@@ -1,6 +1,6 @@
 import {createApp,shallowReactive} from 'vue';
 import ForecastPanel,{type ForecastSnapshot} from './ForecastPanel.vue';
-declare global {interface Window {__oasVueForecastRender?:(snapshot:ForecastSnapshot)=>boolean;}}
+declare global {interface Window {__oasVueForecastRender?:(snapshot:ForecastSnapshot)=>boolean; __oasRefreshForecastVue?:()=>void;}}
 function mount():void{
  if(new URLSearchParams(location.search).get('forecastRenderer')==='legacy')return;
  const target=document.querySelector<HTMLElement>('#forecastProgress');if(!target)return;
@@ -9,6 +9,7 @@ function mount():void{
  try{
   createApp(ForecastPanel,{state}).mount(target);
   window.__oasVueForecastRender=snapshot=>{state.current=snapshot;return true;};
+  window.__oasRefreshForecastVue?.();
   document.documentElement.dataset.oasForecastRenderer='vue';
   document.querySelector<HTMLInputElement>('#requirementsTrackerSearch')?.dispatchEvent(new Event('input'));
  }catch(error){
