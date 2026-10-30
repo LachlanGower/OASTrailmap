@@ -1,3 +1,4 @@
+import '../scheduler/mount';
 import '../tree/admin-mount';
 import '../tree/editor-mount';
 import '../tree/mount';
