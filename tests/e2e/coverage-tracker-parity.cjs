@@ -14,7 +14,7 @@ async function inspect(browser,legacy){
  await page.goto(url.toString(),{waitUntil:'domcontentloaded'});
  await page.evaluate(storage=>{for(const [k,v] of Object.entries(storage))localStorage.setItem(k,JSON.stringify(v));},fixture.storage);
  await page.reload({waitUntil:'domcontentloaded'});
- await page.waitForFunction(()=>document.querySelector('#requirementsTrackerSearch')?.oninput && document.querySelectorAll('#requirementsTrackerRows tr').length>0,{timeout:20000});
+ await page.waitForFunction(()=>document.querySelector('#requirementsTrackerSearch')?.oninput && (document.querySelectorAll('#requirementsTrackerRows tr').length>0 || document.querySelectorAll('#vueCoverageRows tr').length>0),{timeout:20000});
  if(!legacy)await page.waitForFunction(()=>document.documentElement.dataset.oasRequirementsTrackerRenderer==='vue',{timeout:20000});
  await page.locator('[data-mode="schedule"]').click();
  const data=async()=>page.evaluate(()=>{
