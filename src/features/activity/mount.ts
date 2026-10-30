@@ -4,8 +4,9 @@ declare global {interface Window {__oasActivityEditorOpen?:(index:number)=>void;
 const params=new URLSearchParams(location.search);
 function mount():void{
  if(params.get('activityRenderer')==='legacy')return;
- const legacy=document.querySelector<HTMLElement>('#activityEditor');
- if(!legacy)return;
+ const candidate=document.querySelector<HTMLElement>('#activityEditor');
+ if(!candidate)return;
+ const legacy:HTMLElement=candidate;
  const host=document.createElement('div');host.hidden=true;legacy.after(host);
  const state=shallowReactive<{current:ActivityEditorModel}>({current:{index:-1,fields:[],locations:[],tags:[],coverage:[]}});
  const original=(name:string)=>legacy.querySelector<HTMLInputElement|HTMLTextAreaElement|HTMLSelectElement>('[name="'+name+'"]');
