@@ -13,7 +13,7 @@ function mount():void{
   const form=legacy.querySelector<HTMLFormElement>('#activityForm');
   if(!form)throw Error('Legacy activity form is unavailable');
   const names=['title','description','duration','location','equipment','preparation','instructions','safety','review'];
-  const options=(name:string):ActivityOption[]=>Array.from(form.querySelectorAll<HTMLInputElement>('input[name="'+name+'"]')).map(input=>({value:input.value,label:input.checked?'selected':''}));
+  const options=(name:string):ActivityOption[]=>Array.from(form.querySelectorAll<HTMLInputElement>('input[name="'+name+'"]')).map(input=>({value:input.value,label:input.checked?'selected':'',description:input.parentElement?.textContent?.trim()||input.value}));
   return {index,fields:names.map(name=>({name,value:original(name)?.value||''})),locations:Array.from(form.querySelectorAll<HTMLOptionElement>('select[name="location"] option')).map(o=>o.value),tags:options('tags'),coverage:options('covers')};
  }
  function update(name:string,value:string):void{const input=original(name);if(input)input.value=value;state.current={...state.current,fields:state.current.fields.map(f=>f.name===name?{...f,value}:f)};}
