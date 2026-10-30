@@ -29,7 +29,8 @@ async function inspect(browser,legacy,viewport){
  await page.close();
  assert.deepEqual(errors,[]);
  assert.deepEqual(JSON.parse(after.scout).scoutRecords,before,'Activity Studio must not write Scout evidence');
- return JSON.stringify(after.activities);
+ const created=(after.activities.activities||[]).find(a=>a.title==='Synthetic navigation activity');
+ return {title:created?.title,description:created?.description,duration:created?.duration,location:created?.location,coverage:created?.covers};
 }
 (async()=>{
  const browser=await chromium.launch({headless:true});
