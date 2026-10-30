@@ -118,8 +118,6 @@ async function inspect(browser,mode,viewport){
  if(pair){
   await page.evaluate(id=>window.__oasTreeSelect(id),pair.parent);
   await page.waitForSelector('#editTreeForm');
-  const check=page.locator('#editTreeForm input[name="prerequisites"]')
-   .filter({has:page.locator('nothing')});
   const candidate=page.locator('#editTreeForm input[name="prerequisites"]')
    .and(page.locator('[value="'+pair.child+'"]'));
   await candidate.check();
@@ -132,6 +130,19 @@ async function inspect(browser,mode,viewport){
   assert.deepEqual(after.requirement,before.requirement,
    'Rejected cyclic edit must not mutate requirement');
   result.cycle={parent:pair.parent,child:pair.child,rejected:true};
+  // Break the direct edge through the same graph engine, then undo exactly.
+  await page.evaluate(id=>window.__oasTreeSelect(id),pair.child);
+  await page.waitForSelector('#editTreeForm');
+  const link=page.locator('#treeEditor [data-break-child="'+pair.child+'"][data-break-parent="'+pair.parent+'"]');
+  await link.click();
+  await settle();
+  const broken=await snapshot();
+  assert.ok(!broken.requirement.prerequisites.includes(pair.parent));
+  await page.locator('#undoLastEdit').click();
+  await settle();
+  const restored=await snapshot();
+  assert.ok(restored.requirement.prerequisites.includes(pair.parent));
+  result.directBreakUndo={before:pair,removed:true,restored:true};
  }
 
  // Custom graph edits must not mutate mandatory/master requirement links.
