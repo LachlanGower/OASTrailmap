@@ -1,3 +1,4 @@
+import './weeks-mount';
 import { createApp, shallowReactive } from 'vue';
 import ScheduleTimeline, { type TimelineWeek } from './ScheduleTimeline.vue';
 declare global {
