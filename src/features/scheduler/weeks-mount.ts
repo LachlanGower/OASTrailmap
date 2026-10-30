@@ -1,6 +1,6 @@
 import { createApp, nextTick, shallowReactive } from 'vue';
 import ScheduleWeeks, { type WeekCard } from './ScheduleWeeks.vue';
-declare global { interface Window { __oasVueScheduleWeeksRender?:(weeks:WeekCard[],bind:()=>void)=>boolean; __oasScheduleTags?:()=>string[]; } }
+declare global { interface Window { __oasEnhanceScheduleWeeks?:()=>void; __oasVueScheduleWeeksRender?:(weeks:WeekCard[],bind:()=>void)=>boolean; __oasScheduleTags?:()=>string[]; } }
 function mount():void {
  if(new URLSearchParams(location.search).get('scheduleWeeksRenderer')==='legacy')return;
  const target=document.querySelector<HTMLElement>('#scheduleWeeksGrid');
@@ -18,7 +18,7 @@ function mount():void {
    window.__oasVueScheduleWeeksRender=(weeks,bind)=>{
     state.current=weeks;
     tags.current=window.__oasScheduleTags?.()||[];
-    void nextTick(bind);
+    void nextTick(()=>{bind();window.__oasEnhanceScheduleWeeks?.();});
     return true;
    };
    document.documentElement.dataset.oasScheduleWeeksRenderer='vue';

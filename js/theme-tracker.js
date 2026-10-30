@@ -58,6 +58,7 @@ function regenerateThemeWeek(i,theme,mode){
  saveSchedule();
  showToast('Week '+(i+1)+' regenerated with '+chosen.length+' '+theme+' requirements ('+strategy+').');
 }
+window.__oasEnhanceScheduleWeeks=()=>{themeWeekUI(); if(typeof enhanceRequirementSwaps==='function')enhanceRequirementSwaps();};
 function themeWeekUI(){
  const root=$('#scheduleWeeksGrid');if(!root)return;
  root.querySelectorAll('.week-card').forEach((card,i)=>{
@@ -65,6 +66,7 @@ function themeWeekUI(){
   const themeSelect=card.querySelector('[data-week-tag]');
   if(themeSelect){themeSelect.value=currentTagTheme(w);}
   const target=themeSelect?.closest('label');if(!target)return;
+  if(card.querySelector('[data-theme-reroll]'))return;
   const controls=document.createElement('div');
   controls.className='theme-regeneration';
   controls.innerHTML='<label>Choose how to regenerate <select data-theme-method="'+i+'"><option value="progression">Best for progression</option><option value="random">Random within theme</option></select></label><button type="button" class="button secondary" data-theme-reroll="'+i+'">Regenerate themed week</button>';
