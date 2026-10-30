@@ -1,3 +1,4 @@
+import '../tree/admin-mount';
 import '../tree/editor-mount';
 import '../tree/mount';
 import '../workbook/mount';
