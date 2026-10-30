@@ -1,0 +1,42 @@
+name: Phase 4D.3 Vue tree editor parity (no deployment)
+on:
+  push:
+    branches:
+      - migration/phase-04d3-vue-tree-editor
+  pull_request:
+    branches:
+      - migration/phase-04d2-vue-tree-canvas
+permissions:
+  contents: read
+jobs:
+  tree-editor:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+      - run: npm ci
+      - run: npm audit --audit-level=moderate
+      - run: npm test
+      - run: |
+          npm run build
+          npm run check:dist
+      - run: npx playwright install --with-deps chromium
+      - name: Verify legacy versus Vue editor and original graph saves
+        run: |
+          npm run dev -- --host 127.0.0.1 --port 5173 >/tmp/oas-tree-editor-dev.log 2>&1 &
+          python3 -m http.server 8765 --bind 127.0.0.1 -d dist >/tmp/oas-tree-editor-built.log 2>&1 &
+          sleep 3
+          OAS_TEST_URL=http://127.0.0.1:5173/ node tests/e2e/tree-editor-parity.cjs
+          OAS_TEST_URL=http://127.0.0.1:8765/ node tests/e2e/tree-editor-parity.cjs
+      - name: Synthetic editor screenshots
+        if: always()
+        continue-on-error: true
+        uses: actions/upload-artifact@v4
+        with:
+          name: phase-04d3-editor
+          path: tests/baseline-artifacts/phase4d3/
+          if-no-files-found: ignore
