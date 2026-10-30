@@ -1,0 +1,39 @@
+name: Phase 4H.2b development-complete validation
+on:
+  push:
+    branches: [migration/phase-04h2b-build-consolidation]
+  pull_request:
+    branches: [migration/phase-04h2a-ui-accessibility]
+permissions:
+  contents: read
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+      - run: npm ci
+      - run: npm run typecheck
+      - run: npm test
+      - run: npm run build
+      - run: npm run check:dist
+      - name: Test Pages subpath compilation
+        run: |
+          OAS_PUBLIC_BASE=/OASTrailmap/ npm run build
+          node scripts/check-static-subpath.cjs
+      - run: npm run build
+      - run: npx playwright install --with-deps chromium
+      - name: Cross-feature browser regression (dev and built)
+        run: |
+          npm run dev -- --host 127.0.0.1 --port 5173 >/tmp/oas-dev.log 2>&1 &
+          python3 -m http.server 8765 --bind 127.0.0.1 -d dist >/tmp/oas-dist.log 2>&1 &
+          sleep 3
+          for url in http://127.0.0.1:5173/ http://127.0.0.1:8765/; do
+            OAS_TEST_URL="$url" node tests/e2e/accessibility-consolidation.cjs
+            OAS_TEST_URL="$url" node tests/e2e/recovery-parity.cjs
+            OAS_TEST_URL="$url" node tests/e2e/data-dashboard-parity.cjs
+          done
