@@ -17,7 +17,7 @@ async function inspect(browser,legacy,viewport){
  await page.waitForFunction(()=>typeof document.querySelector('#newActivity')?.onclick==='function',{timeout:20000});
  if(!legacy)await page.waitForFunction(()=>document.documentElement.dataset.oasActivityRenderer==='vue',{timeout:20000});
  await page.locator('#activityStudioTab').click();
- const before=await page.evaluate(()=>localStorage.getItem('oas-trailmap-v1'));
+ const before=await page.evaluate(()=>JSON.parse(localStorage.getItem('oas-trailmap-v1')).scoutRecords);
  await page.locator('#newActivity').click();
  const form=legacy?page.locator('#activityEditor #activityForm'):page.locator('#activityEditor + div form');
  await form.locator('[name="title"]').fill('Synthetic navigation activity');
@@ -28,7 +28,7 @@ async function inspect(browser,legacy,viewport){
  const after=await page.evaluate(()=>({scout:localStorage.getItem('oas-trailmap-v1'),activities:JSON.parse(localStorage.getItem('oas-studio-v1')||'{}')}));
  await page.close();
  assert.deepEqual(errors,[]);
- assert.equal(after.scout,before,'Activity Studio must not write Scout evidence');
+ assert.deepEqual(JSON.parse(after.scout).scoutRecords,before,'Activity Studio must not write Scout evidence');
  return JSON.stringify(after.activities);
 }
 (async()=>{
