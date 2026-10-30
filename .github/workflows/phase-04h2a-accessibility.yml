@@ -1,0 +1,27 @@
+name: Phase 4H.2a accessibility
+on:
+  push:
+    branches: [migration/phase-04h2a-ui-accessibility]
+  pull_request:
+    branches: [migration/phase-04g3-vue-recovery]
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+      - run: npm ci
+      - run: npm test
+      - run: npm run build
+      - run: npm run check:dist
+      - run: npx playwright install --with-deps chromium
+      - run: |
+          npm run dev -- --host 127.0.0.1 --port 5173 >/tmp/oas-dev.log 2>&1 &
+          sleep 3
+          node tests/e2e/accessibility-consolidation.cjs
