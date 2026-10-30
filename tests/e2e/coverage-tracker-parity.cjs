@@ -20,7 +20,7 @@ async function inspect(browser,legacy){
  const data=async()=>page.evaluate(()=>{
    const vue=document.documentElement.dataset.oasRequirementsTrackerRenderer==='vue';
    const root=document.querySelector(vue?'#vueCoverageRows':'#requirementsTrackerRows');
-   return {ids:[...root.querySelectorAll('tr td:first-child small')].map(n=>n.textContent),rows:[...root.querySelectorAll('tr')].map(n=>n.textContent.replace(/\\s+/g,' ').trim()),summary:document.querySelector(vue?'#requirementsTracker .data-stats:not(#requirementsTrackerSummary)':'#requirementsTrackerSummary').textContent.replace(/\\s+/g,' ').trim(),scoutState:localStorage.getItem('oas-trailmap-v1')};
+   return {ids:[...root.querySelectorAll('tr td:first-child small')].map(n=>n.textContent),rows:[...root.querySelectorAll('tr')].map(n=>n.textContent.replace(/\s+/g,' ').trim()),summary:document.querySelector(vue?'#requirementsTracker .data-stats:not(#requirementsTrackerSummary)':'#requirementsTrackerSummary').textContent.replace(/\s+/g,' ').trim(),scoutState:localStorage.getItem('oas-trailmap-v1')};
  });
  let full=await data();
  await page.locator('#requirementsTrackerSearch').fill('unlikely-search-term-no-match');
@@ -34,6 +34,7 @@ async function inspect(browser,legacy){
  const browser=await chromium.launch({headless:true});
  try{
   const legacy=await inspect(browser,true),vue=await inspect(browser,false);
+  assert.equal(vue.full.ids.length,142,'All canonical OAS skills must be displayed');
   assert.equal(new Set(vue.full.ids).size,vue.full.ids.length);
   assert.deepEqual(vue.full.ids,legacy.full.ids);
   assert.deepEqual(vue.full.rows,legacy.full.rows);
