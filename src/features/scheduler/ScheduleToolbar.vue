@@ -12,7 +12,7 @@ const value=computed(()=>props.state.current);
   <label class="toggle"><input type="checkbox" :checked="value.locations" @change="change('locations',($event.target as HTMLInputElement).checked)"> Consider locations in recommendations</label>
   <button class="button primary" @click="action('generateSchedule')">Generate schedule</button>
   <button class="button secondary" @click="action('regenerateSchedule')">Regenerate unlocked</button>
-  <button class="button secondary" @click="action('exportSchedule')">Export schedule.yaml</button>
+  <button class="button secondary" @click="action('exportSchedule')">Export schedule.json</button>
   <label class="button secondary file-button" for="vue-import-schedule">Import schedule</label>
   <input id="vue-import-schedule" type="file" accept=".yaml,.yml,.json" hidden @change="($event.target as HTMLInputElement).files?.[0] && importFile(($event.target as HTMLInputElement).files![0]); ($event.target as HTMLInputElement).value=''">
  </div>
