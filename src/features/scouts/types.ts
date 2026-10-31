@@ -14,6 +14,7 @@ export interface ScoutCompletionEntry {
 export interface ScoutCompletionSnapshot {
   requirementId: string;
   group: boolean;
+  hideCompleted?: boolean;
   entries: ScoutCompletionEntry[];
 }
 export interface ScoutBridge {
