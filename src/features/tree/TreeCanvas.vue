@@ -33,7 +33,7 @@ onUpdated(repaint);
   <div class="tree-view-note">
     <b>{{ snapshot.isTag?'Tag view:':'Skill tree:' }}</b>
     {{ ' '+snapshot.name+' · '+snapshot.count+' '+(snapshot.isTag?'matching skills across all trees.':'skills.') }}
-    <span>Solid green = mandatory; dashed amber = recommended. Select a skill, then use ↑ or ↓ to connect another node, or × to break an existing link. Drag to reorder within a column.</span>
+
   </div>
   <div class="tree-lanes">
     <div v-for="lane in snapshot.lanes" :key="lane.depth" class="tree-lane" :data-depth="lane.depth">
