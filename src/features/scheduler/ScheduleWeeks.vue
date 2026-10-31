@@ -14,7 +14,7 @@ const themes=computed(()=>props.tags.current);
   <small>{{ w.skills.length }} planned requirements · {{ w.potential }} Scouts affected</small>
   <div class="week-stage-grid"><section v-for="stage in [1,2,3]" :key="stage" class="week-stage"><strong>Stage {{stage}}</strong><ol><li v-for="r in w.skills.filter(x=>x.stage===stage)" :key="r.id"><button type="button" class="week-requirement-link" :data-week-req="r.id" :title="r.id">{{r.text}}</button></li></ol><p v-if="!w.skills.some(x=>x.stage===stage)" class="tiny muted">None planned</p></section></div>
   <p v-if="!w.skills.length" class="tiny muted">No requirements allocated.</p>
-  <details class="week-activity-accordion"><summary>Activities and week actions</summary><div class="week-actions">
+  <details class="week-activity-accordion" open><summary>Activities and week actions</summary><div class="week-actions">
    <button class="button secondary" :data-week-move="w.week-1" :disabled="w.week===1">↑ Move earlier</button>
    <button class="button secondary" :data-week-edit="w.week-1">Edit skills</button>
    <label class="button secondary file-button" :for="'week-activity-'+(w.week-1)">{{ w.activityName?'Replace activity':'Attach activity' }}</label>
