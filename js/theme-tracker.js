@@ -6,7 +6,7 @@ function useLocationGrouping(){return studio.useLocations===true}
 function themedCandidates(weekIndex,theme){
  const w=studio.schedule[weekIndex],others=studio.schedule.filter((x,i)=>i!==weekIndex);
  const occurrenceCounts=scheduleOccurrenceCounts(others);
- return requirements.filter(r=>(r.tags||[]).includes(theme)&&
+ return requirements.filter(r=>((r.theme_tags||r.tags||[]).includes(theme)||(r.tags||[]).includes(theme))&&
  (occurrenceCounts.get(r.id)||0)<requiredTimes(r))
  .map(r=>({r,elsewhere:occurrenceCounts.get(r.id)||0}));
 }
@@ -34,7 +34,7 @@ function regenerateThemeWeek(i,theme,mode){
   saveSchedule();return;
  }
  const candidates=themedCandidates(i,theme);
- if(!candidates.length){alert('No eligible requirements match the '+theme+' theme. Try another tag or add tags to skills.');renderSchedule();return}
+ if(!candidates.length){alert('No eligible requirements match the '+theme+' theme. Try another theme or add theme tags to requirements.');renderSchedule();return}
  if((w.activity||w.activityIds?.length||w.confirmedSession)&&!confirm('Regenerating Week '+(i+1)+' will invalidate its existing activity attachment or confirmation. Continue?')){renderSchedule();return;}
  const cap=Math.max(1,Math.min(12,Number(w.capacity)||studio.capacity||4));
  const chosen=[],pool=[...candidates];
