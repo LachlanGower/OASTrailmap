@@ -10,9 +10,9 @@ const props = defineProps<{
   initialSaveStatus: string;
   initialClasses: Record<NavigationAction, string>;
 }>();
-function dispatch(action: NavigationAction, event: MouseEvent): void { props.actions[action](event); }
+function dispatch(action: NavigationAction, event: MouseEvent): void { props.actions[action](event); if(action!=='undo'){const nav=(event.currentTarget as HTMLElement).closest('nav');nav?.querySelectorAll('button').forEach(b=>{b.classList.toggle('primary',b===event.currentTarget);b.classList.toggle('secondary',b!==event.currentTarget);});} }
 function classesFor(action: NavigationAction): string {
-  return props.initialClasses[action];
+  return ['trail','tree','schedule','weeklyThemes','tracker','activity','data','help','requirements'].includes(action) ? 'button secondary' : props.initialClasses[action];
 }
 </script>
 
@@ -28,6 +28,5 @@ function classesFor(action: NavigationAction): string {
     <button :class="classesFor('help')" type="button" id="helpDesignTab" @click="dispatch('help', $event)">Help &amp; Design</button>
     <button :class="classesFor('requirements')" type="button" id="appRequirementsTab" @click="dispatch('requirements', $event)">Application Requirements</button>
     <span id="localSaveStatus" class="tiny muted" role="status">{{ initialSaveStatus }}</span>
-    <button :class="classesFor('undo')" id="undoLastEdit" type="button" @click="dispatch('undo', $event)">Undo tree edit</button>
   </nav>
 </template>
