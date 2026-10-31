@@ -1,0 +1,22 @@
+{
+  "schema_version": 2,
+  "activities": [
+    {
+      "id": "example-map-and-compass",
+      "title": "Map and Compass Practice",
+      "description": "Fictional reusable example; review and confirm curriculum coverage before planning.",
+      "duration": 60,
+      "location": "Scout Hall - indoor",
+      "tags": [
+        "Navigation"
+      ],
+      "covers": [],
+      "equipment": "Paper maps, compasses",
+      "preparation": "Prepare a short local route",
+      "instructions": "Introduce bearings and practise in pairs",
+      "safety": "Buddy system and boundaries",
+      "review": "Ask Scouts what bearings they used"
+    }
+  ],
+  "format": "oas-trailmap-activities"
+}

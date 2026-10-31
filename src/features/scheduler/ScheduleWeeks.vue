@@ -12,9 +12,9 @@ const themes=computed(()=>props.tags.current);
   <label>Theme <select :data-week-tag="w.week-1" :value="w.theme"><option value="">Select theme</option><option v-for="t in themes" :key="t" :value="t">{{ t }}</option></select></label>
   <label>Capacity <input type="number" min="1" max="12" :data-week-capacity="w.week-1" :value="w.capacity"></label>
   <small>{{ w.skills.length }} planned requirements · {{ w.potential }} Scouts affected</small>
-  <ol><li v-for="r in w.skills" :key="r.id" :title="r.id">{{ r.text }} <small>Stage {{ r.stage }}</small></li></ol>
+  <div class="week-stage-grid"><section v-for="stage in [1,2,3]" :key="stage" class="week-stage"><strong>Stage {{stage}}</strong><ol><li v-for="r in w.skills.filter(x=>x.stage===stage)" :key="r.id" :title="r.id">{{r.text}}</li></ol><p v-if="!w.skills.some(x=>x.stage===stage)" class="tiny muted">None planned</p></section></div>
   <p v-if="!w.skills.length" class="tiny muted">No requirements allocated.</p>
-  <div class="week-actions">
+  <details class="week-activity-accordion"><summary>Activities and week actions</summary><div class="week-actions">
    <button class="button secondary" :data-week-move="w.week-1" :disabled="w.week===1">↑ Move earlier</button>
    <button class="button secondary" :data-week-edit="w.week-1">Edit skills</button>
    <label class="button secondary file-button" :for="'week-activity-'+(w.week-1)">{{ w.activityName?'Replace activity':'Attach activity' }}</label>
@@ -22,6 +22,6 @@ const themes=computed(()=>props.tags.current);
    <button class="button secondary" :data-week-review="w.week-1">Review skills</button>
   </div>
   <p v-if="w.activityName" class="tiny"><b>Attached:</b> {{ w.activityName }}</p>
-  <div :id="'week-review-'+(w.week-1)" hidden></div>
+  <div :id="'week-review-'+(w.week-1)" hidden></div></details>
  </article>
 </template>

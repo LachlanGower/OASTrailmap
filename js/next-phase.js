@@ -86,7 +86,7 @@ function recoveryInit(){
 }
 function multiActivitiesFor(week){
  const eligible=(activities||[]).filter(a=>a&&a.id&&Array.isArray(a.covers)&&a.covers.some(id=>(week.requirementIds||[]).includes(id)));
- const planned=new Set(week.requirementIds||[]),picked=new Set(),chosen=[],limit=Math.max(15,Number(week.sessionMinutes)||90);
+ const planned=new Set(week.requirementIds||[]),picked=new Set(),chosen=[],limit=Math.max(15,Number(week.sessionMinutes)||60);
  const scope=typeof scheduleScope==='function'?scheduleScope():[];
  let remaining=limit;
  for(let pass=0;pass<8;pass++){
@@ -118,7 +118,7 @@ function multiSchedulePanel(w,i){
  const selected=multiSelectedActivities(w),suggested=multiActivitiesFor(w),choices=Array.isArray(w.activityIds)?selected:suggested;
  const summary=multiSummary(choices,w),remaining=(w.requirementIds||[]).filter(id=>!summary.coverage.includes(id));
  const all=activities.filter(a=>a?.id&&Array.isArray(a.covers));
- const preferred=Number(w.sessionMinutes)||90;
+ const preferred=Number(w.sessionMinutes)||60;
  return '<section class="multi-session" data-week-session="'+i+'"><h4>Activities for this Scout night</h4>'+
  '<p class="tiny muted">'+(w.confirmedSession?'Confirmed by leader':'Suggested combination — not yet confirmed')+' · '+esc(summary.hits)+' planned requirements covered · '+esc(summary.minutes)+' / '+preferred+' minutes'+(summary.minutes>preferred?' ⚠ Over time':'')+'</p>'+
  '<div class="multi-activities">'+choices.map((a,j)=>'<div class="multi-activity"><span>'+(j+1)+'. <strong>'+esc(a.title||a.name||a.id)+'</strong> <small>'+esc(a.duration||60)+' min · '+esc(a.location||'Location flexible')+'</small></span><div><button type="button" class="button secondary" data-multi-up="'+j+'" '+(!j?'disabled':'')+' aria-label="Move activity earlier">↑</button><button type="button" class="button secondary" data-multi-down="'+j+'" '+(j===choices.length-1?'disabled':'')+' aria-label="Move activity later">↓</button><button type="button" class="button secondary" data-multi-remove="'+j+'" aria-label="Remove activity">×</button></div></div>').join('')+'</div>'+
@@ -132,7 +132,8 @@ function multiEnhanceSchedule(){
  grid.querySelectorAll('.week-card').forEach((card,i)=>{
   const w=studio.schedule[i];if(!w)return;
   if(card.querySelector('[data-week-session]'))return;
-  card.insertAdjacentHTML('beforeend',multiSchedulePanel(w,i));
+  const sessionHost=card.querySelector('.week-activity-accordion')||card;
+  sessionHost.insertAdjacentHTML('beforeend',multiSchedulePanel(w,i));
   const panel=card.querySelector('[data-week-session]');if(!panel)return;
   const proposed=()=>Array.isArray(w.activityIds)?multiSelectedActivities(w):multiActivitiesFor(w);
   function update(ids,confirmed=false){w.activityIds=ids;w.confirmedSession=confirmed;saveSchedule();}
@@ -141,11 +142,11 @@ function multiEnhanceSchedule(){
   panel.querySelectorAll('[data-multi-remove]').forEach(b=>b.onclick=()=>{const ids=proposed().map(a=>a.id);ids.splice(+b.dataset.multiRemove,1);update(ids)});
   panel.querySelector('[data-multi-suggest]').onclick=()=>{w.activityIds=multiActivitiesFor(w).map(a=>a.id);w.confirmedSession=false;saveSchedule()};
   panel.querySelector('[data-multi-pick]').onchange=e=>{if(!e.target.value)return;update([...new Set([...proposed().map(a=>a.id),e.target.value])])};
-  panel.querySelector('[data-multi-minutes]').onchange=e=>{w.sessionMinutes=Math.max(15,Math.min(600,Number(e.target.value)||90));w.confirmedSession=false;saveSchedule()};
+  panel.querySelector('[data-multi-minutes]').onchange=e=>{w.sessionMinutes=Math.max(15,Math.min(600,Number(e.target.value)||60));w.confirmedSession=false;saveSchedule()};
   panel.querySelector('[data-multi-confirm]').onclick=()=>{
    const ids=proposed().map(a=>a.id),items=ids.map(id=>activities.find(a=>a.id===id)).filter(Boolean);
    if(!ids.length){alert('Create activities with confirmed requirement coverage in Activity Studio first.');return;}
-   const result=multiSummary(items,w),max=Number(w.sessionMinutes)||90;
+   const result=multiSummary(items,w),max=Number(w.sessionMinutes)||60;
    if(result.minutes>max&&!confirm('Activities total '+result.minutes+' minutes, exceeding '+max+' minutes. Confirm anyway?'))return;
    if(studio.useLocations===true&&result.locations.length>1&&!confirm('Activities use different locations ('+result.locations.join(', ')+'). Confirm after checking travel feasibility?'))return;
    w.activityIds=ids;w.confirmedSession=true;saveSchedule();showToast('Week '+(i+1)+' activity sequence confirmed.');

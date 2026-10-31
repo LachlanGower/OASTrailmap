@@ -1,0 +1,32 @@
+name: Theme-led planning and JSON regression
+on:
+  push:
+    branches: [feature/theme-led-planning-and-json-data]
+  pull_request:
+    branches: [migration/pre-phase5-full-audit]
+permissions:
+  contents: read
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+      - run: npm ci
+      - run: npm run typecheck
+      - run: npm test
+      - run: npm run build
+      - run: npm run check:dist
+      - run: npx playwright install --with-deps chromium
+      - run: |
+          npm run dev -- --host 127.0.0.1 --port 5173 >/tmp/theme-dev.log 2>&1 &
+          python3 -m http.server 8765 --bind 127.0.0.1 -d dist >/tmp/theme-dist.log 2>&1 &
+          sleep 3
+          for url in http://127.0.0.1:5173/ http://127.0.0.1:8765/; do
+            OAS_TEST_URL="$url" node tests/e2e/theme-workspaces.cjs
+            OAS_TEST_URL="$url" node tests/e2e/recovery-parity.cjs
+          done

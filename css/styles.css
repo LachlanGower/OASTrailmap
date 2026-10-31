@@ -195,3 +195,25 @@
 .app-req-card code{display:inline-block;background:#edf4ee;padding:2px 5px;border-radius:4px;margin:2px;overflow-wrap:anywhere}
 @media(max-width:850px){.app-req-controls{grid-template-columns:1fr 1fr}.app-req-controls>label:first-child{grid-column:1/-1}}
 @media(max-width:520px){.app-req-controls{grid-template-columns:1fr}.app-req-controls>label:first-child{grid-column:auto}.app-req-head{flex-direction:column}.app-req-status{white-space:normal}}
+
+/* Theme-led workspace and readable stage-first scheduling */
+.theme-stage-grid,.week-stage-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;align-items:start;margin:12px 0}
+.theme-stage,.week-stage{min-width:0;padding:12px;border:1px solid #cadbce;border-radius:10px;background:#f7faf7;overflow-wrap:anywhere}
+.theme-stage p{padding:6px 0;border-bottom:1px solid #e3e9e4;margin:0}
+.week-stage ol{padding-left:1.3rem}.week-stage li{padding:3px 0}
+.schedule-grid{display:flex!important;flex-direction:column;gap:14px}
+.schedule-grid>.week-card{width:100%;max-width:none;box-sizing:border-box}
+.week-activity-accordion{margin-top:12px;padding:8px;border:1px solid #d1dfd4;border-radius:8px}
+.week-activity-accordion>summary{cursor:pointer;font-weight:600;padding:6px}
+.activity-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:10px}
+.activity-list-item{display:flex!important;flex-direction:column;text-align:left;align-items:flex-start;white-space:normal!important;gap:5px;min-height:88px;padding:12px!important}
+.activity-list-item strong{font-size:1.03rem}.activity-list-item span{font-size:.83rem;opacity:.8}.activity-list-item small{line-height:1.4}
+.location-choices{display:flex;flex-wrap:wrap;gap:10px;padding:8px}.location-choices label{white-space:nowrap}
+@media(max-width:760px){.theme-stage-grid,.week-stage-grid{grid-template-columns:1fr}.activity-list{grid-template-columns:1fr}}
+
+/* Skill mapper: improve link hierarchy and scanability without changing graph data */
+.tree-node{line-height:1.4;min-width:185px;max-width:265px;overflow-wrap:anywhere}
+.tree-node strong{display:block;font-size:.94rem;line-height:1.35}
+.tree-node small{display:block;opacity:.78;margin-top:5px}
+.tree-node:focus-visible,.tree-quick-link:focus-visible{outline:3px solid #287a56;outline-offset:3px}
+.tree-canvas-wrap{scroll-behavior:smooth;overscroll-behavior:contain}

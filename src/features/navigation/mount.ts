@@ -7,6 +7,8 @@ const sources: Record<NavigationAction, string> = {
   trail: '[data-mode="trail"]',
   tree: '[data-mode="tree"]',
   schedule: '[data-mode="schedule"]',
+  weeklyThemes: '#weeklyThemesTab',
+  tracker: '#requirementsTrackerTab',
   activity: '#activityStudioTab',
   data: '#dataManagerTab',
   help: '#helpDesignTab',

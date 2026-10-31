@@ -1,3 +1,4 @@
+import '../../../js/weekly-themes.js';
 import '../data-state/mount';
 import '../activity/mount';
 import '../scheduler/mount';
