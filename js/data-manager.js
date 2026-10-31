@@ -134,7 +134,7 @@ function dataManagerInit(){
  $('#dataWorkbookBtn').onclick=()=>$('#workbookFile').click();
  $('#dataManagerTab').onclick=()=>dataView('data');
  $('#activityStudioTab').onclick=()=>dataView('activity');
- $('#newActivity').onclick=()=>dataEditActivity();
+ $('#newActivity').onclick=()=>dataEditActivity();if($('#activityLibrarySearch'))$('#activityLibrarySearch').oninput=dataActivityRender;
  $('#exportActivityStudio').onclick=()=>dataExport('activities');
  dataRender();dataActivityRender();
 }
@@ -152,7 +152,8 @@ function dataView(mode){
 }
 function dataActivityRender(){
  const area=$('#activityList');if(!area)return;
- area.innerHTML=activities.map((a,i)=>'<button type="button" class="button secondary activity-list-item" data-activity-index="'+i+'"><strong>'+esc(a.title||a.name||a.id)+'</strong><span>'+esc(a.location||'Flexible venue')+' · '+esc(a.duration||60)+' min · '+(a.covers||[]).length+' covered requirements</span><small>'+esc((a.description||'').slice(0,160))+'</small></button>').join('')||'<p class="tiny muted">No activities yet. Create one or import activities.json from Data & State Manager.</p>';
+ const search=($('#activityLibrarySearch')?.value||'').trim().toLowerCase();
+ area.innerHTML=activities.map((a,i)=>({a,i})).filter(({a})=>!search||[a.title,a.description,a.location,...(a.tags||[]),...(a.covers||[])].join(' ').toLowerCase().includes(search)).map(({a,i})=>'<button type="button" class="button secondary activity-list-item" data-activity-index="'+i+'"><strong>'+esc(a.title||a.name||a.id)+'</strong><span>'+esc(a.location||'Flexible venue')+' · '+esc(a.duration||60)+' min · '+(a.covers||[]).length+' covered requirements</span><small>'+esc((a.description||'').slice(0,160))+'</small></button>').join('')||'<p class="tiny muted">No activities yet. Create one or import activities.json from Data & State Manager.</p>';
  area.querySelectorAll('[data-activity-index]').forEach(b=>b.onclick=()=>dataEditActivity(Number(b.dataset.activityIndex)));
 }
 function dataEditActivity(index=-1){
