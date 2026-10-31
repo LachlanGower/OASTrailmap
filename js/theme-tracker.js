@@ -42,7 +42,10 @@ function regenerateThemeWeek(i,theme,mode){
  if((w.activity||w.activityIds?.length||w.confirmedSession)&&!confirm('Regenerating Week '+(i+1)+' will invalidate its existing activity attachment or confirmation. Continue?')){renderSchedule();return;}
  const cap=Math.max(1,Math.min(12,Number(w.capacity)||studio.capacity||4));
  const chosen=[],pool=[...candidates];
+ const stageLimit=Math.max(1,Math.min(12,Number(w.stageLimit)||4));
  while(chosen.length<cap&&pool.length){
+  for(let k=pool.length-1;k>=0;k--)if(chosen.filter(r=>r.stage===pool[k].r.stage).length>=stageLimit)pool.splice(k,1);
+  if(!pool.length)break;
   const chosenIds=chosen.map(r=>r.id),counts=scheduleOccurrenceCounts(studio.schedule.filter((x,k)=>k!==i));
   let pick;
   if(strategy==='random'){
