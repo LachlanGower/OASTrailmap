@@ -132,7 +132,8 @@ function multiEnhanceSchedule(){
  grid.querySelectorAll('.week-card').forEach((card,i)=>{
   const w=studio.schedule[i];if(!w)return;
   if(card.querySelector('[data-week-session]'))return;
-  card.insertAdjacentHTML('beforeend',multiSchedulePanel(w,i));
+  const sessionHost=card.querySelector('.week-activity-accordion')||card;
+  sessionHost.insertAdjacentHTML('beforeend',multiSchedulePanel(w,i));
   const panel=card.querySelector('[data-week-session]');if(!panel)return;
   const proposed=()=>Array.isArray(w.activityIds)?multiSelectedActivities(w):multiActivitiesFor(w);
   function update(ids,confirmed=false){w.activityIds=ids;w.confirmedSession=confirmed;saveSchedule();}
