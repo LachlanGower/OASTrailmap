@@ -210,3 +210,10 @@
 .activity-list-item strong{font-size:1.03rem}.activity-list-item span{font-size:.83rem;opacity:.8}.activity-list-item small{line-height:1.4}
 .location-choices{display:flex;flex-wrap:wrap;gap:10px;padding:8px}.location-choices label{white-space:nowrap}
 @media(max-width:760px){.theme-stage-grid,.week-stage-grid{grid-template-columns:1fr}.activity-list{grid-template-columns:1fr}}
+
+/* Skill mapper: improve link hierarchy and scanability without changing graph data */
+.tree-node{line-height:1.4;min-width:185px;max-width:265px;overflow-wrap:anywhere}
+.tree-node strong{display:block;font-size:.94rem;line-height:1.35}
+.tree-node small{display:block;opacity:.78;margin-top:5px}
+.tree-node:focus-visible,.tree-quick-link:focus-visible{outline:3px solid #287a56;outline-offset:3px}
+.tree-canvas-wrap{scroll-behavior:smooth;overscroll-behavior:contain}
