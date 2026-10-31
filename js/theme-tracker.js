@@ -16,7 +16,7 @@ function themedCandidates(weekIndex,theme){
 }
 function themeScore(r,weekIndex,chosen,occurrenceCounts){
  const scope=scheduleScope(),prior=new Set(studio.schedule.slice(0,weekIndex).flatMap(w=>w.requirementIds||[]));
- const selected=new Set(chosen.map(x=>x.id)),pre=r.prerequisites||[];
+ const selected=new Set(chosen.map(x=>x.id)),pre=Number(r.stage)===1?[]:(r.prerequisites||[]);
  const readyInPlan=pre.every(id=>prior.has(id)||selected.has(id)||isCompletedInScope(id));
  const affected=scope.length?scope.filter(name=>!isCompleted(name,r.id)).length:1;
  const readyScouts=scope.length?scope.filter(name=>!isCompleted(name,r.id)&&pre.every(id=>isCompleted(name,id)||prior.has(id)||selected.has(id))).length:1;
