@@ -108,12 +108,37 @@ function exportCoverage(){
  const text=[header,...records].map(row=>row.map(csvCell).join(',')).join('\r\n');
  download('oas-requirement-coverage.csv',text,'text/csv');
 }
+const OAS_TRELLO_NOTES_KEY='oas-trello-tracker-v1';
+function trelloNotes(){try{const data=JSON.parse(localStorage.getItem(OAS_TRELLO_NOTES_KEY)||'{}');return data&&typeof data==='object'&&!Array.isArray(data)?data:{}}catch{return {}}}
+function exportTrackerTrello(){
+ const lists=[{id:'oas-unaddressed',name:'Unaddressed'},{id:'oas-partial',name:'Partially addressed'},{id:'oas-planned',name:'Fully planned'},{id:'oas-complete',name:'Completed'}];
+ const annotations=trelloNotes(),cards=coverageRows().map(({r,state,needed,times})=>({
+   name:r.text,desc:'OAS-ID: '+r.id+'\nStage: '+r.stage+'\nStream: '+r.stream+'\nPlanned opportunities: '+times+'/'+needed+(annotations[r.id]?.note?'\nNotes: '+annotations[r.id].note:''),
+   idList:'oas-'+state,labels:(r.theme_tags||r.tags||[]).map(t=>({name:t}))
+ }));
+ download('oas-requirements-trello.json',JSON.stringify({format:'oas-trello-exchange-v1',name:'OAS Requirements Tracker',lists,cards},null,2),'application/json');
+}
+async function importTrackerTrello(file){
+ if(!/\.json$/i.test(file.name)||file.size>10000000)throw Error('Choose a Trello JSON export smaller than 10 MB.');
+ const data=JSON.parse(await file.text());if(!Array.isArray(data.cards))throw Error('Expected a board JSON export containing cards.');
+ const ids=new Set(requirements.map(r=>r.id)),found={};let unmatched=0;
+ for(const card of data.cards){if(card.closed||typeof card.desc!=='string')continue;const id=card.desc.match(/(?:^|\n)OAS-ID:\s*([^\s]+)/i)?.[1];if(!id||!ids.has(id)){unmatched++;continue}
+  found[id]={note:String(card.desc.match(/(?:^|\n)Notes:\s*([^\n]*)/i)?.[1]||'').slice(0,1000),list:String(data.lists?.find(l=>l.id===card.idList)?.name||card.listName||'').slice(0,100),importedAt:new Date().toISOString()};
+ }
+ const matched=Object.keys(found).length;if(!matched)throw Error('No matching OAS requirement IDs were found. Use a board exported from this tracker.');
+ if(!confirm('Import '+matched+' Trello planning annotations ('+unmatched+' unmatched cards skipped)? Scout completion records will NOT be changed.'))return;
+ const merged={...trelloNotes(),...found};localStorage.setItem(OAS_TRELLO_NOTES_KEY,JSON.stringify(merged));trackerRender();showToast('Imported '+matched+' Trello planning annotations. Scout progress was not changed.');
+}
+
 function trackerRender(){
  const area=$('#requirementsTrackerRows');if(!area)return;
  const rows=coverageRows(),q=($('#requirementsTrackerSearch')?.value||'').trim().toLowerCase(),filter=$('#requirementsTrackerStatus')?.value||'all';
- const filtered=rows.filter(o=>(filter==='all'||o.state===filter)&&(!q||(o.r.text+' '+o.r.id+' '+(o.r.tags||[]).join(' ')+' '+o.r.stream).toLowerCase().includes(q)));
+ const themeSelect=$('#trackerThemeFilter');if(themeSelect&&themeSelect.options.length===1){const themes=[...new Set(requirements.flatMap(r=>r.theme_tags||r.tags||[]))].sort();for(const theme of themes){const opt=document.createElement('option');opt.value=theme;opt.textContent=theme;themeSelect.append(opt)}}
+ const theme=themeSelect?.value||'',stage=$('#trackerStageFilter')?.value||'',stream=$('#trackerStreamFilter')?.value||'';
+ const filtered=rows.filter(o=>(filter==='all'||o.state===filter)&&(!theme||(o.r.theme_tags||o.r.tags||[]).includes(theme))&&(!stage||String(o.r.stage)===stage)&&(!stream||o.r.stream===stream)&&(!q||(o.r.text+' '+o.r.id+' '+(o.r.tags||[]).join(' ')+' '+o.r.stream).toLowerCase().includes(q)));
+ const notes=trelloNotes();
  const counts=Object.fromEntries(['unaddressed','partial','planned','complete'].map(s=>[s,rows.filter(o=>o.state===s).length]));
- const snapshot={counts,rows:filtered.map(o=>({id:o.r.id,text:o.r.text,stage:o.r.stage,stream:o.r.stream,linked:o.matching.length,activityNames:o.matching.map(a=>a.title||a.id),planned:o.times,needed:o.needed,weeks:o.weeks,scoutsDone:o.scoutsDone,scoutsTotal:o.names,evidence:o.evidence,status:o.state}))};
+ const snapshot={counts,rows:filtered.map(o=>({id:o.r.id,text:o.r.text,stage:o.r.stage,stream:o.r.stream,linked:o.matching.length,activityNames:o.matching.map(a=>a.title||a.id),planned:o.times,needed:o.needed,weeks:o.weeks,scoutsDone:o.scoutsDone,scoutsTotal:o.names,evidence:o.evidence,status:o.state,trelloNote:notes[o.r.id]?.note||'',trelloList:notes[o.r.id]?.list||''}))};
  if(window.__oasVueCoverageRender?.(snapshot))return;
  $('#requirementsTrackerSummary').innerHTML=Object.entries(counts).map(([s,n])=>'<div class="data-stat"><strong>'+n+'</strong><span>'+esc(s==='partial'?'Partially addressed':s==='planned'?'Fully planned':s==='complete'?'Completed for selected Scouts':'Unaddressed')+'</span></div>').join('');
  area.innerHTML=filtered.map(o=>'<tr><td><strong>'+esc(o.r.text)+'</strong><small>'+esc(o.r.id)+'</small></td><td>Stage '+esc(o.r.stage)+' · '+esc(o.r.stream)+'</td><td>'+o.matching.length+' linked'+(o.matching.length?'<small>'+esc(o.matching.map(a=>a.title||a.id).slice(0,2).join('; '))+'</small>':'')+'</td><td>'+o.times+'/'+o.needed+'<small>'+esc(o.weeks.join(', ')||'Not scheduled')+'</small></td><td>'+o.scoutsDone+'/'+o.names+' Scouts complete'+(o.names?'<small>'+o.evidence+' total evidence credits</small>':'')+'</td><td><span class="tracker-status '+o.state+'">'+esc(o.state)+'</span></td></tr>').join('')||'<tr><td colspan="6">No requirements match these filters.</td></tr>';
@@ -126,6 +151,10 @@ function setupThemeAndTracker(){
  const search=$('#requirementsTrackerSearch'),state=$('#requirementsTrackerStatus'),exporter=$('#exportRequirementsTracker');
  if(search)search.oninput=trackerRender;
  if(state)state.onchange=trackerRender;
+ for(const id of ['trackerThemeFilter','trackerStageFilter','trackerStreamFilter'])if($('#'+id))$('#'+id).onchange=trackerRender;
+ if($('#exportRequirementsTrello'))$('#exportRequirementsTrello').onclick=exportTrackerTrello;
+ if($('#importRequirementsTrello'))$('#importRequirementsTrello').onclick=()=>$('#requirementsTrelloFile').click();
+ if($('#requirementsTrelloFile'))$('#requirementsTrelloFile').onchange=async e=>{const file=e.target.files?.[0];if(!file)return;try{await importTrackerTrello(file)}catch(error){alert('Trello import rejected: '+error.message)}e.target.value=''};
  if(exporter)exporter.onclick=exportCoverage;
  const detail=HELP_TOPICS.find(t=>t.id==='scheduling');
  if(detail)detail.text+='\n\nChanging a weekly Theme dropdown now regenerates matching skills for that week. Choose Best for progression or Random within theme; use Regenerate themed week to reroll. The week is locked after a change. Switch off Consider locations if Scout Hall versus external venue should not influence suggestions. Plan 1 to 60 weeks.';
