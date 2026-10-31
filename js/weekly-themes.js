@@ -31,7 +31,7 @@
   host.replaceChildren(grid,heading,list);
  }
  document.addEventListener('DOMContentLoaded',()=>{
-  document.querySelector('.studio-nav')?.addEventListener('click',e=>{const button=e.target.closest('button');if(button&&!['weeklyThemesTab','requirementsTrackerTab'].includes(button.id)){if($('weeklyThemes'))$('weeklyThemes').hidden=true;if($('requirementsWorkspace'))$('requirementsWorkspace').hidden=true;}},true);
+  document.addEventListener('click',e=>{const button=e.target.closest('button');if(button?.closest('nav.studio-nav')&&!['weeklyThemesTab','requirementsTrackerTab'].includes(button.id)){if($('weeklyThemes'))$('weeklyThemes').hidden=true;if($('requirementsWorkspace'))$('requirementsWorkspace').hidden=true;}},true);
   const locationHost=document.createElement('fieldset');locationHost.className='location-choices';locationHost.id='scheduleLocationChoices';
   const legend=document.createElement('legend');legend.textContent='Preferred locations to consider (select any)';locationHost.append(legend);
   const scheduler=$('scheduleStudio');
@@ -42,8 +42,8 @@
    for(const loc of locations){const label=document.createElement('label'),input=document.createElement('input');input.type='checkbox';input.value=loc;input.checked=(studio.allowedLocations||[]).includes(loc);input.addEventListener('change',()=>{studio.allowedLocations=[...locationHost.querySelectorAll('input:checked')].map(x=>x.value);writeStudio()});label.append(input,document.createTextNode(' '+loc));locationHost.append(label)}
   }
   const locationWait=setInterval(()=>{if(typeof requirements==='undefined'||!requirements.length||typeof studio==='undefined')return;clearInterval(locationWait);fillLocations()},100);
-  $('weeklyThemesTab')?.addEventListener('click',()=>{show('weeklyThemes');render()});
-  $('requirementsTrackerTab')?.addEventListener('click',()=>show('requirementsWorkspace'));
+  if($('weeklyThemesTab'))$('weeklyThemesTab').onclick=()=>{show('weeklyThemes');render()};
+  if($('requirementsTrackerTab'))$('requirementsTrackerTab').onclick=()=>show('requirementsWorkspace');
   $('weeklyThemeSelect')?.addEventListener('change',render);
  });
  window.__oasRenderWeeklyThemes=render;
