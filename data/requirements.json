@@ -1,5 +1,5 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
   "source": "OAS-Requirements.txt",
   "requirements": [
     {
@@ -20,7 +20,10 @@
       "required_occurrences": 1,
       "occurrence_unit": "sessions",
       "occurrence_basis": "inferred",
-      "occurrence_note": "Planning default: one session to gather evidence; leader confirmation remains necessary."
+      "occurrence_note": "Planning default: one session to gather evidence; leader confirmation remains necessary.",
+      "theme_tags": [
+        "Equipment & packing"
+      ]
     },
     {
       "id": "s3-camping-i-know-how-and-where-to-get-the-latest-weather-f",
@@ -41,7 +44,12 @@
       "required_occurrences": 1,
       "occurrence_unit": "sessions",
       "occurrence_basis": "inferred",
-      "occurrence_note": "Planning default: one session to gather evidence; leader confirmation remains necessary."
+      "occurrence_note": "Planning default: one session to gather evidence; leader confirmation remains necessary.",
+      "theme_tags": [
+        "Weather",
+        "Planning",
+        "Discussion / theory"
+      ]
     },
     {
       "id": "s3-camping-i-can-help-plan-a-balanced-meal-for-camp",
@@ -75,7 +83,11 @@
       "required_occurrences": 1,
       "occurrence_unit": "sessions",
       "occurrence_basis": "inferred",
-      "occurrence_note": "Planning default: one session to gather evidence; leader confirmation remains necessary."
+      "occurrence_note": "Planning default: one session to gather evidence; leader confirmation remains necessary.",
+      "theme_tags": [
+        "Food & cooking",
+        "Planning"
+      ]
     },
     {
       "id": "s3-camping-i-know-the-benefits-of-using-gas-to-cook-and-can",
@@ -110,7 +122,12 @@
       "required_occurrences": 1,
       "occurrence_unit": "sessions",
       "occurrence_basis": "inferred",
-      "occurrence_note": "Planning default: one session to gather evidence; leader confirmation remains necessary."
+      "occurrence_note": "Planning default: one session to gather evidence; leader confirmation remains necessary.",
+      "theme_tags": [
+        "Safety",
+        "Food & cooking",
+        "Discussion / theory"
+      ]
     },
     {
       "id": "s3-camping-i-can-list-group-equipment-required-for-camp",
@@ -143,7 +160,11 @@
       "required_occurrences": 1,
       "occurrence_unit": "sessions",
       "occurrence_basis": "inferred",
-      "occurrence_note": "Planning default: one session to gather evidence; leader confirmation remains necessary."
+      "occurrence_note": "Planning default: one session to gather evidence; leader confirmation remains necessary.",
+      "theme_tags": [
+        "Equipment & packing",
+        "Discussion / theory"
+      ]
     },
     {
       "id": "s3-camping-i-know-how-to-maintain-personal-hygiene-while-ca",
@@ -176,7 +197,11 @@
       "required_occurrences": 1,
       "occurrence_unit": "sessions",
       "occurrence_basis": "inferred",
-      "occurrence_note": "Planning default: one session to gather evidence; leader confirmation remains necessary."
+      "occurrence_note": "Planning default: one session to gather evidence; leader confirmation remains necessary.",
+      "theme_tags": [
+        "Hygiene & personal care",
+        "Discussion / theory"
+      ]
     },
     {
       "id": "s3-camping-i-can-assemble-a-personal-first-aid-kit-for-a-ca",
@@ -202,7 +227,11 @@
       "required_occurrences": 1,
       "occurrence_unit": "sessions",
       "occurrence_basis": "inferred",
-      "occurrence_note": "Planning default: one session to gather evidence; leader confirmation remains necessary."
+      "occurrence_note": "Planning default: one session to gather evidence; leader confirmation remains necessary.",
+      "theme_tags": [
+        "First aid",
+        "Equipment & packing"
+      ]
     },
     {
       "id": "s3-camping-i-know-what-drsabcd-stands-for-and-how-to-use-it",
@@ -228,7 +257,11 @@
       "required_occurrences": 1,
       "occurrence_unit": "sessions",
       "occurrence_basis": "inferred",
-      "occurrence_note": "Planning default: one session to gather evidence; leader confirmation remains necessary."
+      "occurrence_note": "Planning default: one session to gather evidence; leader confirmation remains necessary.",
+      "theme_tags": [
+        "First aid",
+        "Discussion / theory"
+      ]
     },
     {
       "id": "s3-camping-i-can-demonstrate-keeping-myself-safe-from-natur",
@@ -247,7 +280,10 @@
       "required_occurrences": 1,
       "occurrence_unit": "sessions",
       "occurrence_basis": "inferred",
-      "occurrence_note": "Planning default: one session to gather evidence; leader confirmation remains necessary."
+      "occurrence_note": "Planning default: one session to gather evidence; leader confirmation remains necessary.",
+      "theme_tags": [
+        "Safety"
+      ]
     },
     {
       "id": "s3-camping-i-can-help-build-a-campfire-and-collect-material",
@@ -282,7 +318,10 @@
       "required_occurrences": 1,
       "occurrence_unit": "sessions",
       "occurrence_basis": "inferred",
-      "occurrence_note": "Planning default: one session to gather evidence; leader confirmation remains necessary."
+      "occurrence_note": "Planning default: one session to gather evidence; leader confirmation remains necessary.",
+      "theme_tags": [
+        "Fire"
+      ]
     },
     {
       "id": "s3-camping-i-can-cook-a-meal-on-a-campfire-with-assistance",
@@ -319,7 +358,11 @@
       "required_occurrences": 1,
       "occurrence_unit": "sessions",
       "occurrence_basis": "inferred",
-      "occurrence_note": "Planning default: one session to gather evidence; leader confirmation remains necessary."
+      "occurrence_note": "Planning default: one session to gather evidence; leader confirmation remains necessary.",
+      "theme_tags": [
+        "Food & cooking",
+        "Fire"
+      ]
     },
     {
       "id": "s3-camping-i-have-used-a-gas-cooker-to-help-cook-a-camp-mea",
@@ -353,7 +396,10 @@
       "required_occurrences": 1,
       "occurrence_unit": "sessions",
       "occurrence_basis": "inferred",
-      "occurrence_note": "Planning default: one session to gather evidence; leader confirmation remains necessary."
+      "occurrence_note": "Planning default: one session to gather evidence; leader confirmation remains necessary.",
+      "theme_tags": [
+        "Food & cooking"
+      ]
     },
     {
       "id": "s3-camping-i-can-help-run-an-activity-at-a-camp",
@@ -371,7 +417,10 @@
       "required_occurrences": 1,
       "occurrence_unit": "sessions",
       "occurrence_basis": "inferred",
-      "occurrence_note": "Planning default: one session to gather evidence; leader confirmation remains necessary."
+      "occurrence_note": "Planning default: one session to gather evidence; leader confirmation remains necessary.",
+      "theme_tags": [
+        "Leadership & teamwork"
+      ]
     },
     {
       "id": "s3-camping-i-can-set-up-a-tent-without-help-from-an-adult",
@@ -407,7 +456,10 @@
       "required_occurrences": 1,
       "occurrence_unit": "sessions",
       "occurrence_basis": "inferred",
-      "occurrence_note": "Planning default: one session to gather evidence; leader confirmation remains necessary."
+      "occurrence_note": "Planning default: one session to gather evidence; leader confirmation remains necessary.",
+      "theme_tags": [
+        "Shelter & tents"
+      ]
     },
     {
       "id": "s3-camping-i-have-spent-5-nights-on-camp-in-a-tent-by-the-e",
@@ -444,7 +496,12 @@
       "required_occurrences": 5,
       "occurrence_unit": "nights",
       "occurrence_basis": "explicit",
-      "occurrence_note": "Source wording specifies this minimum number of outings or experiences."
+      "occurrence_note": "Source wording specifies this minimum number of outings or experiences.",
+      "theme_tags": [
+        "Shelter & tents",
+        "Outdoor experience",
+        "External / real-world experience"
+      ]
     },
     {
       "id": "s3-camping-i-know-how-to-treat-cuts-and-minor-bleeding",
@@ -469,7 +526,11 @@
       "required_occurrences": 1,
       "occurrence_unit": "sessions",
       "occurrence_basis": "inferred",
-      "occurrence_note": "Planning default: one session to gather evidence; leader confirmation remains necessary."
+      "occurrence_note": "Planning default: one session to gather evidence; leader confirmation remains necessary.",
+      "theme_tags": [
+        "First aid",
+        "Discussion / theory"
+      ]
     },
     {
       "id": "s3-camping-i-can-teach-the-importance-of-the-buddy-system-t",
@@ -503,7 +564,11 @@
       "required_occurrences": 1,
       "occurrence_unit": "sessions",
       "occurrence_basis": "inferred",
-      "occurrence_note": "Planning default: one session to gather evidence; leader confirmation remains necessary."
+      "occurrence_note": "Planning default: one session to gather evidence; leader confirmation remains necessary.",
+      "theme_tags": [
+        "Safety",
+        "Leadership & teamwork"
+      ]
     },
     {
       "id": "s3-camping-i-can-demonstrate-how-to-store-food-at-camp",
@@ -537,7 +602,10 @@
       "required_occurrences": 1,
       "occurrence_unit": "sessions",
       "occurrence_basis": "inferred",
-      "occurrence_note": "Planning default: one session to gather evidence; leader confirmation remains necessary."
+      "occurrence_note": "Planning default: one session to gather evidence; leader confirmation remains necessary.",
+      "theme_tags": [
+        "Food & cooking"
+      ]
     },
     {
       "id": "s3-camping-i-have-learnt-3-knots-that-can-help-me-during-a-",
@@ -570,7 +638,11 @@
       "required_occurrences": 1,
       "occurrence_unit": "sessions",
       "occurrence_basis": "inferred",
-      "occurrence_note": "Planning default: one session to gather evidence; leader confirmation remains necessary."
+      "occurrence_note": "Planning default: one session to gather evidence; leader confirmation remains necessary.",
+      "theme_tags": [
+        "Knots & rope",
+        "Reflection & review"
+      ]
     },
     {
       "id": "s3-camping-i-have-discussed-the-ways-i-can-improve-the-camp",
@@ -592,7 +664,11 @@
       "required_occurrences": 1,
       "occurrence_unit": "sessions",
       "occurrence_basis": "inferred",
-      "occurrence_note": "Planning default: one session to gather evidence; leader confirmation remains necessary."
+      "occurrence_note": "Planning default: one session to gather evidence; leader confirmation remains necessary.",
+      "theme_tags": [
+        "Reflection & review",
+        "Discussion / theory"
+      ]
     },
     {
       "id": "s3-camping-i-have-discussed-my-camping-and-how-improvements",
@@ -627,7 +703,11 @@
       "required_occurrences": 1,
       "occurrence_unit": "sessions",
       "occurrence_basis": "inferred",
-      "occurrence_note": "Planning default: one session to gather evidence; leader confirmation remains necessary."
+      "occurrence_note": "Planning default: one session to gather evidence; leader confirmation remains necessary.",
+      "theme_tags": [
+        "Reflection & review",
+        "Discussion / theory"
+      ]
     },
     {
       "id": "s3-bushwalking-i-can-help-a-stage-1-scout-to-pack-their-backpac",
@@ -648,7 +728,11 @@
       "required_occurrences": 1,
       "occurrence_unit": "sessions",
       "occurrence_basis": "inferred",
-      "occurrence_note": "Planning default: one session to gather evidence; leader confirmation remains necessary."
+      "occurrence_note": "Planning default: one session to gather evidence; leader confirmation remains necessary.",
+      "theme_tags": [
+        "Equipment & packing",
+        "Leadership & teamwork"
+      ]
     },
     {
       "id": "s3-bushwalking-i-know-how-and-where-to-get-the-latest-weather-f",
@@ -669,7 +753,12 @@
       "required_occurrences": 1,
       "occurrence_unit": "sessions",
       "occurrence_basis": "inferred",
-      "occurrence_note": "Planning default: one session to gather evidence; leader confirmation remains necessary."
+      "occurrence_note": "Planning default: one session to gather evidence; leader confirmation remains necessary.",
+      "theme_tags": [
+        "Weather",
+        "Planning",
+        "Discussion / theory"
+      ]
     },
     {
       "id": "s3-bushwalking-i-can-help-plan-a-balanced-menu-for-bushwalking",
@@ -701,7 +790,11 @@
       "required_occurrences": 1,
       "occurrence_unit": "sessions",
       "occurrence_basis": "inferred",
-      "occurrence_note": "Planning default: one session to gather evidence; leader confirmation remains necessary."
+      "occurrence_note": "Planning default: one session to gather evidence; leader confirmation remains necessary.",
+      "theme_tags": [
+        "Food & cooking",
+        "Planning"
+      ]
     },
     {
       "id": "s3-bushwalking-i-can-list-places-where-i-can-and-cannot-bushwal",
@@ -721,7 +814,11 @@
       "required_occurrences": 1,
       "occurrence_unit": "sessions",
       "occurrence_basis": "inferred",
-      "occurrence_note": "Planning default: one session to gather evidence; leader confirmation remains necessary."
+      "occurrence_note": "Planning default: one session to gather evidence; leader confirmation remains necessary.",
+      "theme_tags": [
+        "Planning",
+        "Discussion / theory"
+      ]
     },
     {
       "id": "s3-bushwalking-i-can-talk-about-different-ways-of-keeping-a-gro",
@@ -741,7 +838,11 @@
       "required_occurrences": 1,
       "occurrence_unit": "sessions",
       "occurrence_basis": "inferred",
-      "occurrence_note": "Planning default: one session to gather evidence; leader confirmation remains necessary."
+      "occurrence_note": "Planning default: one session to gather evidence; leader confirmation remains necessary.",
+      "theme_tags": [
+        "Leadership & teamwork",
+        "Discussion / theory"
+      ]
     },
     {
       "id": "s3-bushwalking-i-have-considered-bushwalking-etiquette-when-pla",
@@ -762,7 +863,12 @@
       "required_occurrences": 1,
       "occurrence_unit": "sessions",
       "occurrence_basis": "inferred",
-      "occurrence_note": "Planning default: one session to gather evidence; leader confirmation remains necessary."
+      "occurrence_note": "Planning default: one session to gather evidence; leader confirmation remains necessary.",
+      "theme_tags": [
+        "Planning",
+        "Reflection & review",
+        "Discussion / theory"
+      ]
     },
     {
       "id": "s3-bushwalking-i-can-be-responsible-for-my-safety-and-aware-of-",
@@ -780,7 +886,10 @@
       "required_occurrences": 1,
       "occurrence_unit": "sessions",
       "occurrence_basis": "inferred",
-      "occurrence_note": "Planning default: one session to gather evidence; leader confirmation remains necessary."
+      "occurrence_note": "Planning default: one session to gather evidence; leader confirmation remains necessary.",
+      "theme_tags": [
+        "Safety"
+      ]
     },
     {
       "id": "s3-bushwalking-i-have-run-a-small-navigational-activity-for-my-",
@@ -813,7 +922,11 @@
       "required_occurrences": 1,
       "occurrence_unit": "sessions",
       "occurrence_basis": "inferred",
-      "occurrence_note": "Planning default: one session to gather evidence; leader confirmation remains necessary."
+      "occurrence_note": "Planning default: one session to gather evidence; leader confirmation remains necessary.",
+      "theme_tags": [
+        "Navigation",
+        "Leadership & teamwork"
+      ]
     },
     {
       "id": "s3-bushwalking-i-can-use-different-types-of-maps-to-help-me-thr",
@@ -844,7 +957,10 @@
       "required_occurrences": 1,
       "occurrence_unit": "sessions",
       "occurrence_basis": "inferred",
-      "occurrence_note": "Planning default: one session to gather evidence; leader confirmation remains necessary."
+      "occurrence_note": "Planning default: one session to gather evidence; leader confirmation remains necessary.",
+      "theme_tags": [
+        "Navigation"
+      ]
     },
     {
       "id": "s3-bushwalking-i-have-attended-a-day-bushwalk-at-this-stage-of-",
@@ -864,7 +980,11 @@
       "required_occurrences": 1,
       "occurrence_unit": "sessions",
       "occurrence_basis": "inferred",
-      "occurrence_note": "Planning default: one session to gather evidence; leader confirmation remains necessary."
+      "occurrence_note": "Planning default: one session to gather evidence; leader confirmation remains necessary.",
+      "theme_tags": [
+        "Outdoor experience",
+        "External / real-world experience"
+      ]
     },
     {
       "id": "s3-bushwalking-i-have-attended-at-least-two-bushwalking-activit",
@@ -884,7 +1004,11 @@
       "required_occurrences": 2,
       "occurrence_unit": "bushwalks",
       "occurrence_basis": "explicit",
-      "occurrence_note": "Source wording specifies this minimum number of outings or experiences."
+      "occurrence_note": "Source wording specifies this minimum number of outings or experiences.",
+      "theme_tags": [
+        "Outdoor experience",
+        "External / real-world experience"
+      ]
     },
     {
       "id": "s3-bushwalking-i-know-how-to-avoid-becoming-lost-and-i-know-wha",
@@ -918,7 +1042,12 @@
       "required_occurrences": 1,
       "occurrence_unit": "sessions",
       "occurrence_basis": "inferred",
-      "occurrence_note": "Planning default: one session to gather evidence; leader confirmation remains necessary."
+      "occurrence_note": "Planning default: one session to gather evidence; leader confirmation remains necessary.",
+      "theme_tags": [
+        "Emergency response",
+        "Navigation",
+        "Discussion / theory"
+      ]
     },
     {
       "id": "s3-bushwalking-i-know-how-to-treat-cuts-and-minor-bleeding",
@@ -943,7 +1072,12 @@
       "required_occurrences": 1,
       "occurrence_unit": "sessions",
       "occurrence_basis": "inferred",
-      "occurrence_note": "Planning default: one session to gather evidence; leader confirmation remains necessary."
+      "occurrence_note": "Planning default: one session to gather evidence; leader confirmation remains necessary.",
+      "theme_tags": [
+        "First aid",
+        "Discussion / theory"
+      ],
+      "duplicate_of": "s3-camping-i-know-how-to-treat-cuts-and-minor-bleeding"
     },
     {
       "id": "s3-bushwalking-i-can-teach-the-importance-of-the-buddy-system-a",
@@ -977,7 +1111,11 @@
       "required_occurrences": 1,
       "occurrence_unit": "sessions",
       "occurrence_basis": "inferred",
-      "occurrence_note": "Planning default: one session to gather evidence; leader confirmation remains necessary."
+      "occurrence_note": "Planning default: one session to gather evidence; leader confirmation remains necessary.",
+      "theme_tags": [
+        "Safety",
+        "Leadership & teamwork"
+      ]
     },
     {
       "id": "s3-bushwalking-i-can-identify-the-features-of-a-topographical-m",
@@ -1008,7 +1146,11 @@
       "required_occurrences": 1,
       "occurrence_unit": "sessions",
       "occurrence_basis": "inferred",
-      "occurrence_note": "Planning default: one session to gather evidence; leader confirmation remains necessary."
+      "occurrence_note": "Planning default: one session to gather evidence; leader confirmation remains necessary.",
+      "theme_tags": [
+        "Navigation",
+        "Discussion / theory"
+      ]
     },
     {
       "id": "s3-bushwalking-i-have-given-a-presentation-to-my-patrol-or-my-u",
@@ -1031,7 +1173,12 @@
       "required_occurrences": 1,
       "occurrence_unit": "sessions",
       "occurrence_basis": "inferred",
-      "occurrence_note": "Planning default: one session to gather evidence; leader confirmation remains necessary."
+      "occurrence_note": "Planning default: one session to gather evidence; leader confirmation remains necessary.",
+      "theme_tags": [
+        "Leadership & teamwork",
+        "Reflection & review",
+        "Discussion / theory"
+      ]
     },
     {
       "id": "s3-bushwalking-i-have-discussed-the-top-five-things-i-have-lear",
@@ -1064,7 +1211,11 @@
       "required_occurrences": 1,
       "occurrence_unit": "sessions",
       "occurrence_basis": "inferred",
-      "occurrence_note": "Planning default: one session to gather evidence; leader confirmation remains necessary."
+      "occurrence_note": "Planning default: one session to gather evidence; leader confirmation remains necessary.",
+      "theme_tags": [
+        "Reflection & review",
+        "Discussion / theory"
+      ]
     },
     {
       "id": "s3-bushcraft-i-can-explain-the-importance-of-wearing-the-righ",
@@ -1085,7 +1236,12 @@
       "required_occurrences": 1,
       "occurrence_unit": "sessions",
       "occurrence_basis": "inferred",
-      "occurrence_note": "Planning default: one session to gather evidence; leader confirmation remains necessary."
+      "occurrence_note": "Planning default: one session to gather evidence; leader confirmation remains necessary.",
+      "theme_tags": [
+        "Equipment & packing",
+        "Environment & nature",
+        "Discussion / theory"
+      ]
     },
     {
       "id": "s3-bushcraft-i-know-about-native-flora-and-fauna-and-the-risk",
@@ -1106,7 +1262,12 @@
       "required_occurrences": 1,
       "occurrence_unit": "sessions",
       "occurrence_basis": "inferred",
-      "occurrence_note": "Planning default: one session to gather evidence; leader confirmation remains necessary."
+      "occurrence_note": "Planning default: one session to gather evidence; leader confirmation remains necessary.",
+      "theme_tags": [
+        "Safety",
+        "Environment & nature",
+        "Discussion / theory"
+      ]
     },
     {
       "id": "s3-bushcraft-i-know-how-and-where-to-get-the-latest-weather-f",
@@ -1127,7 +1288,12 @@
       "required_occurrences": 1,
       "occurrence_unit": "sessions",
       "occurrence_basis": "inferred",
-      "occurrence_note": "Planning default: one session to gather evidence; leader confirmation remains necessary."
+      "occurrence_note": "Planning default: one session to gather evidence; leader confirmation remains necessary.",
+      "theme_tags": [
+        "Weather",
+        "Planning",
+        "Discussion / theory"
+      ]
     },
     {
       "id": "s3-bushcraft-i-know-the-first-aid-treatment-for-burns-from-ho",
@@ -1161,7 +1327,12 @@
       "required_occurrences": 1,
       "occurrence_unit": "sessions",
       "occurrence_basis": "inferred",
-      "occurrence_note": "Planning default: one session to gather evidence; leader confirmation remains necessary."
+      "occurrence_note": "Planning default: one session to gather evidence; leader confirmation remains necessary.",
+      "theme_tags": [
+        "First aid",
+        "Food & cooking",
+        "Discussion / theory"
+      ]
     },
     {
       "id": "s3-bushcraft-i-know-how-to-treat-cuts-and-minor-bleeding",
@@ -1186,7 +1357,12 @@
       "required_occurrences": 1,
       "occurrence_unit": "sessions",
       "occurrence_basis": "inferred",
-      "occurrence_note": "Planning default: one session to gather evidence; leader confirmation remains necessary."
+      "occurrence_note": "Planning default: one session to gather evidence; leader confirmation remains necessary.",
+      "theme_tags": [
+        "First aid",
+        "Discussion / theory"
+      ],
+      "duplicate_of": "s3-camping-i-know-how-to-treat-cuts-and-minor-bleeding"
     },
     {
       "id": "s3-bushcraft-i-know-what-drsabcd-stands-for-and-how-to-apply-",
@@ -1211,7 +1387,11 @@
       "required_occurrences": 1,
       "occurrence_unit": "sessions",
       "occurrence_basis": "inferred",
-      "occurrence_note": "Planning default: one session to gather evidence; leader confirmation remains necessary."
+      "occurrence_note": "Planning default: one session to gather evidence; leader confirmation remains necessary.",
+      "theme_tags": [
+        "First aid",
+        "Discussion / theory"
+      ]
     },
     {
       "id": "s3-bushcraft-i-can-identify-fire-safety-equipment-in-my-hall",
@@ -1246,7 +1426,13 @@
       "required_occurrences": 1,
       "occurrence_unit": "sessions",
       "occurrence_basis": "inferred",
-      "occurrence_note": "Planning default: one session to gather evidence; leader confirmation remains necessary."
+      "occurrence_note": "Planning default: one session to gather evidence; leader confirmation remains necessary.",
+      "theme_tags": [
+        "Safety",
+        "Fire",
+        "Equipment & packing",
+        "Discussion / theory"
+      ]
     },
     {
       "id": "s3-bushcraft-i-can-cook-a-meal-using-a-camp-stove",
@@ -1278,7 +1464,10 @@
       "required_occurrences": 1,
       "occurrence_unit": "sessions",
       "occurrence_basis": "inferred",
-      "occurrence_note": "Planning default: one session to gather evidence; leader confirmation remains necessary."
+      "occurrence_note": "Planning default: one session to gather evidence; leader confirmation remains necessary.",
+      "theme_tags": [
+        "Food & cooking"
+      ]
     },
     {
       "id": "s3-bushcraft-i-can-explain-the-causes-of-a-major-bushfire",
@@ -1311,7 +1500,11 @@
       "required_occurrences": 1,
       "occurrence_unit": "sessions",
       "occurrence_basis": "inferred",
-      "occurrence_note": "Planning default: one session to gather evidence; leader confirmation remains necessary."
+      "occurrence_note": "Planning default: one session to gather evidence; leader confirmation remains necessary.",
+      "theme_tags": [
+        "Fire",
+        "Discussion / theory"
+      ]
     },
     {
       "id": "s3-bushcraft-i-can-name-five-different-situations-that-could-",
@@ -1345,7 +1538,12 @@
       "required_occurrences": 1,
       "occurrence_unit": "sessions",
       "occurrence_basis": "inferred",
-      "occurrence_note": "Planning default: one session to gather evidence; leader confirmation remains necessary."
+      "occurrence_note": "Planning default: one session to gather evidence; leader confirmation remains necessary.",
+      "theme_tags": [
+        "Emergency response",
+        "Environment & nature",
+        "Discussion / theory"
+      ]
     },
     {
       "id": "s3-bushcraft-i-can-identify-the-southern-cross-in-the-night-s",
@@ -1367,7 +1565,11 @@
       "required_occurrences": 1,
       "occurrence_unit": "sessions",
       "occurrence_basis": "inferred",
-      "occurrence_note": "Planning default: one session to gather evidence; leader confirmation remains necessary."
+      "occurrence_note": "Planning default: one session to gather evidence; leader confirmation remains necessary.",
+      "theme_tags": [
+        "Navigation",
+        "Discussion / theory"
+      ]
     },
     {
       "id": "s3-bushcraft-i-can-identify-three-other-constellations-in-the",
@@ -1388,7 +1590,11 @@
       "required_occurrences": 1,
       "occurrence_unit": "sessions",
       "occurrence_basis": "inferred",
-      "occurrence_note": "Planning default: one session to gather evidence; leader confirmation remains necessary."
+      "occurrence_note": "Planning default: one session to gather evidence; leader confirmation remains necessary.",
+      "theme_tags": [
+        "Navigation",
+        "Discussion / theory"
+      ]
     },
     {
       "id": "s3-bushcraft-i-have-set-up-and-followed-a-simple-compass-trai",
@@ -1426,7 +1632,11 @@
       "required_occurrences": 1,
       "occurrence_unit": "sessions",
       "occurrence_basis": "inferred",
-      "occurrence_note": "Planning default: one session to gather evidence; leader confirmation remains necessary."
+      "occurrence_note": "Planning default: one session to gather evidence; leader confirmation remains necessary.",
+      "theme_tags": [
+        "Navigation",
+        "Leadership & teamwork"
+      ]
     },
     {
       "id": "s3-bushcraft-i-can-teach-the-importance-of-the-buddy-system-t",
@@ -1460,7 +1670,11 @@
       "required_occurrences": 1,
       "occurrence_unit": "sessions",
       "occurrence_basis": "inferred",
-      "occurrence_note": "Planning default: one session to gather evidence; leader confirmation remains necessary."
+      "occurrence_note": "Planning default: one session to gather evidence; leader confirmation remains necessary.",
+      "theme_tags": [
+        "Safety",
+        "Leadership & teamwork"
+      ]
     },
     {
       "id": "s3-bushcraft-i-have-put-together-a-personal-outdoor-survival-",
@@ -1481,7 +1695,11 @@
       "required_occurrences": 1,
       "occurrence_unit": "sessions",
       "occurrence_basis": "inferred",
-      "occurrence_note": "Planning default: one session to gather evidence; leader confirmation remains necessary."
+      "occurrence_note": "Planning default: one session to gather evidence; leader confirmation remains necessary.",
+      "theme_tags": [
+        "Equipment & packing",
+        "Discussion / theory"
+      ]
     },
     {
       "id": "s3-bushcraft-i-can-make-a-personal-shelter-out-of-plastic-she",
@@ -1518,7 +1736,11 @@
       "required_occurrences": 1,
       "occurrence_unit": "sessions",
       "occurrence_basis": "inferred",
-      "occurrence_note": "Planning default: one session to gather evidence; leader confirmation remains necessary."
+      "occurrence_note": "Planning default: one session to gather evidence; leader confirmation remains necessary.",
+      "theme_tags": [
+        "Shelter & tents",
+        "Knots & rope"
+      ]
     },
     {
       "id": "s3-bushcraft-i-can-demonstrate-five-knots-in-an-activity-or-c",
@@ -1541,7 +1763,10 @@
       "required_occurrences": 1,
       "occurrence_unit": "sessions",
       "occurrence_basis": "inferred",
-      "occurrence_note": "Planning default: one session to gather evidence; leader confirmation remains necessary."
+      "occurrence_note": "Planning default: one session to gather evidence; leader confirmation remains necessary.",
+      "theme_tags": [
+        "Knots & rope"
+      ]
     },
     {
       "id": "s3-bushcraft-i-can-talk-about-the-ways-in-which-my-patrol-wor",
@@ -1577,7 +1802,12 @@
       "required_occurrences": 1,
       "occurrence_unit": "sessions",
       "occurrence_basis": "inferred",
-      "occurrence_note": "Planning default: one session to gather evidence; leader confirmation remains necessary."
+      "occurrence_note": "Planning default: one session to gather evidence; leader confirmation remains necessary.",
+      "theme_tags": [
+        "Navigation",
+        "Leadership & teamwork",
+        "Discussion / theory"
+      ]
     },
     {
       "id": "s3-bushcraft-i-have-identified-improvements-i-can-make-to-my-",
@@ -1612,7 +1842,11 @@
       "required_occurrences": 1,
       "occurrence_unit": "sessions",
       "occurrence_basis": "inferred",
-      "occurrence_note": "Planning default: one session to gather evidence; leader confirmation remains necessary."
+      "occurrence_note": "Planning default: one session to gather evidence; leader confirmation remains necessary.",
+      "theme_tags": [
+        "Shelter & tents",
+        "Reflection & review"
+      ]
     },
     {
       "id": "s2-camping-i-can-explain-what-clothing-i-should-wear-whilst",
@@ -1632,7 +1866,11 @@
       "required_occurrences": 1,
       "occurrence_unit": "sessions",
       "occurrence_basis": "inferred",
-      "occurrence_note": "Planning default: one session to gather evidence; leader confirmation remains necessary."
+      "occurrence_note": "Planning default: one session to gather evidence; leader confirmation remains necessary.",
+      "theme_tags": [
+        "Equipment & packing",
+        "Discussion / theory"
+      ]
     },
     {
       "id": "s2-camping-i-have-explained-what-impact-i-can-have-on-local",
@@ -1652,7 +1890,11 @@
       "required_occurrences": 1,
       "occurrence_unit": "sessions",
       "occurrence_basis": "inferred",
-      "occurrence_note": "Planning default: one session to gather evidence; leader confirmation remains necessary."
+      "occurrence_note": "Planning default: one session to gather evidence; leader confirmation remains necessary.",
+      "theme_tags": [
+        "Environment & nature",
+        "Discussion / theory"
+      ]
     },
     {
       "id": "s2-camping-i-have-discussed-the-appropriate-action-i-should",
@@ -1686,7 +1928,12 @@
       "required_occurrences": 1,
       "occurrence_unit": "sessions",
       "occurrence_basis": "inferred",
-      "occurrence_note": "Planning default: one session to gather evidence; leader confirmation remains necessary."
+      "occurrence_note": "Planning default: one session to gather evidence; leader confirmation remains necessary.",
+      "theme_tags": [
+        "Emergency response",
+        "Reflection & review",
+        "Discussion / theory"
+      ]
     },
     {
       "id": "s2-camping-i-can-discuss-what-safety-precautions-you-should",
@@ -1708,7 +1955,13 @@
       "required_occurrences": 1,
       "occurrence_unit": "sessions",
       "occurrence_basis": "inferred",
-      "occurrence_note": "Planning default: one session to gather evidence; leader confirmation remains necessary."
+      "occurrence_note": "Planning default: one session to gather evidence; leader confirmation remains necessary.",
+      "theme_tags": [
+        "Safety",
+        "Environment & nature",
+        "Planning",
+        "Discussion / theory"
+      ]
     },
     {
       "id": "s2-camping-i-know-about-proper-hygiene-practices-at-camp",
@@ -1729,7 +1982,12 @@
       "required_occurrences": 1,
       "occurrence_unit": "sessions",
       "occurrence_basis": "inferred",
-      "occurrence_note": "Planning default: one session to gather evidence; leader confirmation remains necessary."
+      "occurrence_note": "Planning default: one session to gather evidence; leader confirmation remains necessary.",
+      "theme_tags": [
+        "Hygiene & personal care",
+        "Knots & rope",
+        "Discussion / theory"
+      ]
     },
     {
       "id": "s2-camping-i-know-how-to-contact-the-emergency-services",
@@ -1762,7 +2020,11 @@
       "required_occurrences": 1,
       "occurrence_unit": "sessions",
       "occurrence_basis": "inferred",
-      "occurrence_note": "Planning default: one session to gather evidence; leader confirmation remains necessary."
+      "occurrence_note": "Planning default: one session to gather evidence; leader confirmation remains necessary.",
+      "theme_tags": [
+        "Emergency response",
+        "Discussion / theory"
+      ]
     },
     {
       "id": "s2-camping-i-can-draw-and-label-a-picture-showing-all-of-th",
@@ -1791,7 +2053,11 @@
       "required_occurrences": 1,
       "occurrence_unit": "sessions",
       "occurrence_basis": "inferred",
-      "occurrence_note": "Planning default: one session to gather evidence; leader confirmation remains necessary."
+      "occurrence_note": "Planning default: one session to gather evidence; leader confirmation remains necessary.",
+      "theme_tags": [
+        "Equipment & packing",
+        "Planning"
+      ]
     },
     {
       "id": "s2-camping-i-know-the-benefits-and-risks-associated-with-fi",
@@ -1825,7 +2091,12 @@
       "required_occurrences": 1,
       "occurrence_unit": "sessions",
       "occurrence_basis": "inferred",
-      "occurrence_note": "Planning default: one session to gather evidence; leader confirmation remains necessary."
+      "occurrence_note": "Planning default: one session to gather evidence; leader confirmation remains necessary.",
+      "theme_tags": [
+        "Safety",
+        "Fire",
+        "Discussion / theory"
+      ]
     },
     {
       "id": "s2-camping-i-can-demonstrate-basic-safe-food-handling-and-t",
@@ -1857,7 +2128,12 @@
       "required_occurrences": 1,
       "occurrence_unit": "sessions",
       "occurrence_basis": "inferred",
-      "occurrence_note": "Planning default: one session to gather evidence; leader confirmation remains necessary."
+      "occurrence_note": "Planning default: one session to gather evidence; leader confirmation remains necessary.",
+      "theme_tags": [
+        "Safety",
+        "Food & cooking",
+        "Hygiene & personal care"
+      ]
     },
     {
       "id": "s2-camping-i-can-protect-myself-when-exposed-to-the-sun-whi",
@@ -1875,7 +2151,10 @@
       "required_occurrences": 1,
       "occurrence_unit": "sessions",
       "occurrence_basis": "inferred",
-      "occurrence_note": "Planning default: one session to gather evidence; leader confirmation remains necessary."
+      "occurrence_note": "Planning default: one session to gather evidence; leader confirmation remains necessary.",
+      "theme_tags": [
+        "Environment & nature"
+      ]
     },
     {
       "id": "s2-camping-i-can-behave-safely-in-and-around-tents-and-camp",
@@ -1911,7 +2190,12 @@
       "required_occurrences": 1,
       "occurrence_unit": "sessions",
       "occurrence_basis": "inferred",
-      "occurrence_note": "Planning default: one session to gather evidence; leader confirmation remains necessary."
+      "occurrence_note": "Planning default: one session to gather evidence; leader confirmation remains necessary.",
+      "theme_tags": [
+        "Safety",
+        "Fire",
+        "Shelter & tents"
+      ]
     },
     {
       "id": "s2-camping-i-can-demonstrate-and-explain-why-sleeping-bags-",
@@ -1933,7 +2217,12 @@
       "required_occurrences": 1,
       "occurrence_unit": "sessions",
       "occurrence_basis": "inferred",
-      "occurrence_note": "Planning default: one session to gather evidence; leader confirmation remains necessary."
+      "occurrence_note": "Planning default: one session to gather evidence; leader confirmation remains necessary.",
+      "theme_tags": [
+        "Equipment & packing",
+        "Hygiene & personal care",
+        "Discussion / theory"
+      ]
     },
     {
       "id": "s2-camping-i-have-spent-two-nights-on-camp-in-a-tent-at-thi",
@@ -1965,7 +2254,12 @@
       "required_occurrences": 2,
       "occurrence_unit": "nights",
       "occurrence_basis": "explicit",
-      "occurrence_note": "Source wording specifies this minimum number of outings or experiences."
+      "occurrence_note": "Source wording specifies this minimum number of outings or experiences.",
+      "theme_tags": [
+        "Shelter & tents",
+        "Outdoor experience",
+        "External / real-world experience"
+      ]
     },
     {
       "id": "s2-camping-i-can-help-set-up-a-tent-and-identify-the-main-p",
@@ -1999,7 +2293,11 @@
       "required_occurrences": 1,
       "occurrence_unit": "sessions",
       "occurrence_basis": "inferred",
-      "occurrence_note": "Planning default: one session to gather evidence; leader confirmation remains necessary."
+      "occurrence_note": "Planning default: one session to gather evidence; leader confirmation remains necessary.",
+      "theme_tags": [
+        "Shelter & tents",
+        "Discussion / theory"
+      ]
     },
     {
       "id": "s2-camping-i-can-talk-about-what-i-enjoyed-learnt-and-impro",
@@ -2032,7 +2330,11 @@
       "required_occurrences": 2,
       "occurrence_unit": "camps",
       "occurrence_basis": "explicit",
-      "occurrence_note": "Source wording specifies this minimum number of outings or experiences."
+      "occurrence_note": "Source wording specifies this minimum number of outings or experiences.",
+      "theme_tags": [
+        "Reflection & review",
+        "Discussion / theory"
+      ]
     },
     {
       "id": "s2-camping-i-can-suggest-what-i-would-do-differently-on-a-f",
@@ -2064,7 +2366,11 @@
       "required_occurrences": 1,
       "occurrence_unit": "sessions",
       "occurrence_basis": "inferred",
-      "occurrence_note": "Planning default: one session to gather evidence; leader confirmation remains necessary."
+      "occurrence_note": "Planning default: one session to gather evidence; leader confirmation remains necessary.",
+      "theme_tags": [
+        "Safety",
+        "Planning"
+      ]
     },
     {
       "id": "s2-bushwalking-i-can-explain-what-clothing-i-should-wear-whilst",
@@ -2084,7 +2390,11 @@
       "required_occurrences": 1,
       "occurrence_unit": "sessions",
       "occurrence_basis": "inferred",
-      "occurrence_note": "Planning default: one session to gather evidence; leader confirmation remains necessary."
+      "occurrence_note": "Planning default: one session to gather evidence; leader confirmation remains necessary.",
+      "theme_tags": [
+        "Equipment & packing",
+        "Discussion / theory"
+      ]
     },
     {
       "id": "s2-bushwalking-i-have-explained-what-impact-i-can-have-on-local",
@@ -2104,7 +2414,11 @@
       "required_occurrences": 1,
       "occurrence_unit": "sessions",
       "occurrence_basis": "inferred",
-      "occurrence_note": "Planning default: one session to gather evidence; leader confirmation remains necessary."
+      "occurrence_note": "Planning default: one session to gather evidence; leader confirmation remains necessary.",
+      "theme_tags": [
+        "Environment & nature",
+        "Discussion / theory"
+      ]
     },
     {
       "id": "s2-bushwalking-i-have-discussed-the-appropriate-action-i-should",
@@ -2138,7 +2452,12 @@
       "required_occurrences": 1,
       "occurrence_unit": "sessions",
       "occurrence_basis": "inferred",
-      "occurrence_note": "Planning default: one session to gather evidence; leader confirmation remains necessary."
+      "occurrence_note": "Planning default: one session to gather evidence; leader confirmation remains necessary.",
+      "theme_tags": [
+        "Emergency response",
+        "Reflection & review",
+        "Discussion / theory"
+      ]
     },
     {
       "id": "s2-bushwalking-i-can-discuss-what-safety-precautions-i-should-t",
@@ -2159,7 +2478,12 @@
       "required_occurrences": 1,
       "occurrence_unit": "sessions",
       "occurrence_basis": "inferred",
-      "occurrence_note": "Planning default: one session to gather evidence; leader confirmation remains necessary."
+      "occurrence_note": "Planning default: one session to gather evidence; leader confirmation remains necessary.",
+      "theme_tags": [
+        "Safety",
+        "Planning",
+        "Discussion / theory"
+      ]
     },
     {
       "id": "s2-bushwalking-i-know-when-and-how-to-contact-the-emergency-ser",
@@ -2192,7 +2516,11 @@
       "required_occurrences": 1,
       "occurrence_unit": "sessions",
       "occurrence_basis": "inferred",
-      "occurrence_note": "Planning default: one session to gather evidence; leader confirmation remains necessary."
+      "occurrence_note": "Planning default: one session to gather evidence; leader confirmation remains necessary.",
+      "theme_tags": [
+        "Emergency response",
+        "Discussion / theory"
+      ]
     },
     {
       "id": "s2-bushwalking-i-can-draw-or-list-all-of-the-essential-equipmen",
@@ -2222,7 +2550,12 @@
       "required_occurrences": 1,
       "occurrence_unit": "sessions",
       "occurrence_basis": "inferred",
-      "occurrence_note": "Planning default: one session to gather evidence; leader confirmation remains necessary."
+      "occurrence_note": "Planning default: one session to gather evidence; leader confirmation remains necessary.",
+      "theme_tags": [
+        "Equipment & packing",
+        "Planning",
+        "Discussion / theory"
+      ]
     },
     {
       "id": "s2-bushwalking-i-can-use-a-compass-to-find-basic-directions",
@@ -2253,7 +2586,10 @@
       "required_occurrences": 1,
       "occurrence_unit": "sessions",
       "occurrence_basis": "inferred",
-      "occurrence_note": "Planning default: one session to gather evidence; leader confirmation remains necessary."
+      "occurrence_note": "Planning default: one session to gather evidence; leader confirmation remains necessary.",
+      "theme_tags": [
+        "Navigation"
+      ]
     },
     {
       "id": "s2-bushwalking-i-can-protect-myself-when-exposed-to-the-sun-whi",
@@ -2271,7 +2607,11 @@
       "required_occurrences": 1,
       "occurrence_unit": "sessions",
       "occurrence_basis": "inferred",
-      "occurrence_note": "Planning default: one session to gather evidence; leader confirmation remains necessary."
+      "occurrence_note": "Planning default: one session to gather evidence; leader confirmation remains necessary.",
+      "theme_tags": [
+        "Environment & nature"
+      ],
+      "duplicate_of": "s2-camping-i-can-protect-myself-when-exposed-to-the-sun-whi"
     },
     {
       "id": "s2-bushwalking-i-have-attended-at-least-two-short-bushwalks-at-",
@@ -2291,7 +2631,11 @@
       "required_occurrences": 2,
       "occurrence_unit": "bushwalks",
       "occurrence_basis": "explicit",
-      "occurrence_note": "Source wording specifies this minimum number of outings or experiences."
+      "occurrence_note": "Source wording specifies this minimum number of outings or experiences.",
+      "theme_tags": [
+        "Outdoor experience",
+        "External / real-world experience"
+      ]
     },
     {
       "id": "s2-bushwalking-i-can-show-where-and-when-i-am-allowed-to-go-bef",
@@ -2310,7 +2654,11 @@
       "required_occurrences": 1,
       "occurrence_unit": "sessions",
       "occurrence_basis": "inferred",
-      "occurrence_note": "Planning default: one session to gather evidence; leader confirmation remains necessary."
+      "occurrence_note": "Planning default: one session to gather evidence; leader confirmation remains necessary.",
+      "theme_tags": [
+        "Safety",
+        "Planning"
+      ]
     },
     {
       "id": "s2-bushwalking-i-have-bushwalked-a-total-distance-of-at-least-1",
@@ -2332,7 +2680,11 @@
       "required_occurrences": 2,
       "occurrence_unit": "bushwalks",
       "occurrence_basis": "inferred",
-      "occurrence_note": "Planning estimate: spread cumulative distance across two walks; can be achieved in one long walk."
+      "occurrence_note": "Planning estimate: spread cumulative distance across two walks; can be achieved in one long walk.",
+      "theme_tags": [
+        "Outdoor experience",
+        "External / real-world experience"
+      ]
     },
     {
       "id": "s2-bushwalking-i-have-talked-about-what-i-enjoyed-learnt-or-imp",
@@ -2363,7 +2715,10 @@
       "required_occurrences": 2,
       "occurrence_unit": "bushwalks",
       "occurrence_basis": "explicit",
-      "occurrence_note": "Source wording specifies this minimum number of outings or experiences."
+      "occurrence_note": "Source wording specifies this minimum number of outings or experiences.",
+      "theme_tags": [
+        "Reflection & review"
+      ]
     },
     {
       "id": "s2-bushwalking-i-can-suggest-what-i-would-do-differently-on-a-f",
@@ -2396,7 +2751,11 @@
       "required_occurrences": 1,
       "occurrence_unit": "sessions",
       "occurrence_basis": "inferred",
-      "occurrence_note": "Planning default: one session to gather evidence; leader confirmation remains necessary."
+      "occurrence_note": "Planning default: one session to gather evidence; leader confirmation remains necessary.",
+      "theme_tags": [
+        "Safety",
+        "Planning"
+      ]
     },
     {
       "id": "s2-bushwalking-i-have-reviewed-my-list-or-picture-of-essential-",
@@ -2430,7 +2789,13 @@
       "required_occurrences": 1,
       "occurrence_unit": "sessions",
       "occurrence_basis": "inferred",
-      "occurrence_note": "Planning default: one session to gather evidence; leader confirmation remains necessary."
+      "occurrence_note": "Planning default: one session to gather evidence; leader confirmation remains necessary.",
+      "theme_tags": [
+        "Equipment & packing",
+        "Leadership & teamwork",
+        "Reflection & review",
+        "Discussion / theory"
+      ]
     },
     {
       "id": "s2-bushcraft-i-have-explained-what-impact-i-can-have-on-local",
@@ -2450,7 +2815,11 @@
       "required_occurrences": 1,
       "occurrence_unit": "sessions",
       "occurrence_basis": "inferred",
-      "occurrence_note": "Planning default: one session to gather evidence; leader confirmation remains necessary."
+      "occurrence_note": "Planning default: one session to gather evidence; leader confirmation remains necessary.",
+      "theme_tags": [
+        "Environment & nature",
+        "Discussion / theory"
+      ]
     },
     {
       "id": "s2-bushcraft-i-have-discussed-the-appropriate-action-i-should",
@@ -2484,7 +2853,13 @@
       "required_occurrences": 1,
       "occurrence_unit": "sessions",
       "occurrence_basis": "inferred",
-      "occurrence_note": "Planning default: one session to gather evidence; leader confirmation remains necessary."
+      "occurrence_note": "Planning default: one session to gather evidence; leader confirmation remains necessary.",
+      "theme_tags": [
+        "Emergency response",
+        "Reflection & review",
+        "Discussion / theory"
+      ],
+      "duplicate_of": "s2-camping-i-have-discussed-the-appropriate-action-i-should"
     },
     {
       "id": "s2-bushcraft-i-can-discuss-what-safety-precautions-i-should-t",
@@ -2505,7 +2880,12 @@
       "required_occurrences": 1,
       "occurrence_unit": "sessions",
       "occurrence_basis": "inferred",
-      "occurrence_note": "Planning default: one session to gather evidence; leader confirmation remains necessary."
+      "occurrence_note": "Planning default: one session to gather evidence; leader confirmation remains necessary.",
+      "theme_tags": [
+        "Safety",
+        "Planning",
+        "Discussion / theory"
+      ]
     },
     {
       "id": "s2-bushcraft-i-know-how-to-contact-the-emergency-services",
@@ -2538,7 +2918,12 @@
       "required_occurrences": 1,
       "occurrence_unit": "sessions",
       "occurrence_basis": "inferred",
-      "occurrence_note": "Planning default: one session to gather evidence; leader confirmation remains necessary."
+      "occurrence_note": "Planning default: one session to gather evidence; leader confirmation remains necessary.",
+      "theme_tags": [
+        "Emergency response",
+        "Discussion / theory"
+      ],
+      "duplicate_of": "s2-camping-i-know-how-to-contact-the-emergency-services"
     },
     {
       "id": "s2-bushcraft-i-can-state-how-many-degrees-there-are-on-a-comp",
@@ -2567,7 +2952,11 @@
       "required_occurrences": 1,
       "occurrence_unit": "sessions",
       "occurrence_basis": "inferred",
-      "occurrence_note": "Planning default: one session to gather evidence; leader confirmation remains necessary."
+      "occurrence_note": "Planning default: one session to gather evidence; leader confirmation remains necessary.",
+      "theme_tags": [
+        "Navigation",
+        "Discussion / theory"
+      ]
     },
     {
       "id": "s2-bushcraft-i-know-the-rules-for-hygiene-at-camp",
@@ -2587,7 +2976,11 @@
       "required_occurrences": 1,
       "occurrence_unit": "sessions",
       "occurrence_basis": "inferred",
-      "occurrence_note": "Planning default: one session to gather evidence; leader confirmation remains necessary."
+      "occurrence_note": "Planning default: one session to gather evidence; leader confirmation remains necessary.",
+      "theme_tags": [
+        "Hygiene & personal care",
+        "Discussion / theory"
+      ]
     },
     {
       "id": "s2-bushcraft-i-can-protect-myself-when-exposed-to-the-sun-whi",
@@ -2605,7 +2998,11 @@
       "required_occurrences": 1,
       "occurrence_unit": "sessions",
       "occurrence_basis": "inferred",
-      "occurrence_note": "Planning default: one session to gather evidence; leader confirmation remains necessary."
+      "occurrence_note": "Planning default: one session to gather evidence; leader confirmation remains necessary.",
+      "theme_tags": [
+        "Environment & nature"
+      ],
+      "duplicate_of": "s2-camping-i-can-protect-myself-when-exposed-to-the-sun-whi"
     },
     {
       "id": "s2-bushcraft-i-can-cook-a-snack-in-a-fire",
@@ -2642,7 +3039,11 @@
       "required_occurrences": 1,
       "occurrence_unit": "sessions",
       "occurrence_basis": "inferred",
-      "occurrence_note": "Planning default: one session to gather evidence; leader confirmation remains necessary."
+      "occurrence_note": "Planning default: one session to gather evidence; leader confirmation remains necessary.",
+      "theme_tags": [
+        "Food & cooking",
+        "Fire"
+      ]
     },
     {
       "id": "s2-bushcraft-i-know-how-much-water-i-should-carry-when-on-a-h",
@@ -2661,7 +3062,10 @@
       "required_occurrences": 1,
       "occurrence_unit": "sessions",
       "occurrence_basis": "inferred",
-      "occurrence_note": "Planning default: one session to gather evidence; leader confirmation remains necessary."
+      "occurrence_note": "Planning default: one session to gather evidence; leader confirmation remains necessary.",
+      "theme_tags": [
+        "Discussion / theory"
+      ]
     },
     {
       "id": "s2-bushcraft-i-can-demonstrate-a-correct-way-to-build-a-safe-",
@@ -2697,7 +3101,11 @@
       "required_occurrences": 1,
       "occurrence_unit": "sessions",
       "occurrence_basis": "inferred",
-      "occurrence_note": "Planning default: one session to gather evidence; leader confirmation remains necessary."
+      "occurrence_note": "Planning default: one session to gather evidence; leader confirmation remains necessary.",
+      "theme_tags": [
+        "Safety",
+        "Fire"
+      ]
     },
     {
       "id": "s2-bushcraft-i-understand-the-basic-dangers-of-fire-and-how-t",
@@ -2731,7 +3139,11 @@
       "required_occurrences": 1,
       "occurrence_unit": "sessions",
       "occurrence_basis": "inferred",
-      "occurrence_note": "Planning default: one session to gather evidence; leader confirmation remains necessary."
+      "occurrence_note": "Planning default: one session to gather evidence; leader confirmation remains necessary.",
+      "theme_tags": [
+        "Safety",
+        "Fire"
+      ]
     },
     {
       "id": "s2-bushcraft-i-can-establish-and-find-the-four-cardinal-direc",
@@ -2760,7 +3172,10 @@
       "required_occurrences": 1,
       "occurrence_unit": "sessions",
       "occurrence_basis": "inferred",
-      "occurrence_note": "Planning default: one session to gather evidence; leader confirmation remains necessary."
+      "occurrence_note": "Planning default: one session to gather evidence; leader confirmation remains necessary.",
+      "theme_tags": [
+        "Navigation"
+      ]
     },
     {
       "id": "s2-bushcraft-i-can-demonstrate-three-knots-and-apply-them-in-",
@@ -2782,7 +3197,10 @@
       "required_occurrences": 1,
       "occurrence_unit": "sessions",
       "occurrence_basis": "inferred",
-      "occurrence_note": "Planning default: one session to gather evidence; leader confirmation remains necessary."
+      "occurrence_note": "Planning default: one session to gather evidence; leader confirmation remains necessary.",
+      "theme_tags": [
+        "Knots & rope"
+      ]
     },
     {
       "id": "s2-bushcraft-i-have-talked-about-what-i-enjoyed-learnt-or-imp",
@@ -2813,7 +3231,10 @@
       "required_occurrences": 2,
       "occurrence_unit": "activities",
       "occurrence_basis": "explicit",
-      "occurrence_note": "Source wording specifies this minimum number of outings or experiences."
+      "occurrence_note": "Source wording specifies this minimum number of outings or experiences.",
+      "theme_tags": [
+        "Reflection & review"
+      ]
     },
     {
       "id": "s2-bushcraft-i-can-suggest-what-i-would-do-differently-for-a-",
@@ -2844,7 +3265,10 @@
       "required_occurrences": 1,
       "occurrence_unit": "sessions",
       "occurrence_basis": "inferred",
-      "occurrence_note": "Planning default: one session to gather evidence; leader confirmation remains necessary."
+      "occurrence_note": "Planning default: one session to gather evidence; leader confirmation remains necessary.",
+      "theme_tags": [
+        "Planning"
+      ]
     },
     {
       "id": "s1-camping-i-know-about-the-buddy-system",
@@ -2864,7 +3288,11 @@
       "required_occurrences": 1,
       "occurrence_unit": "sessions",
       "occurrence_basis": "inferred",
-      "occurrence_note": "Planning default: one session to gather evidence; leader confirmation remains necessary."
+      "occurrence_note": "Planning default: one session to gather evidence; leader confirmation remains necessary.",
+      "theme_tags": [
+        "Safety",
+        "Discussion / theory"
+      ]
     },
     {
       "id": "s1-camping-i-know-the-boundaries-of-where-i-may-go-each-tim",
@@ -2884,7 +3312,11 @@
       "required_occurrences": 1,
       "occurrence_unit": "sessions",
       "occurrence_basis": "inferred",
-      "occurrence_note": "Planning default: one session to gather evidence; leader confirmation remains necessary."
+      "occurrence_note": "Planning default: one session to gather evidence; leader confirmation remains necessary.",
+      "theme_tags": [
+        "Safety",
+        "Discussion / theory"
+      ]
     },
     {
       "id": "s1-camping-i-know-to-stop-when-i-get-lost-while-camping",
@@ -2905,7 +3337,12 @@
       "required_occurrences": 1,
       "occurrence_unit": "sessions",
       "occurrence_basis": "inferred",
-      "occurrence_note": "Planning default: one session to gather evidence; leader confirmation remains necessary."
+      "occurrence_note": "Planning default: one session to gather evidence; leader confirmation remains necessary.",
+      "theme_tags": [
+        "Emergency response",
+        "Navigation",
+        "Discussion / theory"
+      ]
     },
     {
       "id": "s1-camping-i-know-the-basic-elements-that-you-need-to-make-",
@@ -2926,7 +3363,11 @@
       "required_occurrences": 1,
       "occurrence_unit": "sessions",
       "occurrence_basis": "inferred",
-      "occurrence_note": "Planning default: one session to gather evidence; leader confirmation remains necessary."
+      "occurrence_note": "Planning default: one session to gather evidence; leader confirmation remains necessary.",
+      "theme_tags": [
+        "Fire",
+        "Discussion / theory"
+      ]
     },
     {
       "id": "s1-camping-i-know-that-i-should-follow-directions-from-the-",
@@ -2946,7 +3387,11 @@
       "required_occurrences": 1,
       "occurrence_unit": "sessions",
       "occurrence_basis": "inferred",
-      "occurrence_note": "Planning default: one session to gather evidence; leader confirmation remains necessary."
+      "occurrence_note": "Planning default: one session to gather evidence; leader confirmation remains necessary.",
+      "theme_tags": [
+        "Navigation",
+        "Discussion / theory"
+      ]
     },
     {
       "id": "s1-camping-i-can-help-pack-a-bag-for-camp",
@@ -2966,7 +3411,10 @@
       "required_occurrences": 1,
       "occurrence_unit": "sessions",
       "occurrence_basis": "inferred",
-      "occurrence_note": "Planning default: one session to gather evidence; leader confirmation remains necessary."
+      "occurrence_note": "Planning default: one session to gather evidence; leader confirmation remains necessary.",
+      "theme_tags": [
+        "Equipment & packing"
+      ]
     },
     {
       "id": "s1-camping-i-can-strike-a-match",
@@ -2989,7 +3437,10 @@
       "required_occurrences": 1,
       "occurrence_unit": "sessions",
       "occurrence_basis": "inferred",
-      "occurrence_note": "Planning default: one session to gather evidence; leader confirmation remains necessary."
+      "occurrence_note": "Planning default: one session to gather evidence; leader confirmation remains necessary.",
+      "theme_tags": [
+        "Fire"
+      ]
     },
     {
       "id": "s1-camping-i-can-help-prepare-food-for-cooking-at-camp",
@@ -3012,7 +3463,11 @@
       "required_occurrences": 1,
       "occurrence_unit": "sessions",
       "occurrence_basis": "inferred",
-      "occurrence_note": "Planning default: one session to gather evidence; leader confirmation remains necessary."
+      "occurrence_note": "Planning default: one session to gather evidence; leader confirmation remains necessary.",
+      "theme_tags": [
+        "Food & cooking",
+        "Planning"
+      ]
     },
     {
       "id": "s1-camping-i-have-spent-two-nights-at-camps-and-or-scout-sl",
@@ -3032,7 +3487,11 @@
       "required_occurrences": 2,
       "occurrence_unit": "nights",
       "occurrence_basis": "explicit",
-      "occurrence_note": "Source wording specifies this minimum number of outings or experiences."
+      "occurrence_note": "Source wording specifies this minimum number of outings or experiences.",
+      "theme_tags": [
+        "Outdoor experience",
+        "External / real-world experience"
+      ]
     },
     {
       "id": "s1-camping-i-know-why-it-is-important-to-set-up-camp-in-an-",
@@ -3053,7 +3512,11 @@
       "required_occurrences": 1,
       "occurrence_unit": "sessions",
       "occurrence_basis": "inferred",
-      "occurrence_note": "Planning default: one session to gather evidence; leader confirmation remains necessary."
+      "occurrence_note": "Planning default: one session to gather evidence; leader confirmation remains necessary.",
+      "theme_tags": [
+        "Shelter & tents",
+        "Discussion / theory"
+      ]
     },
     {
       "id": "s1-camping-i-can-set-out-my-sleeping-area-at-camp",
@@ -3074,7 +3537,10 @@
       "required_occurrences": 1,
       "occurrence_unit": "sessions",
       "occurrence_basis": "inferred",
-      "occurrence_note": "Planning default: one session to gather evidence; leader confirmation remains necessary."
+      "occurrence_note": "Planning default: one session to gather evidence; leader confirmation remains necessary.",
+      "theme_tags": [
+        "Shelter & tents"
+      ]
     },
     {
       "id": "s1-camping-i-can-care-for-my-basic-personal-gear-on-an-over",
@@ -3095,7 +3561,10 @@
       "required_occurrences": 1,
       "occurrence_unit": "sessions",
       "occurrence_basis": "inferred",
-      "occurrence_note": "Planning default: one session to gather evidence; leader confirmation remains necessary."
+      "occurrence_note": "Planning default: one session to gather evidence; leader confirmation remains necessary.",
+      "theme_tags": [
+        "Equipment & packing"
+      ]
     },
     {
       "id": "s1-camping-i-can-talk-about-what-i-enjoyed-learnt-or-improv",
@@ -3116,7 +3585,11 @@
       "required_occurrences": 1,
       "occurrence_unit": "sessions",
       "occurrence_basis": "inferred",
-      "occurrence_note": "Planning default: one session to gather evidence; leader confirmation remains necessary."
+      "occurrence_note": "Planning default: one session to gather evidence; leader confirmation remains necessary.",
+      "theme_tags": [
+        "Reflection & review",
+        "Discussion / theory"
+      ]
     },
     {
       "id": "s1-bushwalking-i-can-help-pack-a-backpack-for-a-day-walk",
@@ -3136,7 +3609,10 @@
       "required_occurrences": 1,
       "occurrence_unit": "sessions",
       "occurrence_basis": "inferred",
-      "occurrence_note": "Planning default: one session to gather evidence; leader confirmation remains necessary."
+      "occurrence_note": "Planning default: one session to gather evidence; leader confirmation remains necessary.",
+      "theme_tags": [
+        "Equipment & packing"
+      ]
     },
     {
       "id": "s1-bushwalking-i-can-dress-myself-for-a-day-walk",
@@ -3153,7 +3629,10 @@
       "required_occurrences": 1,
       "occurrence_unit": "sessions",
       "occurrence_basis": "inferred",
-      "occurrence_note": "Planning default: one session to gather evidence; leader confirmation remains necessary."
+      "occurrence_note": "Planning default: one session to gather evidence; leader confirmation remains necessary.",
+      "theme_tags": [
+        "Bushwalking"
+      ]
     },
     {
       "id": "s1-bushwalking-i-can-list-what-food-to-bring-on-a-day-bushwalk",
@@ -3175,7 +3654,12 @@
       "required_occurrences": 1,
       "occurrence_unit": "sessions",
       "occurrence_basis": "inferred",
-      "occurrence_note": "Planning default: one session to gather evidence; leader confirmation remains necessary."
+      "occurrence_note": "Planning default: one session to gather evidence; leader confirmation remains necessary.",
+      "theme_tags": [
+        "Food & cooking",
+        "External / real-world experience",
+        "Discussion / theory"
+      ]
     },
     {
       "id": "s1-bushwalking-i-know-why-it-is-important-to-stick-to-trails-wh",
@@ -3195,7 +3679,11 @@
       "required_occurrences": 1,
       "occurrence_unit": "sessions",
       "occurrence_basis": "inferred",
-      "occurrence_note": "Planning default: one session to gather evidence; leader confirmation remains necessary."
+      "occurrence_note": "Planning default: one session to gather evidence; leader confirmation remains necessary.",
+      "theme_tags": [
+        "Environment & nature",
+        "Discussion / theory"
+      ]
     },
     {
       "id": "s1-bushwalking-i-know-why-to-stop-when-i-get-lost-in-the-bush",
@@ -3216,7 +3704,12 @@
       "required_occurrences": 1,
       "occurrence_unit": "sessions",
       "occurrence_basis": "inferred",
-      "occurrence_note": "Planning default: one session to gather evidence; leader confirmation remains necessary."
+      "occurrence_note": "Planning default: one session to gather evidence; leader confirmation remains necessary.",
+      "theme_tags": [
+        "Emergency response",
+        "Navigation",
+        "Discussion / theory"
+      ]
     },
     {
       "id": "s1-bushwalking-i-can-explain-the-buddy-system",
@@ -3236,7 +3729,11 @@
       "required_occurrences": 1,
       "occurrence_unit": "sessions",
       "occurrence_basis": "inferred",
-      "occurrence_note": "Planning default: one session to gather evidence; leader confirmation remains necessary."
+      "occurrence_note": "Planning default: one session to gather evidence; leader confirmation remains necessary.",
+      "theme_tags": [
+        "Safety",
+        "Discussion / theory"
+      ]
     },
     {
       "id": "s1-bushwalking-i-can-put-together-a-small-personal-first-aid-ki",
@@ -3257,7 +3754,11 @@
       "required_occurrences": 1,
       "occurrence_unit": "sessions",
       "occurrence_basis": "inferred",
-      "occurrence_note": "Planning default: one session to gather evidence; leader confirmation remains necessary."
+      "occurrence_note": "Planning default: one session to gather evidence; leader confirmation remains necessary.",
+      "theme_tags": [
+        "First aid",
+        "Equipment & packing"
+      ]
     },
     {
       "id": "s1-bushwalking-i-can-identify-the-four-main-cardinal-points-of-",
@@ -3279,7 +3780,11 @@
       "required_occurrences": 1,
       "occurrence_unit": "sessions",
       "occurrence_basis": "inferred",
-      "occurrence_note": "Planning default: one session to gather evidence; leader confirmation remains necessary."
+      "occurrence_note": "Planning default: one session to gather evidence; leader confirmation remains necessary.",
+      "theme_tags": [
+        "Navigation",
+        "Discussion / theory"
+      ]
     },
     {
       "id": "s1-bushwalking-i-can-identify-the-main-parts-of-the-compass",
@@ -3299,7 +3804,11 @@
       "required_occurrences": 1,
       "occurrence_unit": "sessions",
       "occurrence_basis": "inferred",
-      "occurrence_note": "Planning default: one session to gather evidence; leader confirmation remains necessary."
+      "occurrence_note": "Planning default: one session to gather evidence; leader confirmation remains necessary.",
+      "theme_tags": [
+        "Navigation",
+        "Discussion / theory"
+      ]
     },
     {
       "id": "s1-bushwalking-i-have-attended-at-least-one-bushwalk-of-at-leas",
@@ -3323,7 +3832,11 @@
       "required_occurrences": 1,
       "occurrence_unit": "bushwalk",
       "occurrence_basis": "explicit",
-      "occurrence_note": "Source wording specifies this minimum number of outings or experiences."
+      "occurrence_note": "Source wording specifies this minimum number of outings or experiences.",
+      "theme_tags": [
+        "Outdoor experience",
+        "External / real-world experience"
+      ]
     },
     {
       "id": "s1-bushwalking-i-can-demonstrate-behaving-safely-while-bushwalk",
@@ -3346,7 +3859,10 @@
       "required_occurrences": 1,
       "occurrence_unit": "sessions",
       "occurrence_basis": "inferred",
-      "occurrence_note": "Planning default: one session to gather evidence; leader confirmation remains necessary."
+      "occurrence_note": "Planning default: one session to gather evidence; leader confirmation remains necessary.",
+      "theme_tags": [
+        "Safety"
+      ]
     },
     {
       "id": "s1-bushwalking-i-can-talk-about-what-i-enjoyed-or-learnt-from-g",
@@ -3366,7 +3882,11 @@
       "required_occurrences": 1,
       "occurrence_unit": "sessions",
       "occurrence_basis": "inferred",
-      "occurrence_note": "Planning default: one session to gather evidence; leader confirmation remains necessary."
+      "occurrence_note": "Planning default: one session to gather evidence; leader confirmation remains necessary.",
+      "theme_tags": [
+        "Reflection & review",
+        "Discussion / theory"
+      ]
     },
     {
       "id": "s1-bushcraft-i-know-why-it-is-important-to-stick-to-trails-wh",
@@ -3386,7 +3906,12 @@
       "required_occurrences": 1,
       "occurrence_unit": "sessions",
       "occurrence_basis": "inferred",
-      "occurrence_note": "Planning default: one session to gather evidence; leader confirmation remains necessary."
+      "occurrence_note": "Planning default: one session to gather evidence; leader confirmation remains necessary.",
+      "theme_tags": [
+        "Environment & nature",
+        "Discussion / theory"
+      ],
+      "duplicate_of": "s1-bushwalking-i-know-why-it-is-important-to-stick-to-trails-wh"
     },
     {
       "id": "s1-bushcraft-i-know-about-the-buddy-system",
@@ -3405,7 +3930,10 @@
       "required_occurrences": 1,
       "occurrence_unit": "sessions",
       "occurrence_basis": "inferred",
-      "occurrence_note": "Planning default: one session to gather evidence; leader confirmation remains necessary."
+      "occurrence_note": "Planning default: one session to gather evidence; leader confirmation remains necessary.",
+      "theme_tags": [
+        "Discussion / theory"
+      ]
     },
     {
       "id": "s1-bushcraft-i-know-to-stop-when-i-get-lost-on-activities",
@@ -3426,7 +3954,12 @@
       "required_occurrences": 1,
       "occurrence_unit": "sessions",
       "occurrence_basis": "inferred",
-      "occurrence_note": "Planning default: one session to gather evidence; leader confirmation remains necessary."
+      "occurrence_note": "Planning default: one session to gather evidence; leader confirmation remains necessary.",
+      "theme_tags": [
+        "Emergency response",
+        "Navigation",
+        "Discussion / theory"
+      ]
     },
     {
       "id": "s1-bushcraft-i-know-my-address-and-location-in-an-emergency",
@@ -3446,7 +3979,11 @@
       "required_occurrences": 1,
       "occurrence_unit": "sessions",
       "occurrence_basis": "inferred",
-      "occurrence_note": "Planning default: one session to gather evidence; leader confirmation remains necessary."
+      "occurrence_note": "Planning default: one session to gather evidence; leader confirmation remains necessary.",
+      "theme_tags": [
+        "Emergency response",
+        "Discussion / theory"
+      ]
     },
     {
       "id": "s1-bushcraft-i-know-three-reasons-for-having-a-shelter-when-s",
@@ -3467,7 +4004,12 @@
       "required_occurrences": 1,
       "occurrence_unit": "sessions",
       "occurrence_basis": "inferred",
-      "occurrence_note": "Planning default: one session to gather evidence; leader confirmation remains necessary."
+      "occurrence_note": "Planning default: one session to gather evidence; leader confirmation remains necessary.",
+      "theme_tags": [
+        "Environment & nature",
+        "Shelter & tents",
+        "Discussion / theory"
+      ]
     },
     {
       "id": "s1-bushcraft-i-can-strike-a-match",
@@ -3487,7 +4029,11 @@
       "required_occurrences": 1,
       "occurrence_unit": "sessions",
       "occurrence_basis": "inferred",
-      "occurrence_note": "Planning default: one session to gather evidence; leader confirmation remains necessary."
+      "occurrence_note": "Planning default: one session to gather evidence; leader confirmation remains necessary.",
+      "theme_tags": [
+        "Fire"
+      ],
+      "duplicate_of": "s1-camping-i-can-strike-a-match"
     },
     {
       "id": "s1-bushcraft-i-can-collect-sticks-for-preparing-a-campfire",
@@ -3507,7 +4053,10 @@
       "required_occurrences": 1,
       "occurrence_unit": "sessions",
       "occurrence_basis": "inferred",
-      "occurrence_note": "Planning default: one session to gather evidence; leader confirmation remains necessary."
+      "occurrence_note": "Planning default: one session to gather evidence; leader confirmation remains necessary.",
+      "theme_tags": [
+        "Fire"
+      ]
     },
     {
       "id": "s1-bushcraft-i-can-be-safe-around-a-campfire",
@@ -3529,7 +4078,11 @@
       "required_occurrences": 1,
       "occurrence_unit": "sessions",
       "occurrence_basis": "inferred",
-      "occurrence_note": "Planning default: one session to gather evidence; leader confirmation remains necessary."
+      "occurrence_note": "Planning default: one session to gather evidence; leader confirmation remains necessary.",
+      "theme_tags": [
+        "Safety",
+        "Fire"
+      ]
     },
     {
       "id": "s1-bushcraft-i-can-demonstrate-stop-drop-and-roll-and-how-tha",
@@ -3549,7 +4102,10 @@
       "required_occurrences": 1,
       "occurrence_unit": "sessions",
       "occurrence_basis": "inferred",
-      "occurrence_note": "Planning default: one session to gather evidence; leader confirmation remains necessary."
+      "occurrence_note": "Planning default: one session to gather evidence; leader confirmation remains necessary.",
+      "theme_tags": [
+        "Emergency response"
+      ]
     },
     {
       "id": "s1-bushcraft-i-can-find-the-emergency-exit-and-muster-point-a",
@@ -3568,7 +4124,10 @@
       "required_occurrences": 1,
       "occurrence_unit": "sessions",
       "occurrence_basis": "inferred",
-      "occurrence_note": "Planning default: one session to gather evidence; leader confirmation remains necessary."
+      "occurrence_note": "Planning default: one session to gather evidence; leader confirmation remains necessary.",
+      "theme_tags": [
+        "Emergency response"
+      ]
     },
     {
       "id": "s1-bushcraft-i-have-participated-in-a-game-that-required-basi",
@@ -3589,7 +4148,12 @@
       "required_occurrences": 1,
       "occurrence_unit": "sessions",
       "occurrence_basis": "inferred",
-      "occurrence_note": "Planning default: one session to gather evidence; leader confirmation remains necessary."
+      "occurrence_note": "Planning default: one session to gather evidence; leader confirmation remains necessary.",
+      "theme_tags": [
+        "Navigation",
+        "Outdoor experience",
+        "External / real-world experience"
+      ]
     },
     {
       "id": "s1-bushcraft-i-can-hang-a-clothesline-at-camp-with-a-clove-hi",
@@ -3612,7 +4176,10 @@
       "required_occurrences": 1,
       "occurrence_unit": "sessions",
       "occurrence_basis": "inferred",
-      "occurrence_note": "Planning default: one session to gather evidence; leader confirmation remains necessary."
+      "occurrence_note": "Planning default: one session to gather evidence; leader confirmation remains necessary.",
+      "theme_tags": [
+        "Knots & rope"
+      ]
     },
     {
       "id": "s1-bushcraft-i-know-how-to-correctly-pack-ropes-away",
@@ -3634,7 +4201,12 @@
       "required_occurrences": 1,
       "occurrence_unit": "sessions",
       "occurrence_basis": "inferred",
-      "occurrence_note": "Planning default: one session to gather evidence; leader confirmation remains necessary."
+      "occurrence_note": "Planning default: one session to gather evidence; leader confirmation remains necessary.",
+      "theme_tags": [
+        "Equipment & packing",
+        "Knots & rope",
+        "Discussion / theory"
+      ]
     },
     {
       "id": "s1-bushcraft-i-know-what-is-in-a-dilly-bag-mess-kit-and-can-k",
@@ -3656,7 +4228,13 @@
       "required_occurrences": 1,
       "occurrence_unit": "sessions",
       "occurrence_basis": "inferred",
-      "occurrence_note": "Planning default: one session to gather evidence; leader confirmation remains necessary."
+      "occurrence_note": "Planning default: one session to gather evidence; leader confirmation remains necessary.",
+      "theme_tags": [
+        "Food & cooking",
+        "Equipment & packing",
+        "Hygiene & personal care",
+        "Discussion / theory"
+      ]
     },
     {
       "id": "s1-bushcraft-i-can-talk-about-what-i-enjoyed-learnt-or-improv",
@@ -3677,8 +4255,17 @@
       "required_occurrences": 1,
       "occurrence_unit": "sessions",
       "occurrence_basis": "inferred",
-      "occurrence_note": "Planning default: one session to gather evidence; leader confirmation remains necessary."
+      "occurrence_note": "Planning default: one session to gather evidence; leader confirmation remains necessary.",
+      "theme_tags": [
+        "Navigation",
+        "Reflection & review",
+        "Discussion / theory"
+      ]
     }
   ],
-  "tagging_note": "Tags are broad planning themes and likely delivery settings, inferred from requirement wording; they are suggestions, not official classifications."
+  "tagging_note": "Tags are broad planning themes and likely delivery settings, inferred from requirement wording; they are suggestions, not official classifications.",
+  "theme_metadata": {
+    "source": "tags from canonical requirement data",
+    "note": "theme_tags are planning indexes; duplicate_of is display-only and does not collapse official IDs or evidence."
+  }
 }
