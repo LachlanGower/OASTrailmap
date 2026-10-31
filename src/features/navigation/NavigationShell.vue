@@ -12,7 +12,7 @@ const props = defineProps<{
 }>();
 function dispatch(action: NavigationAction, event: MouseEvent): void { props.actions[action](event); if(action!=='undo'){const nav=(event.currentTarget as HTMLElement).closest('nav');nav?.querySelectorAll('button').forEach(b=>{b.classList.toggle('primary',b===event.currentTarget);b.classList.toggle('secondary',b!==event.currentTarget);});} }
 function classesFor(action: NavigationAction): string {
-  return ['trail','tree','schedule','weeklyThemes','tracker','activity','data','help','requirements'].includes(action) ? 'button secondary' : props.initialClasses[action];
+  return ['trail','tree','schedule','weeklyThemes','tracker','activity','data','help','requirements'].includes(action) ? 'button '+(action==='trail'?'primary':'secondary') : props.initialClasses[action];
 }
 </script>
 
