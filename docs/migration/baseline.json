@@ -1,0 +1,1150 @@
+{
+  "description": "Read-only public-data baseline captured from main at 231341e842f90d0774334a563cf1f6e1e48ef149. No Scout records.",
+  "base_commit": "231341e842f90d0774334a563cf1f6e1e48ef149",
+  "oas_requirement_count": 142,
+  "application_requirement_count": 118,
+  "oas_requirements": [
+    {
+      "id": "s3-camping-i-can-pack-my-own-bag-for-camp",
+      "text": "I can pack my own bag for camp.",
+      "stage": 3,
+      "stream": "Camping"
+    },
+    {
+      "id": "s3-camping-i-know-how-and-where-to-get-the-latest-weather-f",
+      "text": "I know how and where to get the latest weather forecast for the area I will be camping in.",
+      "stage": 3,
+      "stream": "Camping"
+    },
+    {
+      "id": "s3-camping-i-can-help-plan-a-balanced-meal-for-camp",
+      "text": "I can help plan a balanced meal for camp.",
+      "stage": 3,
+      "stream": "Camping"
+    },
+    {
+      "id": "s3-camping-i-know-the-benefits-of-using-gas-to-cook-and-can",
+      "text": "I know the benefits of using gas to cook and can talk about what risks to watch out for in regards to using gas.",
+      "stage": 3,
+      "stream": "Camping"
+    },
+    {
+      "id": "s3-camping-i-can-list-group-equipment-required-for-camp",
+      "text": "I can list group equipment required for camp.",
+      "stage": 3,
+      "stream": "Camping"
+    },
+    {
+      "id": "s3-camping-i-know-how-to-maintain-personal-hygiene-while-ca",
+      "text": "I know how to maintain personal hygiene while camping.",
+      "stage": 3,
+      "stream": "Camping"
+    },
+    {
+      "id": "s3-camping-i-can-assemble-a-personal-first-aid-kit-for-a-ca",
+      "text": "I can assemble a personal first aid kit for a camp.",
+      "stage": 3,
+      "stream": "Camping"
+    },
+    {
+      "id": "s3-camping-i-know-what-drsabcd-stands-for-and-how-to-use-it",
+      "text": "I know what DRSABCD stands for and how to use it in First Aid situations.",
+      "stage": 3,
+      "stream": "Camping"
+    },
+    {
+      "id": "s3-camping-i-can-demonstrate-keeping-myself-safe-from-natur",
+      "text": "I can demonstrate keeping myself safe from natural and man-made things at camp.",
+      "stage": 3,
+      "stream": "Camping"
+    },
+    {
+      "id": "s3-camping-i-can-help-build-a-campfire-and-collect-material",
+      "text": "I can help build a campfire and collect materials to do so.",
+      "stage": 3,
+      "stream": "Camping"
+    },
+    {
+      "id": "s3-camping-i-can-cook-a-meal-on-a-campfire-with-assistance",
+      "text": "I can cook a meal on a campfire with assistance.",
+      "stage": 3,
+      "stream": "Camping"
+    },
+    {
+      "id": "s3-camping-i-have-used-a-gas-cooker-to-help-cook-a-camp-mea",
+      "text": "I have used a gas cooker to help cook a camp meal.",
+      "stage": 3,
+      "stream": "Camping"
+    },
+    {
+      "id": "s3-camping-i-can-help-run-an-activity-at-a-camp",
+      "text": "I can help run an activity at a camp.",
+      "stage": 3,
+      "stream": "Camping"
+    },
+    {
+      "id": "s3-camping-i-can-set-up-a-tent-without-help-from-an-adult",
+      "text": "I can set up a tent, without help from an adult.",
+      "stage": 3,
+      "stream": "Camping"
+    },
+    {
+      "id": "s3-camping-i-have-spent-5-nights-on-camp-in-a-tent-by-the-e",
+      "text": "I have spent 5 nights on camp in a tent by the end of this Stage.",
+      "stage": 3,
+      "stream": "Camping"
+    },
+    {
+      "id": "s3-camping-i-know-how-to-treat-cuts-and-minor-bleeding",
+      "text": "I know how to treat cuts and minor bleeding.",
+      "stage": 3,
+      "stream": "Camping"
+    },
+    {
+      "id": "s3-camping-i-can-teach-the-importance-of-the-buddy-system-t",
+      "text": "I can teach the importance of the buddy system to a Stage 1 Scout.",
+      "stage": 3,
+      "stream": "Camping"
+    },
+    {
+      "id": "s3-camping-i-can-demonstrate-how-to-store-food-at-camp",
+      "text": "I can demonstrate how to store food at camp.",
+      "stage": 3,
+      "stream": "Camping"
+    },
+    {
+      "id": "s3-camping-i-have-learnt-3-knots-that-can-help-me-during-a-",
+      "text": "I have learnt 3 knots that can help me during a standing camp.",
+      "stage": 3,
+      "stream": "Camping"
+    },
+    {
+      "id": "s3-camping-i-have-discussed-the-ways-i-can-improve-the-camp",
+      "text": "I have discussed the ways I can improve the camping activity that I assisted in.",
+      "stage": 3,
+      "stream": "Camping"
+    },
+    {
+      "id": "s3-camping-i-have-discussed-my-camping-and-how-improvements",
+      "text": "I have discussed my camping and how improvements can be made.",
+      "stage": 3,
+      "stream": "Camping"
+    },
+    {
+      "id": "s3-bushwalking-i-can-help-a-stage-1-scout-to-pack-their-backpac",
+      "text": "I can help a Stage 1 Scout to pack their backpack for a bushwalk.",
+      "stage": 3,
+      "stream": "Bushwalking"
+    },
+    {
+      "id": "s3-bushwalking-i-know-how-and-where-to-get-the-latest-weather-f",
+      "text": "I know how and where to get the latest weather forecast for the area I will be bushwalking in.",
+      "stage": 3,
+      "stream": "Bushwalking"
+    },
+    {
+      "id": "s3-bushwalking-i-can-help-plan-a-balanced-menu-for-bushwalking",
+      "text": "I can help plan a balanced menu for bushwalking.",
+      "stage": 3,
+      "stream": "Bushwalking"
+    },
+    {
+      "id": "s3-bushwalking-i-can-list-places-where-i-can-and-cannot-bushwal",
+      "text": "I can list places where I can and cannot bushwalk.",
+      "stage": 3,
+      "stream": "Bushwalking"
+    },
+    {
+      "id": "s3-bushwalking-i-can-talk-about-different-ways-of-keeping-a-gro",
+      "text": "I can talk about different ways of keeping a group together while bushwalking.",
+      "stage": 3,
+      "stream": "Bushwalking"
+    },
+    {
+      "id": "s3-bushwalking-i-have-considered-bushwalking-etiquette-when-pla",
+      "text": "I have considered bushwalking etiquette when planning for a journey.",
+      "stage": 3,
+      "stream": "Bushwalking"
+    },
+    {
+      "id": "s3-bushwalking-i-can-be-responsible-for-my-safety-and-aware-of-",
+      "text": "I can be responsible for my safety and aware of my surroundings.",
+      "stage": 3,
+      "stream": "Bushwalking"
+    },
+    {
+      "id": "s3-bushwalking-i-have-run-a-small-navigational-activity-for-my-",
+      "text": "I have run a small navigational activity for my fellow Scouts with the support of my Leaders.",
+      "stage": 3,
+      "stream": "Bushwalking"
+    },
+    {
+      "id": "s3-bushwalking-i-can-use-different-types-of-maps-to-help-me-thr",
+      "text": "I can use different types of maps to help me throughout different activities.",
+      "stage": 3,
+      "stream": "Bushwalking"
+    },
+    {
+      "id": "s3-bushwalking-i-have-attended-a-day-bushwalk-at-this-stage-of-",
+      "text": "I have attended a day bushwalk at this stage of at least six hours duration.",
+      "stage": 3,
+      "stream": "Bushwalking"
+    },
+    {
+      "id": "s3-bushwalking-i-have-attended-at-least-two-bushwalking-activit",
+      "text": "I have attended at least two bushwalking activities at this stage.",
+      "stage": 3,
+      "stream": "Bushwalking"
+    },
+    {
+      "id": "s3-bushwalking-i-know-how-to-avoid-becoming-lost-and-i-know-wha",
+      "text": "I know how to avoid becoming lost, and I know what to do if I get lost.",
+      "stage": 3,
+      "stream": "Bushwalking"
+    },
+    {
+      "id": "s3-bushwalking-i-know-how-to-treat-cuts-and-minor-bleeding",
+      "text": "I know how to treat cuts and minor bleeding.",
+      "stage": 3,
+      "stream": "Bushwalking"
+    },
+    {
+      "id": "s3-bushwalking-i-can-teach-the-importance-of-the-buddy-system-a",
+      "text": "I can teach the importance of the buddy system and other ways to stay safe to a Scout in Stage 1.",
+      "stage": 3,
+      "stream": "Bushwalking"
+    },
+    {
+      "id": "s3-bushwalking-i-can-identify-the-features-of-a-topographical-m",
+      "text": "I can identify the features of a topographical map.",
+      "stage": 3,
+      "stream": "Bushwalking"
+    },
+    {
+      "id": "s3-bushwalking-i-have-given-a-presentation-to-my-patrol-or-my-u",
+      "text": "I have given a presentation to my Patrol or my Unit Council about one of the bushwalks I went on during Stage 3.",
+      "stage": 3,
+      "stream": "Bushwalking"
+    },
+    {
+      "id": "s3-bushwalking-i-have-discussed-the-top-five-things-i-have-lear",
+      "text": "I have discussed the top five things I have learnt throughout Stages 1–3 of Bushwalking.",
+      "stage": 3,
+      "stream": "Bushwalking"
+    },
+    {
+      "id": "s3-bushcraft-i-can-explain-the-importance-of-wearing-the-righ",
+      "text": "I can explain the importance of wearing the right clothing while outdoors.",
+      "stage": 3,
+      "stream": "Bushcraft"
+    },
+    {
+      "id": "s3-bushcraft-i-know-about-native-flora-and-fauna-and-the-risk",
+      "text": "I know about native flora and fauna and the risks or benefits they pose.",
+      "stage": 3,
+      "stream": "Bushcraft"
+    },
+    {
+      "id": "s3-bushcraft-i-know-how-and-where-to-get-the-latest-weather-f",
+      "text": "I know how and where to get the latest weather forecast for the areas I will be doing activities in.",
+      "stage": 3,
+      "stream": "Bushcraft"
+    },
+    {
+      "id": "s3-bushcraft-i-know-the-first-aid-treatment-for-burns-from-ho",
+      "text": "I know the first aid treatment for burns from hot water, grease and food.",
+      "stage": 3,
+      "stream": "Bushcraft"
+    },
+    {
+      "id": "s3-bushcraft-i-know-how-to-treat-cuts-and-minor-bleeding",
+      "text": "I know how to treat cuts and minor bleeding.",
+      "stage": 3,
+      "stream": "Bushcraft"
+    },
+    {
+      "id": "s3-bushcraft-i-know-what-drsabcd-stands-for-and-how-to-apply-",
+      "text": "I know what DRSABCD stands for and how to apply it in First Aid situations.",
+      "stage": 3,
+      "stream": "Bushcraft"
+    },
+    {
+      "id": "s3-bushcraft-i-can-identify-fire-safety-equipment-in-my-hall",
+      "text": "I can identify fire safety equipment in my hall.",
+      "stage": 3,
+      "stream": "Bushcraft"
+    },
+    {
+      "id": "s3-bushcraft-i-can-cook-a-meal-using-a-camp-stove",
+      "text": "I can cook a meal using a camp stove.",
+      "stage": 3,
+      "stream": "Bushcraft"
+    },
+    {
+      "id": "s3-bushcraft-i-can-explain-the-causes-of-a-major-bushfire",
+      "text": "I can explain the causes of a major bushfire.",
+      "stage": 3,
+      "stream": "Bushcraft"
+    },
+    {
+      "id": "s3-bushcraft-i-can-name-five-different-situations-that-could-",
+      "text": "I can name five different situations that could be classified as an emergency in the outdoors and can respond to a mock emergency for one of these situations.",
+      "stage": 3,
+      "stream": "Bushcraft"
+    },
+    {
+      "id": "s3-bushcraft-i-can-identify-the-southern-cross-in-the-night-s",
+      "text": "I can identify the Southern Cross in the night's sky and then find South.",
+      "stage": 3,
+      "stream": "Bushcraft"
+    },
+    {
+      "id": "s3-bushcraft-i-can-identify-three-other-constellations-in-the",
+      "text": "I can identify three other Constellations in the night sky.",
+      "stage": 3,
+      "stream": "Bushcraft"
+    },
+    {
+      "id": "s3-bushcraft-i-have-set-up-and-followed-a-simple-compass-trai",
+      "text": "I have set up and followed a simple compass trail with the support of a local map with a group of Scouts.",
+      "stage": 3,
+      "stream": "Bushcraft"
+    },
+    {
+      "id": "s3-bushcraft-i-can-teach-the-importance-of-the-buddy-system-t",
+      "text": "I can teach the importance of the buddy system to a Scout working on Stage 1.",
+      "stage": 3,
+      "stream": "Bushcraft"
+    },
+    {
+      "id": "s3-bushcraft-i-have-put-together-a-personal-outdoor-survival-",
+      "text": "I have put together a personal outdoor survival kit and can explain why I have included these items.",
+      "stage": 3,
+      "stream": "Bushcraft"
+    },
+    {
+      "id": "s3-bushcraft-i-can-make-a-personal-shelter-out-of-plastic-she",
+      "text": "I can make a personal shelter out of plastic sheeting, rope and other things I have found.",
+      "stage": 3,
+      "stream": "Bushcraft"
+    },
+    {
+      "id": "s3-bushcraft-i-can-demonstrate-five-knots-in-an-activity-or-c",
+      "text": "I can demonstrate five knots in an activity or camp setting, three of which can be my Stage 2 knots.",
+      "stage": 3,
+      "stream": "Bushcraft"
+    },
+    {
+      "id": "s3-bushcraft-i-can-talk-about-the-ways-in-which-my-patrol-wor",
+      "text": "I can talk about the ways in which my Patrol worked together while following a compass trail.",
+      "stage": 3,
+      "stream": "Bushcraft"
+    },
+    {
+      "id": "s3-bushcraft-i-have-identified-improvements-i-can-make-to-my-",
+      "text": "I have identified improvements I can make to my shelter next time I try building one.",
+      "stage": 3,
+      "stream": "Bushcraft"
+    },
+    {
+      "id": "s2-camping-i-can-explain-what-clothing-i-should-wear-whilst",
+      "text": "I can explain what clothing I should wear whilst camping.",
+      "stage": 2,
+      "stream": "Camping"
+    },
+    {
+      "id": "s2-camping-i-have-explained-what-impact-i-can-have-on-local",
+      "text": "I have explained what impact I can have on local vegetation when camping.",
+      "stage": 2,
+      "stream": "Camping"
+    },
+    {
+      "id": "s2-camping-i-have-discussed-the-appropriate-action-i-should",
+      "text": "I have discussed the appropriate action I should take in the case of an accident.",
+      "stage": 2,
+      "stream": "Camping"
+    },
+    {
+      "id": "s2-camping-i-can-discuss-what-safety-precautions-you-should",
+      "text": "I can discuss what safety precautions you should take before going camping outdoors.",
+      "stage": 2,
+      "stream": "Camping"
+    },
+    {
+      "id": "s2-camping-i-know-about-proper-hygiene-practices-at-camp",
+      "text": "I know about proper hygiene practices at camp.",
+      "stage": 2,
+      "stream": "Camping"
+    },
+    {
+      "id": "s2-camping-i-know-how-to-contact-the-emergency-services",
+      "text": "I know how to contact the emergency services.",
+      "stage": 2,
+      "stream": "Camping"
+    },
+    {
+      "id": "s2-camping-i-can-draw-and-label-a-picture-showing-all-of-th",
+      "text": "I can draw and label a picture showing all of the essential equipment to bring on a camp.",
+      "stage": 2,
+      "stream": "Camping"
+    },
+    {
+      "id": "s2-camping-i-know-the-benefits-and-risks-associated-with-fi",
+      "text": "I know the benefits and risks associated with fire.",
+      "stage": 2,
+      "stream": "Camping"
+    },
+    {
+      "id": "s2-camping-i-can-demonstrate-basic-safe-food-handling-and-t",
+      "text": "I can demonstrate basic safe food handling and the importance of hygiene at camp.",
+      "stage": 2,
+      "stream": "Camping"
+    },
+    {
+      "id": "s2-camping-i-can-protect-myself-when-exposed-to-the-sun-whi",
+      "text": "I can protect myself when exposed to the sun while outdoors.",
+      "stage": 2,
+      "stream": "Camping"
+    },
+    {
+      "id": "s2-camping-i-can-behave-safely-in-and-around-tents-and-camp",
+      "text": "I can behave safely in and around tents and campfires at camp.",
+      "stage": 2,
+      "stream": "Camping"
+    },
+    {
+      "id": "s2-camping-i-can-demonstrate-and-explain-why-sleeping-bags-",
+      "text": "I can demonstrate and explain why sleeping bags need to be aired out.",
+      "stage": 2,
+      "stream": "Camping"
+    },
+    {
+      "id": "s2-camping-i-have-spent-two-nights-on-camp-in-a-tent-at-thi",
+      "text": "I have spent two nights on camp in a tent at this stage.",
+      "stage": 2,
+      "stream": "Camping"
+    },
+    {
+      "id": "s2-camping-i-can-help-set-up-a-tent-and-identify-the-main-p",
+      "text": "I can help set up a tent and identify the main parts of a tent.",
+      "stage": 2,
+      "stream": "Camping"
+    },
+    {
+      "id": "s2-camping-i-can-talk-about-what-i-enjoyed-learnt-and-impro",
+      "text": "I can talk about what I enjoyed, learnt, and improved upon from at least two camps.",
+      "stage": 2,
+      "stream": "Camping"
+    },
+    {
+      "id": "s2-camping-i-can-suggest-what-i-would-do-differently-on-a-f",
+      "text": "I can suggest what I would do differently on a future camp to enjoy it more, to be safer, or to learn new things.",
+      "stage": 2,
+      "stream": "Camping"
+    },
+    {
+      "id": "s2-bushwalking-i-can-explain-what-clothing-i-should-wear-whilst",
+      "text": "I can explain what clothing I should wear whilst bushwalking.",
+      "stage": 2,
+      "stream": "Bushwalking"
+    },
+    {
+      "id": "s2-bushwalking-i-have-explained-what-impact-i-can-have-on-local",
+      "text": "I have explained what impact I can have on local vegetation when bushwalking.",
+      "stage": 2,
+      "stream": "Bushwalking"
+    },
+    {
+      "id": "s2-bushwalking-i-have-discussed-the-appropriate-action-i-should",
+      "text": "I have discussed the appropriate action I should take in the case of an accident or emergency.",
+      "stage": 2,
+      "stream": "Bushwalking"
+    },
+    {
+      "id": "s2-bushwalking-i-can-discuss-what-safety-precautions-i-should-t",
+      "text": "I can discuss what safety precautions I should take before going out for a bushwalk.",
+      "stage": 2,
+      "stream": "Bushwalking"
+    },
+    {
+      "id": "s2-bushwalking-i-know-when-and-how-to-contact-the-emergency-ser",
+      "text": "I know when and how to contact the emergency services in an emergency.",
+      "stage": 2,
+      "stream": "Bushwalking"
+    },
+    {
+      "id": "s2-bushwalking-i-can-draw-or-list-all-of-the-essential-equipmen",
+      "text": "I can draw or list all of the essential equipment to bring on a bushwalk.",
+      "stage": 2,
+      "stream": "Bushwalking"
+    },
+    {
+      "id": "s2-bushwalking-i-can-use-a-compass-to-find-basic-directions",
+      "text": "I can use a compass to find basic directions.",
+      "stage": 2,
+      "stream": "Bushwalking"
+    },
+    {
+      "id": "s2-bushwalking-i-can-protect-myself-when-exposed-to-the-sun-whi",
+      "text": "I can protect myself when exposed to the sun while outdoors.",
+      "stage": 2,
+      "stream": "Bushwalking"
+    },
+    {
+      "id": "s2-bushwalking-i-have-attended-at-least-two-short-bushwalks-at-",
+      "text": "I have attended at least two short bushwalks at this stage.",
+      "stage": 2,
+      "stream": "Bushwalking"
+    },
+    {
+      "id": "s2-bushwalking-i-can-show-where-and-when-i-am-allowed-to-go-bef",
+      "text": "I can show where and when I am allowed to go, before I start bushwalking.",
+      "stage": 2,
+      "stream": "Bushwalking"
+    },
+    {
+      "id": "s2-bushwalking-i-have-bushwalked-a-total-distance-of-at-least-1",
+      "text": "I have bushwalked a total distance of at least 10km.",
+      "stage": 2,
+      "stream": "Bushwalking"
+    },
+    {
+      "id": "s2-bushwalking-i-have-talked-about-what-i-enjoyed-learnt-or-imp",
+      "text": "I have talked about what I enjoyed, learnt, or improved upon from at least two bushwalks.",
+      "stage": 2,
+      "stream": "Bushwalking"
+    },
+    {
+      "id": "s2-bushwalking-i-can-suggest-what-i-would-do-differently-on-a-f",
+      "text": "I can suggest what I would do differently on a future bushwalk to enjoy it more, to be safer, to learn new things, or to be more challenging.",
+      "stage": 2,
+      "stream": "Bushwalking"
+    },
+    {
+      "id": "s2-bushwalking-i-have-reviewed-my-list-or-picture-of-essential-",
+      "text": "I have reviewed my list or picture of essential equipment with my Patrol and Leaders.",
+      "stage": 2,
+      "stream": "Bushwalking"
+    },
+    {
+      "id": "s2-bushcraft-i-have-explained-what-impact-i-can-have-on-local",
+      "text": "I have explained what impact I can have on local vegetation while participating in activities.",
+      "stage": 2,
+      "stream": "Bushcraft"
+    },
+    {
+      "id": "s2-bushcraft-i-have-discussed-the-appropriate-action-i-should",
+      "text": "I have discussed the appropriate action I should take in the case of an accident.",
+      "stage": 2,
+      "stream": "Bushcraft"
+    },
+    {
+      "id": "s2-bushcraft-i-can-discuss-what-safety-precautions-i-should-t",
+      "text": "I can discuss what safety precautions I should take before going out in the bush.",
+      "stage": 2,
+      "stream": "Bushcraft"
+    },
+    {
+      "id": "s2-bushcraft-i-know-how-to-contact-the-emergency-services",
+      "text": "I know how to contact the emergency services.",
+      "stage": 2,
+      "stream": "Bushcraft"
+    },
+    {
+      "id": "s2-bushcraft-i-can-state-how-many-degrees-there-are-on-a-comp",
+      "text": "I can state how many degrees there are on a compass and at what degrees the cardinal points are.",
+      "stage": 2,
+      "stream": "Bushcraft"
+    },
+    {
+      "id": "s2-bushcraft-i-know-the-rules-for-hygiene-at-camp",
+      "text": "I know the rules for hygiene at camp.",
+      "stage": 2,
+      "stream": "Bushcraft"
+    },
+    {
+      "id": "s2-bushcraft-i-can-protect-myself-when-exposed-to-the-sun-whi",
+      "text": "I can protect myself when exposed to the sun while outdoors.",
+      "stage": 2,
+      "stream": "Bushcraft"
+    },
+    {
+      "id": "s2-bushcraft-i-can-cook-a-snack-in-a-fire",
+      "text": "I can cook a snack in a fire.",
+      "stage": 2,
+      "stream": "Bushcraft"
+    },
+    {
+      "id": "s2-bushcraft-i-know-how-much-water-i-should-carry-when-on-a-h",
+      "text": "I know how much water I should carry when on a hike or when taking part in an outdoor activity.",
+      "stage": 2,
+      "stream": "Bushcraft"
+    },
+    {
+      "id": "s2-bushcraft-i-can-demonstrate-a-correct-way-to-build-a-safe-",
+      "text": "I can demonstrate a correct way to build a safe fireplace in the bush.",
+      "stage": 2,
+      "stream": "Bushcraft"
+    },
+    {
+      "id": "s2-bushcraft-i-understand-the-basic-dangers-of-fire-and-how-t",
+      "text": "I understand the basic dangers of fire, and how to be safe around them.",
+      "stage": 2,
+      "stream": "Bushcraft"
+    },
+    {
+      "id": "s2-bushcraft-i-can-establish-and-find-the-four-cardinal-direc",
+      "text": "I can establish and find the four cardinal directions (north, south, east, west) without a magnetic compass or any electronic means.",
+      "stage": 2,
+      "stream": "Bushcraft"
+    },
+    {
+      "id": "s2-bushcraft-i-can-demonstrate-three-knots-and-apply-them-in-",
+      "text": "I can demonstrate three knots and apply them in an activity.",
+      "stage": 2,
+      "stream": "Bushcraft"
+    },
+    {
+      "id": "s2-bushcraft-i-have-talked-about-what-i-enjoyed-learnt-or-imp",
+      "text": "I have talked about what I enjoyed, learnt, or improved upon from at least two bushcraft activities.",
+      "stage": 2,
+      "stream": "Bushcraft"
+    },
+    {
+      "id": "s2-bushcraft-i-can-suggest-what-i-would-do-differently-for-a-",
+      "text": "I can suggest what I would do differently for a future bushcraft activity.",
+      "stage": 2,
+      "stream": "Bushcraft"
+    },
+    {
+      "id": "s1-camping-i-know-about-the-buddy-system",
+      "text": "I know about the buddy system",
+      "stage": 1,
+      "stream": "Camping"
+    },
+    {
+      "id": "s1-camping-i-know-the-boundaries-of-where-i-may-go-each-tim",
+      "text": "I know the boundaries of where I may go each time I go out camping.",
+      "stage": 1,
+      "stream": "Camping"
+    },
+    {
+      "id": "s1-camping-i-know-to-stop-when-i-get-lost-while-camping",
+      "text": "I know to stop when I get lost while camping.",
+      "stage": 1,
+      "stream": "Camping"
+    },
+    {
+      "id": "s1-camping-i-know-the-basic-elements-that-you-need-to-make-",
+      "text": "I know the basic elements that you need to make a fire.",
+      "stage": 1,
+      "stream": "Camping"
+    },
+    {
+      "id": "s1-camping-i-know-that-i-should-follow-directions-from-the-",
+      "text": "I know that I should follow directions from the leader of this activity.",
+      "stage": 1,
+      "stream": "Camping"
+    },
+    {
+      "id": "s1-camping-i-can-help-pack-a-bag-for-camp",
+      "text": "I can help pack a bag for camp.",
+      "stage": 1,
+      "stream": "Camping"
+    },
+    {
+      "id": "s1-camping-i-can-strike-a-match",
+      "text": "I can strike a match.",
+      "stage": 1,
+      "stream": "Camping"
+    },
+    {
+      "id": "s1-camping-i-can-help-prepare-food-for-cooking-at-camp",
+      "text": "I can help prepare food for cooking at camp.",
+      "stage": 1,
+      "stream": "Camping"
+    },
+    {
+      "id": "s1-camping-i-have-spent-two-nights-at-camps-and-or-scout-sl",
+      "text": "I have spent two nights at camps and/or Scout sleep-overs.",
+      "stage": 1,
+      "stream": "Camping"
+    },
+    {
+      "id": "s1-camping-i-know-why-it-is-important-to-set-up-camp-in-an-",
+      "text": "I know why it is important to set up camp in an existing campsite.",
+      "stage": 1,
+      "stream": "Camping"
+    },
+    {
+      "id": "s1-camping-i-can-set-out-my-sleeping-area-at-camp",
+      "text": "I can set out my sleeping area at camp.",
+      "stage": 1,
+      "stream": "Camping"
+    },
+    {
+      "id": "s1-camping-i-can-care-for-my-basic-personal-gear-on-an-over",
+      "text": "I can care for my basic personal gear on an overnight camp.",
+      "stage": 1,
+      "stream": "Camping"
+    },
+    {
+      "id": "s1-camping-i-can-talk-about-what-i-enjoyed-learnt-or-improv",
+      "text": "I can talk about what I enjoyed, learnt, or improved upon by participating in the camp or sleepover.",
+      "stage": 1,
+      "stream": "Camping"
+    },
+    {
+      "id": "s1-bushwalking-i-can-help-pack-a-backpack-for-a-day-walk",
+      "text": "I can help pack a backpack for a day walk.",
+      "stage": 1,
+      "stream": "Bushwalking"
+    },
+    {
+      "id": "s1-bushwalking-i-can-dress-myself-for-a-day-walk",
+      "text": "I can dress myself for a day walk",
+      "stage": 1,
+      "stream": "Bushwalking"
+    },
+    {
+      "id": "s1-bushwalking-i-can-list-what-food-to-bring-on-a-day-bushwalk",
+      "text": "I can list what food to bring on a day bushwalk.",
+      "stage": 1,
+      "stream": "Bushwalking"
+    },
+    {
+      "id": "s1-bushwalking-i-know-why-it-is-important-to-stick-to-trails-wh",
+      "text": "I know why it is important to stick to trails when outdoors.",
+      "stage": 1,
+      "stream": "Bushwalking"
+    },
+    {
+      "id": "s1-bushwalking-i-know-why-to-stop-when-i-get-lost-in-the-bush",
+      "text": "I know why to stop when I get lost in the bush.",
+      "stage": 1,
+      "stream": "Bushwalking"
+    },
+    {
+      "id": "s1-bushwalking-i-can-explain-the-buddy-system",
+      "text": "I can explain the buddy system.",
+      "stage": 1,
+      "stream": "Bushwalking"
+    },
+    {
+      "id": "s1-bushwalking-i-can-put-together-a-small-personal-first-aid-ki",
+      "text": "I can put together a small personal first aid kit for our bushwalk.",
+      "stage": 1,
+      "stream": "Bushwalking"
+    },
+    {
+      "id": "s1-bushwalking-i-can-identify-the-four-main-cardinal-points-of-",
+      "text": "I can identify the four main cardinal points of the compass.",
+      "stage": 1,
+      "stream": "Bushwalking"
+    },
+    {
+      "id": "s1-bushwalking-i-can-identify-the-main-parts-of-the-compass",
+      "text": "I can identify the main parts of the compass.",
+      "stage": 1,
+      "stream": "Bushwalking"
+    },
+    {
+      "id": "s1-bushwalking-i-have-attended-at-least-one-bushwalk-of-at-leas",
+      "text": "I have attended at least one bushwalk of at least one hour’s duration at this stage.",
+      "stage": 1,
+      "stream": "Bushwalking"
+    },
+    {
+      "id": "s1-bushwalking-i-can-demonstrate-behaving-safely-while-bushwalk",
+      "text": "I can demonstrate behaving safely while bushwalking.",
+      "stage": 1,
+      "stream": "Bushwalking"
+    },
+    {
+      "id": "s1-bushwalking-i-can-talk-about-what-i-enjoyed-or-learnt-from-g",
+      "text": "I can talk about what I enjoyed or learnt from going on a bushwalk.",
+      "stage": 1,
+      "stream": "Bushwalking"
+    },
+    {
+      "id": "s1-bushcraft-i-know-why-it-is-important-to-stick-to-trails-wh",
+      "text": "I know why it is important to stick to trails when outdoors.",
+      "stage": 1,
+      "stream": "Bushcraft"
+    },
+    {
+      "id": "s1-bushcraft-i-know-about-the-buddy-system",
+      "text": "I know about the “Buddy” system.",
+      "stage": 1,
+      "stream": "Bushcraft"
+    },
+    {
+      "id": "s1-bushcraft-i-know-to-stop-when-i-get-lost-on-activities",
+      "text": "I know to stop when I get lost on activities.",
+      "stage": 1,
+      "stream": "Bushcraft"
+    },
+    {
+      "id": "s1-bushcraft-i-know-my-address-and-location-in-an-emergency",
+      "text": "I know my address and location in an emergency.",
+      "stage": 1,
+      "stream": "Bushcraft"
+    },
+    {
+      "id": "s1-bushcraft-i-know-three-reasons-for-having-a-shelter-when-s",
+      "text": "I know three reasons for having a shelter when sleeping outdoors.",
+      "stage": 1,
+      "stream": "Bushcraft"
+    },
+    {
+      "id": "s1-bushcraft-i-can-strike-a-match",
+      "text": "I can strike a match.",
+      "stage": 1,
+      "stream": "Bushcraft"
+    },
+    {
+      "id": "s1-bushcraft-i-can-collect-sticks-for-preparing-a-campfire",
+      "text": "I can collect sticks for preparing a campfire.",
+      "stage": 1,
+      "stream": "Bushcraft"
+    },
+    {
+      "id": "s1-bushcraft-i-can-be-safe-around-a-campfire",
+      "text": "I can be safe around a campfire.",
+      "stage": 1,
+      "stream": "Bushcraft"
+    },
+    {
+      "id": "s1-bushcraft-i-can-demonstrate-stop-drop-and-roll-and-how-tha",
+      "text": "I can demonstrate stop, drop and roll, and how that can be used in an emergency situation.",
+      "stage": 1,
+      "stream": "Bushcraft"
+    },
+    {
+      "id": "s1-bushcraft-i-can-find-the-emergency-exit-and-muster-point-a",
+      "text": "I can find the emergency exit and muster point at my Scout Hall.",
+      "stage": 1,
+      "stream": "Bushcraft"
+    },
+    {
+      "id": "s1-bushcraft-i-have-participated-in-a-game-that-required-basi",
+      "text": "I have participated in a game that required basic navigational skills.",
+      "stage": 1,
+      "stream": "Bushcraft"
+    },
+    {
+      "id": "s1-bushcraft-i-can-hang-a-clothesline-at-camp-with-a-clove-hi",
+      "text": "I can hang a clothesline at camp with a clove hitch or other knot.",
+      "stage": 1,
+      "stream": "Bushcraft"
+    },
+    {
+      "id": "s1-bushcraft-i-know-how-to-correctly-pack-ropes-away",
+      "text": "I know how to correctly pack ropes away.",
+      "stage": 1,
+      "stream": "Bushcraft"
+    },
+    {
+      "id": "s1-bushcraft-i-know-what-is-in-a-dilly-bag-mess-kit-and-can-k",
+      "text": "I know what is in a dilly bag/mess kit and can keep it clean at camp.",
+      "stage": 1,
+      "stream": "Bushcraft"
+    },
+    {
+      "id": "s1-bushcraft-i-can-talk-about-what-i-enjoyed-learnt-or-improv",
+      "text": "I can talk about what I enjoyed, learnt, or improved upon, by playing a navigational game",
+      "stage": 1,
+      "stream": "Bushcraft"
+    }
+  ],
+  "application_requirement_ids": [
+    "APP-001",
+    "APP-002",
+    "APP-003",
+    "APP-004",
+    "APP-005",
+    "APP-006",
+    "APP-007",
+    "APP-008",
+    "APP-009",
+    "APP-010",
+    "APP-011",
+    "APP-012",
+    "APP-013",
+    "APP-014",
+    "APP-015",
+    "APP-016",
+    "APP-017",
+    "APP-018",
+    "APP-019",
+    "APP-020",
+    "APP-021",
+    "APP-022",
+    "APP-023",
+    "APP-024",
+    "APP-025",
+    "APP-026",
+    "APP-027",
+    "APP-028",
+    "APP-029",
+    "APP-030",
+    "APP-031",
+    "APP-032",
+    "APP-033",
+    "APP-034",
+    "APP-035",
+    "APP-036",
+    "APP-037",
+    "APP-038",
+    "APP-039",
+    "APP-040",
+    "APP-041",
+    "APP-042",
+    "APP-043",
+    "APP-044",
+    "APP-045",
+    "APP-046",
+    "APP-047",
+    "APP-048",
+    "APP-049",
+    "APP-050",
+    "APP-051",
+    "APP-052",
+    "APP-053",
+    "APP-054",
+    "APP-055",
+    "APP-056",
+    "APP-057",
+    "APP-058",
+    "APP-059",
+    "APP-060",
+    "APP-061",
+    "APP-062",
+    "APP-063",
+    "APP-064",
+    "APP-065",
+    "APP-066",
+    "APP-067",
+    "APP-068",
+    "APP-069",
+    "APP-070",
+    "APP-071",
+    "APP-072",
+    "APP-073",
+    "APP-074",
+    "APP-075",
+    "APP-076",
+    "APP-077",
+    "APP-078",
+    "APP-079",
+    "APP-080",
+    "APP-081",
+    "APP-082",
+    "APP-083",
+    "APP-084",
+    "APP-085",
+    "APP-086",
+    "APP-087",
+    "APP-088",
+    "APP-089",
+    "APP-090",
+    "APP-091",
+    "APP-092",
+    "APP-093",
+    "APP-094",
+    "APP-095",
+    "APP-096",
+    "APP-097",
+    "APP-098",
+    "APP-099",
+    "APP-100",
+    "APP-101",
+    "APP-102",
+    "APP-103",
+    "APP-104",
+    "APP-105",
+    "APP-106",
+    "APP-107",
+    "APP-108",
+    "APP-109",
+    "APP-110",
+    "APP-111",
+    "APP-112",
+    "APP-113",
+    "APP-114",
+    "APP-115",
+    "APP-116",
+    "APP-117",
+    "APP-118"
+  ],
+  "browser_storage_keys": [
+    "oas-trailmap-v1",
+    "oas-studio-v1",
+    "oas-data-checkpoints-v1"
+  ],
+  "legacy_entrypoints": [
+    "index.html",
+    "css/styles.css",
+    "js/app.js",
+    "js/studio.js",
+    "js/data-manager.js",
+    "js/next-phase.js",
+    "js/forecast.js",
+    "js/docs-upgrade.js",
+    "js/theme-tracker.js",
+    "js/application-requirements.js"
+  ],
+  "dom_element_ids": [
+    "exportBtn",
+    "importBackupBtn",
+    "backupFile",
+    "totalReq",
+    "scoutSelect",
+    "multiScoutBtn",
+    "stageFilter",
+    "streamFilter",
+    "statusFilter",
+    "mainTagFilter",
+    "searchInput",
+    "multiScoutPanel",
+    "multiScoutOptions",
+    "applyScoutSubset",
+    "cancelScoutSubset",
+    "summaryRow",
+    "progressPct",
+    "progressBar",
+    "completedCount",
+    "scopeNote",
+    "activityCount",
+    "nextCount",
+    "activityStudioTab",
+    "dataManagerTab",
+    "helpDesignTab",
+    "appRequirementsTab",
+    "localSaveStatus",
+    "undoLastEdit",
+    "treeStudio",
+    "treeSelect",
+    "treeGraphMode",
+    "treeGraphHint",
+    "newTree",
+    "renameTree",
+    "manageTags",
+    "treeSnapshot",
+    "historyBtn",
+    "exportRequirements",
+    "importRequirements",
+    "treeFocus",
+    "treeCanvas",
+    "treeEditor",
+    "historyPanel",
+    "scheduleStudio",
+    "scheduleStrategy",
+    "scheduleWeeks",
+    "scheduleCapacity",
+    "useLocations",
+    "generateSchedule",
+    "regenerateSchedule",
+    "exportSchedule",
+    "importSchedule",
+    "externalWeeks",
+    "applyExternalWeeks",
+    "scheduleTimeline",
+    "scheduleImpact",
+    "scheduleInfo",
+    "scheduleSummary",
+    "forecastProgress",
+    "schedulePreview",
+    "requirementsTracker",
+    "requirementsTrackerSearch",
+    "requirementsTrackerStatus",
+    "exportRequirementsTracker",
+    "requirementsTrackerSummary",
+    "requirementsTrackerRows",
+    "scheduleWeeksGrid",
+    "activityStudio",
+    "newActivity",
+    "exportActivityStudio",
+    "activityList",
+    "activityEditor",
+    "applicationRequirements",
+    "appReqSummary",
+    "appReqSearch",
+    "appReqStatus",
+    "appReqCategory",
+    "appReqClear",
+    "appReqExportCsv",
+    "appReqExportJson",
+    "appReqResults",
+    "appReqList",
+    "helpDesign",
+    "helpSearch",
+    "helpTopics",
+    "helpContent",
+    "dataManager",
+    "dataStats",
+    "dataType",
+    "dataImportBtn",
+    "dataWorkbookBtn",
+    "dataFile",
+    "dataPreview",
+    "resetRecovery",
+    "clearAchievementsBtn",
+    "clearScoutDataBtn",
+    "clearPlanBtn",
+    "restoreDefaultReqsBtn",
+    "fullResetBtn",
+    "resetReview",
+    "previewPanel",
+    "importStatus",
+    "activityStatus",
+    "workbookFile",
+    "dataExports",
+    "dataCheckpointBtn",
+    "dataHistory",
+    "trailWorkspace",
+    "missingOnly",
+    "plannerMode",
+    "showRelated",
+    "plannerPanel",
+    "plannerReqCount",
+    "plannerOutstandingCount",
+    "plannerAffectedCount",
+    "plannerReadyCount",
+    "plannerTags",
+    "plannerNote",
+    "mapCanvas",
+    "emptyMap",
+    "detailPanel",
+    "toast"
+  ],
+  "script_sources": [
+    "https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js",
+    "https://cdn.jsdelivr.net/npm/js-yaml@4.1.0/dist/js-yaml.min.js",
+    "js/app.js",
+    "js/studio.js",
+    "js/data-manager.js",
+    "js/next-phase.js",
+    "js/forecast.js",
+    "js/docs-upgrade.js",
+    "js/theme-tracker.js",
+    "js/application-requirements.js"
+  ],
+  "workspace_labels": [
+    "Trailmap",
+    "Skill Tree Mapper",
+    "40-week Scheduler",
+    "Activity Studio",
+    "Data & State",
+    "Help & Design",
+    "Application Requirements"
+  ],
+  "format_identifiers": [
+    "oas-trailmap-backup",
+    "oas-trailmap-full-state",
+    "oas-trailmap-progress",
+    "oas-trailmap-activities",
+    "oas-trailmap-schedule",
+    "oas-trailmap-trees"
+  ]
+}

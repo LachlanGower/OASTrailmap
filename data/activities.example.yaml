@@ -1,0 +1,20 @@
+# Copy this file and add your own activities.
+# Requirement IDs must match data/requirements.yaml.
+activities:
+  - id: compass-trail-game
+    title: Compass trail game
+    description: Small-group navigation trail using a compass and local map.
+    duration_minutes: 45
+    tags: [navigation, outdoors, teamwork]
+    covers:
+      - s1-bushwalking-i-can-identify-the-four-main-cardinal-points-of-
+      - s2-bushcraft-i-can-state-how-many-degrees-there-are-on-a-comp
+      - s3-bushcraft-i-have-set-up-and-followed-a-simple-compass-trai
+  - id: camp-kitchen
+    title: Camp kitchen challenge
+    description: Plan a simple meal, practise safe food handling, and review the process.
+    duration_minutes: 60
+    tags: [camping, food, safety]
+    covers:
+      - s1-camping-i-can-help-prepare-food-for-cooking-at-camp
+      - s2-camping-i-can-demonstrate-basic-safe-food-handling-and-t
