@@ -12,7 +12,7 @@ const ROOT=process.env.OAS_TEST_URL||'http://127.0.0.1:5173/';
   const ids=await page.locator('[data-recovery-action]').evaluateAll(nodes=>nodes.map(n=>n.getAttribute('aria-describedby')));
   assert.deepEqual([...new Set(ids)],['recovery-warning']);
   await page.locator('[data-recovery-action="clearPlanBtn"]').press('Enter');
-  assert.equal(await page.locator('#resetReview').isVisible(),true);
+  await page.locator('#resetReview').waitFor({state:'visible',timeout:7000});
   await page.locator('#resetCancel').click();
   assert.equal(await page.locator('#resetReview').isVisible(),false);
   await page.close();
