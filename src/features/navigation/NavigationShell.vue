@@ -28,5 +28,6 @@ function classesFor(action: NavigationAction): string {
     <button :class="classesFor('help')" type="button" id="helpDesignTab" @click="dispatch('help', $event)">Help &amp; Design</button>
     <button :class="classesFor('requirements')" type="button" id="appRequirementsTab" @click="dispatch('requirements', $event)">Application Requirements</button>
     <span id="localSaveStatus" class="tiny muted" role="status">{{ initialSaveStatus }}</span>
+    <button id="undoLastEdit" hidden type="button" :class="classesFor('undo')" @click="dispatch('undo',$event)" aria-hidden="true">Undo tree edit</button>
   </nav>
 </template>
