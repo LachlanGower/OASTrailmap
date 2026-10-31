@@ -21,7 +21,7 @@
   const grid=document.createElement('div');grid.className='theme-stage-grid';
   for(let stage=1;stage<=3;stage++){
    const col=document.createElement('section');col.className='theme-stage';const title=document.createElement('h3');title.textContent='Stage '+stage;col.append(title);
-   const seen=new Set();for(const r of matched.filter(r=>Number(r.stage)===stage)){const key=canonical(r);if(seen.has(key))continue;seen.add(key);const item=document.createElement('p');item.textContent=r.text+' ('+r.stream+')';item.title=r.id;col.append(item)}
+   const seen=new Set();for(const r of matched.filter(r=>Number(r.stage)===stage)){const key=canonical(r);if(seen.has(key))continue;seen.add(key);const item=document.createElement('button');item.className='theme-requirement-link';item.type='button';item.dataset.themeReq=r.id;item.textContent=r.text+' ('+r.stream+')';item.title='View requirement '+r.id;col.append(item)}
    if(!seen.size){const empty=document.createElement('p');empty.textContent='No matching requirements';col.append(empty)}
    grid.append(col);
   }
