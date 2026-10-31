@@ -101,7 +101,8 @@ window.__oasScoutPickerSnapshot=()=>({
 window.__oasScoutCompletionSnapshot=()=>{
  const r=requirements.find(x=>x.id===selectedRequirement);if(!r)return null;
  const names=groupScope()?scopedScoutNames():[selectedScout];
- return {requirementId:r.id,group:groupScope(),entries:names.map(name=>{
+ const hideCompleted=groupScope()&&!!$('#hideCompletedScouts')?.checked;
+ return {requirementId:r.id,group:groupScope(),hideCompleted,entries:names.filter(name=>!hideCompleted||!isCompleted(name,r.id)).map(name=>{
   const old=recordFor(name,r.id);
   return {scout:name,completed:old.completed===true,date:old.date||''};
  })};
