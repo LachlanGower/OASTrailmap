@@ -3,15 +3,16 @@
  */
 function currentTagTheme(w){return w.theme||w.tags?.[0]||''}
 function useLocationGrouping(){return studio.useLocations===true}
+function themeLocationAllowed(r){const allowed=studio.allowedLocations||[];return studio.useLocations!==true||!allowed.length||[r.locations?.preferred,...(r.locations?.alternatives||[])].some(loc=>allowed.includes(loc));}
 function themedCandidates(weekIndex,theme){
  const w=studio.schedule[weekIndex],others=studio.schedule.filter((x,i)=>i!==weekIndex);
  const occurrenceCounts=scheduleOccurrenceCounts(others);
- const candidates=requirements.filter(r=>((r.theme_tags||r.tags||[]).includes(theme)||(r.tags||[]).includes(theme))&&
+ const candidates=requirements.filter(r=>themeLocationAllowed(r)&&((r.theme_tags||r.tags||[]).includes(theme)||(r.tags||[]).includes(theme))&&
  (occurrenceCounts.get(r.id)||0)<requiredTimes(r))
  .map(r=>({r,elsewhere:occurrenceCounts.get(r.id)||0}));
  if(candidates.length)return candidates;
  // Allow reusing valid themed requirements when all matching opportunities are already planned elsewhere.
- return requirements.filter(r=>(r.theme_tags||r.tags||[]).includes(theme)||(r.tags||[]).includes(theme)).map(r=>({r,elsewhere:occurrenceCounts.get(r.id)||0}));
+ return requirements.filter(r=>themeLocationAllowed(r)&&((r.theme_tags||r.tags||[]).includes(theme)||(r.tags||[]).includes(theme))).map(r=>({r,elsewhere:occurrenceCounts.get(r.id)||0}));
 }
 function themeScore(r,weekIndex,chosen,occurrenceCounts){
  const scope=scheduleScope(),prior=new Set(studio.schedule.slice(0,weekIndex).flatMap(w=>w.requirementIds||[]));
