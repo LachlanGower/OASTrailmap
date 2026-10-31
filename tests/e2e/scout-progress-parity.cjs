@@ -33,7 +33,8 @@ async function inspect(browser,mode,viewport){
    for(const [key,value] of Object.entries(x))localStorage.setItem(key,JSON.stringify(value));
  },storage);
  await page.reload({waitUntil:'domcontentloaded'});
- await page.waitForFunction(()=>document.querySelectorAll('#mapCanvas .requirement-node').length===142);
+ await page.evaluate(()=>{const toggle=document.querySelector('#groupDuplicateRequirements');if(toggle){toggle.checked=false;toggle.dispatchEvent(new Event('change',{bubbles:true}));}});
+  await page.waitForFunction(()=>document.querySelectorAll('#mapCanvas .requirement-node').length===142);
  if(mode==='vue')await page.waitForFunction(
    ()=>document.documentElement.dataset.oasScoutRenderer==='vue',{timeout:20000});
  else assert.notEqual(await page.locator('html').getAttribute('data-oas-scout-renderer'),'vue');
