@@ -7,6 +7,7 @@ const URL=process.env.OAS_TEST_URL||'http://127.0.0.1:5173/';
  const page=await browser.newPage({viewport});const errors=[];
  page.on('pageerror',e=>errors.push(e.message));
  await page.goto(URL,{waitUntil:'domcontentloaded'});
+ await page.waitForFunction(()=>document.documentElement.dataset.oasNavRenderer==='vue',{timeout:25000});
  await page.locator('#weeklyThemesTab').click();
  await page.waitForFunction(()=>document.querySelector('#weeklyThemeSelect')?.options.length>3,{timeout:25000});
  assert.equal(await page.locator('#weeklyThemes').isVisible(),true);
