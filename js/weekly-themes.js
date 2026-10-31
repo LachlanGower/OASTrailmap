@@ -33,13 +33,14 @@
  document.addEventListener('DOMContentLoaded',()=>{
   document.addEventListener('click',e=>{const button=e.target.closest('button');if(button?.closest('nav.studio-nav')&&!['weeklyThemesTab','requirementsTrackerTab'].includes(button.id)){if($('weeklyThemes'))$('weeklyThemes').hidden=true;if($('requirementsWorkspace'))$('requirementsWorkspace').hidden=true;}},true);
   const locationHost=document.createElement('fieldset');locationHost.className='location-choices';locationHost.id='scheduleLocationChoices';
-  const legend=document.createElement('legend');legend.textContent='Preferred locations to consider (select any)';locationHost.append(legend);
+  const legend=document.createElement('legend');legend.textContent='Allowed scheduling locations (none selected = all locations)';locationHost.append(legend);
   const scheduler=$('scheduleStudio');
   scheduler?.querySelector('.section-heading')?.after(locationHost);
   function fillLocations(){
    if(typeof requirements==='undefined'||!Array.isArray(requirements))return;
-   const locations=[...new Set(requirements.flatMap(r=>[r.locations?.preferred,...(r.locations?.alternatives||[])].filter(Boolean)))].sort();
-   for(const loc of locations){const label=document.createElement('label'),input=document.createElement('input');input.type='checkbox';input.value=loc;input.checked=(studio.allowedLocations||[]).includes(loc);input.addEventListener('change',()=>{studio.allowedLocations=[...locationHost.querySelectorAll('input:checked')].map(x=>x.value);writeStudio()});label.append(input,document.createTextNode(' '+loc));locationHost.append(label)}
+   const defaults=['Scout Hall - indoor','Scout Hall - outdoor','Local outdoor area','Campsite','External venue','Flexible / anywhere'];
+   const locations=[...new Set([...defaults,...requirements.flatMap(r=>[r.locations?.preferred,...(r.locations?.alternatives||[])].filter(Boolean))])].sort();
+   for(const loc of locations){const label=document.createElement('label'),input=document.createElement('input');input.type='checkbox';input.value=loc;input.checked=(studio.allowedLocations||[]).includes(loc);input.addEventListener('change',()=>{studio.allowedLocations=[...locationHost.querySelectorAll('input:checked')].map(x=>x.value);studio.useLocations=studio.allowedLocations.length>0;const master=$('useLocations');if(master)master.checked=studio.useLocations;writeStudio();if(typeof renderSchedule==='function')renderSchedule()});label.append(input,document.createTextNode(' '+loc));locationHost.append(label)}
   }
   const locationWait=setInterval(()=>{if(typeof requirements==='undefined'||!requirements.length||typeof studio==='undefined')return;clearInterval(locationWait);fillLocations()},100);
   if($('weeklyThemesTab'))$('weeklyThemesTab').onclick=()=>{show('weeklyThemes');render()};
