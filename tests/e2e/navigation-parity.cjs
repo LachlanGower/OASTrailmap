@@ -26,13 +26,14 @@ async function inspect(browser,mode,viewport){
   await page.route('https://cdn.jsdelivr.net/**',r=>r.fulfill({status:200,contentType:'application/javascript',body:''}));
   const url=new URL(BASE);if(mode==='legacy')url.searchParams.set('navRenderer','legacy');
   await page.goto(url.toString(),{waitUntil:'domcontentloaded'});
+  await page.evaluate(()=>{const toggle=document.querySelector('#groupDuplicateRequirements');if(toggle){toggle.checked=false;toggle.dispatchEvent(new Event('change',{bubbles:true}));}});
   await page.waitForFunction(()=>document.querySelectorAll('#mapCanvas .requirement-node').length===142);
   await page.waitForFunction(()=>document.querySelector('#appRequirementsTab')?.onclick!==null||
     document.documentElement.dataset.oasNavRenderer==='vue');
   if(mode==='vue') await page.waitForFunction(
     ()=>document.documentElement.dataset.oasNavRenderer==='vue',{timeout:20000});
   else assert.notEqual(await page.locator('html').getAttribute('data-oas-nav-renderer'),'vue');
-  assert.equal(await page.locator('nav.studio-nav button').count(),8);
+  assert.equal(await page.locator('nav.studio-nav button:visible').count(),9);
   const results=[];
   for(const item of tabs) {
     await page.locator(item.tab).click();
