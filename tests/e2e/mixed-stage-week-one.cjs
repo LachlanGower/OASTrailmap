@@ -5,7 +5,7 @@ const ROOT=process.env.OAS_TEST_URL||'http://127.0.0.1:5173/';
 (async()=>{const browser=await chromium.launch({headless:true});try{
  const page=await browser.newPage();
  await page.goto(ROOT,{waitUntil:'domcontentloaded'});
- await page.waitForFunction(()=>typeof window.buildSchedule==='function'&&typeof window.scopedScoutNames==='function'&&document.querySelector('#totalReq')?.textContent==='142',{timeout:25000});
+ await page.waitForFunction(()=>typeof window.buildSchedule==='function'&&typeof window.scopedScoutNames==='function'&&typeof requirements!=='undefined'&&requirements.length===142,{timeout:25000});
  const result=await page.evaluate(()=>{
   const before=localStorage.getItem('oas-trailmap-v1');
   scoutRecords={};
