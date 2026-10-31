@@ -112,7 +112,7 @@ async function inspect(browser,mode,viewport){
  // Reject a mandatory cycle before making any further checkpoint.
  const pair=await page.evaluate(()=>{
   const child=requirements.find(r=>r.prerequisites?.length&&
-    requirements.some(x=>x.id===r.prerequisites[0]));
+    requirements.some(x=>x.id===r.prerequisites[0]&&x.stage>1));
   return child?{child:child.id,parent:child.prerequisites[0]}:null;
  });
  if(pair){
