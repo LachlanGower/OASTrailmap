@@ -8,7 +8,7 @@ const ROOT=process.env.OAS_TEST_URL||'http://127.0.0.1:5173/';
   const page=await browser.newPage({viewport:{width:1365,height:900},acceptDownloads:true});
   const errors=[];page.on('pageerror',e=>errors.push(e.message));
   await page.goto(ROOT,{waitUntil:'domcontentloaded'});
-  await page.waitForFunction(()=>typeof window.dataBundle==='function'&&typeof window.dataCsvParse==='function',{timeout:25000});
+  await page.waitForFunction(()=>typeof window.dataBundle==='function'&&typeof window.dataCsvParse==='function'&&typeof requirements!=='undefined'&&requirements.length===142&&document.documentElement.dataset.oasNavRenderer==='vue',{timeout:25000});
   const result=await page.evaluate(()=>{
     const original=localStorage.getItem('oas-trailmap-v1');
     const formats=['requirements','progress','activities','schedule'];
