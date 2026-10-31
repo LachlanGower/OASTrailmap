@@ -20,7 +20,7 @@ function editDate(scout:string,event:Event):void{
         <label>{{ entry.scout }}</label>
       </div>
     </template>
-    <p v-else class="empty-inline">Import a workbook to add Scouts, or select an individual Scout after importing.</p>
+    <p v-else class="empty-inline">{{ snapshot.hideCompleted ? "No outstanding Scouts in this selection." : "Import a workbook to add Scouts, or select an individual Scout after importing." }}</p>
   </template>
   <template v-else-if="snapshot.entries.length">
     <div class="completion-control">

@@ -11,7 +11,7 @@ export interface TreeCheckpoint {
  title:string;
  at:string;
 }
-export type TreeAdminAction = 'tree'|'mode'|'new'|'rename'|'tags'|'snapshot'|'history'|'export'|'import';
+export type TreeAdminAction = 'tree'|'mode'|'new'|'rename'|'delete'|'tags'|'snapshot'|'history'|'export'|'import';
 export function treeAdminSnapshot(
   trees:readonly string[],tags:readonly string[],active:string,
   graphMode:'master'|'custom'

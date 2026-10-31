@@ -12,7 +12,7 @@ declare global {
  }
 }
 const ids:Record<TreeAdminAction,string>={
- tree:'#treeSelect',mode:'#treeGraphMode',new:'#newTree',rename:'#renameTree',
+ tree:'#treeSelect',mode:'#treeGraphMode',new:'#newTree',rename:'#renameTree',delete:'#deleteTree',
  tags:'#manageTags',snapshot:'#treeSnapshot',history:'#historyBtn',
  export:'#exportRequirements',import:'#importRequirements'
 };

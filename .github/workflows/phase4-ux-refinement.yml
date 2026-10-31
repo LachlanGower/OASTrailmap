@@ -1,0 +1,76 @@
+name: Phase 4 UX refinement and data integrity
+on:
+  push:
+    branches: [feature/phase4-ux-data-refinement]
+  pull_request:
+    branches: [feature/theme-led-planning-and-json-data]
+permissions:
+  contents: write
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 55
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+      - run: npm ci
+      - run: npm run typecheck
+      - run: npm test
+      - run: npm run build
+      - run: npm run check:dist
+      - run: npx playwright install --with-deps chromium
+      - name: Browser parity against dev and compiled builds
+        run: |
+          npm run dev -- --host 127.0.0.1 --port 5173 >/tmp/refine-dev.log 2>&1 &
+          python3 -m http.server 8765 --bind 127.0.0.1 -d dist >/tmp/refine-dist.log 2>&1 &
+          sleep 4
+          failures=0
+          for base in http://127.0.0.1:5173/ http://127.0.0.1:8765/; do
+            for spec in tests/e2e/*.cjs; do
+              echo "::group::$base $spec"
+              OAS_TEST_URL="$base" timeout 100s node "$spec" || { echo "FAILED: $spec at $base"; failures=$((failures+1)); }
+              echo "::endgroup::"
+            done
+          done
+          echo "Browser regression failures: $failures"
+          test "$failures" -eq 0
+
+  publish-testing-pages:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: feature/phase4-ux-data-refinement
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+      - run: npm ci
+      - run: npm run typecheck
+      - run: npm test
+      - name: Build public-path test candidate
+        env:
+          OAS_PUBLIC_BASE: /OASTrailmap/
+        run: npm run build
+      - run: npm run check:dist
+      - run: node scripts/check-static-subpath.cjs
+      - name: Publish dist to gh-pages
+        shell: bash
+        run: |
+          set -euo pipefail
+          touch dist/.nojekyll
+          printf '%s\n' "Build source: $(git rev-parse HEAD)" "Channel: PR #40 manual test candidate (not an approved release)." > dist/BUILD-INFO.txt
+          cd dist
+          git init -b gh-pages
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -A
+          git commit -m "Publish Phase 4 testing dist from ${GITHUB_SHA}"
+          git remote add publish "https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
+          git push --force publish HEAD:refs/heads/gh-pages
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

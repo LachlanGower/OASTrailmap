@@ -9,7 +9,7 @@ let dataMatch='any';
 const dataClone=x=>JSON.parse(JSON.stringify(x));
 function dataStamp(){return new Date().toISOString();}
 function dataEncode(x){return window.jsyaml?jsyaml.dump(x,{lineWidth:120,noRefs:true}):JSON.stringify(x,null,2);}
-function dataParse(text,name){return /\.json$/i.test(name)?JSON.parse(text):(window.jsyaml?jsyaml.load(text):JSON.parse(text));}
+function dataParse(text,name,type){if(/\.csv$/i.test(name))return dataCsvParse(text,type);return /\.json$/i.test(name)?JSON.parse(text):(window.jsyaml?jsyaml.load(text):JSON.parse(text));}
 function dataLabel(type){return ({full:'Complete backup',requirements:'Requirements',progress:'Scout progress',activities:'Activities',schedule:'Schedule',trees:'Tree layouts and links'})[type]||type;}
 function dataBundle(type){
  if(type==='full')return {format:'oas-trailmap-full-state',schema_version:2,exportedAt:dataStamp(),requirements:dataClone(requirements),scoutRecords:dataClone(scoutRecords),activities:dataClone(activities),studio:dataClone({...studio,history:studio.history.slice(0,10)})};
@@ -68,7 +68,33 @@ function dataCheckpoint(title,types=['full']){
  list=list.slice(0,6);
  try{localStorage.setItem(DATA_CHECKPOINTS_KEY,JSON.stringify(list))}catch(error){throw new Error('Safety checkpoint could not be stored. Export a full backup before proceeding. '+(error?.message||''))}
 }
-function dataExport(type){const obj=dataBundle(type),ext='json';download(type==='full'?'oas-trailmap-full-backup.json':type+'-'+(type==='trees'?'layout.':'')+ext,JSON.stringify(obj,null,2),'application/json')}
+function dataCsvRecords(type,bundle){
+ const field={requirements:'requirements',activities:'activities',schedule:'weeks',progress:'scoutRecords'}[type];
+ if(!field)throw Error('CSV is only available for requirements, activities, schedule and Scout progress. Use JSON or YAML for complete backups or tree layouts.');
+ const values=field==='scoutRecords'?Object.entries(bundle[field]):bundle[field].map(x=>[x.id,x]);
+ const shell={...bundle,[field]:field==='scoutRecords'?{}:[]};
+ const rows=[['id','record_json'],['__oas_metadata__',JSON.stringify({type,shell})],...values.map(([id,record])=>[String(id),JSON.stringify(record)])];
+ const cell=v=>'"'+String(v).replace(/"/g,'""')+'"';
+ return rows.map(row=>row.map(cell).join(',')).join('\r\n')+'\r\n';
+}
+function dataCsvParse(source,type){
+ if(source.length>15000000)throw Error('CSV exceeds 15 MB; use JSON for large datasets.');
+ const rows=[],row=[];let value='',quoted=false;
+ for(let i=0;i<source.length;i++){const c=source[i];if(c==='"'){if(quoted&&source[i+1]==='"'){value+='"';i++;}else quoted=!quoted;}else if(c===','&&!quoted){row.push(value);value='';}else if((c==='\n'||c==='\r')&&!quoted){if(c==='\r'&&source[i+1]==='\n')i++;row.push(value);if(row.some(x=>x!==''))rows.push([...row]);row.length=0;value='';}else value+=c;}
+ if(quoted)throw Error('Unclosed CSV quoted cell.');
+ if(value||row.length){row.push(value);rows.push(row);}
+ if(rows[0]?.join('|')!=='id|record_json')throw Error('Expected OAS CSV columns: id,record_json.');
+ if(rows[1]?.[0]!=='__oas_metadata__')throw Error('Expected OAS CSV metadata row.');
+ const meta=JSON.parse(rows[1][1]);if(meta.type!==type)throw Error('CSV dataset type does not match selected importer.');
+ const field={requirements:'requirements',activities:'activities',schedule:'weeks',progress:'scoutRecords'}[type];
+ if(!field)throw Error('CSV unsupported for this dataset; use JSON or YAML.');
+ const out=meta.shell;if(!out||typeof out!=='object')throw Error('Invalid CSV metadata.');
+ out[field]=field==='scoutRecords'?{}:[];
+ const ids=new Set();
+ for(const record of rows.slice(2)){if(record.length!==2)throw Error('Malformed CSV row.');const [id,json]=record;if(!id||ids.has(id))throw Error('Missing or duplicated CSV ID: '+id);ids.add(id);const obj=JSON.parse(json);if(field==='scoutRecords')out[field][id]=obj;else {if(obj.id!==id)throw Error('CSV row ID mismatch: '+id);out[field].push(obj);}}
+ return out;
+}
+function dataExport(type){const obj=dataBundle(type),ext=$('#dataExportFormat')?.value||'json';if(ext==='csv'&&['full','trees'].includes(type)){alert('Complete backups and tree layouts contain nested state. Choose JSON or YAML to preserve it.');return;}const text=ext==='csv'?dataCsvRecords(type,obj):ext==='yaml'?dataEncode(obj):JSON.stringify(obj,null,2);download(type==='full'?'oas-trailmap-full-backup.'+ext:type+'-'+(type==='trees'?'layout.':'')+ext,text,ext==='csv'?'text/csv':ext==='yaml'?'text/yaml':'application/json')}
 function dataShowPreview(type,next,fileName){
  try{next=dataDataset(next,type);dataValidate(type,next)}catch(e){alert('Import rejected: '+e.message);return}
  const d=dataCompare(type,next);dataPending={type,next};
@@ -103,12 +129,12 @@ function dataRender(){
 function dataManagerInit(){
  $('#dataType').onchange=()=>$('#dataPreview').hidden=true;
  $('#dataImportBtn').onclick=()=>$('#dataFile').click();
- $('#dataFile').onchange=async e=>{const file=e.target.files[0];if(!file)return;try{const type=$('#dataType').value;if(type==='excel'){await handleWorkbook(file);$('#dataManager').scrollIntoView({behavior:'smooth'});}else{const obj=dataParse(await file.text(),file.name);dataShowPreview(type,obj,file.name)}}catch(err){alert('Import error: '+err.message)}e.target.value=''};
+ $('#dataFile').onchange=async e=>{const file=e.target.files[0];if(!file)return;try{const type=$('#dataType').value;if(type==='excel'){await handleWorkbook(file);$('#dataManager').scrollIntoView({behavior:'smooth'});}else{const obj=dataParse(await file.text(),file.name,type);dataShowPreview(type,obj,file.name)}}catch(err){alert('Import error: '+err.message)}e.target.value=''};
  $('#dataCheckpointBtn').onclick=()=>{dataCheckpoint(prompt('Checkpoint name','Manual checkpoint')||'Manual checkpoint');dataRender()};
  $('#dataWorkbookBtn').onclick=()=>$('#workbookFile').click();
  $('#dataManagerTab').onclick=()=>dataView('data');
  $('#activityStudioTab').onclick=()=>dataView('activity');
- $('#newActivity').onclick=()=>dataEditActivity();
+ $('#newActivity').onclick=()=>dataEditActivity();if($('#activityLibrarySearch'))$('#activityLibrarySearch').oninput=dataActivityRender;
  $('#exportActivityStudio').onclick=()=>dataExport('activities');
  dataRender();dataActivityRender();
 }
@@ -126,7 +152,8 @@ function dataView(mode){
 }
 function dataActivityRender(){
  const area=$('#activityList');if(!area)return;
- area.innerHTML=activities.map((a,i)=>'<button type="button" class="button secondary activity-list-item" data-activity-index="'+i+'"><strong>'+esc(a.title||a.name||a.id)+'</strong><span>'+esc(a.location||'Flexible venue')+' · '+esc(a.duration||60)+' min · '+(a.covers||[]).length+' covered requirements</span><small>'+esc((a.description||'').slice(0,160))+'</small></button>').join('')||'<p class="tiny muted">No activities yet. Create one or import activities.json from Data & State Manager.</p>';
+ const search=($('#activityLibrarySearch')?.value||'').trim().toLowerCase();
+ area.innerHTML=activities.map((a,i)=>({a,i})).filter(({a})=>!search||[a.title,a.description,a.location,...(a.tags||[]),...(a.covers||[]),...(a.covers||[]).flatMap(id=>{const r=requirements.find(x=>x.id===id);return r?[r.text,...(r.tags||[]),...(r.theme_tags||[])]:[]})].join(' ').toLowerCase().includes(search)).map(({a,i})=>'<button type="button" class="button secondary activity-list-item" data-activity-index="'+i+'"><strong>'+esc(a.title||a.name||a.id)+'</strong><span>'+esc(a.location||'Flexible venue')+' · '+esc(a.duration||60)+' min · '+(a.covers||[]).length+' covered requirements</span><small>'+esc((a.description||'').slice(0,160))+'</small></button>').join('')||'<p class="tiny muted">No activities yet. Create one or import activities.json from Data & State Manager.</p>';
  area.querySelectorAll('[data-activity-index]').forEach(b=>b.onclick=()=>dataEditActivity(Number(b.dataset.activityIndex)));
 }
 function dataEditActivity(index=-1){

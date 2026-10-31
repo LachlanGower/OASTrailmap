@@ -26,6 +26,7 @@ async function inspect(browser,mode,viewport){
     for(const [key,value] of Object.entries(storage))localStorage.setItem(key,JSON.stringify(value));
   },fixture.storage);
   await page.reload({waitUntil:'domcontentloaded'});
+  await page.evaluate(()=>{const toggle=document.querySelector('#groupDuplicateRequirements');if(toggle){toggle.checked=false;toggle.dispatchEvent(new Event('change',{bubbles:true}));}});
   await page.waitForFunction(()=>document.querySelectorAll('#mapCanvas .requirement-node').length===142);
   if(mode==='vue')await page.waitForFunction(
     ()=>document.documentElement.dataset.oasTrailmapRenderer==='vue',{timeout:20000});

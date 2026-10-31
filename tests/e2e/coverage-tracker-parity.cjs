@@ -16,7 +16,9 @@ async function inspect(browser,legacy){
  await page.reload({waitUntil:'domcontentloaded'});
  await page.waitForFunction(()=>document.querySelector('#requirementsTrackerSearch')?.oninput && (document.querySelectorAll('#requirementsTrackerRows tr').length>0 || document.querySelectorAll('#vueCoverageRows tr').length>0),{timeout:20000});
  if(!legacy)await page.waitForFunction(()=>document.documentElement.dataset.oasRequirementsTrackerRenderer==='vue',{timeout:20000});
- await page.locator('[data-mode="schedule"]').click();
+ await page.waitForFunction(()=>document.documentElement.dataset.oasNavRenderer==='vue',{timeout:20000});
+ await page.locator('#requirementsTrackerTab').click();
+ assert.equal(await page.locator('#requirementsWorkspace').isVisible(),true);
  const data=async()=>page.evaluate(()=>{
    const vue=document.documentElement.dataset.oasRequirementsTrackerRenderer==='vue';
    const root=document.querySelector(vue?'#vueCoverageRows':'#requirementsTrackerRows');

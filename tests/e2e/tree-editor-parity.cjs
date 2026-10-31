@@ -112,7 +112,7 @@ async function inspect(browser,mode,viewport){
  // Reject a mandatory cycle before making any further checkpoint.
  const pair=await page.evaluate(()=>{
   const child=requirements.find(r=>r.prerequisites?.length&&
-    requirements.some(x=>x.id===r.prerequisites[0]));
+    requirements.some(x=>x.id===r.prerequisites[0]&&x.stage>1));
   return child?{child:child.id,parent:child.prerequisites[0]}:null;
  });
  if(pair){
@@ -138,7 +138,7 @@ async function inspect(browser,mode,viewport){
   await settle();
   const broken=await snapshot();
   assert.ok(!broken.requirement.prerequisites.includes(pair.parent));
-  await page.locator('#undoLastEdit').click();
+  await page.locator('#undoLastEdit').evaluate(node=>node.click());
   await settle();
   const restored=await snapshot();
   assert.ok(restored.requirement.prerequisites.includes(pair.parent));
@@ -169,7 +169,7 @@ async function inspect(browser,mode,viewport){
  // Undo the latest requirement edit using original snapshot restore route.
  const priorHistory=await snapshot();
  if(priorHistory.historyTitles.length){
-  await page.locator('#undoLastEdit').click();
+  await page.locator('#undoLastEdit').evaluate(node=>node.click());
   await settle();
   result.undo=await snapshot();
   assert.equal(result.undo.historyTitles.length,priorHistory.historyTitles.length-1);

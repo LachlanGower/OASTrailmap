@@ -217,3 +217,37 @@
 .tree-node small{display:block;opacity:.78;margin-top:5px}
 .tree-node:focus-visible,.tree-quick-link:focus-visible{outline:3px solid #287a56;outline-offset:3px}
 .tree-canvas-wrap{scroll-behavior:smooth;overscroll-behavior:contain}
+
+/* Phase 4 refinement: clear sections and compact weekly planning controls */
+.data-manager-sections{display:grid;gap:18px;margin:20px 0}
+.data-manager-section{padding:16px 18px;border:1px solid #dce5dd;border-radius:12px;background:#fbfcfa;min-width:0}
+.data-manager-section>h3{margin:0 0 8px;font-size:1.08rem;color:#214d37}
+.data-manager-section>p{margin:0 0 12px;line-height:1.5}
+#dataExportFormat{display:block;min-width:190px;max-width:260px;padding:9px;margin-top:5px}
+.tree-management-actions{display:flex;flex-wrap:wrap;gap:8px;align-items:center;flex-basis:100%;margin-top:8px;padding-top:10px;border-top:1px solid #dce5dd}
+.mapper-graph-controls{display:flex;flex-wrap:wrap;gap:16px;padding:8px 0 12px}
+.tree-canvas-wrap{height:min(72vh,760px);max-height:760px;overflow:auto;scrollbar-gutter:stable;overscroll-behavior:contain;scroll-behavior:auto}
+.tree-canvas{min-height:100%;width:max-content;min-width:100%;box-sizing:border-box}
+.week-settings{display:flex;flex-wrap:wrap;gap:10px;align-items:end}
+.week-settings label{display:flex;align-items:center;gap:6px}
+.week-settings input[type=number]{width:66px}
+.week-requirement-link,.theme-requirement-link{display:block;width:100%;text-align:left;background:transparent;border:0;border-radius:6px;color:#1b5f46;padding:5px 3px;cursor:pointer;font:inherit;line-height:1.4}
+.week-requirement-link:hover,.theme-requirement-link:hover{background:#e6f3ea;text-decoration:underline}
+.week-requirement-link:focus-visible,.theme-requirement-link:focus-visible{outline:3px solid #287a56;outline-offset:1px}
+.week-activity-accordion>.week-actions,.week-activity-accordion .studio-toolbar{margin:10px 0;gap:8px}
+.week-card{padding:14px 18px}
+.week-card>label{display:inline-flex;gap:8px;align-items:center;margin:8px 12px 8px 0}
+.week-card .week-stage{padding:10px}
+#forecastDisclosure{border:1px solid #dce5dd;border-radius:10px;padding:10px;margin:12px 0}
+#forecastDisclosure>summary{font-weight:700;cursor:pointer;padding:8px}
+.location-subset-wrapper{margin:10px 0}
+.location-subset-wrapper>.selection-panel{margin-top:8px}
+.oas-requirement-dialog{border:1px solid #a7c3ae;border-radius:14px;padding:24px;max-width:min(660px,calc(100vw - 32px));max-height:84vh;overflow:auto;background:#fff;color:#19392d}
+.oas-requirement-dialog::backdrop{background:rgba(7,32,20,.55)}
+.oas-requirement-dialog h2{font-size:1.25rem;line-height:1.35}
+.oas-requirement-dialog section{padding:8px 0;border-bottom:1px solid #e1e9e1}
+.oas-requirement-dialog ul{padding-left:21px}
+@media(max-width:760px){.tree-layout{display:flex;flex-direction:column}.tree-canvas-wrap{width:100%;height:60vh;max-height:650px}.tree-layout>.studio-editor{width:100%;box-sizing:border-box}.data-manager-section{padding:12px}.week-settings{flex-direction:column;align-items:flex-start}}
+
+/* Hidden legacy handlers must never duplicate Vue controls visually. */
+[hidden]{display:none!important}

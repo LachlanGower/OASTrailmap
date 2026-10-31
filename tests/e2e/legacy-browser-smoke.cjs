@@ -25,7 +25,8 @@ const delay = ms => new Promise(resolve=>setTimeout(resolve, ms));
         route.fulfill({status:200,contentType:'application/javascript',body:''})
       );
       await page.goto(ROOT,{waitUntil:'domcontentloaded'});
-      await page.waitForFunction(
+      await page.evaluate(()=>{const toggle=document.querySelector('#groupDuplicateRequirements');if(toggle){toggle.checked=false;toggle.dispatchEvent(new Event('change',{bubbles:true}));}});
+  await page.waitForFunction(
         ()=>document.querySelectorAll('#mapCanvas .requirement-node').length===142,
         {timeout:20000}
       );

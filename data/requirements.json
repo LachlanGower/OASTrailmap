@@ -4182,10 +4182,7 @@
       "stream": "Camping",
       "text": "I can strike a match.",
       "workflow": null,
-      "prerequisites": [
-        "s1-camping-i-know-the-basic-elements-that-you-need-to-make-",
-        "s1-camping-i-know-that-i-should-follow-directions-from-the-"
-      ],
+      "prerequisites": [],
       "suggested_links": [],
       "source": "OAS-Requirements.txt",
       "tags": [
@@ -4216,10 +4213,7 @@
       "stream": "Camping",
       "text": "I can help prepare food for cooking at camp.",
       "workflow": null,
-      "prerequisites": [
-        "s1-camping-i-know-about-the-buddy-system",
-        "s1-camping-i-know-that-i-should-follow-directions-from-the-"
-      ],
+      "prerequisites": [],
       "suggested_links": [],
       "source": "OAS-Requirements.txt",
       "tags": [
@@ -4315,9 +4309,7 @@
       "stream": "Camping",
       "text": "I can set out my sleeping area at camp.",
       "workflow": null,
-      "prerequisites": [
-        "s1-camping-i-can-help-pack-a-bag-for-camp"
-      ],
+      "prerequisites": [],
       "suggested_links": [],
       "source": "OAS-Requirements.txt",
       "tags": [
@@ -4347,9 +4339,7 @@
       "stream": "Camping",
       "text": "I can care for my basic personal gear on an overnight camp.",
       "workflow": null,
-      "prerequisites": [
-        "s1-camping-i-can-help-pack-a-bag-for-camp"
-      ],
+      "prerequisites": [],
       "suggested_links": [],
       "source": "OAS-Requirements.txt",
       "tags": [
@@ -4628,9 +4618,7 @@
       "stream": "Bushwalking",
       "text": "I can identify the four main cardinal points of the compass.",
       "workflow": null,
-      "prerequisites": [
-        "s1-bushwalking-i-can-identify-the-main-parts-of-the-compass"
-      ],
+      "prerequisites": [],
       "suggested_links": [],
       "source": "OAS-Requirements.txt",
       "tags": [
@@ -4692,11 +4680,7 @@
       "stream": "Bushwalking",
       "text": "I have attended at least one bushwalk of at least one hour’s duration at this stage.",
       "workflow": null,
-      "prerequisites": [
-        "s1-bushwalking-i-can-dress-myself-for-a-day-walk",
-        "s1-bushwalking-i-can-help-pack-a-backpack-for-a-day-walk",
-        "s1-bushwalking-i-can-explain-the-buddy-system"
-      ],
+      "prerequisites": [],
       "suggested_links": [],
       "source": "OAS-Requirements.txt",
       "tags": [
@@ -4728,10 +4712,7 @@
       "stream": "Bushwalking",
       "text": "I can demonstrate behaving safely while bushwalking.",
       "workflow": null,
-      "prerequisites": [
-        "s1-bushwalking-i-can-explain-the-buddy-system",
-        "s1-bushwalking-i-know-why-it-is-important-to-stick-to-trails-wh"
-      ],
+      "prerequisites": [],
       "suggested_links": [],
       "source": "OAS-Requirements.txt",
       "tags": [
@@ -5014,10 +4995,7 @@
       "stream": "Bushcraft",
       "text": "I can be safe around a campfire.",
       "workflow": null,
-      "prerequisites": [
-        "s1-bushcraft-i-can-collect-sticks-for-preparing-a-campfire",
-        "s1-bushcraft-i-know-about-the-buddy-system"
-      ],
+      "prerequisites": [],
       "suggested_links": [],
       "source": "OAS-Requirements.txt",
       "tags": [
@@ -5138,9 +5116,7 @@
       "stream": "Bushcraft",
       "text": "I can hang a clothesline at camp with a clove hitch or other knot.",
       "workflow": null,
-      "prerequisites": [
-        "s1-bushcraft-i-know-how-to-correctly-pack-ropes-away"
-      ],
+      "prerequisites": [],
       "suggested_links": [],
       "source": "OAS-Requirements.txt",
       "tags": [

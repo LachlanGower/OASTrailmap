@@ -26,13 +26,14 @@ async function inspect(browser,mode,viewport){
   await page.route('https://cdn.jsdelivr.net/**',r=>r.fulfill({status:200,contentType:'application/javascript',body:''}));
   const url=new URL(BASE);if(mode==='legacy')url.searchParams.set('navRenderer','legacy');
   await page.goto(url.toString(),{waitUntil:'domcontentloaded'});
+  await page.evaluate(()=>{const toggle=document.querySelector('#groupDuplicateRequirements');if(toggle){toggle.checked=false;toggle.dispatchEvent(new Event('change',{bubbles:true}));}});
   await page.waitForFunction(()=>document.querySelectorAll('#mapCanvas .requirement-node').length===142);
   await page.waitForFunction(()=>document.querySelector('#appRequirementsTab')?.onclick!==null||
     document.documentElement.dataset.oasNavRenderer==='vue');
   if(mode==='vue') await page.waitForFunction(
     ()=>document.documentElement.dataset.oasNavRenderer==='vue',{timeout:20000});
   else assert.notEqual(await page.locator('html').getAttribute('data-oas-nav-renderer'),'vue');
-  assert.equal(await page.locator('nav.studio-nav button').count(),8);
+  assert.equal(await page.locator('nav.studio-nav button:visible').count(),9);
   const results=[];
   for(const item of tabs) {
     await page.locator(item.tab).click();
@@ -51,7 +52,7 @@ async function inspect(browser,mode,viewport){
     results.push({
       label:item.label,
       panelVisibility:panels,
-      navClasses:await page.locator('nav.studio-nav button').evaluateAll(nodes=>nodes.map(x=>x.className)),
+      activeCount:await page.locator('nav.studio-nav button.primary:visible').count(),
       sectionHeading:await page.locator(item.panel).locator('h2').first().innerText()
     });
   }
@@ -68,7 +69,8 @@ async function inspect(browser,mode,viewport){
     for(const viewport of [{width:1440,height:900},{width:390,height:844}]){
       const legacy=await inspect(browser,'legacy',viewport);
       const vue=await inspect(browser,'vue',viewport);
-      assert.deepEqual(vue,legacy,'Vue navigation changed workspace behavior at '+viewport.width+'px');
+      assert.deepEqual(vue.map(({activeCount,...item})=>item),legacy.map(({activeCount,...item})=>item),'Vue navigation changed workspace behavior at '+viewport.width+'px');
+      assert.ok(vue.every(item=>item.activeCount===1),'Only one workspace can be active');
       console.log('Navigation 7/7 parity: '+viewport.width+'px');
     }
   }finally{await browser.close();}

@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { computed } from 'vue';
 export interface WeekSkill {id:string;text:string;stage:number;}
-export interface WeekCard {week:number;locked:boolean;theme:string;capacity:number;skills:WeekSkill[];potential:number;activityName:string;}
+export interface WeekCard {week:number;locked:boolean;theme:string;capacity:number;stageLimit:number;skills:WeekSkill[];potential:number;activityName:string;}
 const props=defineProps<{state:{current:WeekCard[]};tags:{current:string[]}}>();
 const weeks=computed(()=>props.state.current);
 const themes=computed(()=>props.tags.current);
@@ -10,11 +10,11 @@ const themes=computed(()=>props.tags.current);
  <article v-for="w in weeks" :key="w.week" :class="['week-card',{'week-locked':w.locked}]">
   <div class="week-head"><strong>Week {{ w.week }}</strong><label><input type="checkbox" :data-week-lock="w.week-1" :checked="w.locked"> Lock</label></div>
   <label>Theme <select :data-week-tag="w.week-1" :value="w.theme"><option value="">Select theme</option><option v-for="t in themes" :key="t" :value="t">{{ t }}</option></select></label>
-  <label>Capacity <input type="number" min="1" max="12" :data-week-capacity="w.week-1" :value="w.capacity"></label>
+  <div class="week-settings"><label>Total requirements <input type="number" min="1" max="12" :data-week-capacity="w.week-1" :value="w.capacity"></label><label>Max per stage <input type="number" min="1" max="12" :data-week-stage-limit="w.week-1" :value="w.stageLimit"></label></div>
   <small>{{ w.skills.length }} planned requirements · {{ w.potential }} Scouts affected</small>
-  <div class="week-stage-grid"><section v-for="stage in [1,2,3]" :key="stage" class="week-stage"><strong>Stage {{stage}}</strong><ol><li v-for="r in w.skills.filter(x=>x.stage===stage)" :key="r.id" :title="r.id">{{r.text}}</li></ol><p v-if="!w.skills.some(x=>x.stage===stage)" class="tiny muted">None planned</p></section></div>
+  <div class="week-stage-grid"><section v-for="stage in [1,2,3]" :key="stage" class="week-stage"><strong>Stage {{stage}}</strong><ol><li v-for="r in w.skills.filter(x=>x.stage===stage)" :key="r.id"><button type="button" class="week-requirement-link" :data-week-req="r.id" :title="r.id">{{r.text}}</button></li></ol><p v-if="!w.skills.some(x=>x.stage===stage)" class="tiny muted">None planned</p></section></div>
   <p v-if="!w.skills.length" class="tiny muted">No requirements allocated.</p>
-  <details class="week-activity-accordion"><summary>Activities and week actions</summary><div class="week-actions">
+  <details class="week-activity-accordion" open><summary>Activities and week actions</summary><div class="week-actions">
    <button class="button secondary" :data-week-move="w.week-1" :disabled="w.week===1">↑ Move earlier</button>
    <button class="button secondary" :data-week-edit="w.week-1">Edit skills</button>
    <label class="button secondary file-button" :for="'week-activity-'+(w.week-1)">{{ w.activityName?'Replace activity':'Attach activity' }}</label>

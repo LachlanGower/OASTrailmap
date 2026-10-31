@@ -9,8 +9,7 @@ const actions=[
 ] as const;
 </script>
 <template>
- <section class="recovery-section" aria-labelledby="recovery-heading">
-  <h3 id="recovery-heading">Reset &amp; Recovery</h3>
+ <section class="recovery-section" aria-label="Destructive reset controls">
   <p class="muted">Reset only what you choose. Before destructive actions, download a full backup.</p>
   <div class="studio-toolbar">
    <button v-for="action in actions" :key="action.id" type="button" class="button secondary" :data-recovery-action="action.id" :aria-describedby="'recovery-warning'" @click="activate(action.id)">{{action.label}}</button>

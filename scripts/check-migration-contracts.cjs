@@ -19,7 +19,7 @@ const html = fs.readFileSync(fromRoot('index.html'),'utf8');
 const actualIds = [...html.matchAll(/\bid="([^"]+)"/g)].map(m => m[1]);
 for(const id of baseline.dom_element_ids) assert.ok(actualIds.includes(id),
   'A required legacy DOM ID was removed: '+id);
-const allowedNewIds=new Set(['weeklyThemesTab','requirementsTrackerTab','weeklyThemes','weeklyThemeSelect','weeklyThemeContent','requirementsWorkspace','showRecommendedMapperLinks']);
+const allowedNewIds=new Set(['groupDuplicateRequirements','hideCompletedScouts','treeTagSearch','deleteTree','forecastDisclosure','trackerThemeFilter','trackerStageFilter','trackerStreamFilter','activityLibrarySearch','dataSnapshot','dataImporter','dataExporter','dataExportFormat','dataReset','weeklyThemesTab','requirementsTrackerTab','weeklyThemes','weeklyThemeSelect','weeklyThemeContent','requirementsWorkspace','showRecommendedMapperLinks']);
 for(const id of actualIds) assert.ok(baseline.dom_element_ids.includes(id)||allowedNewIds.has(id),
   'Unexpected new static DOM ID: '+id);
 assert.equal(new Set(actualIds).size, actualIds.length, 'Duplicate static DOM IDs');

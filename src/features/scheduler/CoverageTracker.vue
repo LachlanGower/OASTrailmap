@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import {computed} from 'vue';
-export interface CoverageItem {id:string;text:string;stage:number;stream:string;linked:number;activityNames:string[];planned:number;needed:number;weeks:number[];scoutsDone:number;scoutsTotal:number;evidence:number;status:string}
+export interface CoverageItem {id:string;text:string;stage:number;stream:string;linked:number;activityNames:string[];planned:number;needed:number;weeks:number[];scoutsDone:number;scoutsTotal:number;evidence:number;status:string;trelloNote?:string;trelloList?:string}
 export interface CoverageSnapshot {rows:CoverageItem[];counts:Record<string,number>}
 const props=defineProps<{state:{current:CoverageSnapshot}}>();
 const data=computed(()=>props.state.current);
@@ -19,7 +19,7 @@ const statusNames:Record<string,string>={unaddressed:'Unaddressed',partial:'Part
     <td>{{ row.linked }} linked<small v-if="row.linked">{{ row.activityNames.slice(0,2).join('; ') }}</small></td>
     <td>{{ row.planned }}/{{ row.needed }}<small>{{ row.weeks.join(', ')||'Not scheduled' }}</small></td>
     <td>{{ row.scoutsDone }}/{{ row.scoutsTotal }} Scouts complete<small v-if="row.scoutsTotal">{{ row.evidence }} total evidence credits</small></td>
-    <td><span :class="['tracker-status',row.status]">{{ row.status }}</span></td>
+    <td><span :class="['tracker-status',row.status]">{{ row.status }}</span><small v-if="row.trelloList">Trello: {{row.trelloList}}</small><small v-if="row.trelloNote">{{row.trelloNote}}</small></td>
    </tr>
    <tr v-if="!data.rows.length"><td colspan="6">No requirements match these filters.</td></tr>
   </tbody>
