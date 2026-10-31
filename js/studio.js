@@ -309,6 +309,7 @@ function buildSchedule(keepLocks=false){const weeks=studio.weeks,scope=scheduleS
  const preferredExternal=(studio.externalWeeks||[]).includes(wi+1);
  const allowedLocations=studio.allowedLocations||[];
  const permitted=!studio.useLocations||!allowedLocations.length||locationOptions.some(l=>allowedLocations.includes(l));
+ if(!permitted)continue;
  const locationScore=studio.useLocations?(permitted?(compatible?22:chosenLocations.length?-9:8):-60):0;
  const externalScore=studio.useLocations&&external?(preferredExternal?28:-18):0;
  const progressScore=count*8+ready*5+descendantsCount(r.id)*2;
