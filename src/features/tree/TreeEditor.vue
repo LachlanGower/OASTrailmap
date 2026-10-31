@@ -83,7 +83,7 @@ function submit(event:Event):void {
         </select>
       </label>
       <label>Stage <input name="stage" :value="current.stage" readonly></label>
-      <fieldset><legend>Tags</legend><label>Search tags <input v-model="tagsQuery" type="search" placeholder="Filter tags"></label>
+      <fieldset><legend>Tags</legend><input v-for="tag in current.selectedTags.filter(t=>!filteredTags.includes(t))" :key="'keep-tag-'+tag" type="hidden" name="tags" :value="tag"><label>Search tags <input v-model="tagsQuery" type="search" placeholder="Filter tags"></label>
         <div class="studio-tag-list">
           <label v-for="tag in filteredTags" :key="tag">
             <input type="checkbox" name="tags" :value="tag" :checked="current.selectedTags.includes(tag)">
@@ -92,15 +92,15 @@ function submit(event:Event):void {
         </div>
       </fieldset>
       <label>Find prerequisite or recommended link <input v-model="linkQuery" type="search" placeholder="Search text, ID or tree"></label>
-      <fieldset><legend>Mandatory prerequisites</legend>
+      <fieldset><legend>Mandatory prerequisites</legend><p v-if="Number(current.stage)===1" class="tiny muted">Stage 1 has no mandatory prerequisites.</p><input v-for="id in current.prerequisites.filter(id=>!filteredChoices.some(c=>c.id===id))" :key="'keep-parent-'+id" type="hidden" name="prerequisites" :value="id">
         <div class="studio-prereqs">
           <label v-for="choice in filteredChoices" :key="choice.id">
-            <input type="checkbox" name="prerequisites" :value="choice.id" :checked="current.prerequisites.includes(choice.id)">
+            <input type="checkbox" name="prerequisites" :value="choice.id" :checked="current.prerequisites.includes(choice.id)" :disabled="Number(current.stage)===1">
             {{ choice.text.slice(0,95) }} <small>({{ choice.tree }})</small>
           </label>
         </div>
       </fieldset>
-      <fieldset><legend>Recommended learning links</legend>
+      <fieldset><legend>Recommended learning links</legend><input v-for="id in current.recommended.filter(id=>!filteredChoices.some(c=>c.id===id))" :key="'keep-recommended-'+id" type="hidden" name="recommended" :value="id">
         <div class="studio-prereqs">
           <label v-for="choice in current.choices" :key="choice.id">
             <input type="checkbox" name="recommended" :value="choice.id" :checked="current.recommended.includes(choice.id)">
