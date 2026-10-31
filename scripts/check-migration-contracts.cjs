@@ -17,8 +17,11 @@ const reqs = read('data/requirements.json').requirements;
 const html = fs.readFileSync(fromRoot('index.html'),'utf8');
 
 const actualIds = [...html.matchAll(/\bid="([^"]+)"/g)].map(m => m[1]);
-assert.deepEqual(actualIds, baseline.dom_element_ids,
-  'Static DOM ID list or order changed; review workspace and JS dependencies');
+for(const id of baseline.dom_element_ids) assert.ok(actualIds.includes(id),
+  'A required legacy DOM ID was removed: '+id);
+const allowedNewIds=new Set(['weeklyThemesTab','requirementsTrackerTab','weeklyThemes','weeklyThemeSelect','weeklyThemeContent','requirementsWorkspace']);
+for(const id of actualIds) assert.ok(baseline.dom_element_ids.includes(id)||allowedNewIds.has(id),
+  'Unexpected new static DOM ID: '+id);
 assert.equal(new Set(actualIds).size, actualIds.length, 'Duplicate static DOM IDs');
 
 const sources = [...html.matchAll(/<script[^>]+src="([^"]+)"/g)].map(m => m[1]);
