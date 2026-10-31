@@ -1,5 +1,5 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
   "activities": [
     {
       "id": "example-map-and-compass",
@@ -17,5 +17,6 @@
       "safety": "Buddy system and boundaries",
       "review": "Ask Scouts what bearings they used"
     }
-  ]
+  ],
+  "format": "oas-trailmap-activities"
 }
