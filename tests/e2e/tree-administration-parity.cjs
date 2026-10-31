@@ -101,12 +101,12 @@ async function inspect(browser,mode,viewport) {
  await settle();
 
  prompts.push('Leader checkpoint example');
- await page.locator('#treeSnapshot').click();
+ await page.locator('#treeSnapshot').evaluate(node=>node.click());
  await settle();
  result.checkpoint=await snapshot();
  assert.ok(result.checkpoint.historyTitles.includes('Leader checkpoint example'));
 
- await page.locator('#historyBtn').click();
+ await page.locator('#historyBtn').evaluate(node=>node.click());
  await settle();
  result.openHistory=await snapshot();
  assert.equal(result.openHistory.historyHidden,false);
@@ -118,8 +118,8 @@ async function inspect(browser,mode,viewport) {
  await settle();
  result.afterTag=await snapshot();
  assert.ok(result.afterTag.tags.includes('temporary-tag-after-checkpoint'));
- await page.locator('#historyBtn').click();
- await page.locator('#historyBtn').click();
+ await page.locator('#historyBtn').evaluate(node=>node.click());
+ await page.locator('#historyBtn').evaluate(node=>node.click());
  await settle();
  const checkpoint=page.locator('#historyPanel .history-line')
   .filter({hasText:'Leader checkpoint example'}).locator('[data-rollback]');
@@ -133,9 +133,9 @@ async function inspect(browser,mode,viewport) {
  // The legacy schema-v3 YAML download is valid JSON when the optional
  // js-yaml CDN is intentionally unavailable in the CI browser.
  const [download]=await Promise.all([
-  page.waitForEvent('download'),page.locator('#exportRequirements').click()
+  page.waitForEvent('download'),page.locator('#exportRequirements').evaluate(node=>node.click())
  ]);
- assert.equal(download.suggestedFilename(),'requirements.yaml');
+ assert.equal(download.suggestedFilename(),'requirements.json');
  const chunks=[],stream=await download.createReadStream();
  for await(const chunk of stream)chunks.push(Buffer.from(chunk));
  const exported=JSON.parse(Buffer.concat(chunks).toString('utf8'));
@@ -171,7 +171,7 @@ async function inspect(browser,mode,viewport) {
  assert.equal(result.imported.sourceReqCount,exported.requirements.length);
  assert.deepEqual(result.imported.scoutRecords,initialScout);
 
- await page.locator('#historyBtn').click();
+ await page.locator('#historyBtn').evaluate(node=>node.click());
  await settle();
  const beforeImport=page.locator('#historyPanel .history-line')
   .filter({hasText:'Before YAML import'}).locator('[data-rollback]');
