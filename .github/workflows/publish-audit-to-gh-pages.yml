@@ -1,7 +1,7 @@
-name: Publish audited Vue dist to gh-pages branch
+name: Publish Phase 4 testing build to gh-pages
 on:
   push:
-    branches: [migration/pre-phase5-full-audit]
+    branches: [feature/phase4-ux-data-refinement]
     paths:
       - '.github/workflows/publish-audit-to-gh-pages.yml'
       - 'src/**'
@@ -20,7 +20,7 @@ on:
 permissions:
   contents: write
 concurrency:
-  group: oas-audit-gh-pages-publish
+  group: oas-phase4-gh-pages-publish
   cancel-in-progress: false
 jobs:
   build-and-publish:
@@ -48,7 +48,7 @@ jobs:
         run: |
           set -euo pipefail
           touch dist/.nojekyll
-          printf '%s\n' "Build source: ${GITHUB_SHA}" "This branch contains compiled static output only." > dist/BUILD-INFO.txt
+          printf '%s\n' "Build source: ${GITHUB_SHA}" "Channel: Phase 4 testing candidate (PR #40); not approved for production." "This branch contains compiled static output only." > dist/BUILD-INFO.txt
           cd dist
           git init -b gh-pages
           git config user.name 'github-actions[bot]'
