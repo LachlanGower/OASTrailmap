@@ -16,6 +16,7 @@ async function inspect(browser,mode,viewport) {
   }));
   const url=new URL(ROOT);if(mode==='legacy')url.searchParams.set('helpRenderer','legacy');
   await page.goto(url.toString(),{waitUntil:'domcontentloaded'});
+  await page.evaluate(()=>{const toggle=document.querySelector('#groupDuplicateRequirements');if(toggle){toggle.checked=false;toggle.dispatchEvent(new Event('change',{bubbles:true}));}});
   await page.waitForFunction(()=>document.querySelectorAll('#mapCanvas .requirement-node').length===142);
   if(mode==='vue') await page.waitForFunction(
     ()=>document.documentElement.dataset.oasHelpRenderer==='vue',{timeout:20000});
