@@ -10,14 +10,14 @@
  }
  function render(){
   const select=$('weeklyThemeSelect'),host=$('weeklyThemeContent');
-  if(!select||!host||!Array.isArray(window.requirements))return;
+  if(!select||!host||typeof requirements==='undefined'||!Array.isArray(requirements))return;
   const themes=[...new Set(requirements.flatMap(r=>r.theme_tags||r.tags||[]))].sort();
   const prior=select.value;
   select.innerHTML='<option value="">Select a theme</option>';
   for(const t of themes){const opt=document.createElement('option');opt.value=t;opt.textContent=t;select.append(opt)}
   select.value=themes.includes(prior)?prior:'';
   const theme=select.value;if(!theme){host.replaceChildren();return}
-  const matched=requirements.filter(r=>same(r,theme)),activityMatches=(window.activities||[]).map(a=>({...a,_hits:(a.covers||[]).filter(id=>matched.some(r=>r.id===id))})).filter(a=>a._hits.length);
+  const matched=requirements.filter(r=>same(r,theme)),activityMatches=(typeof activities!=='undefined'?activities:[]).map(a=>({...a,_hits:(a.covers||[]).filter(id=>matched.some(r=>r.id===id))})).filter(a=>a._hits.length);
   const grid=document.createElement('div');grid.className='theme-stage-grid';
   for(let stage=1;stage<=3;stage++){
    const col=document.createElement('section');col.className='theme-stage';const title=document.createElement('h3');title.textContent='Stage '+stage;col.append(title);
@@ -34,8 +34,6 @@
   $('weeklyThemesTab')?.addEventListener('click',()=>{show('weeklyThemes');render()});
   $('requirementsTrackerTab')?.addEventListener('click',()=>show('requirementsWorkspace'));
   $('weeklyThemeSelect')?.addEventListener('change',render);
-  const observer=new MutationObserver(()=>{}); // no persistent Scout-data observer needed
-  void observer;
  });
  window.__oasRenderWeeklyThemes=render;
 })();
