@@ -21,6 +21,8 @@ function classesFor(action: NavigationAction): string {
     <button :class="classesFor('trail')" data-mode="trail" @click="dispatch('trail', $event)">Trailmap</button>
     <button :class="classesFor('tree')" data-mode="tree" @click="dispatch('tree', $event)">Skill Tree Mapper</button>
     <button :class="classesFor('schedule')" data-mode="schedule" @click="dispatch('schedule', $event)">40-week Scheduler</button>
+    <button :class="classesFor('weeklyThemes')" type="button" id="weeklyThemesTab" @click="dispatch('weeklyThemes', $event)">Weekly Themes</button>
+    <button :class="classesFor('tracker')" type="button" id="requirementsTrackerTab" @click="dispatch('tracker', $event)">Requirements Tracker</button>
     <button :class="classesFor('activity')" type="button" id="activityStudioTab" @click="dispatch('activity', $event)">Activity Studio</button>
     <button :class="classesFor('data')" type="button" id="dataManagerTab" @click="dispatch('data', $event)">Data &amp; State</button>
     <button :class="classesFor('help')" type="button" id="helpDesignTab" @click="dispatch('help', $event)">Help &amp; Design</button>
