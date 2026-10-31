@@ -33,7 +33,7 @@ function call(action:TreeAdminAction,event:Event):void {
         <option value="custom">This tree’s own links</option>
       </select>
     </label>
-    <span id="treeGraphHint" class="tree-graph-hint">{{ view.graphHint }}</span>
+    <span id="treeGraphHint" class="tree-graph-hint" hidden>{{ view.graphHint }}</span>
     <div class="tree-management-actions">
     <button id="newTree" class="button secondary" @click="call('new',$event)">New tree</button>
     <button id="renameTree" class="button secondary" :disabled="view.isTag" @click="call('rename',$event)">Rename tree</button>
