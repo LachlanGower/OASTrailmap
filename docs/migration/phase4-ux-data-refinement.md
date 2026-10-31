@@ -23,3 +23,6 @@
 
 ## Test gates
 `npm ci`, `npm run typecheck`, `npm test`, `npm run build`, `npm run check:dist`, full Playwright `tests/e2e/*.cjs` against Vite dev and compiled dist, including focused data-format and workspace UX tests. Unfixed failures keep PR draft.
+
+## Pages test deployment
+`gh-pages` is a compiled testing channel for this draft PR, not a Phase 5 or production sign-off. The build manifest identifies the exact source SHA. Always back up browser-local Scout records before destructive testing.
