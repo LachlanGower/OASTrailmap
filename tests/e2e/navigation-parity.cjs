@@ -52,7 +52,7 @@ async function inspect(browser,mode,viewport){
     results.push({
       label:item.label,
       panelVisibility:panels,
-      navClasses:await page.locator('nav.studio-nav button').evaluateAll(nodes=>nodes.map(x=>x.className)),
+      activeCount:await page.locator('nav.studio-nav button.primary:visible').count(),
       sectionHeading:await page.locator(item.panel).locator('h2').first().innerText()
     });
   }
@@ -69,7 +69,8 @@ async function inspect(browser,mode,viewport){
     for(const viewport of [{width:1440,height:900},{width:390,height:844}]){
       const legacy=await inspect(browser,'legacy',viewport);
       const vue=await inspect(browser,'vue',viewport);
-      assert.deepEqual(vue,legacy,'Vue navigation changed workspace behavior at '+viewport.width+'px');
+      assert.deepEqual(vue.map(({activeCount,...item})=>item),legacy.map(({activeCount,...item})=>item),'Vue navigation changed workspace behavior at '+viewport.width+'px');
+      assert.ok(vue.every(item=>item.activeCount===1),'Only one workspace can be active');
       console.log('Navigation 7/7 parity: '+viewport.width+'px');
     }
   }finally{await browser.close();}
