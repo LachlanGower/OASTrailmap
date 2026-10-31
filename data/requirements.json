@@ -23,7 +23,14 @@
       "occurrence_note": "Planning default: one session to gather evidence; leader confirmation remains necessary.",
       "theme_tags": [
         "Equipment & packing"
-      ]
+      ],
+      "locations": {
+        "preferred": "Scout Hall - indoor",
+        "alternatives": [
+          "Scout Hall - outdoor"
+        ]
+      },
+      "location_basis": "inferred_planning_only"
     },
     {
       "id": "s3-camping-i-know-how-and-where-to-get-the-latest-weather-f",
@@ -49,7 +56,14 @@
         "Weather",
         "Planning",
         "Discussion / theory"
-      ]
+      ],
+      "locations": {
+        "preferred": "Scout Hall - indoor",
+        "alternatives": [
+          "Scout Hall - outdoor"
+        ]
+      },
+      "location_basis": "inferred_planning_only"
     },
     {
       "id": "s3-camping-i-can-help-plan-a-balanced-meal-for-camp",
@@ -87,7 +101,15 @@
       "theme_tags": [
         "Food & cooking",
         "Planning"
-      ]
+      ],
+      "locations": {
+        "preferred": "Scout Hall - outdoor",
+        "alternatives": [
+          "Scout Hall - indoor",
+          "Campsite"
+        ]
+      },
+      "location_basis": "inferred_planning_only"
     },
     {
       "id": "s3-camping-i-know-the-benefits-of-using-gas-to-cook-and-can",
@@ -127,7 +149,14 @@
         "Safety",
         "Food & cooking",
         "Discussion / theory"
-      ]
+      ],
+      "locations": {
+        "preferred": "Scout Hall - indoor",
+        "alternatives": [
+          "Scout Hall - outdoor"
+        ]
+      },
+      "location_basis": "inferred_planning_only"
     },
     {
       "id": "s3-camping-i-can-list-group-equipment-required-for-camp",
@@ -164,7 +193,14 @@
       "theme_tags": [
         "Equipment & packing",
         "Discussion / theory"
-      ]
+      ],
+      "locations": {
+        "preferred": "Scout Hall - indoor",
+        "alternatives": [
+          "Scout Hall - outdoor"
+        ]
+      },
+      "location_basis": "inferred_planning_only"
     },
     {
       "id": "s3-camping-i-know-how-to-maintain-personal-hygiene-while-ca",
@@ -201,7 +237,14 @@
       "theme_tags": [
         "Hygiene & personal care",
         "Discussion / theory"
-      ]
+      ],
+      "locations": {
+        "preferred": "Scout Hall - indoor",
+        "alternatives": [
+          "Scout Hall - outdoor"
+        ]
+      },
+      "location_basis": "inferred_planning_only"
     },
     {
       "id": "s3-camping-i-can-assemble-a-personal-first-aid-kit-for-a-ca",
@@ -231,7 +274,14 @@
       "theme_tags": [
         "First aid",
         "Equipment & packing"
-      ]
+      ],
+      "locations": {
+        "preferred": "Scout Hall - indoor",
+        "alternatives": [
+          "Scout Hall - outdoor"
+        ]
+      },
+      "location_basis": "inferred_planning_only"
     },
     {
       "id": "s3-camping-i-know-what-drsabcd-stands-for-and-how-to-use-it",
@@ -261,7 +311,14 @@
       "theme_tags": [
         "First aid",
         "Discussion / theory"
-      ]
+      ],
+      "locations": {
+        "preferred": "Scout Hall - indoor",
+        "alternatives": [
+          "Scout Hall - outdoor"
+        ]
+      },
+      "location_basis": "inferred_planning_only"
     },
     {
       "id": "s3-camping-i-can-demonstrate-keeping-myself-safe-from-natur",
@@ -283,7 +340,15 @@
       "occurrence_note": "Planning default: one session to gather evidence; leader confirmation remains necessary.",
       "theme_tags": [
         "Safety"
-      ]
+      ],
+      "locations": {
+        "preferred": "Scout Hall - outdoor",
+        "alternatives": [
+          "Scout Hall - indoor",
+          "Campsite"
+        ]
+      },
+      "location_basis": "inferred_planning_only"
     },
     {
       "id": "s3-camping-i-can-help-build-a-campfire-and-collect-material",
@@ -321,7 +386,15 @@
       "occurrence_note": "Planning default: one session to gather evidence; leader confirmation remains necessary.",
       "theme_tags": [
         "Fire"
-      ]
+      ],
+      "locations": {
+        "preferred": "Campsite",
+        "alternatives": [
+          "Local outdoor area",
+          "Scout Hall - outdoor"
+        ]
+      },
+      "location_basis": "inferred_planning_only"
     },
     {
       "id": "s3-camping-i-can-cook-a-meal-on-a-campfire-with-assistance",
@@ -362,7 +435,15 @@
       "theme_tags": [
         "Food & cooking",
         "Fire"
-      ]
+      ],
+      "locations": {
+        "preferred": "Campsite",
+        "alternatives": [
+          "Local outdoor area",
+          "Scout Hall - outdoor"
+        ]
+      },
+      "location_basis": "inferred_planning_only"
     },
     {
       "id": "s3-camping-i-have-used-a-gas-cooker-to-help-cook-a-camp-mea",
@@ -399,7 +480,15 @@
       "occurrence_note": "Planning default: one session to gather evidence; leader confirmation remains necessary.",
       "theme_tags": [
         "Food & cooking"
-      ]
+      ],
+      "locations": {
+        "preferred": "Scout Hall - outdoor",
+        "alternatives": [
+          "Scout Hall - indoor",
+          "Campsite"
+        ]
+      },
+      "location_basis": "inferred_planning_only"
     },
     {
       "id": "s3-camping-i-can-help-run-an-activity-at-a-camp",
@@ -420,7 +509,15 @@
       "occurrence_note": "Planning default: one session to gather evidence; leader confirmation remains necessary.",
       "theme_tags": [
         "Leadership & teamwork"
-      ]
+      ],
+      "locations": {
+        "preferred": "Scout Hall - outdoor",
+        "alternatives": [
+          "Scout Hall - indoor",
+          "Campsite"
+        ]
+      },
+      "location_basis": "inferred_planning_only"
     },
     {
       "id": "s3-camping-i-can-set-up-a-tent-without-help-from-an-adult",
@@ -459,7 +556,15 @@
       "occurrence_note": "Planning default: one session to gather evidence; leader confirmation remains necessary.",
       "theme_tags": [
         "Shelter & tents"
-      ]
+      ],
+      "locations": {
+        "preferred": "Campsite",
+        "alternatives": [
+          "Local outdoor area",
+          "Scout Hall - outdoor"
+        ]
+      },
+      "location_basis": "inferred_planning_only"
     },
     {
       "id": "s3-camping-i-have-spent-5-nights-on-camp-in-a-tent-by-the-e",
@@ -501,7 +606,15 @@
         "Shelter & tents",
         "Outdoor experience",
         "External / real-world experience"
-      ]
+      ],
+      "locations": {
+        "preferred": "Campsite",
+        "alternatives": [
+          "Local outdoor area",
+          "Scout Hall - outdoor"
+        ]
+      },
+      "location_basis": "inferred_planning_only"
     },
     {
       "id": "s3-camping-i-know-how-to-treat-cuts-and-minor-bleeding",
@@ -530,7 +643,14 @@
       "theme_tags": [
         "First aid",
         "Discussion / theory"
-      ]
+      ],
+      "locations": {
+        "preferred": "Scout Hall - indoor",
+        "alternatives": [
+          "Scout Hall - outdoor"
+        ]
+      },
+      "location_basis": "inferred_planning_only"
     },
     {
       "id": "s3-camping-i-can-teach-the-importance-of-the-buddy-system-t",
@@ -568,7 +688,15 @@
       "theme_tags": [
         "Safety",
         "Leadership & teamwork"
-      ]
+      ],
+      "locations": {
+        "preferred": "Scout Hall - outdoor",
+        "alternatives": [
+          "Scout Hall - indoor",
+          "Campsite"
+        ]
+      },
+      "location_basis": "inferred_planning_only"
     },
     {
       "id": "s3-camping-i-can-demonstrate-how-to-store-food-at-camp",
@@ -605,7 +733,15 @@
       "occurrence_note": "Planning default: one session to gather evidence; leader confirmation remains necessary.",
       "theme_tags": [
         "Food & cooking"
-      ]
+      ],
+      "locations": {
+        "preferred": "Scout Hall - outdoor",
+        "alternatives": [
+          "Scout Hall - indoor",
+          "Campsite"
+        ]
+      },
+      "location_basis": "inferred_planning_only"
     },
     {
       "id": "s3-camping-i-have-learnt-3-knots-that-can-help-me-during-a-",
@@ -642,7 +778,14 @@
       "theme_tags": [
         "Knots & rope",
         "Reflection & review"
-      ]
+      ],
+      "locations": {
+        "preferred": "Scout Hall - indoor",
+        "alternatives": [
+          "Scout Hall - outdoor"
+        ]
+      },
+      "location_basis": "inferred_planning_only"
     },
     {
       "id": "s3-camping-i-have-discussed-the-ways-i-can-improve-the-camp",
@@ -668,7 +811,14 @@
       "theme_tags": [
         "Reflection & review",
         "Discussion / theory"
-      ]
+      ],
+      "locations": {
+        "preferred": "Scout Hall - indoor",
+        "alternatives": [
+          "Scout Hall - outdoor"
+        ]
+      },
+      "location_basis": "inferred_planning_only"
     },
     {
       "id": "s3-camping-i-have-discussed-my-camping-and-how-improvements",
@@ -707,7 +857,14 @@
       "theme_tags": [
         "Reflection & review",
         "Discussion / theory"
-      ]
+      ],
+      "locations": {
+        "preferred": "Scout Hall - indoor",
+        "alternatives": [
+          "Scout Hall - outdoor"
+        ]
+      },
+      "location_basis": "inferred_planning_only"
     },
     {
       "id": "s3-bushwalking-i-can-help-a-stage-1-scout-to-pack-their-backpac",
@@ -732,7 +889,14 @@
       "theme_tags": [
         "Equipment & packing",
         "Leadership & teamwork"
-      ]
+      ],
+      "locations": {
+        "preferred": "Scout Hall - indoor",
+        "alternatives": [
+          "Scout Hall - outdoor"
+        ]
+      },
+      "location_basis": "inferred_planning_only"
     },
     {
       "id": "s3-bushwalking-i-know-how-and-where-to-get-the-latest-weather-f",
@@ -758,7 +922,14 @@
         "Weather",
         "Planning",
         "Discussion / theory"
-      ]
+      ],
+      "locations": {
+        "preferred": "Scout Hall - indoor",
+        "alternatives": [
+          "Scout Hall - outdoor"
+        ]
+      },
+      "location_basis": "inferred_planning_only"
     },
     {
       "id": "s3-bushwalking-i-can-help-plan-a-balanced-menu-for-bushwalking",
@@ -794,7 +965,14 @@
       "theme_tags": [
         "Food & cooking",
         "Planning"
-      ]
+      ],
+      "locations": {
+        "preferred": "Local outdoor area",
+        "alternatives": [
+          "Scout Hall - indoor"
+        ]
+      },
+      "location_basis": "inferred_planning_only"
     },
     {
       "id": "s3-bushwalking-i-can-list-places-where-i-can-and-cannot-bushwal",
@@ -818,7 +996,14 @@
       "theme_tags": [
         "Planning",
         "Discussion / theory"
-      ]
+      ],
+      "locations": {
+        "preferred": "Scout Hall - indoor",
+        "alternatives": [
+          "Scout Hall - outdoor"
+        ]
+      },
+      "location_basis": "inferred_planning_only"
     },
     {
       "id": "s3-bushwalking-i-can-talk-about-different-ways-of-keeping-a-gro",
@@ -842,7 +1027,14 @@
       "theme_tags": [
         "Leadership & teamwork",
         "Discussion / theory"
-      ]
+      ],
+      "locations": {
+        "preferred": "Scout Hall - indoor",
+        "alternatives": [
+          "Scout Hall - outdoor"
+        ]
+      },
+      "location_basis": "inferred_planning_only"
     },
     {
       "id": "s3-bushwalking-i-have-considered-bushwalking-etiquette-when-pla",
@@ -868,7 +1060,14 @@
         "Planning",
         "Reflection & review",
         "Discussion / theory"
-      ]
+      ],
+      "locations": {
+        "preferred": "Scout Hall - indoor",
+        "alternatives": [
+          "Scout Hall - outdoor"
+        ]
+      },
+      "location_basis": "inferred_planning_only"
     },
     {
       "id": "s3-bushwalking-i-can-be-responsible-for-my-safety-and-aware-of-",
@@ -889,7 +1088,14 @@
       "occurrence_note": "Planning default: one session to gather evidence; leader confirmation remains necessary.",
       "theme_tags": [
         "Safety"
-      ]
+      ],
+      "locations": {
+        "preferred": "Local outdoor area",
+        "alternatives": [
+          "Scout Hall - indoor"
+        ]
+      },
+      "location_basis": "inferred_planning_only"
     },
     {
       "id": "s3-bushwalking-i-have-run-a-small-navigational-activity-for-my-",
@@ -926,7 +1132,14 @@
       "theme_tags": [
         "Navigation",
         "Leadership & teamwork"
-      ]
+      ],
+      "locations": {
+        "preferred": "Scout Hall - indoor",
+        "alternatives": [
+          "Scout Hall - outdoor"
+        ]
+      },
+      "location_basis": "inferred_planning_only"
     },
     {
       "id": "s3-bushwalking-i-can-use-different-types-of-maps-to-help-me-thr",
@@ -960,7 +1173,14 @@
       "occurrence_note": "Planning default: one session to gather evidence; leader confirmation remains necessary.",
       "theme_tags": [
         "Navigation"
-      ]
+      ],
+      "locations": {
+        "preferred": "Scout Hall - indoor",
+        "alternatives": [
+          "Scout Hall - outdoor"
+        ]
+      },
+      "location_basis": "inferred_planning_only"
     },
     {
       "id": "s3-bushwalking-i-have-attended-a-day-bushwalk-at-this-stage-of-",
@@ -984,7 +1204,15 @@
       "theme_tags": [
         "Outdoor experience",
         "External / real-world experience"
-      ]
+      ],
+      "locations": {
+        "preferred": "Local outdoor area",
+        "alternatives": [
+          "Scout Hall - outdoor",
+          "External venue"
+        ]
+      },
+      "location_basis": "inferred_planning_only"
     },
     {
       "id": "s3-bushwalking-i-have-attended-at-least-two-bushwalking-activit",
@@ -1008,7 +1236,15 @@
       "theme_tags": [
         "Outdoor experience",
         "External / real-world experience"
-      ]
+      ],
+      "locations": {
+        "preferred": "Local outdoor area",
+        "alternatives": [
+          "Scout Hall - outdoor",
+          "External venue"
+        ]
+      },
+      "location_basis": "inferred_planning_only"
     },
     {
       "id": "s3-bushwalking-i-know-how-to-avoid-becoming-lost-and-i-know-wha",
@@ -1047,7 +1283,14 @@
         "Emergency response",
         "Navigation",
         "Discussion / theory"
-      ]
+      ],
+      "locations": {
+        "preferred": "Scout Hall - indoor",
+        "alternatives": [
+          "Scout Hall - outdoor"
+        ]
+      },
+      "location_basis": "inferred_planning_only"
     },
     {
       "id": "s3-bushwalking-i-know-how-to-treat-cuts-and-minor-bleeding",
@@ -1077,7 +1320,14 @@
         "First aid",
         "Discussion / theory"
       ],
-      "duplicate_of": "s3-camping-i-know-how-to-treat-cuts-and-minor-bleeding"
+      "duplicate_of": "s3-camping-i-know-how-to-treat-cuts-and-minor-bleeding",
+      "locations": {
+        "preferred": "Scout Hall - indoor",
+        "alternatives": [
+          "Scout Hall - outdoor"
+        ]
+      },
+      "location_basis": "inferred_planning_only"
     },
     {
       "id": "s3-bushwalking-i-can-teach-the-importance-of-the-buddy-system-a",
@@ -1115,7 +1365,14 @@
       "theme_tags": [
         "Safety",
         "Leadership & teamwork"
-      ]
+      ],
+      "locations": {
+        "preferred": "Local outdoor area",
+        "alternatives": [
+          "Scout Hall - indoor"
+        ]
+      },
+      "location_basis": "inferred_planning_only"
     },
     {
       "id": "s3-bushwalking-i-can-identify-the-features-of-a-topographical-m",
@@ -1150,7 +1407,14 @@
       "theme_tags": [
         "Navigation",
         "Discussion / theory"
-      ]
+      ],
+      "locations": {
+        "preferred": "Scout Hall - indoor",
+        "alternatives": [
+          "Scout Hall - outdoor"
+        ]
+      },
+      "location_basis": "inferred_planning_only"
     },
     {
       "id": "s3-bushwalking-i-have-given-a-presentation-to-my-patrol-or-my-u",
@@ -1178,7 +1442,14 @@
         "Leadership & teamwork",
         "Reflection & review",
         "Discussion / theory"
-      ]
+      ],
+      "locations": {
+        "preferred": "Scout Hall - indoor",
+        "alternatives": [
+          "Scout Hall - outdoor"
+        ]
+      },
+      "location_basis": "inferred_planning_only"
     },
     {
       "id": "s3-bushwalking-i-have-discussed-the-top-five-things-i-have-lear",
@@ -1215,7 +1486,14 @@
       "theme_tags": [
         "Reflection & review",
         "Discussion / theory"
-      ]
+      ],
+      "locations": {
+        "preferred": "Scout Hall - indoor",
+        "alternatives": [
+          "Scout Hall - outdoor"
+        ]
+      },
+      "location_basis": "inferred_planning_only"
     },
     {
       "id": "s3-bushcraft-i-can-explain-the-importance-of-wearing-the-righ",
@@ -1241,7 +1519,14 @@
         "Equipment & packing",
         "Environment & nature",
         "Discussion / theory"
-      ]
+      ],
+      "locations": {
+        "preferred": "Scout Hall - indoor",
+        "alternatives": [
+          "Scout Hall - outdoor"
+        ]
+      },
+      "location_basis": "inferred_planning_only"
     },
     {
       "id": "s3-bushcraft-i-know-about-native-flora-and-fauna-and-the-risk",
@@ -1267,7 +1552,14 @@
         "Safety",
         "Environment & nature",
         "Discussion / theory"
-      ]
+      ],
+      "locations": {
+        "preferred": "Scout Hall - indoor",
+        "alternatives": [
+          "Scout Hall - outdoor"
+        ]
+      },
+      "location_basis": "inferred_planning_only"
     },
     {
       "id": "s3-bushcraft-i-know-how-and-where-to-get-the-latest-weather-f",
@@ -1293,7 +1585,14 @@
         "Weather",
         "Planning",
         "Discussion / theory"
-      ]
+      ],
+      "locations": {
+        "preferred": "Scout Hall - indoor",
+        "alternatives": [
+          "Scout Hall - outdoor"
+        ]
+      },
+      "location_basis": "inferred_planning_only"
     },
     {
       "id": "s3-bushcraft-i-know-the-first-aid-treatment-for-burns-from-ho",
@@ -1332,7 +1631,14 @@
         "First aid",
         "Food & cooking",
         "Discussion / theory"
-      ]
+      ],
+      "locations": {
+        "preferred": "Scout Hall - indoor",
+        "alternatives": [
+          "Scout Hall - outdoor"
+        ]
+      },
+      "location_basis": "inferred_planning_only"
     },
     {
       "id": "s3-bushcraft-i-know-how-to-treat-cuts-and-minor-bleeding",
@@ -1362,7 +1668,14 @@
         "First aid",
         "Discussion / theory"
       ],
-      "duplicate_of": "s3-camping-i-know-how-to-treat-cuts-and-minor-bleeding"
+      "duplicate_of": "s3-camping-i-know-how-to-treat-cuts-and-minor-bleeding",
+      "locations": {
+        "preferred": "Scout Hall - indoor",
+        "alternatives": [
+          "Scout Hall - outdoor"
+        ]
+      },
+      "location_basis": "inferred_planning_only"
     },
     {
       "id": "s3-bushcraft-i-know-what-drsabcd-stands-for-and-how-to-apply-",
@@ -1391,7 +1704,14 @@
       "theme_tags": [
         "First aid",
         "Discussion / theory"
-      ]
+      ],
+      "locations": {
+        "preferred": "Scout Hall - indoor",
+        "alternatives": [
+          "Scout Hall - outdoor"
+        ]
+      },
+      "location_basis": "inferred_planning_only"
     },
     {
       "id": "s3-bushcraft-i-can-identify-fire-safety-equipment-in-my-hall",
@@ -1432,7 +1752,14 @@
         "Fire",
         "Equipment & packing",
         "Discussion / theory"
-      ]
+      ],
+      "locations": {
+        "preferred": "Scout Hall - indoor",
+        "alternatives": [
+          "Scout Hall - outdoor"
+        ]
+      },
+      "location_basis": "inferred_planning_only"
     },
     {
       "id": "s3-bushcraft-i-can-cook-a-meal-using-a-camp-stove",
@@ -1467,7 +1794,12 @@
       "occurrence_note": "Planning default: one session to gather evidence; leader confirmation remains necessary.",
       "theme_tags": [
         "Food & cooking"
-      ]
+      ],
+      "locations": {
+        "preferred": "Flexible / anywhere",
+        "alternatives": []
+      },
+      "location_basis": "inferred_planning_only"
     },
     {
       "id": "s3-bushcraft-i-can-explain-the-causes-of-a-major-bushfire",
@@ -1504,7 +1836,14 @@
       "theme_tags": [
         "Fire",
         "Discussion / theory"
-      ]
+      ],
+      "locations": {
+        "preferred": "Scout Hall - indoor",
+        "alternatives": [
+          "Scout Hall - outdoor"
+        ]
+      },
+      "location_basis": "inferred_planning_only"
     },
     {
       "id": "s3-bushcraft-i-can-name-five-different-situations-that-could-",
@@ -1543,7 +1882,14 @@
         "Emergency response",
         "Environment & nature",
         "Discussion / theory"
-      ]
+      ],
+      "locations": {
+        "preferred": "Scout Hall - indoor",
+        "alternatives": [
+          "Scout Hall - outdoor"
+        ]
+      },
+      "location_basis": "inferred_planning_only"
     },
     {
       "id": "s3-bushcraft-i-can-identify-the-southern-cross-in-the-night-s",
@@ -1569,7 +1915,14 @@
       "theme_tags": [
         "Navigation",
         "Discussion / theory"
-      ]
+      ],
+      "locations": {
+        "preferred": "Scout Hall - indoor",
+        "alternatives": [
+          "Scout Hall - outdoor"
+        ]
+      },
+      "location_basis": "inferred_planning_only"
     },
     {
       "id": "s3-bushcraft-i-can-identify-three-other-constellations-in-the",
@@ -1594,7 +1947,14 @@
       "theme_tags": [
         "Navigation",
         "Discussion / theory"
-      ]
+      ],
+      "locations": {
+        "preferred": "Scout Hall - indoor",
+        "alternatives": [
+          "Scout Hall - outdoor"
+        ]
+      },
+      "location_basis": "inferred_planning_only"
     },
     {
       "id": "s3-bushcraft-i-have-set-up-and-followed-a-simple-compass-trai",
@@ -1636,7 +1996,14 @@
       "theme_tags": [
         "Navigation",
         "Leadership & teamwork"
-      ]
+      ],
+      "locations": {
+        "preferred": "Scout Hall - indoor",
+        "alternatives": [
+          "Scout Hall - outdoor"
+        ]
+      },
+      "location_basis": "inferred_planning_only"
     },
     {
       "id": "s3-bushcraft-i-can-teach-the-importance-of-the-buddy-system-t",
@@ -1674,7 +2041,12 @@
       "theme_tags": [
         "Safety",
         "Leadership & teamwork"
-      ]
+      ],
+      "locations": {
+        "preferred": "Flexible / anywhere",
+        "alternatives": []
+      },
+      "location_basis": "inferred_planning_only"
     },
     {
       "id": "s3-bushcraft-i-have-put-together-a-personal-outdoor-survival-",
@@ -1699,7 +2071,14 @@
       "theme_tags": [
         "Equipment & packing",
         "Discussion / theory"
-      ]
+      ],
+      "locations": {
+        "preferred": "Scout Hall - indoor",
+        "alternatives": [
+          "Scout Hall - outdoor"
+        ]
+      },
+      "location_basis": "inferred_planning_only"
     },
     {
       "id": "s3-bushcraft-i-can-make-a-personal-shelter-out-of-plastic-she",
@@ -1740,7 +2119,14 @@
       "theme_tags": [
         "Shelter & tents",
         "Knots & rope"
-      ]
+      ],
+      "locations": {
+        "preferred": "Scout Hall - indoor",
+        "alternatives": [
+          "Scout Hall - outdoor"
+        ]
+      },
+      "location_basis": "inferred_planning_only"
     },
     {
       "id": "s3-bushcraft-i-can-demonstrate-five-knots-in-an-activity-or-c",
@@ -1766,7 +2152,14 @@
       "occurrence_note": "Planning default: one session to gather evidence; leader confirmation remains necessary.",
       "theme_tags": [
         "Knots & rope"
-      ]
+      ],
+      "locations": {
+        "preferred": "Scout Hall - indoor",
+        "alternatives": [
+          "Scout Hall - outdoor"
+        ]
+      },
+      "location_basis": "inferred_planning_only"
     },
     {
       "id": "s3-bushcraft-i-can-talk-about-the-ways-in-which-my-patrol-wor",
@@ -1807,7 +2200,14 @@
         "Navigation",
         "Leadership & teamwork",
         "Discussion / theory"
-      ]
+      ],
+      "locations": {
+        "preferred": "Scout Hall - indoor",
+        "alternatives": [
+          "Scout Hall - outdoor"
+        ]
+      },
+      "location_basis": "inferred_planning_only"
     },
     {
       "id": "s3-bushcraft-i-have-identified-improvements-i-can-make-to-my-",
@@ -1846,7 +2246,12 @@
       "theme_tags": [
         "Shelter & tents",
         "Reflection & review"
-      ]
+      ],
+      "locations": {
+        "preferred": "Flexible / anywhere",
+        "alternatives": []
+      },
+      "location_basis": "inferred_planning_only"
     },
     {
       "id": "s2-camping-i-can-explain-what-clothing-i-should-wear-whilst",
@@ -1870,7 +2275,14 @@
       "theme_tags": [
         "Equipment & packing",
         "Discussion / theory"
-      ]
+      ],
+      "locations": {
+        "preferred": "Scout Hall - indoor",
+        "alternatives": [
+          "Scout Hall - outdoor"
+        ]
+      },
+      "location_basis": "inferred_planning_only"
     },
     {
       "id": "s2-camping-i-have-explained-what-impact-i-can-have-on-local",
@@ -1894,7 +2306,14 @@
       "theme_tags": [
         "Environment & nature",
         "Discussion / theory"
-      ]
+      ],
+      "locations": {
+        "preferred": "Scout Hall - indoor",
+        "alternatives": [
+          "Scout Hall - outdoor"
+        ]
+      },
+      "location_basis": "inferred_planning_only"
     },
     {
       "id": "s2-camping-i-have-discussed-the-appropriate-action-i-should",
@@ -1933,7 +2352,14 @@
         "Emergency response",
         "Reflection & review",
         "Discussion / theory"
-      ]
+      ],
+      "locations": {
+        "preferred": "Scout Hall - indoor",
+        "alternatives": [
+          "Scout Hall - outdoor"
+        ]
+      },
+      "location_basis": "inferred_planning_only"
     },
     {
       "id": "s2-camping-i-can-discuss-what-safety-precautions-you-should",
@@ -1961,7 +2387,14 @@
         "Environment & nature",
         "Planning",
         "Discussion / theory"
-      ]
+      ],
+      "locations": {
+        "preferred": "Scout Hall - indoor",
+        "alternatives": [
+          "Scout Hall - outdoor"
+        ]
+      },
+      "location_basis": "inferred_planning_only"
     },
     {
       "id": "s2-camping-i-know-about-proper-hygiene-practices-at-camp",
@@ -1987,7 +2420,14 @@
         "Hygiene & personal care",
         "Knots & rope",
         "Discussion / theory"
-      ]
+      ],
+      "locations": {
+        "preferred": "Scout Hall - indoor",
+        "alternatives": [
+          "Scout Hall - outdoor"
+        ]
+      },
+      "location_basis": "inferred_planning_only"
     },
     {
       "id": "s2-camping-i-know-how-to-contact-the-emergency-services",
@@ -2024,7 +2464,14 @@
       "theme_tags": [
         "Emergency response",
         "Discussion / theory"
-      ]
+      ],
+      "locations": {
+        "preferred": "Scout Hall - indoor",
+        "alternatives": [
+          "Scout Hall - outdoor"
+        ]
+      },
+      "location_basis": "inferred_planning_only"
     },
     {
       "id": "s2-camping-i-can-draw-and-label-a-picture-showing-all-of-th",
@@ -2057,7 +2504,14 @@
       "theme_tags": [
         "Equipment & packing",
         "Planning"
-      ]
+      ],
+      "locations": {
+        "preferred": "Scout Hall - indoor",
+        "alternatives": [
+          "Scout Hall - outdoor"
+        ]
+      },
+      "location_basis": "inferred_planning_only"
     },
     {
       "id": "s2-camping-i-know-the-benefits-and-risks-associated-with-fi",
@@ -2096,7 +2550,14 @@
         "Safety",
         "Fire",
         "Discussion / theory"
-      ]
+      ],
+      "locations": {
+        "preferred": "Scout Hall - indoor",
+        "alternatives": [
+          "Scout Hall - outdoor"
+        ]
+      },
+      "location_basis": "inferred_planning_only"
     },
     {
       "id": "s2-camping-i-can-demonstrate-basic-safe-food-handling-and-t",
@@ -2133,7 +2594,15 @@
         "Safety",
         "Food & cooking",
         "Hygiene & personal care"
-      ]
+      ],
+      "locations": {
+        "preferred": "Scout Hall - outdoor",
+        "alternatives": [
+          "Scout Hall - indoor",
+          "Campsite"
+        ]
+      },
+      "location_basis": "inferred_planning_only"
     },
     {
       "id": "s2-camping-i-can-protect-myself-when-exposed-to-the-sun-whi",
@@ -2154,7 +2623,15 @@
       "occurrence_note": "Planning default: one session to gather evidence; leader confirmation remains necessary.",
       "theme_tags": [
         "Environment & nature"
-      ]
+      ],
+      "locations": {
+        "preferred": "Scout Hall - outdoor",
+        "alternatives": [
+          "Scout Hall - indoor",
+          "Campsite"
+        ]
+      },
+      "location_basis": "inferred_planning_only"
     },
     {
       "id": "s2-camping-i-can-behave-safely-in-and-around-tents-and-camp",
@@ -2195,7 +2672,15 @@
         "Safety",
         "Fire",
         "Shelter & tents"
-      ]
+      ],
+      "locations": {
+        "preferred": "Scout Hall - outdoor",
+        "alternatives": [
+          "Scout Hall - indoor",
+          "Campsite"
+        ]
+      },
+      "location_basis": "inferred_planning_only"
     },
     {
       "id": "s2-camping-i-can-demonstrate-and-explain-why-sleeping-bags-",
@@ -2222,7 +2707,14 @@
         "Equipment & packing",
         "Hygiene & personal care",
         "Discussion / theory"
-      ]
+      ],
+      "locations": {
+        "preferred": "Scout Hall - indoor",
+        "alternatives": [
+          "Scout Hall - outdoor"
+        ]
+      },
+      "location_basis": "inferred_planning_only"
     },
     {
       "id": "s2-camping-i-have-spent-two-nights-on-camp-in-a-tent-at-thi",
@@ -2259,7 +2751,15 @@
         "Shelter & tents",
         "Outdoor experience",
         "External / real-world experience"
-      ]
+      ],
+      "locations": {
+        "preferred": "Campsite",
+        "alternatives": [
+          "Local outdoor area",
+          "Scout Hall - outdoor"
+        ]
+      },
+      "location_basis": "inferred_planning_only"
     },
     {
       "id": "s2-camping-i-can-help-set-up-a-tent-and-identify-the-main-p",
@@ -2297,7 +2797,14 @@
       "theme_tags": [
         "Shelter & tents",
         "Discussion / theory"
-      ]
+      ],
+      "locations": {
+        "preferred": "Scout Hall - indoor",
+        "alternatives": [
+          "Scout Hall - outdoor"
+        ]
+      },
+      "location_basis": "inferred_planning_only"
     },
     {
       "id": "s2-camping-i-can-talk-about-what-i-enjoyed-learnt-and-impro",
@@ -2334,7 +2841,14 @@
       "theme_tags": [
         "Reflection & review",
         "Discussion / theory"
-      ]
+      ],
+      "locations": {
+        "preferred": "Scout Hall - indoor",
+        "alternatives": [
+          "Scout Hall - outdoor"
+        ]
+      },
+      "location_basis": "inferred_planning_only"
     },
     {
       "id": "s2-camping-i-can-suggest-what-i-would-do-differently-on-a-f",
@@ -2370,7 +2884,15 @@
       "theme_tags": [
         "Safety",
         "Planning"
-      ]
+      ],
+      "locations": {
+        "preferred": "Scout Hall - outdoor",
+        "alternatives": [
+          "Scout Hall - indoor",
+          "Campsite"
+        ]
+      },
+      "location_basis": "inferred_planning_only"
     },
     {
       "id": "s2-bushwalking-i-can-explain-what-clothing-i-should-wear-whilst",
@@ -2394,7 +2916,14 @@
       "theme_tags": [
         "Equipment & packing",
         "Discussion / theory"
-      ]
+      ],
+      "locations": {
+        "preferred": "Scout Hall - indoor",
+        "alternatives": [
+          "Scout Hall - outdoor"
+        ]
+      },
+      "location_basis": "inferred_planning_only"
     },
     {
       "id": "s2-bushwalking-i-have-explained-what-impact-i-can-have-on-local",
@@ -2418,7 +2947,14 @@
       "theme_tags": [
         "Environment & nature",
         "Discussion / theory"
-      ]
+      ],
+      "locations": {
+        "preferred": "Scout Hall - indoor",
+        "alternatives": [
+          "Scout Hall - outdoor"
+        ]
+      },
+      "location_basis": "inferred_planning_only"
     },
     {
       "id": "s2-bushwalking-i-have-discussed-the-appropriate-action-i-should",
@@ -2457,7 +2993,14 @@
         "Emergency response",
         "Reflection & review",
         "Discussion / theory"
-      ]
+      ],
+      "locations": {
+        "preferred": "Scout Hall - indoor",
+        "alternatives": [
+          "Scout Hall - outdoor"
+        ]
+      },
+      "location_basis": "inferred_planning_only"
     },
     {
       "id": "s2-bushwalking-i-can-discuss-what-safety-precautions-i-should-t",
@@ -2483,7 +3026,14 @@
         "Safety",
         "Planning",
         "Discussion / theory"
-      ]
+      ],
+      "locations": {
+        "preferred": "Scout Hall - indoor",
+        "alternatives": [
+          "Scout Hall - outdoor"
+        ]
+      },
+      "location_basis": "inferred_planning_only"
     },
     {
       "id": "s2-bushwalking-i-know-when-and-how-to-contact-the-emergency-ser",
@@ -2520,7 +3070,14 @@
       "theme_tags": [
         "Emergency response",
         "Discussion / theory"
-      ]
+      ],
+      "locations": {
+        "preferred": "Scout Hall - indoor",
+        "alternatives": [
+          "Scout Hall - outdoor"
+        ]
+      },
+      "location_basis": "inferred_planning_only"
     },
     {
       "id": "s2-bushwalking-i-can-draw-or-list-all-of-the-essential-equipmen",
@@ -2555,7 +3112,14 @@
         "Equipment & packing",
         "Planning",
         "Discussion / theory"
-      ]
+      ],
+      "locations": {
+        "preferred": "Scout Hall - indoor",
+        "alternatives": [
+          "Scout Hall - outdoor"
+        ]
+      },
+      "location_basis": "inferred_planning_only"
     },
     {
       "id": "s2-bushwalking-i-can-use-a-compass-to-find-basic-directions",
@@ -2589,7 +3153,14 @@
       "occurrence_note": "Planning default: one session to gather evidence; leader confirmation remains necessary.",
       "theme_tags": [
         "Navigation"
-      ]
+      ],
+      "locations": {
+        "preferred": "Scout Hall - indoor",
+        "alternatives": [
+          "Scout Hall - outdoor"
+        ]
+      },
+      "location_basis": "inferred_planning_only"
     },
     {
       "id": "s2-bushwalking-i-can-protect-myself-when-exposed-to-the-sun-whi",
@@ -2611,7 +3182,14 @@
       "theme_tags": [
         "Environment & nature"
       ],
-      "duplicate_of": "s2-camping-i-can-protect-myself-when-exposed-to-the-sun-whi"
+      "duplicate_of": "s2-camping-i-can-protect-myself-when-exposed-to-the-sun-whi",
+      "locations": {
+        "preferred": "Local outdoor area",
+        "alternatives": [
+          "Scout Hall - indoor"
+        ]
+      },
+      "location_basis": "inferred_planning_only"
     },
     {
       "id": "s2-bushwalking-i-have-attended-at-least-two-short-bushwalks-at-",
@@ -2635,7 +3213,15 @@
       "theme_tags": [
         "Outdoor experience",
         "External / real-world experience"
-      ]
+      ],
+      "locations": {
+        "preferred": "Local outdoor area",
+        "alternatives": [
+          "Scout Hall - outdoor",
+          "External venue"
+        ]
+      },
+      "location_basis": "inferred_planning_only"
     },
     {
       "id": "s2-bushwalking-i-can-show-where-and-when-i-am-allowed-to-go-bef",
@@ -2658,7 +3244,14 @@
       "theme_tags": [
         "Safety",
         "Planning"
-      ]
+      ],
+      "locations": {
+        "preferred": "Local outdoor area",
+        "alternatives": [
+          "Scout Hall - indoor"
+        ]
+      },
+      "location_basis": "inferred_planning_only"
     },
     {
       "id": "s2-bushwalking-i-have-bushwalked-a-total-distance-of-at-least-1",
@@ -2684,7 +3277,15 @@
       "theme_tags": [
         "Outdoor experience",
         "External / real-world experience"
-      ]
+      ],
+      "locations": {
+        "preferred": "Local outdoor area",
+        "alternatives": [
+          "Scout Hall - outdoor",
+          "External venue"
+        ]
+      },
+      "location_basis": "inferred_planning_only"
     },
     {
       "id": "s2-bushwalking-i-have-talked-about-what-i-enjoyed-learnt-or-imp",
@@ -2718,7 +3319,14 @@
       "occurrence_note": "Source wording specifies this minimum number of outings or experiences.",
       "theme_tags": [
         "Reflection & review"
-      ]
+      ],
+      "locations": {
+        "preferred": "Local outdoor area",
+        "alternatives": [
+          "Scout Hall - indoor"
+        ]
+      },
+      "location_basis": "inferred_planning_only"
     },
     {
       "id": "s2-bushwalking-i-can-suggest-what-i-would-do-differently-on-a-f",
@@ -2755,7 +3363,14 @@
       "theme_tags": [
         "Safety",
         "Planning"
-      ]
+      ],
+      "locations": {
+        "preferred": "Scout Hall - indoor",
+        "alternatives": [
+          "Scout Hall - outdoor"
+        ]
+      },
+      "location_basis": "inferred_planning_only"
     },
     {
       "id": "s2-bushwalking-i-have-reviewed-my-list-or-picture-of-essential-",
@@ -2795,7 +3410,14 @@
         "Leadership & teamwork",
         "Reflection & review",
         "Discussion / theory"
-      ]
+      ],
+      "locations": {
+        "preferred": "Scout Hall - indoor",
+        "alternatives": [
+          "Scout Hall - outdoor"
+        ]
+      },
+      "location_basis": "inferred_planning_only"
     },
     {
       "id": "s2-bushcraft-i-have-explained-what-impact-i-can-have-on-local",
@@ -2819,7 +3441,14 @@
       "theme_tags": [
         "Environment & nature",
         "Discussion / theory"
-      ]
+      ],
+      "locations": {
+        "preferred": "Scout Hall - indoor",
+        "alternatives": [
+          "Scout Hall - outdoor"
+        ]
+      },
+      "location_basis": "inferred_planning_only"
     },
     {
       "id": "s2-bushcraft-i-have-discussed-the-appropriate-action-i-should",
@@ -2859,7 +3488,14 @@
         "Reflection & review",
         "Discussion / theory"
       ],
-      "duplicate_of": "s2-camping-i-have-discussed-the-appropriate-action-i-should"
+      "duplicate_of": "s2-camping-i-have-discussed-the-appropriate-action-i-should",
+      "locations": {
+        "preferred": "Scout Hall - indoor",
+        "alternatives": [
+          "Scout Hall - outdoor"
+        ]
+      },
+      "location_basis": "inferred_planning_only"
     },
     {
       "id": "s2-bushcraft-i-can-discuss-what-safety-precautions-i-should-t",
@@ -2885,7 +3521,14 @@
         "Safety",
         "Planning",
         "Discussion / theory"
-      ]
+      ],
+      "locations": {
+        "preferred": "Scout Hall - indoor",
+        "alternatives": [
+          "Scout Hall - outdoor"
+        ]
+      },
+      "location_basis": "inferred_planning_only"
     },
     {
       "id": "s2-bushcraft-i-know-how-to-contact-the-emergency-services",
@@ -2923,7 +3566,14 @@
         "Emergency response",
         "Discussion / theory"
       ],
-      "duplicate_of": "s2-camping-i-know-how-to-contact-the-emergency-services"
+      "duplicate_of": "s2-camping-i-know-how-to-contact-the-emergency-services",
+      "locations": {
+        "preferred": "Scout Hall - indoor",
+        "alternatives": [
+          "Scout Hall - outdoor"
+        ]
+      },
+      "location_basis": "inferred_planning_only"
     },
     {
       "id": "s2-bushcraft-i-can-state-how-many-degrees-there-are-on-a-comp",
@@ -2956,7 +3606,14 @@
       "theme_tags": [
         "Navigation",
         "Discussion / theory"
-      ]
+      ],
+      "locations": {
+        "preferred": "Scout Hall - indoor",
+        "alternatives": [
+          "Scout Hall - outdoor"
+        ]
+      },
+      "location_basis": "inferred_planning_only"
     },
     {
       "id": "s2-bushcraft-i-know-the-rules-for-hygiene-at-camp",
@@ -2980,7 +3637,14 @@
       "theme_tags": [
         "Hygiene & personal care",
         "Discussion / theory"
-      ]
+      ],
+      "locations": {
+        "preferred": "Scout Hall - indoor",
+        "alternatives": [
+          "Scout Hall - outdoor"
+        ]
+      },
+      "location_basis": "inferred_planning_only"
     },
     {
       "id": "s2-bushcraft-i-can-protect-myself-when-exposed-to-the-sun-whi",
@@ -3002,7 +3666,12 @@
       "theme_tags": [
         "Environment & nature"
       ],
-      "duplicate_of": "s2-camping-i-can-protect-myself-when-exposed-to-the-sun-whi"
+      "duplicate_of": "s2-camping-i-can-protect-myself-when-exposed-to-the-sun-whi",
+      "locations": {
+        "preferred": "Flexible / anywhere",
+        "alternatives": []
+      },
+      "location_basis": "inferred_planning_only"
     },
     {
       "id": "s2-bushcraft-i-can-cook-a-snack-in-a-fire",
@@ -3043,7 +3712,15 @@
       "theme_tags": [
         "Food & cooking",
         "Fire"
-      ]
+      ],
+      "locations": {
+        "preferred": "Local outdoor area",
+        "alternatives": [
+          "Scout Hall - outdoor",
+          "External venue"
+        ]
+      },
+      "location_basis": "inferred_planning_only"
     },
     {
       "id": "s2-bushcraft-i-know-how-much-water-i-should-carry-when-on-a-h",
@@ -3065,7 +3742,14 @@
       "occurrence_note": "Planning default: one session to gather evidence; leader confirmation remains necessary.",
       "theme_tags": [
         "Discussion / theory"
-      ]
+      ],
+      "locations": {
+        "preferred": "Scout Hall - indoor",
+        "alternatives": [
+          "Scout Hall - outdoor"
+        ]
+      },
+      "location_basis": "inferred_planning_only"
     },
     {
       "id": "s2-bushcraft-i-can-demonstrate-a-correct-way-to-build-a-safe-",
@@ -3105,7 +3789,12 @@
       "theme_tags": [
         "Safety",
         "Fire"
-      ]
+      ],
+      "locations": {
+        "preferred": "Flexible / anywhere",
+        "alternatives": []
+      },
+      "location_basis": "inferred_planning_only"
     },
     {
       "id": "s2-bushcraft-i-understand-the-basic-dangers-of-fire-and-how-t",
@@ -3143,7 +3832,12 @@
       "theme_tags": [
         "Safety",
         "Fire"
-      ]
+      ],
+      "locations": {
+        "preferred": "Flexible / anywhere",
+        "alternatives": []
+      },
+      "location_basis": "inferred_planning_only"
     },
     {
       "id": "s2-bushcraft-i-can-establish-and-find-the-four-cardinal-direc",
@@ -3175,7 +3869,14 @@
       "occurrence_note": "Planning default: one session to gather evidence; leader confirmation remains necessary.",
       "theme_tags": [
         "Navigation"
-      ]
+      ],
+      "locations": {
+        "preferred": "Scout Hall - indoor",
+        "alternatives": [
+          "Scout Hall - outdoor"
+        ]
+      },
+      "location_basis": "inferred_planning_only"
     },
     {
       "id": "s2-bushcraft-i-can-demonstrate-three-knots-and-apply-them-in-",
@@ -3200,7 +3901,14 @@
       "occurrence_note": "Planning default: one session to gather evidence; leader confirmation remains necessary.",
       "theme_tags": [
         "Knots & rope"
-      ]
+      ],
+      "locations": {
+        "preferred": "Scout Hall - indoor",
+        "alternatives": [
+          "Scout Hall - outdoor"
+        ]
+      },
+      "location_basis": "inferred_planning_only"
     },
     {
       "id": "s2-bushcraft-i-have-talked-about-what-i-enjoyed-learnt-or-imp",
@@ -3234,7 +3942,12 @@
       "occurrence_note": "Source wording specifies this minimum number of outings or experiences.",
       "theme_tags": [
         "Reflection & review"
-      ]
+      ],
+      "locations": {
+        "preferred": "Flexible / anywhere",
+        "alternatives": []
+      },
+      "location_basis": "inferred_planning_only"
     },
     {
       "id": "s2-bushcraft-i-can-suggest-what-i-would-do-differently-for-a-",
@@ -3268,7 +3981,12 @@
       "occurrence_note": "Planning default: one session to gather evidence; leader confirmation remains necessary.",
       "theme_tags": [
         "Planning"
-      ]
+      ],
+      "locations": {
+        "preferred": "Flexible / anywhere",
+        "alternatives": []
+      },
+      "location_basis": "inferred_planning_only"
     },
     {
       "id": "s1-camping-i-know-about-the-buddy-system",
@@ -3292,7 +4010,14 @@
       "theme_tags": [
         "Safety",
         "Discussion / theory"
-      ]
+      ],
+      "locations": {
+        "preferred": "Scout Hall - indoor",
+        "alternatives": [
+          "Scout Hall - outdoor"
+        ]
+      },
+      "location_basis": "inferred_planning_only"
     },
     {
       "id": "s1-camping-i-know-the-boundaries-of-where-i-may-go-each-tim",
@@ -3316,7 +4041,14 @@
       "theme_tags": [
         "Safety",
         "Discussion / theory"
-      ]
+      ],
+      "locations": {
+        "preferred": "Scout Hall - indoor",
+        "alternatives": [
+          "Scout Hall - outdoor"
+        ]
+      },
+      "location_basis": "inferred_planning_only"
     },
     {
       "id": "s1-camping-i-know-to-stop-when-i-get-lost-while-camping",
@@ -3342,7 +4074,14 @@
         "Emergency response",
         "Navigation",
         "Discussion / theory"
-      ]
+      ],
+      "locations": {
+        "preferred": "Scout Hall - indoor",
+        "alternatives": [
+          "Scout Hall - outdoor"
+        ]
+      },
+      "location_basis": "inferred_planning_only"
     },
     {
       "id": "s1-camping-i-know-the-basic-elements-that-you-need-to-make-",
@@ -3367,7 +4106,14 @@
       "theme_tags": [
         "Fire",
         "Discussion / theory"
-      ]
+      ],
+      "locations": {
+        "preferred": "Scout Hall - indoor",
+        "alternatives": [
+          "Scout Hall - outdoor"
+        ]
+      },
+      "location_basis": "inferred_planning_only"
     },
     {
       "id": "s1-camping-i-know-that-i-should-follow-directions-from-the-",
@@ -3391,7 +4137,14 @@
       "theme_tags": [
         "Navigation",
         "Discussion / theory"
-      ]
+      ],
+      "locations": {
+        "preferred": "Scout Hall - indoor",
+        "alternatives": [
+          "Scout Hall - outdoor"
+        ]
+      },
+      "location_basis": "inferred_planning_only"
     },
     {
       "id": "s1-camping-i-can-help-pack-a-bag-for-camp",
@@ -3414,7 +4167,14 @@
       "occurrence_note": "Planning default: one session to gather evidence; leader confirmation remains necessary.",
       "theme_tags": [
         "Equipment & packing"
-      ]
+      ],
+      "locations": {
+        "preferred": "Scout Hall - indoor",
+        "alternatives": [
+          "Scout Hall - outdoor"
+        ]
+      },
+      "location_basis": "inferred_planning_only"
     },
     {
       "id": "s1-camping-i-can-strike-a-match",
@@ -3440,7 +4200,15 @@
       "occurrence_note": "Planning default: one session to gather evidence; leader confirmation remains necessary.",
       "theme_tags": [
         "Fire"
-      ]
+      ],
+      "locations": {
+        "preferred": "Campsite",
+        "alternatives": [
+          "Local outdoor area",
+          "Scout Hall - outdoor"
+        ]
+      },
+      "location_basis": "inferred_planning_only"
     },
     {
       "id": "s1-camping-i-can-help-prepare-food-for-cooking-at-camp",
@@ -3467,7 +4235,15 @@
       "theme_tags": [
         "Food & cooking",
         "Planning"
-      ]
+      ],
+      "locations": {
+        "preferred": "Scout Hall - outdoor",
+        "alternatives": [
+          "Scout Hall - indoor",
+          "Campsite"
+        ]
+      },
+      "location_basis": "inferred_planning_only"
     },
     {
       "id": "s1-camping-i-have-spent-two-nights-at-camps-and-or-scout-sl",
@@ -3491,7 +4267,15 @@
       "theme_tags": [
         "Outdoor experience",
         "External / real-world experience"
-      ]
+      ],
+      "locations": {
+        "preferred": "Campsite",
+        "alternatives": [
+          "Local outdoor area",
+          "Scout Hall - outdoor"
+        ]
+      },
+      "location_basis": "inferred_planning_only"
     },
     {
       "id": "s1-camping-i-know-why-it-is-important-to-set-up-camp-in-an-",
@@ -3516,7 +4300,14 @@
       "theme_tags": [
         "Shelter & tents",
         "Discussion / theory"
-      ]
+      ],
+      "locations": {
+        "preferred": "Scout Hall - indoor",
+        "alternatives": [
+          "Scout Hall - outdoor"
+        ]
+      },
+      "location_basis": "inferred_planning_only"
     },
     {
       "id": "s1-camping-i-can-set-out-my-sleeping-area-at-camp",
@@ -3540,7 +4331,15 @@
       "occurrence_note": "Planning default: one session to gather evidence; leader confirmation remains necessary.",
       "theme_tags": [
         "Shelter & tents"
-      ]
+      ],
+      "locations": {
+        "preferred": "Campsite",
+        "alternatives": [
+          "Local outdoor area",
+          "Scout Hall - outdoor"
+        ]
+      },
+      "location_basis": "inferred_planning_only"
     },
     {
       "id": "s1-camping-i-can-care-for-my-basic-personal-gear-on-an-over",
@@ -3564,7 +4363,14 @@
       "occurrence_note": "Planning default: one session to gather evidence; leader confirmation remains necessary.",
       "theme_tags": [
         "Equipment & packing"
-      ]
+      ],
+      "locations": {
+        "preferred": "Scout Hall - indoor",
+        "alternatives": [
+          "Scout Hall - outdoor"
+        ]
+      },
+      "location_basis": "inferred_planning_only"
     },
     {
       "id": "s1-camping-i-can-talk-about-what-i-enjoyed-learnt-or-improv",
@@ -3589,7 +4395,14 @@
       "theme_tags": [
         "Reflection & review",
         "Discussion / theory"
-      ]
+      ],
+      "locations": {
+        "preferred": "Scout Hall - indoor",
+        "alternatives": [
+          "Scout Hall - outdoor"
+        ]
+      },
+      "location_basis": "inferred_planning_only"
     },
     {
       "id": "s1-bushwalking-i-can-help-pack-a-backpack-for-a-day-walk",
@@ -3612,7 +4425,14 @@
       "occurrence_note": "Planning default: one session to gather evidence; leader confirmation remains necessary.",
       "theme_tags": [
         "Equipment & packing"
-      ]
+      ],
+      "locations": {
+        "preferred": "Scout Hall - indoor",
+        "alternatives": [
+          "Scout Hall - outdoor"
+        ]
+      },
+      "location_basis": "inferred_planning_only"
     },
     {
       "id": "s1-bushwalking-i-can-dress-myself-for-a-day-walk",
@@ -3632,7 +4452,14 @@
       "occurrence_note": "Planning default: one session to gather evidence; leader confirmation remains necessary.",
       "theme_tags": [
         "Bushwalking"
-      ]
+      ],
+      "locations": {
+        "preferred": "Local outdoor area",
+        "alternatives": [
+          "Scout Hall - indoor"
+        ]
+      },
+      "location_basis": "inferred_planning_only"
     },
     {
       "id": "s1-bushwalking-i-can-list-what-food-to-bring-on-a-day-bushwalk",
@@ -3659,7 +4486,14 @@
         "Food & cooking",
         "External / real-world experience",
         "Discussion / theory"
-      ]
+      ],
+      "locations": {
+        "preferred": "Scout Hall - indoor",
+        "alternatives": [
+          "Scout Hall - outdoor"
+        ]
+      },
+      "location_basis": "inferred_planning_only"
     },
     {
       "id": "s1-bushwalking-i-know-why-it-is-important-to-stick-to-trails-wh",
@@ -3683,7 +4517,14 @@
       "theme_tags": [
         "Environment & nature",
         "Discussion / theory"
-      ]
+      ],
+      "locations": {
+        "preferred": "Scout Hall - indoor",
+        "alternatives": [
+          "Scout Hall - outdoor"
+        ]
+      },
+      "location_basis": "inferred_planning_only"
     },
     {
       "id": "s1-bushwalking-i-know-why-to-stop-when-i-get-lost-in-the-bush",
@@ -3709,7 +4550,14 @@
         "Emergency response",
         "Navigation",
         "Discussion / theory"
-      ]
+      ],
+      "locations": {
+        "preferred": "Scout Hall - indoor",
+        "alternatives": [
+          "Scout Hall - outdoor"
+        ]
+      },
+      "location_basis": "inferred_planning_only"
     },
     {
       "id": "s1-bushwalking-i-can-explain-the-buddy-system",
@@ -3733,7 +4581,14 @@
       "theme_tags": [
         "Safety",
         "Discussion / theory"
-      ]
+      ],
+      "locations": {
+        "preferred": "Scout Hall - indoor",
+        "alternatives": [
+          "Scout Hall - outdoor"
+        ]
+      },
+      "location_basis": "inferred_planning_only"
     },
     {
       "id": "s1-bushwalking-i-can-put-together-a-small-personal-first-aid-ki",
@@ -3758,7 +4613,14 @@
       "theme_tags": [
         "First aid",
         "Equipment & packing"
-      ]
+      ],
+      "locations": {
+        "preferred": "Scout Hall - indoor",
+        "alternatives": [
+          "Scout Hall - outdoor"
+        ]
+      },
+      "location_basis": "inferred_planning_only"
     },
     {
       "id": "s1-bushwalking-i-can-identify-the-four-main-cardinal-points-of-",
@@ -3784,7 +4646,14 @@
       "theme_tags": [
         "Navigation",
         "Discussion / theory"
-      ]
+      ],
+      "locations": {
+        "preferred": "Scout Hall - indoor",
+        "alternatives": [
+          "Scout Hall - outdoor"
+        ]
+      },
+      "location_basis": "inferred_planning_only"
     },
     {
       "id": "s1-bushwalking-i-can-identify-the-main-parts-of-the-compass",
@@ -3808,7 +4677,14 @@
       "theme_tags": [
         "Navigation",
         "Discussion / theory"
-      ]
+      ],
+      "locations": {
+        "preferred": "Scout Hall - indoor",
+        "alternatives": [
+          "Scout Hall - outdoor"
+        ]
+      },
+      "location_basis": "inferred_planning_only"
     },
     {
       "id": "s1-bushwalking-i-have-attended-at-least-one-bushwalk-of-at-leas",
@@ -3836,7 +4712,15 @@
       "theme_tags": [
         "Outdoor experience",
         "External / real-world experience"
-      ]
+      ],
+      "locations": {
+        "preferred": "Local outdoor area",
+        "alternatives": [
+          "Scout Hall - outdoor",
+          "External venue"
+        ]
+      },
+      "location_basis": "inferred_planning_only"
     },
     {
       "id": "s1-bushwalking-i-can-demonstrate-behaving-safely-while-bushwalk",
@@ -3862,7 +4746,15 @@
       "occurrence_note": "Planning default: one session to gather evidence; leader confirmation remains necessary.",
       "theme_tags": [
         "Safety"
-      ]
+      ],
+      "locations": {
+        "preferred": "Local outdoor area",
+        "alternatives": [
+          "Scout Hall - outdoor",
+          "External venue"
+        ]
+      },
+      "location_basis": "inferred_planning_only"
     },
     {
       "id": "s1-bushwalking-i-can-talk-about-what-i-enjoyed-or-learnt-from-g",
@@ -3886,7 +4778,14 @@
       "theme_tags": [
         "Reflection & review",
         "Discussion / theory"
-      ]
+      ],
+      "locations": {
+        "preferred": "Scout Hall - indoor",
+        "alternatives": [
+          "Scout Hall - outdoor"
+        ]
+      },
+      "location_basis": "inferred_planning_only"
     },
     {
       "id": "s1-bushcraft-i-know-why-it-is-important-to-stick-to-trails-wh",
@@ -3911,7 +4810,14 @@
         "Environment & nature",
         "Discussion / theory"
       ],
-      "duplicate_of": "s1-bushwalking-i-know-why-it-is-important-to-stick-to-trails-wh"
+      "duplicate_of": "s1-bushwalking-i-know-why-it-is-important-to-stick-to-trails-wh",
+      "locations": {
+        "preferred": "Scout Hall - indoor",
+        "alternatives": [
+          "Scout Hall - outdoor"
+        ]
+      },
+      "location_basis": "inferred_planning_only"
     },
     {
       "id": "s1-bushcraft-i-know-about-the-buddy-system",
@@ -3933,7 +4839,14 @@
       "occurrence_note": "Planning default: one session to gather evidence; leader confirmation remains necessary.",
       "theme_tags": [
         "Discussion / theory"
-      ]
+      ],
+      "locations": {
+        "preferred": "Scout Hall - indoor",
+        "alternatives": [
+          "Scout Hall - outdoor"
+        ]
+      },
+      "location_basis": "inferred_planning_only"
     },
     {
       "id": "s1-bushcraft-i-know-to-stop-when-i-get-lost-on-activities",
@@ -3959,7 +4872,14 @@
         "Emergency response",
         "Navigation",
         "Discussion / theory"
-      ]
+      ],
+      "locations": {
+        "preferred": "Scout Hall - indoor",
+        "alternatives": [
+          "Scout Hall - outdoor"
+        ]
+      },
+      "location_basis": "inferred_planning_only"
     },
     {
       "id": "s1-bushcraft-i-know-my-address-and-location-in-an-emergency",
@@ -3983,7 +4903,14 @@
       "theme_tags": [
         "Emergency response",
         "Discussion / theory"
-      ]
+      ],
+      "locations": {
+        "preferred": "Scout Hall - indoor",
+        "alternatives": [
+          "Scout Hall - outdoor"
+        ]
+      },
+      "location_basis": "inferred_planning_only"
     },
     {
       "id": "s1-bushcraft-i-know-three-reasons-for-having-a-shelter-when-s",
@@ -4009,7 +4936,14 @@
         "Environment & nature",
         "Shelter & tents",
         "Discussion / theory"
-      ]
+      ],
+      "locations": {
+        "preferred": "Scout Hall - indoor",
+        "alternatives": [
+          "Scout Hall - outdoor"
+        ]
+      },
+      "location_basis": "inferred_planning_only"
     },
     {
       "id": "s1-bushcraft-i-can-strike-a-match",
@@ -4033,7 +4967,15 @@
       "theme_tags": [
         "Fire"
       ],
-      "duplicate_of": "s1-camping-i-can-strike-a-match"
+      "duplicate_of": "s1-camping-i-can-strike-a-match",
+      "locations": {
+        "preferred": "Local outdoor area",
+        "alternatives": [
+          "Scout Hall - outdoor",
+          "External venue"
+        ]
+      },
+      "location_basis": "inferred_planning_only"
     },
     {
       "id": "s1-bushcraft-i-can-collect-sticks-for-preparing-a-campfire",
@@ -4056,7 +4998,15 @@
       "occurrence_note": "Planning default: one session to gather evidence; leader confirmation remains necessary.",
       "theme_tags": [
         "Fire"
-      ]
+      ],
+      "locations": {
+        "preferred": "Local outdoor area",
+        "alternatives": [
+          "Scout Hall - outdoor",
+          "External venue"
+        ]
+      },
+      "location_basis": "inferred_planning_only"
     },
     {
       "id": "s1-bushcraft-i-can-be-safe-around-a-campfire",
@@ -4082,7 +5032,12 @@
       "theme_tags": [
         "Safety",
         "Fire"
-      ]
+      ],
+      "locations": {
+        "preferred": "Flexible / anywhere",
+        "alternatives": []
+      },
+      "location_basis": "inferred_planning_only"
     },
     {
       "id": "s1-bushcraft-i-can-demonstrate-stop-drop-and-roll-and-how-tha",
@@ -4105,7 +5060,14 @@
       "occurrence_note": "Planning default: one session to gather evidence; leader confirmation remains necessary.",
       "theme_tags": [
         "Emergency response"
-      ]
+      ],
+      "locations": {
+        "preferred": "Scout Hall - indoor",
+        "alternatives": [
+          "Scout Hall - outdoor"
+        ]
+      },
+      "location_basis": "inferred_planning_only"
     },
     {
       "id": "s1-bushcraft-i-can-find-the-emergency-exit-and-muster-point-a",
@@ -4127,7 +5089,14 @@
       "occurrence_note": "Planning default: one session to gather evidence; leader confirmation remains necessary.",
       "theme_tags": [
         "Emergency response"
-      ]
+      ],
+      "locations": {
+        "preferred": "Scout Hall - indoor",
+        "alternatives": [
+          "Scout Hall - outdoor"
+        ]
+      },
+      "location_basis": "inferred_planning_only"
     },
     {
       "id": "s1-bushcraft-i-have-participated-in-a-game-that-required-basi",
@@ -4153,7 +5122,15 @@
         "Navigation",
         "Outdoor experience",
         "External / real-world experience"
-      ]
+      ],
+      "locations": {
+        "preferred": "Local outdoor area",
+        "alternatives": [
+          "Scout Hall - outdoor",
+          "External venue"
+        ]
+      },
+      "location_basis": "inferred_planning_only"
     },
     {
       "id": "s1-bushcraft-i-can-hang-a-clothesline-at-camp-with-a-clove-hi",
@@ -4179,7 +5156,14 @@
       "occurrence_note": "Planning default: one session to gather evidence; leader confirmation remains necessary.",
       "theme_tags": [
         "Knots & rope"
-      ]
+      ],
+      "locations": {
+        "preferred": "Scout Hall - indoor",
+        "alternatives": [
+          "Scout Hall - outdoor"
+        ]
+      },
+      "location_basis": "inferred_planning_only"
     },
     {
       "id": "s1-bushcraft-i-know-how-to-correctly-pack-ropes-away",
@@ -4206,7 +5190,14 @@
         "Equipment & packing",
         "Knots & rope",
         "Discussion / theory"
-      ]
+      ],
+      "locations": {
+        "preferred": "Scout Hall - indoor",
+        "alternatives": [
+          "Scout Hall - outdoor"
+        ]
+      },
+      "location_basis": "inferred_planning_only"
     },
     {
       "id": "s1-bushcraft-i-know-what-is-in-a-dilly-bag-mess-kit-and-can-k",
@@ -4234,7 +5225,14 @@
         "Equipment & packing",
         "Hygiene & personal care",
         "Discussion / theory"
-      ]
+      ],
+      "locations": {
+        "preferred": "Scout Hall - indoor",
+        "alternatives": [
+          "Scout Hall - outdoor"
+        ]
+      },
+      "location_basis": "inferred_planning_only"
     },
     {
       "id": "s1-bushcraft-i-can-talk-about-what-i-enjoyed-learnt-or-improv",
@@ -4260,12 +5258,20 @@
         "Navigation",
         "Reflection & review",
         "Discussion / theory"
-      ]
+      ],
+      "locations": {
+        "preferred": "Scout Hall - indoor",
+        "alternatives": [
+          "Scout Hall - outdoor"
+        ]
+      },
+      "location_basis": "inferred_planning_only"
     }
   ],
   "tagging_note": "Tags are broad planning themes and likely delivery settings, inferred from requirement wording; they are suggestions, not official classifications.",
   "theme_metadata": {
     "source": "tags from canonical requirement data",
-    "note": "theme_tags are planning indexes; duplicate_of is display-only and does not collapse official IDs or evidence."
+    "note": "theme_tags are planning indexes; duplicate_of is display-only and does not collapse official IDs or evidence.",
+    "location_note": "Location preferences inferred from generic activity tags/stream for planning only; not prescribed venues or official requirement conditions."
   }
 }
