@@ -14,3 +14,6 @@ tests/baseline-artifacts/
 
 # Phase 3 transient TypeScript test build
 .phase3-test-dist/
+
+.tools/
+debug.log

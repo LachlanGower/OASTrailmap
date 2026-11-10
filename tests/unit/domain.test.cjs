@@ -13,7 +13,7 @@ const imports = require('../../.phase3-test-dist/services/import-validation.js')
 const fixture = JSON.parse(readFileSync(path.resolve(__dirname,'../../tests/fixtures/legacy-state.synthetic.json'),'utf8'));
 const dataset = JSON.parse(readFileSync(path.resolve(__dirname,'../../data/requirements.json'),'utf8'));
 const A = {id:'A',stage:1,stream:'Camping',text:'Prepare',tags:['camp','group'],prerequisites:[]};
-const B = {id:'B',stage:1,stream:'Camping',text:'Practice',tags:['camp'],prerequisites:['A']};
+const B = {id:'B',stage:2,stream:'Camping',text:'Practice',tags:['camp'],prerequisites:['A']};
 const C = {id:'C',stage:2,stream:'Bushwalking',text:'Review',tags:[],prerequisites:['B']};
 const graph=[A,B,C];
 const record=(completed,extras={})=>({completed,...extras});

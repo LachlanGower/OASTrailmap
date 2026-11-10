@@ -30,7 +30,7 @@ export function blockedPrerequisites(
   requirement: OasRequirement, scout: string,
   requirements: readonly OasRequirement[], records: ScoutRecords
 ): string[] {
-  return requirement.prerequisites.filter(id =>
+  return (Number(requirement.stage) === 1 ? [] : requirement.prerequisites).filter(id =>
     !requirements.some(r => r.id === id) || !isCompleted(records, scout, id)
   );
 }

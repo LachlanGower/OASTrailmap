@@ -4,10 +4,8 @@ import { defineConfig, type Plugin } from 'vite';
 import vue from '@vitejs/plugin-vue';
 
 /**
- * A temporary migration bridge. The original app remains the default entry.
- * Phase 4 bundles index.html with an opt-in Vue island for the app register,
- * plus vue-preview.html. All original legacy JS, CSS, data and docs stay
- * intact in dist/, with the old register retained as an explicit fallback.
+ * The root is Vue-owned. legacy.html is a separate PR #40 comparison entry.
+ * Original assets are copied only for that page and public curriculum/docs.
  */
 function copyUnchangedLegacySite(): Plugin {
   return {
@@ -37,7 +35,8 @@ export default defineConfig({
     rollupOptions: {
       input: {
         index: resolve(process.cwd(), 'index.html'),
-        'vue-preview': resolve(process.cwd(), 'vue-preview.html')
+        'vue-preview': resolve(process.cwd(), 'vue-preview.html'),
+        legacy: resolve(process.cwd(), 'legacy.html')
       }
     }
   }

@@ -1,5 +1,5 @@
 import { createApp } from 'vue';
-import VuePreview from './components/VuePreview.vue';
-import './styles/preview.css';
+import App from './App.vue';
+import './styles/app.css';
 
-createApp(VuePreview).mount('#oas-vue-preview');
+createApp(App).mount(document.querySelector('#app') ? '#app' : '#oas-vue-preview');
