@@ -26,8 +26,8 @@ for(const base of required) {
  }
 }
 
-const sourceHtml=fs.readFileSync(path.join(root,'index.html'),'utf8');
-const builtHtml=fs.readFileSync(path.join(root,'dist','index.html'),'utf8');
+const sourceHtml=fs.readFileSync(path.join(root,'legacy.html'),'utf8');
+const builtHtml=fs.readFileSync(path.join(root,'dist','legacy.html'),'utf8');
 const ids=s=>[...s.matchAll(/\bid="([^"]+)"/g)].map(m=>m[1]);
 assert.deepEqual(ids(builtHtml),ids(sourceHtml),'Vite build changed static application DOM IDs');
 const originalScripts=[
@@ -43,4 +43,8 @@ assert.ok(!builtHtml.includes('src="/src/features/application-requirements/mount
 const preview=fs.readFileSync(path.join(root,'dist','vue-preview.html'),'utf8');
 assert.ok(preview.includes('id="oas-vue-preview"'),'Vue entry missing from built output');
 assert.ok(/assets\//.test(preview),'Vite did not bundle the Vue preview');
-console.log('Vite build preserved '+count+' legacy CSS/JS/data/docs files byte-for-byte; index DOM IDs and original scripts retained; Vue island and preview bundled.');
+const standalone=fs.readFileSync(path.join(root,'dist','index.html'),'utf8');
+assert.deepEqual(ids(standalone),['app'],'Root page must contain only the Vue mount point');
+assert.ok(/assets\//.test(standalone),'Root Vue bundle missing');
+assert.ok(!/src="(?:https?:|js\/)/.test(standalone),'Standalone root includes a legacy script');
+console.log('Build preserved '+count+' legacy assets; legacy.html retains the comparison UI; root is standalone Vue.');

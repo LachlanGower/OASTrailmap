@@ -4,13 +4,16 @@ A local-first single-page app prototype for Scout leaders to visualise Outdoor A
 
 ## Run locally
 
-Because the app fetches `data/requirements.json`, open it through a local static server rather than by double-clicking `index.html`:
+Use Node 22.12+ and npm. The root URL starts the standalone Vue app with hot reload:
 
 ```bash
-python -m http.server 8000
+npm ci
+npm run dev
 ```
 
-Then visit `http://localhost:8000` (from this folder). The app uses SheetJS and js-yaml from public CDNs for Excel and YAML import; those features need an internet connection. The rest of the app uses vanilla JavaScript.
+Open `http://localhost:5173/`. Compare the preserved PR #40 interface at `/legacy.html`. Both pages share the existing storage keys on the same origin; close one before editing in the other. Export a full backup before comparing.
+
+This draft owns the application in Vue but **does not yet have full PR #40 feature parity**. See [the migration notes](docs/standalone-vue.md) for the exact gaps and local acceptance commands. YAML and XLSX readers are bundled npm dependencies; the Vue interface does not load legacy scripts or CDN libraries. The older feature descriptions below document the comparison app unless listed as delivered in the migration notes.
 
 ## Publish with GitHub Pages
 

@@ -14,7 +14,7 @@ const read = p => JSON.parse(fs.readFileSync(fromRoot(p), 'utf8'));
 const baseline = read('docs/migration/baseline.json');
 const app = read('data/application-requirements.json');
 const reqs = read('data/requirements.json').requirements;
-const html = fs.readFileSync(fromRoot('index.html'),'utf8');
+const html = fs.readFileSync(fromRoot('legacy.html'),'utf8');
 
 const actualIds = [...html.matchAll(/\bid="([^"]+)"/g)].map(m => m[1]);
 for(const id of baseline.dom_element_ids) assert.ok(actualIds.includes(id),

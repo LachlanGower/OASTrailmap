@@ -69,7 +69,7 @@ const delay = ms => new Promise(resolve=>setTimeout(resolve, ms));
       for (const [key,value] of Object.entries(storage)) localStorage.setItem(key,JSON.stringify(value));
     },fixture.storage);
     await page.reload({waitUntil:'domcontentloaded'});
-    await page.waitForFunction(()=>document.querySelectorAll('#mapCanvas .requirement-node').length===142);
+    await page.waitForFunction(()=>{const toggle=document.querySelector('#groupDuplicateRequirements');if(toggle?.checked){toggle.checked=false;toggle.dispatchEvent(new Event('change',{bubbles:true}));}return document.querySelectorAll('#mapCanvas .requirement-node').length===142;});
     await page.locator('#scoutSelect').selectOption('Example Scout');
     await page.locator('#mapCanvas [data-id="s1-camping-i-know-about-the-buddy-system"]').click();
     await page.waitForSelector('#detailComplete');
@@ -82,7 +82,7 @@ const delay = ms => new Promise(resolve=>setTimeout(resolve, ms));
     },recordId);
     assert.equal(saved?.completed,false,'Manual completion change must persist locally');
     await page.reload({waitUntil:'domcontentloaded'});
-    await page.waitForFunction(()=>document.querySelectorAll('#mapCanvas .requirement-node').length===142);
+    await page.waitForFunction(()=>{const toggle=document.querySelector('#groupDuplicateRequirements');if(toggle?.checked){toggle.checked=false;toggle.dispatchEvent(new Event('change',{bubbles:true}));}return document.querySelectorAll('#mapCanvas .requirement-node').length===142;});
     await page.locator('#scoutSelect').selectOption('Example Scout');
     await page.locator('#mapCanvas [data-id="s1-camping-i-know-about-the-buddy-system"]').click();
     assert.equal(await page.locator('#detailComplete').isChecked(),false,
