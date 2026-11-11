@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { computed, onMounted, onUnmounted, ref } from 'vue';
-import { initialize, state, ui, names, scope, change } from './state';
+import { computed, onMounted, onUnmounted, ref, watch } from 'vue';
+import { initialize, state, ui, names, scope } from './state';
 import RequirementWorkspace from './workspaces/RequirementWorkspace.vue';
 import RequirementDetail from './workspaces/RequirementDetail.vue';
 import SchedulerWorkspace from './workspaces/SchedulerWorkspace.vue';
@@ -9,34 +9,49 @@ import ActivityWorkspace from './workspaces/ActivityWorkspace.vue';
 import ApplicationRequirements from './features/application-requirements/ApplicationRequirements.vue';
 import { parseCatalogue, type ApplicationCatalogue } from './features/application-requirements/catalogue';
 import { LEGACY_KEYS } from './services/legacy-state';
-const routes=['Trailmap','Skill Trees','Scheduler','Activities','Weekly Themes','Requirements Tracker','Data & State','Application Requirements','Help'];
-const route=ref('Trailmap'),catalogue=ref<ApplicationCatalogue|null>(null),scout=ref('');
-function syncRoute(){const value=decodeURIComponent(location.hash.slice(1));route.value=routes.includes(value)?value:'Trailmap';}
+import RequirementsTracker from './workspaces/RequirementsTracker.vue';
+import { coverageRows } from './domain/coverage-tracker';
+import CurriculumEditor from './workspaces/CurriculumEditor.vue';
+import HelpWorkspace from './workspaces/HelpWorkspace.vue';
+import StageDetail from './workspaces/StageDetail.vue';
+const sections=[
+ {name:'Planner',tabs:['Trailmap','Scheduler','Activity Studio']},
+ {name:'Curriculum Mapping',tabs:['Curriculum Editor','Requirements Tracker']},
+ {name:'Data and State',tabs:['Monitoring','Importer','Exporter','Recovery and reset']},
+ {name:'Help',tabs:['Help docs','Application Requirements','Future state']}
+];
+const routes=sections.flatMap(section=>section.tabs);
+const route=ref('Trailmap'),catalogue=ref<ApplicationCatalogue|null>(null);
+const section=computed(()=>sections.find(s=>s.tabs.includes(route.value))!);
+function syncRoute(){let value='';try{value=decodeURIComponent(location.hash.slice(1));}catch{/* Invalid hashes fall back to Trailmap. */}const aliases:Record<string,string>={'Activities':'Activity Studio','Data & State':'Monitoring','Help':'Help docs','Skill Trees':'Curriculum Editor','Weekly Themes':'Curriculum Editor'};value=aliases[value]??value;route.value=routes.includes(value)?value:'Trailmap';}
+watch(route,()=>{ui.requirementId='';ui.stageSelection=null;});
+watch(()=>ui.requirementId,id=>{if(id)ui.stageSelection=null;});
+const selectedStageIndex=computed(()=>{const selection=ui.stageSelection;if(!selection)return -1;const weeks=state.value?.studio.schedule??[];return selection.weekId?weeks.findIndex(w=>w.id===selection.weekId):selection.weekIndex<weeks.length?selection.weekIndex:-1;});
 function storageChanged(event:StorageEvent){if(event.key===null||event.key===LEGACY_KEYS.progress||event.key===LEGACY_KEYS.studio){ui.stale=true;ui.error='Another tab changed local data. Reload before editing.';}}
+const coverage=computed(()=>state.value?coverageRows(state.value.requirements,state.value.progress.activities??[],state.value.studio.schedule??[],{},[]):[]);
+const overview=computed(()=>[{label:'Requirements',value:coverage.value.length,kind:'total'},{label:'Unaddressed',value:coverage.value.filter(r=>r.status==='unaddressed').length,kind:'unaddressed'},{label:'Partially addressed',value:coverage.value.filter(r=>r.status==='partial').length,kind:'partial'},{label:'Fully planned',value:coverage.value.filter(r=>r.status==='planned').length,kind:'planned'},{label:'Addressed',value:coverage.value.filter(r=>r.status!=='unaddressed').length,kind:'addressed'}]);
 const selected=computed(()=>state.value?.requirements.find(r=>r.id===ui.requirementId));
-function addScout(){const name=scout.value.trim();if(!name||name.includes('::')||name.startsWith('__')){ui.error='Enter a Scout name without :: or a reserved prefix.';return;}if(change('Before adding Scout',s=>{s.progress.scoutRecords[name+'::__roster__']??={completed:false,date:'',source:'manual-roster'};})){ui.selection=name;scout.value='';}}
 onMounted(async()=>{syncRoute();window.addEventListener('hashchange',syncRoute);window.addEventListener('storage',storageChanged);await initialize();try{const r=await fetch(new URL('data/application-requirements.json',document.baseURI));catalogue.value=parseCatalogue(await r.json());}catch(e){ui.error=String(e);}});
 onUnmounted(()=>{window.removeEventListener('hashchange',syncRoute);window.removeEventListener('storage',storageChanged);});
 </script>
 <template>
- <header><a class="brand" href="#Trailmap">✦ OAS Trailmap</a><span>Local-first Scout planning</span><a href="./legacy.html" target="_blank" rel="noopener">Compare legacy app ↗</a></header>
+ <header><a class="brand" href="#Trailmap">✦ OAS Trailmap</a><nav class="major-nav" aria-label="Main sections"><a v-for="s in sections" :key="s.name" :href="'#'+encodeURIComponent(s.tabs[0])" :aria-current="section.name===s.name?'page':undefined">{{s.name}}</a></nav></header>
  <main>
-  <p class="notice">Standalone Vue · draft migration. Some advanced tools still require parity work. <a href="#Help">See known gaps</a>.</p>
   <div v-if="ui.error" class="error" role="alert">{{ui.error}} <button @click="ui.error=''">Dismiss</button></div>
   <p role="status" aria-live="polite">{{ui.notice}}</p>
   <template v-if="state">
-   <nav aria-label="Workspaces"><a v-for="name in routes" :key="name" :href="'#'+encodeURIComponent(name)" :aria-current="route===name?'page':undefined">{{name}}</a></nav>
-   <section class="scope toolbar"><label>Scout scope<select v-model="ui.selection"><option value="__all__">All Scouts</option><option value="__subset__">Selected subset</option><option v-for="name in names" :key="name">{{name}}</option></select></label><span>{{scope.length}} Scouts · {{state.requirements.length}} requirements</span><form class="toolbar" @submit.prevent="addScout"><label>Add Scout<input v-model="scout" placeholder="Scout name"></label><button>Add Scout</button></form></section>
-   <fieldset v-if="ui.selection==='__subset__'"><legend>Scouts in subset</legend><label v-for="name in names" :key="name" class="check"><input v-model="ui.subset" type="checkbox" :value="name">{{name}}</label></fieldset>
-   <h1>{{route}}</h1>
+   <nav class="workspace-tabs" aria-label="Workspaces"><a v-for="name in section.tabs" :key="name" :href="'#'+encodeURIComponent(name)" :aria-current="route===name?'page':undefined">{{name}}</a></nav>
+   <section v-if="section.name==='Planner'||section.name==='Curriculum Mapping'||route==='Monitoring'" class="scope toolbar"><label>Scout scope<select v-model="ui.selection" aria-label="Scout scope"><option value="__all__">All imported Scouts</option><option value="__subset__">Choose a subset</option><option v-for="name in names" :key="name" :value="name">{{name}}</option></select></label><span>{{scope.length}} Scouts selected · {{state.requirements.length}} requirements</span><p v-if="!names.length">No Scouts imported yet. <a href="#Importer">Import your progress workbook</a> to choose from its roster.</p><fieldset v-if="ui.selection==='__subset__'" class="scout-subset"><legend>Select imported Scouts</legend><label v-for="name in names" :key="name" class="check"><input v-model="ui.subset" type="checkbox" :value="name">{{name}}</label><p v-if="!names.length">Import a workbook to populate this list.</p></fieldset><div class="coverage-summary scope-overview"><article v-for="item in overview" :key="item.kind" :class="['coverage-stat',item.kind]"><strong>{{item.value}}</strong><span>{{item.label}}</span></article></div></section>
+   <section class="workspace-surface"><div class="workspace-heading"><p class="eyebrow">{{section.name}}</p><h1>{{route}}</h1></div>
    <div class="workspace"><div class="workspace-main">
-    <RequirementWorkspace v-if="['Trailmap','Skill Trees','Weekly Themes','Requirements Tracker'].includes(route)" :mode="route" />
+    <RequirementWorkspace v-if="route==='Trailmap'" :key="route" :mode="route" />
     <SchedulerWorkspace v-else-if="route==='Scheduler'" />
-    <DataWorkspace v-else-if="route==='Data & State'" />
-    <ActivityWorkspace v-else-if="route==='Activities'" />
+    <CurriculumEditor v-else-if="route==='Curriculum Editor'" /><RequirementsTracker v-else-if="route==='Requirements Tracker'" />
+    <DataWorkspace v-else-if="section.name==='Data and State'" :mode="route" />
+    <ActivityWorkspace v-else-if="route==='Activity Studio'" />
     <ApplicationRequirements v-else-if="route==='Application Requirements'&&catalogue" :catalogue="catalogue" />
-    <section v-else><h2>Working locally</h2><p>Changes save in this browser. Use Data & State to download a full backup before comparing apps. Both apps share existing browser data on the same origin. Close one before editing in the other.</p><h2>Draft parity gaps</h2><p>The Vue interface owns every workspace, navigation and save action. Advanced tree canvas positioning and private link-layer editing, Trello exchange, the detailed per-Scout forecast, activity-file attachments and session review workflow are still pending. Existing fields are retained in storage and backups. Use the separate legacy app to compare those tools.</p><p>The application requirements catalogue describes the PR #40 product; its implementation statuses do not certify parity in this draft.</p><p>Scheduling plans opportunities and never awards evidence. Stage 1 is ready without mandatory prerequisites. Curriculum IDs and individual Scout evidence remain distinct even when duplicate text is grouped for display.</p><a href="./docs/standalone-vue.md">Migration and local verification notes</a></section>
-   </div><RequirementDetail v-if="selected" :key="selected.id" :requirement="selected" /></div>
+    <HelpWorkspace v-else :mode="route" />
+   </div><RequirementDetail v-if="selected" :key="selected.id" :requirement="selected" /><StageDetail v-else-if="route==='Scheduler'&&ui.stageSelection&&selectedStageIndex>=0" :key="selectedStageIndex+'-'+ui.stageSelection.stage" :week-index="selectedStageIndex" :stage="ui.stageSelection.stage" /></div></section>
   </template><p v-else>Loading application… If loading fails, stored data is left untouched.</p>
  </main><footer>Private Scout records stay in this browser. Export backups regularly.</footer>
 </template>

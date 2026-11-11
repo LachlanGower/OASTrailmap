@@ -878,15 +878,17 @@
 
 **Verification:** Check no proposal is mislabelled shipped.
 
-## Future discovery
+## Stage delivery and future discovery
 
-### APP-105 — Stage-oriented night redesign
+### APP-105 — Exclusive weekly stage activities and Scout assignments
 
-**Delivery:** future. **Requirement:** Investigate four requirements per stage per night, cohesive themes and mixed-stage delivery.
+**Delivery:** implemented in local Vue code; user acceptance pending. **Requirement:** Each stage has one linked Activity Bank activity per week, and each Scout can join at most one stage/activity that week. Each Scout must finish every earlier-stage statement across streams before advancing in a later week: Stage 1 before Stage 2, and Stage 2 before Stage 3. Statements can recur until their required opportunities are met. Assign Scouts before projecting any evidence from that night. Credit only eligible planned statements in that Scout's stage and the linked activity's coverage. Unlinked activities remain provisional.
 
-**Implementation references:** `docs/future-phases.md`.
+**Implementation references:** `src/domain/scout-projection.ts`, `src/domain/night-planning.ts`, `src/domain/stage-activity.ts`, `src/workspaces/StageDetail.vue`, `src/workspaces/SchedulerWorkspace.vue`, `tests/unit/exclusive-stage-activities.test.cjs`.
 
-**Verification:** Discover group composition, acceptance criteria and model.
+**Whole-night planning:** Form stage cohorts from projected progress before selecting requirements. Compare permitted themes, venues and alternative requirement sets across all active cohorts, prioritising useful work for everyone. Related-theme fillers remain Suggested and location constraints remain mandatory. Bounded search improves coverage without claiming a globally optimal plan. List unresolved Scouts by name and reason in the week and stage sidebar. Generation runs in a cancellable background worker with weekly progress.
+
+**Verification:** No overlapping stage membership or cross-stage projected credit in a week. Check later-week progression, repeat evidence, coverage gaps, missing activities, locations, locked plans, backup round trips and recalculation after swaps/scope/evidence changes. The 30-Scout regression must serve simultaneous Stage 1/2/3 groups (15/10/5), choosing a compatible venue instead of committing to an early Stage 1 venue. Alternative statement sets, related-theme anchors and named gaps are covered by `tests/unit/whole-night-planner.test.cjs`. Clicking a stage opens the Scout/activity/coverage sidebar; clicking a requirement opens OAS Statement separately. Manual local acceptance remains pending.
 
 ### APP-106 — Stages become soft prerequisites again
 

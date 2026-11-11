@@ -14,7 +14,7 @@ export function loadApplication(storage: StoragePort, defaults: OasRequirement[]
   const requirements=clone(progress.requirementsOverride ?? defaults);
   for(const r of progress.supplementalRequirements ?? []) if(!requirements.some(x=>x.id===r.id)) requirements.push(clone(r));
   validateRequirements(requirements);
-  return {requirements,progress,studio:{trees:[],tags:[],schedule:[],history:[],order:{},treeGraphs:{},strategy:'progress',weeks:40,capacity:4,...snapshot.studio}};
+  return {requirements,progress,studio:{trees:[],tags:[],schedule:[],history:[],order:{},treeGraphs:{},strategy:'progress',weeks:10,capacity:4,...snapshot.studio}};
 }
 export function exportApplication(state:ApplicationState,kind:DataExportKind,scope:string[]=[]):Record<string,unknown> {
   return buildLegacyExport(kind,{requirements:state.requirements,scoutRecords:state.progress.scoutRecords,activities:state.progress.activities??[],studio:state.studio,scope},new Date().toISOString());

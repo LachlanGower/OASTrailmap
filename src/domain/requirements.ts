@@ -50,6 +50,11 @@ export function validateRequirements(value: unknown): asserts value is OasRequir
     visited.add(id);
   }
   for (const id of byId.keys()) visit(id);
+  for(const r of byId.values())if(r.duplicate_of!==undefined){
+    if(typeof r.duplicate_of!=='string'||!byId.has(r.duplicate_of))throw new Error('Missing duplicate statement for '+r.id);
+    const seen=new Set<string>([r.id]);let id:string|undefined=r.duplicate_of;
+    while(id){if(seen.has(id))throw new Error('Circular duplicate relationship at '+r.id);seen.add(id);id=byId.get(id)?.duplicate_of;}
+  }
   for (const r of byId.values()) for (const link of r.suggested_links ?? []) {
     if (!byId.has(link.id)) throw new Error('Missing advisory link ' + link.id + ' used by ' + r.id);
   }

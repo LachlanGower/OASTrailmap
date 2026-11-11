@@ -1,0 +1,41 @@
+<script setup lang="ts">
+import { computed,ref,watch } from 'vue';
+import { state,scope,ui,change } from '../state';
+import { projectSchedule } from '../domain/scout-projection';
+import { assignStageActivity,stageActivityIssue } from '../domain/stage-activity';
+import { activityLabel } from '../domain/activity-planning';
+const props=defineProps<{weekIndex:number;stage:number}>();
+const week=computed(()=>state.value!.studio.schedule![props.weekIndex]);
+const bank=computed(()=>state.value!.progress.activities??[]);
+const requirements=computed(()=>state.value!.requirements);
+const planned=computed(()=>requirements.value.filter(r=>r.stage===props.stage&&week.value.requirementIds.includes(r.id)));
+const linkedId=computed(()=>week.value.stageActivityIds?.[String(props.stage)]??'');
+const draftId=ref(linkedId.value);
+watch(linkedId,id=>{draftId.value=id;});
+const activity=computed(()=>bank.value.find(a=>a.id===draftId.value));
+const context=computed(()=>({useLocations:true,allowedLocations:(state.value!.studio.allowedLocations??[]) as string[],activities:bank.value}));
+const issue=computed(()=>activity.value?stageActivityIssue(week.value,props.stage,activity.value,requirements.value,context.value):draftId.value?'This activity is missing from the bank.':'');
+const previewing=computed(()=>!week.value.locked&&!!draftId.value&&draftId.value!==linkedId.value&&!issue.value);
+const participation=computed(()=>{
+ const weeks=[...(state.value!.studio.schedule??[])];
+ if(previewing.value)weeks[props.weekIndex]={...week.value,stageActivityIds:{...week.value.stageActivityIds,[String(props.stage)]:draftId.value}};
+ return projectSchedule(requirements.value,state.value!.progress.scoutRecords,weeks,state.value!.studio.strategy==='curriculum'?[]:scope.value,context.value)[props.weekIndex];
+});
+const scouts=computed(()=>participation.value?.stageScouts[String(props.stage)]??[]);
+const awaitingWork=computed(()=>(participation.value?.stageCohorts[String(props.stage)]??[]).filter(s=>!scouts.value.includes(s)));
+const earlierStageScouts=computed(()=>Object.entries(participation.value?.lowerStageRemaining[String(props.stage)]??{}).filter(([,count])=>count>0));
+const covered=computed(()=>requirements.value.filter(r=>activity.value?.covers.includes(r.id)));
+const plannedCovered=computed(()=>planned.value.filter(r=>activity.value?.covers.includes(r.id)));
+const missing=computed(()=>planned.value.filter(r=>!activity.value?.covers.includes(r.id)));
+const otherCoverage=computed(()=>covered.value.filter(r=>!planned.value.some(p=>p.id===r.id)));
+function scoutCoverage(scout:string){return planned.value.filter(r=>participation.value?.requirementScouts[r.id]?.includes(scout)).length;}
+function assign(){if(!activity.value)return;change('Before assigning Stage '+props.stage+' activity',s=>{s.studio.schedule![props.weekIndex]=assignStageActivity(s.studio.schedule![props.weekIndex],props.stage,draftId.value,s.progress.activities??[],s.requirements,context.value);});}
+function remove(){change('Before removing Stage '+props.stage+' activity',s=>{s.studio.schedule![props.weekIndex]=assignStageActivity(s.studio.schedule![props.weekIndex],props.stage,null,s.progress.activities??[],s.requirements,context.value);});}
+function openRequirement(id:string){ui.stageSelection=null;ui.requirementId=id;}
+</script>
+<template><aside class="detail stage-detail" aria-labelledby="stage-detail-title"><div class="detail-header"><h2 id="stage-detail-title">Week {{weekIndex+1}} · Stage {{stage}}</h2><button class="close" aria-label="Close stage details" @click="ui.stageSelection=null">×</button></div><div class="detail-content"><h3 class="statement-name">{{week.theme||week.title||'Stage activity'}}</h3><p class="section-caption">{{week.location||'Flexible / anywhere'}} · one activity per Scout this week</p>
+ <section class="statement-section"><h3>Scouts affected <span class="stage-count-badge">{{scouts.length}}</span><small v-if="previewing" class="stage-preview-badge">Preview</small></h3><p class="section-caption">Each Scout belongs to one stage group this week. They can move to another stage in a later week.</p><div class="stage-roster"><div v-for="scout in scouts" :key="scout" class="stage-roster-row"><span>{{scout}}</span><small>{{scoutCoverage(scout)}} planned skills</small></div><p v-if="!scouts.length" class="section-caption">No Scouts have suitable planned work in this stage yet.</p></div><div v-if="awaitingWork.length" class="stage-awaiting"><h4>Still need Stage {{stage}} work</h4><p v-for="scout in awaitingWork" :key="scout"><strong>{{scout}}</strong><small>{{participation?.unassignedReasons[scout]}}</small></p></div><details v-if="earlierStageScouts.length" class="earlier-stage-note"><summary>{{earlierStageScouts.length}} Scouts still finishing earlier stages</summary><p>All earlier-stage statements must be complete before joining Stage {{stage}}. Stage changes take effect in a later week.</p><div v-for="[scout,count] in earlierStageScouts" :key="scout"><span>{{scout}}</span><small>{{count}} earlier statements remaining</small></div></details></section>
+ <section class="statement-section"><h3>Stage activity</h3><p v-if="week.locked" class="stage-activity-warning">This week is locked. Unlock it before changing its activity.</p><label>Choose from Activity Bank<select v-model="draftId" :disabled="!!week.locked" aria-label="Stage activity"><option value="">No activity assigned</option><option v-for="a in bank" :key="a.id" :value="a.id">{{activityLabel(a)}} · {{planned.filter(r=>a.covers.includes(r.id)).length}}/{{planned.length}} planned skills</option></select></label><p v-if="!bank.length" class="section-caption">Create an activity in <a href="#Activity%20Studio">Activity Studio</a> first.</p><p v-if="!linkedId" class="stage-activity-warning">No bank activity linked yet. Coverage and projected progress are provisional until an activity is chosen.</p><p v-if="issue" class="stage-activity-warning" role="status">{{issue}}</p><div v-if="activity" class="stage-activity-card"><strong>{{activityLabel(activity)}}</strong><p>{{activity.description}}</p><small>{{activity.duration||activity.duration_minutes||60}} min · {{activity.location||'Flexible / anywhere'}}</small></div><div class="stage-activity-actions"><button :disabled="!!week.locked||!activity||!!issue||draftId===linkedId" @click="assign">Assign activity</button><button v-if="linkedId" :disabled="!!week.locked" @click="remove">Remove activity</button><button v-if="draftId!==linkedId" @click="draftId=linkedId">Cancel selection</button></div></section>
+ <section class="statement-section"><h3>Activity coverage</h3><p class="section-caption">{{plannedCovered.length}} / {{planned.length}} planned Stage {{stage}} statements covered. Click a statement for its OAS details.</p><h4 v-if="plannedCovered.length">Covered in this stage</h4><button v-for="r in plannedCovered" :key="r.id" class="stage-coverage-link covered" @click="openRequirement(r.id)"><span aria-hidden="true">✓</span><span>{{r.text}}</span></button><template v-if="missing.length"><h4>{{activity?'Not covered by this activity':'Planned statements — activity needed'}}</h4><p v-if="activity" class="stage-activity-warning">Uncovered statements do not add projected progress once a bank activity is assigned.</p><button v-for="r in missing" :key="r.id" class="stage-coverage-link missing" @click="openRequirement(r.id)"><span aria-hidden="true">○</span><span>{{r.text}}</span></button></template><details v-if="otherCoverage.length" class="stage-other-coverage"><summary>Other activity coverage · {{otherCoverage.length}}</summary><p class="section-caption">These statements are outside this group's planned work. Other-stage coverage is not credited to Scouts in Stage {{stage}}.</p><button v-for="r in otherCoverage" :key="r.id" class="stage-coverage-link" @click="openRequirement(r.id)"><span>{{r.text}}<small>Stage {{r.stage}} · {{r.stream}}</small></span></button></details></section>
+ <p class="section-caption">Assignments assume attendance and successful demonstration of covered skills. Actual Scout evidence stays unchanged.</p>
+ </div></aside></template>

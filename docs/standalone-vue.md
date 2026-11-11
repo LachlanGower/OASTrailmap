@@ -1,5 +1,21 @@
 # Standalone Vue draft, stacked on PR #40
 
+## Local scheduler revisions awaiting user testing
+
+Weekly stage membership is now exclusive: one Scout can join at most one stage/activity that night. Choose membership before crediting planned evidence; same-night work cannot move that Scout into another stage. Within primary-theme options the highest ready stage is selected, with related-theme work used only for Scouts not already allocated. A recorded session already associated with a stage reserves that Scout's stage; conflicting historical multi-stage evidence is retained and flagged instead of earning further projected credit.
+
+Click a stage heading to open its Scout/activity sidebar. Link one bank activity using `stageActivityIds[stage]`; coverage, missing coverage and other-stage coverage are listed separately. Only covered, eligible planned statements in that stage contribute projected opportunities. No bank activity means the intended stage plan is explicitly provisional. Requirement clicks still open OAS Statement, and the two sidebars are mutually exclusive. Locked activity links cannot be edited. APP-105 now documents this agreed behavior in the internal catalogue and written register.
+
+The scheduler now assigns individual Scouts to each requirement and projects their progress chronologically. Different cohorts may run all stages in Week 1, but every Scout must finish all earlier-stage statements across streams before entering a higher stage in a later week. Stage 1 gates Stage 2; Stage 1 and Stage 2 gate Stage 3. Repeated statements may recur until their required opportunities are met. Eligibility uses whole-stage completion, each Scout's remaining evidence count and that requirement's specific prerequisites (Stage 1 keeps its existing prerequisite exception). Only the Scouts actually assigned to an eligible skill gain a projected opportunity. Imported completions remain authoritative; recorded session keys are not counted twice. A requirement may recur for a different Scout who becomes ready later, even after other Scouts finish it.
+
+Stage groups and individual cards display participant names. Assignments are derived again after Scout-scope changes, actual evidence changes, edits, swaps and individual theme changes. Names conditional on planned prerequisite evidence are labelled accordingly. Locked plans retain their exact stored payload; derived warnings flag unsuitable skills without modifying the plan. New generated weeks store optional `scoutAssignments` and `assignmentScope` fields for their original generation context. Displayed names are recalculated from current evidence and scope instead of trusting stale stored assignments. Curriculum mode stays available without Scout assignments. No projected progress is written into Scout evidence.
+
+The working copy now uses a theme-led target **per stage per night**, with ten weeks by default. The target applies separately to Stages 1, 2 and 3. First select from the night's chosen theme; then use themes on its primary selections to fill stage shortages. These fallback skills carry `suggestedRequirementIds` and `suggestionThemes` metadata and amber Suggested badges. Unfilled stage targets are recorded as `stageShortfalls` and shown explicitly. Unrelated skills are not added just to fill capacity.
+
+Selected themes/tags are the primary decision; readiness and the selected strategy break ties. With location matching enabled, the whole night must share a compatible allowed venue; a fixed location on an individually regenerated week is also respected. Separate opportunities can repeat only up to the requirement's planning target. Generated plans never modify Scout evidence. Existing saved and locked weeks remain intact until an explicit generation/preview apply action.
+
+This behavior supersedes the earlier PR #40 scoring-parity port described in the original draft. Tests now verify the requested stage quotas, flagged related-theme fill-ins, location constraints, shortfall reporting, locked-week preservation and evidence safety. Changes remain local pending the user's acceptance; no additional GitHub updates are authorised.
+
 The root page runs a Vue application. It does not run `js/app.js`, `js/studio.js`, the legacy UI, island mount modules, hidden button proxies, or a legacy DOM scaffold. The original PR #40 entry is preserved separately as `legacy.html`. `vue-preview.html` is now an alias entry into the same Vue application.
 
 This is an architectural replacement with working core workflows, **not full feature parity**. It must remain draft. Phase 5 remains on hold. Main, gh-pages and all Actions workflows are untouched.
@@ -77,3 +93,21 @@ Local verification covers baseline identities and comparison markup, existing do
 Verified locally: clean `npm ci` (zero reported dependency vulnerabilities), typecheck, all 68 unit tests, production build, asset/entry checks, Vue browser acceptance on dev and compiled output, and dev hot reload. The legacy comparison smoke explicitly disables duplicate display grouping before asserting all 142 visible cards after each reload; its prior reload assertion predated that PR #40 default.
 
 Do not merge or deploy this draft as a parity-complete release. Complete the gaps above and real-workbook/manual acceptance first.
+
+## Local whole-night scheduler refinement
+
+The planner now forms cohorts from projected progress before selecting work, then compares permitted themes, locations and alternative statement sets across all active stages. Related-theme fillers remain Suggested. Stage gates, occurrence counts, exclusive weekly membership, activity coverage and locked plans still apply. Unresolved Scouts appear by name and reason. A cancellable background worker keeps generation responsive. The search retains a bounded set of alternatives; it does not guarantee a global optimum.
+
+The 30-Scout regression covers simultaneous groups of 15 Stage 1, 10 Stage 2 and 5 Stage 3 Scouts, including the early-venue trap. Local user acceptance remains pending; no GitHub push or Actions run is part of this refinement.
+
+## Curriculum structure and planning UX
+
+Curriculum Mapping now contains a structured Curriculum Editor in place of Skill Trees and Weekly Themes. It edits stages, scheduler themes, preferred/alternative locations and mandatory/recommended links, preserves identity and unknown metadata, and validates graph cycles before checkpointed saves. Legacy route bookmarks redirect to the new editor. Its table contains structure and locations without Scout evidence or completion status. Activity/schedule addressed coverage moved into a Trailmap accordion, with location columns and a matching CSV export. Selected Trailmap statements highlight direct mandatory/recommended connections and replace their progress icon with the link arrow.
+
+The generation form is one accordion: strategy and quotas, allowed locations, theme priorities, then preview-generation actions. Location constraints always apply in schedule generation, themed-week planning and assignment displays. Local manual visual acceptance remains pending.
+
+## Statement sidebar, overview and duplicate groups
+
+The statement sidebar now shows only required sessions for its completion guidance, with locations in their own chip section. Requirements Tracker returns to Curriculum Mapping; coverage summary cards now live beside Scout scope (total, unaddressed, partial, fully planned, addressed). Addressed means any activity or schedule coverage and includes partial and fully planned, independently of Scout evidence. Preview and legacy comparison links are removed from the Vue header; the separately accessible comparison entry remains available by URL.
+
+The existing duplicate_of metadata is editable in Curriculum Editor. The scheduler resolves transitive groups and selects at most one group member per night, for both full generation and themed-week replanning. It preserves separate evidence and permits repeats in later weeks when sessions remain needed. Duplicate targets must exist and cannot form cycles. Existing locked and manually edited weeks are preserved rather than silently rewritten.

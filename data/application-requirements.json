@@ -1330,15 +1330,22 @@
     },
     {
       "id": "APP-105",
-      "category": "FUTURE",
-      "title": "Stage-oriented night redesign",
-      "description": "Investigate four requirements per stage per night, cohesive themes and mixed-stage delivery.",
-      "status": "future",
+      "category": "SCHED",
+      "title": "Exclusive weekly stage activities and Scout assignments",
+      "description": "Plan themed stage groups with one linked Activity Bank activity per stage and at most one stage/activity per Scout in a week. Require every Scout to finish all earlier-stage statements across streams before advancing in a later week (Stage 1 before Stage 2, Stage 2 before Stage 3); repeated statements can recur until their required opportunities are met. Assign Scouts before projecting that night's progress; only eligible, planned statements in their assigned stage and linked activity coverage can contribute. Stage headings open a Scout/activity sidebar with coverage and gaps; statement clicks open the separate OAS Statement sidebar. Recalculate exclusive assignments after scope, evidence, activity or week-order changes without changing actual completion evidence. Unlinked stage activities remain explicitly provisional. Form stage cohorts before choosing work; compare permitted themes, venues and alternative statement sets across the whole night. List unresolved Scouts by name and reason. Generate in a cancellable background worker with weekly progress.",
+      "status": "implemented",
       "implementation": [
-        "docs/future-phases.md"
+        "src/domain/scout-projection.ts",
+        "src/domain/night-planning.ts",
+        "src/domain/stage-activity.ts",
+        "src/workspaces/StageDetail.vue",
+        "src/workspaces/SchedulerWorkspace.vue",
+        "tests/unit/exclusive-stage-activities.test.cjs",
+        "src/workers/schedule-worker.ts",
+        "tests/unit/whole-night-planner.test.cjs"
       ],
-      "verification": "Discover group composition, acceptance criteria and model",
-      "source": "OAS Trailmap feature planning and repository review"
+      "verification": "Verify no Scout appears in two stage groups or gains projected credit across stages in one week; test repeat evidence, coverage gaps, missing activities, location rejection, locked plans and later-week progression. Verify stage/activity sidebar, statement-sidebar separation and backup round trips. Code implementation; local user acceptance remains pending. Whole-night regression: 30 Scouts split 15/10/5 across stages must all receive compatible work rather than an early Stage 1 venue excluding higher stages. Cover alternative sets, theme anchors and named gaps. Search is bounded, not a global optimum guarantee.",
+      "source": "Agreed local Vue scheduler refinement: one activity per Scout per week"
     },
     {
       "id": "APP-106",

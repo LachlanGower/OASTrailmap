@@ -18,6 +18,8 @@ export interface OasRequirement {
   occurrence_basis?: string;
   occurrence_note?: string;
   supplemental?: boolean;
+  /** Equivalent statement; schedule at most one member of its duplicate group per night. */
+  duplicate_of?: string;
   [field: string]: unknown;
 }
 
@@ -42,6 +44,13 @@ export interface PlannedWeek {
   locked?: boolean;
   capacity?: number;
   activityIds?: string[];
+  requirementsPerStage?: number;
+  suggestedRequirementIds?: string[];
+  suggestionThemes?: Record<string,string[]>;
+  stageShortfalls?: Record<string,number>;
+  scoutAssignments?: Record<string,string[]>;
+  assignmentScope?: string[];
+  stageActivityIds?: Record<string,string>;
   [field: string]: unknown;
 }
 
@@ -75,6 +84,8 @@ export interface LegacyStudioState {
   weeks?: number;
   capacity?: number;
   externalWeeks?: number[];
+  preferredThemes?: string[];
+  requirementsPerStage?: number;
   [field: string]: unknown;
 }
 

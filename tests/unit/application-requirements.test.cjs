@@ -13,7 +13,7 @@ describe('Application Requirements Vue island pure data parity',()=>{
   it('preserves all source IDs, statuses and original category options',()=>{
     assert.equal(catalogue.requirements.length,118);
     assert.strictEqual(catalogue,source);
-    assert.deepEqual(statusCounts(catalogue),{implemented:93,partial:7,planned:3,future:15});
+    assert.deepEqual(statusCounts(catalogue),{implemented:94,partial:7,planned:3,future:14});
     assert.equal(Object.keys(catalogue.categories).length,10);
     assert.equal(statusLabel('implemented'),'Implemented in code');
     assert.equal(statusLabel('future'),'Future idea only');

@@ -36,5 +36,8 @@ export function validateScheduleWeeks(
       w.requirementIds.some((id: unknown) => typeof id !== 'string' || !known.has(id))) {
       throw new Error('Schedule refers to unknown requirement IDs.');
     }
+    if(w.stageActivityIds!==undefined){
+      if(!w.stageActivityIds||typeof w.stageActivityIds!=='object'||Array.isArray(w.stageActivityIds)||Object.entries(w.stageActivityIds).some(([stage,id])=>!['1','2','3'].includes(stage)||typeof id!=='string'||!id.trim()))throw new Error('Expected one activity ID per stage.');
+    }
   }
 }

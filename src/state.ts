@@ -4,7 +4,7 @@ import { clone, loadApplication, persistApplication } from './services/applicati
 import { scoutNames, scopedScoutNames } from './domain/progress';
 import { parseRequirementsData } from './domain/requirements';
 export const state=ref<ApplicationState|null>(null);
-export const ui=reactive({error:'',notice:'',selection:'__all__',subset:[] as string[],requirementId:'',stale:false});
+export const ui=reactive({error:'',notice:'',selection:'__all__',subset:[] as string[],requirementId:'',stageSelection:null as {weekIndex:number;weekId?:string;stage:number}|null,stale:false});
 export const names=computed(()=>state.value?scoutNames(state.value.progress.scoutRecords):[]);
 export const scope=computed(()=>state.value?scopedScoutNames(state.value.progress.scoutRecords,ui.selection,ui.subset):[]);
 export const tags=computed(()=>[...new Set([...(state.value?.studio.tags??[]),...(state.value?.requirements.flatMap(r=>r.tags)??[])])].sort());
