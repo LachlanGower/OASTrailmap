@@ -1,3 +1,4 @@
+import { planningPrerequisites } from './planning-links.js';
 import type { OasRequirement, ScoutRecord, ScoutRecords } from './models.js';
 
 /** Keep the original Scout::requirementId key exactly as it appears in localStorage. */
@@ -30,7 +31,7 @@ export function blockedPrerequisites(
   requirement: OasRequirement, scout: string,
   requirements: readonly OasRequirement[], records: ScoutRecords
 ): string[] {
-  return (Number(requirement.stage) === 1 ? [] : requirement.prerequisites).filter(id =>
+  return planningPrerequisites(requirement).filter(id =>
     !requirements.some(r => r.id === id) || !isCompleted(records, scout, id)
   );
 }

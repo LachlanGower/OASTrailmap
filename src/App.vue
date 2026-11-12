@@ -11,19 +11,20 @@ import { parseCatalogue, type ApplicationCatalogue } from './features/applicatio
 import { LEGACY_KEYS } from './services/legacy-state';
 import RequirementsTracker from './workspaces/RequirementsTracker.vue';
 import { coverageRows } from './domain/coverage-tracker';
+import SkillTreeWorkspace from './workspaces/SkillTreeWorkspace.vue';
 import CurriculumEditor from './workspaces/CurriculumEditor.vue';
 import HelpWorkspace from './workspaces/HelpWorkspace.vue';
 import StageDetail from './workspaces/StageDetail.vue';
 const sections=[
  {name:'Planner',tabs:['Trailmap','Scheduler','Activity Studio']},
- {name:'Curriculum Mapping',tabs:['Curriculum Editor','Requirements Tracker']},
+ {name:'Curriculum Mapping',tabs:['Curriculum Editor','Skill Trees','Requirements Tracker']},
  {name:'Data and State',tabs:['Monitoring','Importer','Exporter','Recovery and reset']},
  {name:'Help',tabs:['Help docs','Application Requirements','Future state']}
 ];
 const routes=sections.flatMap(section=>section.tabs);
 const route=ref('Trailmap'),catalogue=ref<ApplicationCatalogue|null>(null);
 const section=computed(()=>sections.find(s=>s.tabs.includes(route.value))!);
-function syncRoute(){let value='';try{value=decodeURIComponent(location.hash.slice(1));}catch{/* Invalid hashes fall back to Trailmap. */}const aliases:Record<string,string>={'Activities':'Activity Studio','Data & State':'Monitoring','Help':'Help docs','Skill Trees':'Curriculum Editor','Weekly Themes':'Curriculum Editor'};value=aliases[value]??value;route.value=routes.includes(value)?value:'Trailmap';}
+function syncRoute(){let value='';try{value=decodeURIComponent(location.hash.slice(1));}catch{/* Invalid hashes fall back to Trailmap. */}const aliases:Record<string,string>={'Activities':'Activity Studio','Data & State':'Monitoring','Help':'Help docs','Weekly Themes':'Curriculum Editor'};value=aliases[value]??value;route.value=routes.includes(value)?value:'Trailmap';}
 watch(route,()=>{ui.requirementId='';ui.stageSelection=null;});
 watch(()=>ui.requirementId,id=>{if(id)ui.stageSelection=null;});
 const selectedStageIndex=computed(()=>{const selection=ui.stageSelection;if(!selection)return -1;const weeks=state.value?.studio.schedule??[];return selection.weekId?weeks.findIndex(w=>w.id===selection.weekId):selection.weekIndex<weeks.length?selection.weekIndex:-1;});
@@ -46,7 +47,7 @@ onUnmounted(()=>{window.removeEventListener('hashchange',syncRoute);window.remov
    <div class="workspace"><div class="workspace-main">
     <RequirementWorkspace v-if="route==='Trailmap'" :key="route" :mode="route" />
     <SchedulerWorkspace v-else-if="route==='Scheduler'" />
-    <CurriculumEditor v-else-if="route==='Curriculum Editor'" /><RequirementsTracker v-else-if="route==='Requirements Tracker'" />
+    <CurriculumEditor v-else-if="route==='Curriculum Editor'" /><SkillTreeWorkspace v-else-if="route==='Skill Trees'" /><RequirementsTracker v-else-if="route==='Requirements Tracker'" />
     <DataWorkspace v-else-if="section.name==='Data and State'" :mode="route" />
     <ActivityWorkspace v-else-if="route==='Activity Studio'" />
     <ApplicationRequirements v-else-if="route==='Application Requirements'&&catalogue" :catalogue="catalogue" />

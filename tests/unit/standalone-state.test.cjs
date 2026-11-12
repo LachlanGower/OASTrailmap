@@ -45,8 +45,8 @@ it('real XLSX bytes retain dates, roster entries, manual evidence and workbook-o
  assert.equal(preview.scouts.length,2);assert.equal(preview.rows.length,2);assert.equal(preview.extraReqs.length,1);assert.equal(next.progress.scoutRecords['Synthetic Scout A::'+r.id].date,'2026-01-15');assert.equal(next.progress.scoutRecords['Synthetic Scout A::'+r.id].sourceRow,2);assert.equal(next.progress.scoutRecords['Synthetic Scout B::__roster__'].completed,false);for(const [key,value] of Object.entries(state.progress.scoutRecords))assert.deepEqual(next.progress.scoutRecords[key],value);
  assert.equal(next.requirements.length,143);assert.deepEqual(state.requirements,requirements);assert.equal(Object.keys(state.progress.scoutRecords).length,Object.keys(fixture[keys.progress].scoutRecords).length);
 });
-it('Stage 1 readiness ignores prerequisite metadata while earned evidence remains authoritative',()=>{
- const r={...requirements[0],stage:1,prerequisites:['unknown']};assert.equal(progress.requirementStatus(r,'Synthetic Scout',['Synthetic Scout'],[r],{}),'ready');assert.equal(progress.requirementStatus(r,'Synthetic Scout',['Synthetic Scout'],[r],{['Synthetic Scout::'+r.id]:{completed:true}}),'complete');
+it('Stage 1 readiness honours explicit links while earned evidence remains authoritative',()=>{
+ const r={...requirements[0],stage:1,prerequisites:['unknown']};assert.equal(progress.requirementStatus(r,'Synthetic Scout',['Synthetic Scout'],[r],{}),'blocked');assert.equal(progress.requirementStatus(r,'Synthetic Scout',['Synthetic Scout'],[r],{['Synthetic Scout::'+r.id]:{completed:true}}),'complete');
 });
 it('theme-led scheduling preserves locked metadata and never mutates earned evidence',()=>{
  const records={'A::__roster__':{completed:false},['A::'+requirements[0].id]:{completed:true}};

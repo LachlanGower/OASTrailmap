@@ -1332,7 +1332,7 @@
       "id": "APP-105",
       "category": "SCHED",
       "title": "Exclusive weekly stage activities and Scout assignments",
-      "description": "Plan themed stage groups with one linked Activity Bank activity per stage and at most one stage/activity per Scout in a week. Require every Scout to finish all earlier-stage statements across streams before advancing in a later week (Stage 1 before Stage 2, Stage 2 before Stage 3); repeated statements can recur until their required opportunities are met. Assign Scouts before projecting that night's progress; only eligible, planned statements in their assigned stage and linked activity coverage can contribute. Stage headings open a Scout/activity sidebar with coverage and gaps; statement clicks open the separate OAS Statement sidebar. Recalculate exclusive assignments after scope, evidence, activity or week-order changes without changing actual completion evidence. Unlinked stage activities remain explicitly provisional. Form stage cohorts before choosing work; compare permitted themes, venues and alternative statement sets across the whole night. List unresolved Scouts by name and reason. Generate in a cancellable background worker with weekly progress.",
+      "description": "Offer themed, location-compatible work in all three stages each week. Assign each Scout one eligible stage/activity, with unfinished lower stages a preference rather than a gate. Mandatory and recommended statement links are prerequisites by default; recommendations may explicitly be advisory. Prioritise prerequisite flow, then useful opportunities, with lower stages as a tie preference. Project only the chosen activity, assumed completed by week end. Alternative options give no extra credit. Allow eligible activity switching in the stage sidebar by replacing the assignment. Respect actual session evidence, repetitions, bank coverage, locations and locked plans. Multi-select duplicate groups occupy at most one slot per night, preserving IDs/evidence. Skill Trees edits shared typed links with cycle validation. Planning never changes actual completion evidence.",
       "status": "implemented",
       "implementation": [
         "src/domain/scout-projection.ts",
@@ -1342,9 +1342,13 @@
         "src/workspaces/SchedulerWorkspace.vue",
         "tests/unit/exclusive-stage-activities.test.cjs",
         "src/workers/schedule-worker.ts",
-        "tests/unit/whole-night-planner.test.cjs"
+        "tests/unit/whole-night-planner.test.cjs",
+        "src/domain/planning-links.ts",
+        "src/domain/skill-links.ts",
+        "src/workspaces/SkillTreeWorkspace.vue",
+        "tests/unit/flexible-stage-flow.test.cjs"
       ],
-      "verification": "Verify no Scout appears in two stage groups or gains projected credit across stages in one week; test repeat evidence, coverage gaps, missing activities, location rejection, locked plans and later-week progression. Verify stage/activity sidebar, statement-sidebar separation and backup round trips. Code implementation; local user acceptance remains pending. Whole-night regression: 30 Scouts split 15/10/5 across stages must all receive compatible work rather than an early Stage 1 venue excluding higher stages. Cover alternative sets, theme anchors and named gaps. Search is bounded, not a global optimum guarantee.",
+      "verification": "Verify all-stage options, higher-stage eligibility without whole-stage blocking, one credited activity per Scout, eligible switching, recommended defaults and advisory opt-out, same-stage chains, later-week cross-stage progression, duplicate groups, venues, bank coverage, locked payloads and backups. Local user acceptance remains pending.",
       "source": "Agreed local Vue scheduler refinement: one activity per Scout per week"
     },
     {

@@ -12,7 +12,7 @@ function exclusive(part){const all=Object.values(part.stageScouts).flat();assert
 it('a Scout progresses through stage activities in separate weeks, never multiple stages in one week',()=>{
  const weeks=generateSchedule(r,{}, {weeks:3,requirementsPerStage:4,preferredThemes:['Camp']},['Scout'],false);
  const parts=projectSchedule(r,{},weeks,['Scout']);parts.forEach(exclusive);
- assert.deepEqual(parts.map(p=>p.scoutStages.Scout),[1,2,3]);assert.ok(!weeks[0].requirementIds.includes('two'));assert.ok(!weeks[0].requirementIds.includes('three'));
+ assert.deepEqual(parts.map(p=>p.scoutStages.Scout),[1,2,3]);assert.ok(weeks[0].requirementIds.includes('two'));assert.ok(weeks[0].requirementIds.includes('three'));assert.deepEqual(weeks[0].scoutAssignments.two,[]);assert.deepEqual(weeks[0].scoutAssignments.three,[]);
 });
 it('advanced and beginner groups run together but an eligible Scout joins only the highest primary stage',()=>{
  const records={'Advanced::one':{completed:true},'Advanced::extra-one':{completed:true},'Advanced::two':{completed:true}},weeks=[{requirementIds:['one','two','three','extra-one']}];
@@ -56,7 +56,7 @@ it('saved assignments cannot introduce duplicate membership after a scope or pro
 it('generation replays locked stage activities using their real coverage, without changing their payload',()=>{
  const locked={id:'locked',locked:true,requirementIds:['one'],location:'Hall',stageActivityIds:{'1':'uncovered'},custom:true};
  const activity={id:'uncovered',covers:['extra-one'],location:'Hall'},studio={weeks:2,requirementsPerStage:1,preferredThemes:['Camp'],schedule:[locked]};
- const result=generateSchedule(r,{},studio,['Scout'],true,[activity]);assert.deepEqual(result[0],locked);assert.ok(!result[1].requirementIds.includes('two'));
+ const result=generateSchedule(r,{},studio,['Scout'],true,[activity]);assert.deepEqual(result[0],locked);assert.deepEqual(result[1].scoutAssignments.two,[]);
 });
 it('theme replacement clears stale stage activity links and leaves evidence untouched',()=>{
  const records={'Scout::__roster__':{completed:false}},before=JSON.stringify(records),studio={schedule:[{requirementIds:['one'],stageActivityIds:{'1':'first'}}]};

@@ -1,3 +1,4 @@
+import { planningPrerequisites } from './planning-links.js';
 import type { OasRequirement, PlannedWeek } from './models.js';
 
 /** Reproduces legacy orderSession() including its fallback on invalid graphs. */
@@ -6,7 +7,7 @@ export function orderSession(ids: readonly string[], requirements: readonly OasR
   const remaining = new Set(ids);
   const ordered: string[] = [];
   while (remaining.size) {
-    const next = [...remaining].find(id => (byId.get(id)?.prerequisites ?? [])
+    const next = [...remaining].find(id => (byId.get(id)?planningPrerequisites(byId.get(id)!):[])
       .every(parent => !remaining.has(parent))) ?? [...remaining][0];
     ordered.push(next);
     remaining.delete(next);
@@ -36,6 +37,7 @@ export function validateScheduleWeeks(
       w.requirementIds.some((id: unknown) => typeof id !== 'string' || !known.has(id))) {
       throw new Error('Schedule refers to unknown requirement IDs.');
     }
+    if(w.scoutStageChoices!==undefined&&(!w.scoutStageChoices||typeof w.scoutStageChoices!=='object'||Array.isArray(w.scoutStageChoices)||Object.values(w.scoutStageChoices).some(stage=>typeof stage!=='number'||![1,2,3].includes(stage))))throw new Error('Expected one stage choice per Scout.');
     if(w.stageActivityIds!==undefined){
       if(!w.stageActivityIds||typeof w.stageActivityIds!=='object'||Array.isArray(w.stageActivityIds)||Object.entries(w.stageActivityIds).some(([stage,id])=>!['1','2','3'].includes(stage)||typeof id!=='string'||!id.trim()))throw new Error('Expected one activity ID per stage.');
     }

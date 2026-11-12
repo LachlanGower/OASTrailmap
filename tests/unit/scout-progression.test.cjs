@@ -21,22 +21,22 @@ it('advances each Scout across later weeks and reoffers one-off skills to newly 
  assert.equal(weeks.filter(w=>w.requirementIds.includes('advanced')).length,2);assert.deepEqual(weeks[3].requirementIds,[]);assert.equal(JSON.stringify(records),before);
  assert.deepEqual(projectSchedule(chain,records,weeks,scouts)[2].conditionalScouts.advanced,['Beginner']);
 });
-it('blocks higher-stage statements until every Stage 1 statement is finished across streams',()=>{
+it('allows unlinked higher-stage work despite unfinished lower stages',()=>{
  const requirements=[req('unrelated-stage1',1,'Other'),req('stage3-ready',3,'Camp',[],{stream:'Bushwalking'})];
  const weeks=generateSchedule(requirements,{}, {weeks:1,requirementsPerStage:1,preferredThemes:['Camp']},['Scout'],false);
- assert.deepEqual(weeks[0].requirementIds,[]);assert.equal(weeks[0].scoutAssignments['stage3-ready'],undefined);
+ assert.deepEqual(weeks[0].requirementIds,['stage3-ready']);assert.deepEqual(weeks[0].scoutAssignments['stage3-ready'],['Scout']);
 });
 it('a lower-stage activity cannot unlock another stage activity for the same Scout that night',()=>{
  const requirements=[req('repeat',1,'Camp',[],{required_occurrences:2}),req('child',2,'Camp',['repeat'])];
  const evidence={'A::repeat':{completed:false,occurrences:1}},scope=['A','B'];
  const plan=planNight({requirements,records:evidence,scouts:scope,themes:['Camp'],target:1,eligible:()=>true,sessionId:'night-1'});
- assert.deepEqual(plan.scoutAssignments.repeat,['A','B']);assert.equal(plan.scoutAssignments.child,undefined);assert.equal(evidence['A::repeat'].occurrences,1);
+ assert.deepEqual(plan.scoutAssignments.repeat,['A','B']);assert.deepEqual(plan.scoutAssignments.child,[]);assert.ok(plan.opportunityOnlyIds.includes('child'));assert.equal(evidence['A::repeat'].occurrences,1);
 });
 it('does not borrow another Scouts prerequisite completion',()=>{
  const requirements=[req('parent',1,'Other'),req('child',2,'Camp',['parent'])];
  const evidence={'A::parent':{completed:true},'A::child':{completed:true}};
  const weeks=generateSchedule(requirements,evidence,{weeks:1,preferredThemes:['Camp']},['A','B'],false);
- assert.deepEqual(weeks[0].requirementIds,[]);
+ assert.deepEqual(weeks[0].scoutAssignments.child,[]);
 });
 it('imported completion remains authoritative and already-complete skills get no assignment',()=>{
  const r=req('repeat',3,'Camp',[],{required_occurrences:5}),evidence={'A::repeat':{completed:true,source:'workbook',date:'2026-01-01'}};
@@ -53,7 +53,7 @@ it('future locked weeks cannot unlock earlier weeks, and all locked metadata sta
  const locked={id:'future',locked:true,requirementIds:['parent'],location:'Hall',activity:{filename:'retain.md'},scoutAssignments:{parent:['Old scope']},custom:{keep:true}};
  const state={weeks:3,requirementsPerStage:1,preferredThemes:['Camp'],schedule:[{requirementIds:[]},locked]};
  const before=JSON.stringify(state),result=generateSchedule(requirements,{},state,['Scout'],true);
- assert.deepEqual(result[0].requirementIds,[]);assert.deepEqual(result[1],locked);assert.deepEqual(result[2].scoutAssignments.child,['Scout']);assert.equal(JSON.stringify(state),before);
+ assert.deepEqual(result[0].scoutAssignments.child,[]);assert.deepEqual(result[1],locked);assert.deepEqual(result[2].scoutAssignments.child,['Scout']);assert.equal(JSON.stringify(state),before);
 });
 it('swapping weeks recalculates assignments chronologically and flags now-blocked plans',()=>{
  const requirements=[req('parent',1,'Camp'),req('child',2,'Camp',['parent'])],weeks=[{id:'first',requirementIds:['parent']},{id:'second',requirementIds:['child']}];

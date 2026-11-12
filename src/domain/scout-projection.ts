@@ -1,3 +1,4 @@
+import { planningPrerequisites } from './planning-links.js';
 import type { Activity,OasRequirement,PlannedWeek,ScoutRecords } from './models.js';
 import { occurrenceState,recordFor,requiredTimes } from './progress.js';
 import { orderSession } from './scheduling.js';
@@ -9,30 +10,33 @@ export class ScoutProjection {
  private counts=new Map<string,Map<string,number>>();
  private sessions=new Map<string,Map<string,Set<string>>>();
  private stageMissing=new Map<string,Map<number,number>>();
+ private flowChildren=new Map<string,OasRequirement[]>();
  private recordedCache=new Map<string,number[]>();
  readonly scouts:string[];
  constructor(requirements:readonly OasRequirement[],readonly records:ScoutRecords,scouts:readonly string[],seed=true){
   this.requirements=new Map(requirements.map(r=>[r.id,r]));this.scouts=[...new Set(scouts)];
+  if(seed)for(const child of requirements)for(const parent of planningPrerequisites(child)){const children=this.flowChildren.get(parent)??[];children.push(child);this.flowChildren.set(parent,children);}
   if(seed)for(const scout of this.scouts){this.counts.set(scout,new Map(requirements.map(r=>[r.id,occurrenceState(recordFor(records,scout,r.id),r)])));this.sessions.set(scout,new Map(requirements.map(r=>{const sessions=recordFor(records,scout,r.id).sessionEvidence;return [r.id,new Set(Array.isArray(sessions)?sessions:[])];})));this.stageMissing.set(scout,new Map([1,2,3].map(stage=>[stage,requirements.filter(r=>r.stage===stage&&!this.complete(scout,r.id)).length])));}
  }
  copy():ScoutProjection {
   const next=new ScoutProjection([...this.requirements.values()],this.records,this.scouts,false);
-  next.counts=new Map(this.counts);next.sessions=new Map(this.sessions);next.stageMissing=new Map(this.stageMissing);next.recordedCache=new Map(this.recordedCache);return next;
+  next.counts=new Map(this.counts);next.sessions=new Map(this.sessions);next.stageMissing=new Map(this.stageMissing);next.recordedCache=new Map(this.recordedCache);next.flowChildren=this.flowChildren;return next;
  }
+ /** Scouts with identical projected counts/current-session evidence are interchangeable during search. */
+ equivalentScoutGroups(session:string):Map<string,string[]>{const groups=new Map<string,string[]>();for(const scout of this.scouts){const key=JSON.stringify([...this.requirements.keys()].map(id=>[this.count(scout,id),this.sessions.get(scout)?.get(id)?.has(session)?1:0]));const group=groups.get(key)??[];group.push(scout);groups.set(key,group);}return new Map([...groups.values()].map(names=>[names[0],names]));}
+ subset(scouts:readonly string[]):ScoutProjection{const next=this.copy();next.scouts.splice(0,next.scouts.length,...scouts);return next;}
+ needsOpportunity(scout:string,id:string,session:string):boolean{return !this.complete(scout,id)&&!this.sessions.get(scout)?.get(id)?.has(session);}
  count(scout:string,id:string):number{return this.counts.get(scout)?.get(id)??0;}
  recordedStages(scout:string,session:string):number[]{const key=JSON.stringify([scout,session]);const cached=this.recordedCache.get(key);if(cached)return cached;const stages=[...new Set([...this.requirements.values()].filter(r=>this.sessions.get(scout)?.get(r.id)?.has(session)).map(r=>r.stage))];this.recordedCache.set(key,stages);return stages;}
  complete(scout:string,id:string):boolean{const r=this.requirements.get(id);return !!r&&this.count(scout,id)>=requiredTimes(r);}
  lowerStageOutstanding(scout:string,stage:number):OasRequirement[]{return [...this.requirements.values()].filter(r=>r.stage<stage&&!this.complete(scout,r.id));}
  weeklyCohorts(session:string):Record<string,number>{
   const cohorts:Record<string,number>={};
-  for(const scout of this.scouts){
-   const stage=[1,2,3].find(stage=>(this.stageMissing.get(scout)?.get(stage)??0)>0);
-   const recorded=this.recordedStages(scout,session);
-   if(stage&&recorded.length<=1&&(!recorded.length||recorded[0]===stage))cohorts[scout]=stage;
-  }
+  for(const r of this.requirements.values())for(const scout of this.participants(r,session)){const recorded=this.recordedStages(scout,session);if(recorded.length>1||recorded.length&&recorded[0]!==r.stage)continue;cohorts[scout]=Math.min(cohorts[scout]??r.stage,r.stage);}
   return cohorts;
  }
- participants(r:OasRequirement,session?:string):string[]{return this.scouts.filter(s=>!this.complete(s,r.id)&&![1,2,3].some(stage=>stage<r.stage&&(this.stageMissing.get(s)?.get(stage)??0)>0)&&(!session||!this.sessions.get(s)?.get(r.id)?.has(session))&&(r.stage===1?[]:r.prerequisites).every(id=>this.complete(s,id)));}
+ participants(r:OasRequirement,session?:string):string[]{return this.scouts.filter(s=>!this.complete(s,r.id)&&(!session||!this.sessions.get(s)?.get(r.id)?.has(session))&&planningPrerequisites(r).every(id=>this.complete(s,id)));}
+ flowSupport(r:OasRequirement,scout:string):number{return this.count(scout,r.id)+1>=requiredTimes(r)?(this.flowChildren.get(r.id)??[]).filter(child=>!this.complete(scout,child.id)).length:0;}
  grant(r:OasRequirement,scouts:readonly string[],session:string):void {
   const ready=new Set(this.participants(r));
   for(const scout of scouts){if(!ready.has(scout))continue;const seen=new Set(this.sessions.get(scout)!.get(r.id)!);if(seen.has(session))continue;seen.add(session);const sessions=new Map(this.sessions.get(scout)!);sessions.set(r.id,seen);this.sessions.set(scout,sessions);const counts=new Map(this.counts.get(scout)!);counts.set(r.id,Math.min(requiredTimes(r),this.count(scout,r.id)+1));this.counts.set(scout,counts);if(this.complete(scout,r.id)){const missing=new Map(this.stageMissing.get(scout)!);missing.set(r.stage,Math.max(0,(missing.get(r.stage)??0)-1));this.stageMissing.set(scout,missing);}this.recordedCache.delete(JSON.stringify([scout,session]));}
@@ -49,8 +53,9 @@ export interface WeekParticipation {
  stageCohorts:Record<string,string[]>;
  unassignedReasons:Record<string,string>;
  completedScouts:string[];
+ alternativeStageScouts:Record<string,string[]>;
 }
-export interface ProjectionContext {useLocations?:boolean;allowedLocations?:readonly string[];activities?:readonly Activity[]}
+export interface ProjectionContext {useLocations?:boolean;allowedLocations?:readonly string[];activities?:readonly Activity[];lightweight?:boolean}
 const specific=(v:unknown):v is string=>typeof v==='string'&&!!v&&!['Flexible / anywhere','Anywhere','Any location'].includes(v);
 export function fitsWeekLocation(r:OasRequirement,week:PlannedWeek,scope:ProjectionContext={}):boolean {
  const locations=locationOptions(r),flexible=locations.some(l=>!specific(l));
@@ -60,13 +65,17 @@ export function fitsWeekLocation(r:OasRequirement,week:PlannedWeek,scope:Project
  if(scope.useLocations&&allowed.length&&!flexible&&!locations.some(l=>allowed.includes(l)))return false;
  return true;
 }
-/** Choose one ready stage at the start of the night; primary-theme work wins over suggestions. */
+/** Compare complete same-stage activities; each Scout still chooses exactly one. */
 export function chooseScoutStages(projection:ScoutProjection,requirements:readonly OasRequirement[],session:string,suggested:readonly string[]=[],existing:Record<string,number>={}):Record<string,number>{
- const stages={...existing},cohorts=projection.weeklyCohorts(session);
- for(const scout of projection.scouts){
-  if(stages[scout])continue;
-  const ready=requirements.some(r=>r.stage===cohorts[scout]&&projection.participants(r,session).includes(scout));
-  if(ready)stages[scout]=cohorts[scout];
+ const stages:Record<string,number>={},scores=new Map<string,number[]>();
+ for(const stage of [1,2,3]){
+  const trial=projection.copy(),plans=orderSession(requirements.filter(r=>r.stage===stage).map(r=>r.id),requirements),byId=new Map(requirements.map(r=>[r.id,r]));
+  const gains=new Map<string,number>(),flow=new Map<string,number>(),primary=new Map<string,number>();
+  for(const id of plans){const r=byId.get(id)!;const names=trial.participants(r,session);for(const scout of names){gains.set(scout,(gains.get(scout)??0)+1);flow.set(scout,(flow.get(scout)??0)+trial.flowSupport(r,scout));if(!suggested.includes(id))primary.set(scout,(primary.get(scout)??0)+1);}trial.grant(r,names,session);}
+  for(const scout of projection.scouts){const recorded=projection.recordedStages(scout,session);if(recorded.length>1||recorded.length&&recorded[0]!==stage||!gains.get(scout))continue;
+   const score=[existing[scout]===stage?1:0,flow.get(scout)??0,gains.get(scout)??0,primary.get(scout)??0,-stage],previous=scores.get(scout);let better=!previous;for(let i=0;previous&&i<score.length;i++)if(score[i]!==previous[i]){better=score[i]>previous[i];break;}
+   if(better){stages[scout]=stage;scores.set(scout,score);}
+  }
  }
  return stages;
 }
@@ -79,12 +88,12 @@ export function activityFitsWeek(activity:Activity,week:PlannedWeek,scope:Projec
  if(specific(week.location)&&week.location!==venue)return false;
  return !scope.useLocations||!scope.allowedLocations?.length||scope.allowedLocations.includes(venue);
 }
-/** Replay a single exclusive stage/activity per Scout; cross-stage unlocks wait until later weeks. */
+/** Replay one chosen activity per Scout; other stage options earn no projected credit. */
 export function projectWeek(projection:ScoutProjection,requirements:readonly OasRequirement[],week:PlannedWeek,index:number,scope:ProjectionContext={}):WeekParticipation {
- const result:WeekParticipation={requirementScouts:{},stageScouts:{'1':[],'2':[],'3':[]},conditionalScouts:{},warnings:[],scoutStages:{},unassignedScouts:[],stageCohorts:{'1':[],'2':[],'3':[]},unassignedReasons:{},completedScouts:[],lowerStageRemaining:Object.fromEntries([2,3].map(stage=>[String(stage),Object.fromEntries(projection.scouts.map(s=>[s,projection.lowerStageOutstanding(s,stage).length]))]))};
+ const result:WeekParticipation={requirementScouts:{},stageScouts:{'1':[],'2':[],'3':[]},conditionalScouts:{},warnings:[],scoutStages:{},unassignedScouts:[],stageCohorts:{'1':[],'2':[],'3':[]},unassignedReasons:{},completedScouts:[],alternativeStageScouts:{'1':[],'2':[],'3':[]},lowerStageRemaining:scope.lightweight?{}:Object.fromEntries([2,3].map(stage=>[String(stage),Object.fromEntries(projection.scouts.map(s=>[s,projection.lowerStageOutstanding(s,stage).length]))]))};
  const byId=new Map(requirements.map(r=>[r.id,r])),session=week.id||`week-${index+1}`;
- const cohorts=projection.weeklyCohorts(session);
- for(const scout of projection.scouts){if(cohorts[scout])result.stageCohorts[String(cohorts[scout])].push(scout);else if(requirements.every(r=>projection.complete(scout,r.id)))result.completedScouts.push(scout);}
+ const cohorts=scope.lightweight?{}:projection.weeklyCohorts(session);
+ if(!scope.lightweight)for(const r of requirements)for(const scout of projection.participants(r,session))if(!result.stageCohorts[String(r.stage)].includes(scout))result.stageCohorts[String(r.stage)].push(scout);if(!scope.lightweight)for(const scout of projection.scouts)if(requirements.every(r=>projection.complete(scout,r.id)))result.completedScouts.push(scout);
  for(const scout of projection.scouts)if(projection.recordedStages(scout,session).length>1)result.warnings.push(`${scout}: existing evidence for this week spans multiple stages; review before planning more work.`);
  const stageEligible=(r:OasRequirement):boolean=>{
   if(!fitsWeekLocation(r,week,scope))return false;
@@ -94,15 +103,17 @@ export function projectWeek(projection:ScoutProjection,requirements:readonly Oas
   return !!activity&&activityFitsWeek(activity,week,scope)&&activity.covers.includes(r.id)&&fitsWeekLocation(r,{...week,location:activity.location||week.location},scope);
  };
  const planned=week.requirementIds.map(id=>byId.get(id)).filter((r):r is OasRequirement=>!!r);
- result.scoutStages=chooseScoutStages(projection,planned.filter(stageEligible),session,week.suggestedRequirementIds);
- for(const scout of projection.scouts){const stage=result.scoutStages[scout];if(stage)(result.stageScouts[String(stage)]??=[]).push(scout);else if(cohorts[scout]){
-  const needed=cohorts[scout],stagePlan=planned.filter(r=>r.stage===needed),activityId=week.stageActivityIds?.[String(needed)];
+ result.scoutStages=chooseScoutStages(projection,planned.filter(stageEligible),session,week.suggestedRequirementIds,week.scoutStageChoices);
+ for(const scout of projection.scouts){const stage=result.scoutStages[scout];if(stage)(result.stageScouts[String(stage)]??=[]).push(scout);else if(!scope.lightweight&&!result.completedScouts.includes(scout)){
+  const needed=cohorts[scout]??Math.min(...requirements.filter(r=>!projection.complete(scout,r.id)).map(r=>r.stage)),stagePlan=planned.filter(r=>r.stage===needed),activityId=week.stageActivityIds?.[String(needed)];
   result.unassignedScouts.push(scout);
   result.unassignedReasons[scout]=!stagePlan.length?`Needs Stage ${needed}; no work was found within this night's themes and locations.`:
    !stagePlan.some(r=>fitsWeekLocation(r,week,scope))?`The planned Stage ${needed} statements do not suit this location.`:
    activityId?`The Stage ${needed} activity is missing, incompatible or does not cover this Scout's ready statements.`:
    `The planned Stage ${needed} statements are not ready or have already been recorded for this Scout.`;
  }}
+ for(const [scout,stage] of Object.entries(week.scoutStageChoices??{}))if(projection.scouts.includes(scout)&&result.scoutStages[scout]!==stage)result.warnings.push(scout+': selected stage activity is no longer eligible; planner assignment used.');
+ for(const stage of [1,2,3])result.alternativeStageScouts[String(stage)]=result.stageCohorts[String(stage)].filter(s=>result.scoutStages[s]&&result.scoutStages[s]!==stage&&planned.some(r=>r.stage===stage&&stageEligible(r)&&projection.participants(r,session).includes(s)));
  for(const [stage,id] of Object.entries(week.stageActivityIds??{})){
   const activity=scope.activities?.find(a=>a.id===id);
   if(!activity)result.warnings.push(`Stage ${stage}: linked activity is missing from the bank.`);
@@ -114,7 +125,7 @@ export function projectWeek(projection:ScoutProjection,requirements:readonly Oas
   if(!fitsWeekLocation(r,week,scope)){result.warnings.push('Location does not suit: '+r.text);continue;}
   if(!stageEligible(r)){result.warnings.push('Not covered by the linked stage activity: '+r.text);continue;}
   const names=projection.participants(r,session).filter(s=>result.scoutStages[s]===r.stage);result.requirementScouts[id]=names;
-  result.conditionalScouts[id]=names.filter(s=>[...byId.values()].some(p=>p.stage<r.stage&&occurrenceState(recordFor(projection.records,s,p.id),p)<requiredTimes(p))||(r.stage===1?[]:r.prerequisites).some(parent=>{const p=byId.get(parent);return !p||occurrenceState(recordFor(projection.records,s,parent),p)<requiredTimes(p);}));
+  result.conditionalScouts[id]=names.filter(s=>planningPrerequisites(r).some(parent=>{const p=byId.get(parent);return !p||occurrenceState(recordFor(projection.records,s,parent),p)<requiredTimes(p);}));
   if(projection.scouts.length&&!names.length)result.warnings.push('No selected Scouts are currently ready and still need: '+r.text);
   projection.grant(r,names,session);
  }

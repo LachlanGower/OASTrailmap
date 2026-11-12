@@ -8,7 +8,7 @@ export function planThemeWeek(requirements:readonly OasRequirement[],records:Sco
  const weeks=studio.schedule??[],existing=weeks[index];if(!existing)throw new Error('Week no longer exists.');
  const next:PlannedWeek=JSON.parse(JSON.stringify(existing));
  next.activity=null;delete next.activityIds;next.confirmedSession=false;next.reviewed=false;next.locked=true;
- delete next.stageActivityIds;
+ delete next.stageActivityIds;delete next.scoutStageChoices;
  next.suggestedRequirementIds=[];next.suggestionThemes={};next.stageShortfalls={};next.scoutAssignments={};next.assignmentScope=[];
  if(!theme){next.theme='';next.tags=[];next.title='Week '+(index+1);next.requirementIds=[];return next;}
  const target=stageTarget(existing.requirementsPerStage??studio.requirementsPerStage??existing.stageLimit);

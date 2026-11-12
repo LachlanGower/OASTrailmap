@@ -20,6 +20,8 @@ export interface OasRequirement {
   supplemental?: boolean;
   /** Equivalent statement; schedule at most one member of its duplicate group per night. */
   duplicate_of?: string;
+  duplicates?: string[];
+  recommended_as_prerequisites?: boolean;
   [field: string]: unknown;
 }
 
@@ -51,6 +53,7 @@ export interface PlannedWeek {
   scoutAssignments?: Record<string,string[]>;
   assignmentScope?: string[];
   stageActivityIds?: Record<string,string>;
+  scoutStageChoices?: Record<string,number>;
   [field: string]: unknown;
 }
 

@@ -48,11 +48,11 @@ it('compares selected themes for whole-night participation instead of stopping a
  const week=generateSchedule(requirements,records,{weeks:1,requirementsPerStage:1,preferredThemes:['Early','Camp']},['A','B','C'],false)[0];
  assert.equal(week.theme,'Camp');assert.equal(week.planningMetrics.assignedScouts,3);assert.equal(week.planningMetrics.activeStages,3);
 });
-it('groups Scouts from projected progress even if the chosen theme has no work for their stage',()=>{
+it('permits an eligible higher-stage activity when the lower-stage work is off theme',()=>{
  const requirements=[req('one',1,'Hall',['Other']),req('two',2)],records={};
  const projection=new ScoutProjection(requirements,records,['Beginner']);assert.deepEqual(projection.weeklyCohorts('week-1'),{Beginner:1});
  const weeks=generateSchedule(requirements,records,{weeks:1,preferredThemes:['Camp']},['Beginner'],false),part=projectSchedule(requirements,records,weeks,['Beginner'])[0];
- assert.deepEqual(part.stageCohorts['1'],['Beginner']);assert.deepEqual(part.unassignedScouts,['Beginner']);assert.ok(part.unassignedReasons.Beginner.includes('Stage 1'));assert.equal(part.scoutStages.Beginner,undefined);
+ assert.deepEqual(part.stageCohorts['1'],['Beginner']);assert.deepEqual(part.unassignedScouts,[]);assert.equal(part.scoutStages.Beginner,2);assert.deepEqual(part.requirementScouts.two,['Beginner']);
 });
 it('reports no further work for completed Scouts rather than calling them an unresolved gap',()=>{
  const requirements=[req('one',1)],records={'Done::one':{completed:true}};

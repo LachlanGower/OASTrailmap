@@ -1,3 +1,4 @@
+import { planningPrerequisites } from './planning-links.js';
 import type { OasRequirement, RequirementsDataFile } from './models.js';
 
 function asObject(value: unknown): Record<string, unknown> {
@@ -37,19 +38,22 @@ export function validateRequirements(value: unknown): asserts value is OasRequir
   const visiting = new Set<string>();
   const visited = new Set<string>();
   function visit(id: string): void {
-    if (visiting.has(id)) throw new Error('Circular mandatory prerequisite at ' + id);
+    if (visiting.has(id)) throw new Error('Circular readiness prerequisite at ' + id);
     if (visited.has(id)) return;
     const req = byId.get(id);
     if (!req) throw new Error('Missing prerequisite ' + id);
     visiting.add(id);
-    for (const parent of req.prerequisites) {
-      if (!byId.has(parent)) throw new Error('Missing prerequisite ' + parent + ' used by ' + id);
+    for (const parent of planningPrerequisites(req)) {
+      if (!byId.has(parent)) throw new Error((req.prerequisites.includes(parent)?'Missing prerequisite ':'Missing advisory link ') + parent + ' used by ' + id);
       visit(parent);
     }
     visiting.delete(id);
     visited.add(id);
   }
   for (const id of byId.keys()) visit(id);
+  for(const r of byId.values())if(r.duplicates!==undefined){
+    if(!Array.isArray(r.duplicates)||r.duplicates.some(id=>typeof id!=='string'||id===r.id||!byId.has(id)))throw new Error('Invalid duplicate statements for '+r.id);
+  }
   for(const r of byId.values())if(r.duplicate_of!==undefined){
     if(typeof r.duplicate_of!=='string'||!byId.has(r.duplicate_of))throw new Error('Missing duplicate statement for '+r.id);
     const seen=new Set<string>([r.id]);let id:string|undefined=r.duplicate_of;
